@@ -11,31 +11,17 @@ Este archivo contiene **el PROMPT** que tienes que pegar en tu Proyecto Claude p
 1. **Abre tu Proyecto Claude** (donde ya tienes los archivos de teoría + ejercicios).
 2. **Crea un chat NUEVO** dentro del Proyecto. Nómbralo: `Generación [Asignatura] 3º Primaria`.
    - ❗ **No reutilices chats antiguos** — se inflan y empeoran.
-   - El chat nuevo tiene acceso automático a todos los archivos del Proyecto, pero NO al historial de los otros chats.
-3. **Pega el PROMPT completo** (la sección de abajo) como primer mensaje. Espera la confirmación de Claude.
+3. **Pega el PROMPT completo** como primer mensaje.
 4. **Pide el índice**: `"Lista las fichas que detectas en el material de [Asignatura]"`.
-5. Claude responde con una lista. Tú dices: `"Ok, genera 2 fichas por tanda"`.
-6. **Tanda 1**: Claude te devuelve un bloque ```json ... ``` con 2 fichas.
-7. **Importa en la app**: ⚙️ → PIN `1234` → "📥 Importar contenido nuevo" → elige asignatura → pega el JSON → Validar → Importar.
-8. Vuelve al chat de Claude y di: `"sigue"`. Claude genera la siguiente tanda.
-9. Repite hasta acabar la asignatura.
-10. **Cierra el chat** cuando termines. Para la siguiente asignatura, crea otro chat nuevo.
+5. Claude responde con lista. Tú dices: `"Ok, genera 2 fichas por tanda"`.
+6. **Tanda 1**: bloque JSON con 2 fichas.
+7. **Importa en la app**: ⚙️ → PIN `1234` → "📥 Importar contenido nuevo".
+8. Si la app muestra errores → copia el bloque de errores, pégalo en el chat: `"Corrige estos errores: [pegado]"`.
+9. Vuelves al chat → `"sigue"` → tanda 2 → importas. Y así.
+10. Cierras el chat al terminar la asignatura. Otro chat nuevo para la siguiente.
 
-### Si tienes material en chats antiguos mezclados:
-
-Después de pegar el PROMPT, pega también el bloque de texto relevante:
-
-```
-[PROMPT pegado arriba]
-
-Te paso material adicional para procesar. Ignora los archivos del Proyecto para esta petición y trabaja solo con lo que te pego:
-
----
-[pega aquí el texto del chat antiguo]
----
-
-Genera las fichas de [Asignatura] que puedas extraer.
-```
+### Si tienes material mezclado en chats antiguos:
+Pega después del PROMPT el bloque relevante: `"Usa este material: [pegado]. Genera las fichas de [Asignatura] que encuentres"`.
 
 ---
 
@@ -47,334 +33,230 @@ Trabajamos en un Proyecto Claude. Tienes acceso a los archivos del Proyecto con 
 
 # REGLAS INMUTABLES
 
-1. **Vocabulario**: usa palabras conocidas por niños de 8-9 años (3º Primaria). Frases cortas y claras.
-2. **Idioma**: español de España, EXCEPTO el contenido de los ejercicios de Inglés (que va en inglés).
-3. **Tipos de ejercicio**: solo puedes usar estos 11 (no inventes otros):
-   - EleccionMultiple, RellenarHueco, ArrastrarPalabras, OrdenarFrase, UnirColumnas,
-     ClasificarGrupos, CompletarSerie, SopaLetras, MemoriaPareja, ProblemaVisual, ComprensionLectora
-4. **Distribución obligatoria por ficha**: 8 ejercicios mínimo: 3 nivel 1, 3 nivel 2, 2 nivel 3.
-5. **Variedad**: incluye al menos 4 tipos distintos por ficha. Evita 4 ejercicios del mismo tipo seguidos.
-6. **Output**: solo el bloque ```json [...] ``` con un ARRAY de fichas. Sin prosa antes ni después (salvo el marcador "sigue?" al final si estás paginando).
+1. Vocabulario apto para 8-9 años. Frases cortas y claras.
+2. Idioma: español de España. EXCEPCIÓN: contenido de los ejercicios de "ingles" va en inglés.
+3. Solo estos 11 tipos (no inventes otros):
+   EleccionMultiple, RellenarHueco, ArrastrarPalabras, OrdenarFrase, UnirColumnas,
+   ClasificarGrupos, CompletarSerie, SopaLetras, MemoriaPareja, ProblemaVisual, ComprensionLectora
+4. Distribución por ficha: 8 ejercicios mínimo, 3 nivel 1 + 3 nivel 2 + 2 nivel 3.
+5. Variedad: al menos 4 tipos distintos por ficha.
+6. Output: SOLO bloque ```json [...] ``` con array de fichas. Sin prosa antes ni después.
 
-# IDS — REGLAS ESTRICTAS
+# IDS
 
-Prefijos por asignatura:
-- matematicas → `mat`
-- lengua      → `len`
-- ciencias    → `cie`
-- social      → `soc`
-- ingles      → `ing`
-- valores     → `val`
+Prefijos: matematicas→mat, lengua→len, ciencias→cie, social→soc, ingles→ing, valores→val.
+Ficha: `{prefijo}-NNN` (mat-001). Ejercicio: `{fichaId}-ex-MMM` (mat-001-ex-001).
+NNN/MMM con 3 dígitos. IDs ÚNICOS entre todas las fichas del bloque.
 
-Formato:
-- Ficha: `{prefijo}-NNN` (ej. `mat-001`)
-- Ejercicio: `{fichaId}-ex-MMM` (ej. `mat-001-ex-001`)
-
-IDs únicos en toda la asignatura. NNN y MMM con ceros a la izquierda (3 dígitos).
-
-# SCHEMA — FICHA
+# SCHEMA FICHA
 
 ```json
 {
   "id": "len-001",
   "subject": "lengua",
-  "titulo": "Tipos de palabras: sustantivos y verbos",
+  "titulo": "Determinantes demostrativos",
   "nivel": 1,
-  "contenido": "Texto explicativo de 4-6 frases. Vocabulario 3º Primaria.",
-  "ejemplos": ["Ejemplo 1", "Ejemplo 2", "Ejemplo 3"],
-  "palabrasClave": ["palabra", "clave", "sustantivo"],
-  "tiposEjercicio": ["EleccionMultiple", "RellenarHueco", "..."],
+  "contenido": "Texto explicativo, 4-6 frases, vocabulario 3º Primaria.",
+  "ejemplos": ["Ejemplo 1.", "Ejemplo 2."],
+  "palabrasClave": ["palabra", "clave"],
+  "tiposEjercicio": ["EleccionMultiple", "..."],
   "ejerciciosDerivar": 8,
-  "ejercicios": [ /* array de 8 ejercicios mínimo, ver schemas abajo */ ]
+  "ejercicios": [ /* 8 mínimo */ ]
 }
 ```
 
-# SCHEMA POR TIPO DE EJERCICIO
-
-## Campos COMUNES a todos los ejercicios
+# CAMPOS COMUNES DE EJERCICIO
 
 ```json
 {
-  "id": "...",            // string, único
-  "fichaId": "...",       // mismo id que la ficha contenedora
-  "subject": "...",       // mismo subject que la ficha
-  "tipo": "...",          // uno de los 11 válidos
-  "nivel": 1,             // 1, 2 o 3
-  "enunciado": "...",     // texto de la pregunta (no aplica a todos)
-  "tiempoEstimado": 30    // segundos, según tabla
+  "id": "...", "fichaId": "...", "subject": "...",
+  "tipo": "...", "nivel": 1, "tiempoEstimado": 30,
+  "enunciado": "..." /* si aplica */
 }
 ```
 
-## TABLA: cuándo usar cada tipo
+# REGLAS ANTI-BUG (CRÍTICAS — VERIFICA UNA POR UNA)
 
-| Si el ejercicio original... | Usa el tipo | Tiempo (s) |
-|---|---|---|
-| Pregunta con 4 opciones de respuesta | EleccionMultiple | 30 |
-| Verdadero/Falso | EleccionMultiple con 2 opciones | 25 |
-| Hueco para escribir una palabra | RellenarHueco | 30 |
-| Cálculo mental con respuesta numérica | RellenarHueco o ProblemaVisual numérico | 30 |
-| Ordenar palabras para formar frase | OrdenarFrase | 60 |
-| Une elementos con flechas | UnirColumnas | 90 |
-| Arrastra palabras a huecos | ArrastrarPalabras | 60 |
-| Clasifica en 2-3 grupos | ClasificarGrupos | 60 |
-| Completa serie/patrón | CompletarSerie | 35 |
-| Encuentra palabras escondidas | SopaLetras | 180 |
-| Empareja pares iguales | MemoriaPareja | 180 |
-| Problema con visualización | ProblemaVisual | 45 |
-| Lee texto y responde preguntas | ComprensionLectora | 240 |
-| Dibuja/redacta libre | ADAPTAR: convertir en EleccionMultiple o RellenarHueco con respuesta cerrada |
+## EleccionMultiple
+- `respuestaCorrecta` DEBE coincidir EXACTAMENTE con uno de `opciones[].texto`.
+- ⚠️ **NUNCA pongas emoji "✅", "❌", "✔", "✓", "🟢", "🔴" en ninguna opción**. La app los muestra y DELATAN la respuesta correcta. Pon `"emoji": ""` o un emoji TEMÁTICO no indicador (ej. 🐕, 🌳, 🍎).
+- Mínimo 2 opciones (4 ideal). Sin textos duplicados.
+- ✅ Correcto: `{"texto": "Madrid", "emoji": "🏙️"}`
+- ❌ Incorrecto: `{"texto": "Madrid", "emoji": "✅"}`
 
-## Schemas específicos
-
-### EleccionMultiple
 ```json
 {
-  "id": "...", "fichaId": "...", "subject": "...", "tipo": "EleccionMultiple", "nivel": 1,
-  "enunciado": "¿Cuánto es 5 + 3?",
+  "id": "len-001-ex-001", "fichaId": "len-001", "subject": "lengua",
+  "tipo": "EleccionMultiple", "nivel": 1,
+  "enunciado": "¿Qué demostrativo usamos para algo CERCA?",
   "opciones": [
-    {"texto": "8", "emoji": "✅"},
-    {"texto": "7", "emoji": ""},
-    {"texto": "9", "emoji": ""},
-    {"texto": "10", "emoji": ""}
+    {"texto": "Este", "emoji": ""},
+    {"texto": "Ese", "emoji": ""},
+    {"texto": "Aquel", "emoji": ""},
+    {"texto": "Aquella", "emoji": ""}
   ],
-  "respuestaCorrecta": "8",
+  "respuestaCorrecta": "Este",
   "tiempoEstimado": 30
 }
 ```
-- `respuestaCorrecta` DEBE coincidir EXACTAMENTE con uno de los `opciones[].texto`.
-- `emoji` puede ser "" o un emoji ilustrativo.
 
-### RellenarHueco
+## RellenarHueco
+- Enunciado DEBE contener `[___]` (3 guiones bajos entre corchetes).
+- La respuesta DEBE aparecer en `contenido`, `ejemplos` o `palabrasClave` de la ficha (el niño debe poder deducirla).
+
 ```json
 {
-  "id": "...", "fichaId": "...", "subject": "...", "tipo": "RellenarHueco", "nivel": 1,
-  "enunciado": "La capital de España es [___].",
-  "respuestaCorrecta": "Madrid",
+  "id": "...", "fichaId": "...", "subject": "...",
+  "tipo": "RellenarHueco", "nivel": 1,
+  "enunciado": "[___] perro está aquí a mi lado.",
+  "respuestaCorrecta": "Este",
   "tiempoEstimado": 30
 }
 ```
-- El enunciado contiene `[___]` donde va la respuesta.
-- Comparación se hace sin acentos ni mayúsculas, pero pon la respuesta bien escrita.
 
-### ArrastrarPalabras
-```json
-{
-  "id": "...", "fichaId": "...", "subject": "...", "tipo": "ArrastrarPalabras", "nivel": 2,
-  "fraseConHuecos": "El [___] vuela por el [___] azul.",
-  "banco": ["pájaro", "cielo", "perro", "agua"],
-  "respuestasCorrectas": ["pájaro", "cielo"],
-  "tiempoEstimado": 60
-}
-```
-- `banco` tiene 4-6 palabras (correctas + distractores).
-- `respuestasCorrectas[i]` corresponde al hueco `i`.
+## ArrastrarPalabras
+- `respuestasCorrectas` NUNCA puede tener palabras duplicadas (cada palabra del banco se arrastra a 1 solo hueco).
+- `banco` NUNCA puede tener palabras duplicadas (rompe el drag&drop por IDs).
+- Número de `[___]` en `fraseConHuecos` DEBE igualar `respuestasCorrectas.length`.
+- Cada palabra de `respuestasCorrectas` DEBE estar en `banco`.
+- `banco` debería tener al menos 1 distractor (palabra no correcta).
 
-### OrdenarFrase
+❌ Incorrecto:
 ```json
-{
-  "id": "...", "fichaId": "...", "subject": "...", "tipo": "OrdenarFrase", "nivel": 1,
-  "enunciado": "Ordena las palabras:",
-  "palabrasDesordenadas": ["gato", "El", "leche", "bebe"],
-  "fraseCorrecta": "El gato bebe leche",
-  "tiempoEstimado": 60
-}
+"fraseConHuecos": "El [___] del ordenador. El [___] corrió.",
+"banco": ["ratón", "hoja"],
+"respuestasCorrectas": ["ratón", "ratón"]   ← duplicado, imposible
 ```
 
-### UnirColumnas
+✅ Correcto:
 ```json
-{
-  "id": "...", "fichaId": "...", "subject": "...", "tipo": "UnirColumnas", "nivel": 1,
-  "enunciado": "Une cada animal con su grupo:",
-  "parejas": [
-    {"izquierda": "Perro 🐕", "derecha": "Mamífero"},
-    {"izquierda": "Águila 🦅", "derecha": "Ave"},
-    {"izquierda": "Salmón 🐟", "derecha": "Pez"},
-    {"izquierda": "Rana 🐸", "derecha": "Anfibio"}
-  ],
-  "tiempoEstimado": 90
-}
+"fraseConHuecos": "[___] casa a lo lejos. [___] silla aquí.",
+"banco": ["Aquella", "Esta", "Ese", "Aquel"],
+"respuestasCorrectas": ["Aquella", "Esta"]
 ```
-- 4 parejas exactas.
 
-### ClasificarGrupos
-```json
-{
-  "id": "...", "fichaId": "...", "subject": "...", "tipo": "ClasificarGrupos", "nivel": 1,
-  "enunciado": "Clasifica los animales:",
-  "grupos": [
-    {"id": "mamiferos", "nombre": "Mamíferos 🐕"},
-    {"id": "aves", "nombre": "Aves 🐦"}
-  ],
-  "items": [
-    {"id": "1", "texto": "Gato", "grupoId": "mamiferos"},
-    {"id": "2", "texto": "Águila", "grupoId": "aves"},
-    {"id": "3", "texto": "Ballena", "grupoId": "mamiferos"},
-    {"id": "4", "texto": "Paloma", "grupoId": "aves"}
-  ],
-  "tiempoEstimado": 60
-}
+## OrdenarFrase
+- Las palabras de `fraseCorrecta` (separadas por espacios) DEBEN ser exactamente las mismas que `palabrasDesordenadas` (sin duplicados ni omisiones, case-insensitive).
+
+✅ `palabrasDesordenadas: ["niña","aquella","muy","canta","bien"]` + `fraseCorrecta: "Aquella niña canta muy bien"` ✓
+
+## UnirColumnas
+- EXACTAMENTE 4 parejas.
+- Sin duplicados en `izquierda` ni en `derecha`.
+
+## ClasificarGrupos
+- 2 o 3 grupos. Mínimo 4 items, máximo 6.
+- Cada item tiene un `grupoId` que DEBE existir en `grupos`.
+- Cada grupo DEBE tener al menos 1 item.
+- IDs de items únicos.
+
+## CompletarSerie
+- `serie` tiene EXACTAMENTE 1 valor `null` (el hueco). No 0 ni más de 1.
+- `respuestaCorrecta` DEBE estar en `opciones`.
+
+## SopaLetras
+- `cuadricula` DEBE ser EXACTAMENTE 8x8 (8 arrays de 8 letras cada uno).
+- Cada palabra de `palabras` DEBE aparecer en la cuadrícula horizontal o vertical (ida o vuelta). Sin diagonales.
+- Letras MAYÚSCULAS, sin acentos ni Ñ (usa N).
+- Antes de devolver, verifica letra por letra: "¿la palabra X aparece en alguna fila o columna?"
+
+✅ Si palabras incluye "GATO":
 ```
-- 2 o 3 grupos. 4-6 items. `grupoId` de cada item debe existir en `grupos`.
-
-### CompletarSerie
-```json
-{
-  "id": "...", "fichaId": "...", "subject": "...", "tipo": "CompletarSerie", "nivel": 1,
-  "enunciado": "Completa la serie de 5 en 5:",
-  "serie": ["5", "10", "15", null, "25"],
-  "opciones": ["18", "20", "22"],
-  "respuestaCorrecta": "20",
-  "tiempoEstimado": 35
-}
+Fila 0: ["G","A","T","O","X","Z","L","M"]   ← GATO aparece
 ```
-- `null` marca el hueco. Una sola posición vacía. `respuestaCorrecta` está en `opciones`.
 
-### SopaLetras
-```json
-{
-  "id": "...", "fichaId": "...", "subject": "...", "tipo": "SopaLetras", "nivel": 1,
-  "enunciado": "Encuentra los animales:",
-  "palabras": ["GATO", "PEZ", "RANA"],
-  "cuadricula": [
-    ["G","A","T","O","X","Z","L","M"],
-    ["A","B","C","D","E","F","P","N"],
-    ["R","A","N","A","H","U","E","O"],
-    ["S","F","G","H","J","K","Z","P"],
-    ["D","G","H","J","K","L","M","N"],
-    ["F","G","H","J","K","L","M","N"],
-    ["R","H","J","K","L","M","N","O"],
-    ["X","Y","Z","A","B","C","D","E"]
-  ],
-  "tiempoEstimado": 180
-}
-```
-- Cuadrícula exactamente 8x8. Mayúsculas. Palabras del campo `palabras` deben aparecer en filas o columnas (horizontales/verticales). El resto son letras de relleno.
+## MemoriaPareja
+- EXACTAMENTE 6 parejas (12 cartas en grid 3x4). Ni más ni menos.
+- Ningún valor `a` o `b` puede repetirse entre cartas.
 
-### MemoriaPareja
-```json
-{
-  "id": "...", "fichaId": "...", "subject": "...", "tipo": "MemoriaPareja", "nivel": 2,
-  "enunciado": "Empareja cada animal con su grupo:",
-  "parejas": [
-    {"a": "Perro", "b": "Mamífero"},
-    {"a": "Águila", "b": "Ave"},
-    {"a": "Salmón", "b": "Pez"},
-    {"a": "Rana", "b": "Anfibio"},
-    {"a": "Serpiente", "b": "Reptil"},
-    {"a": "Delfín", "b": "Mamífero"}
-  ],
-  "tiempoEstimado": 180
-}
-```
-- EXACTAMENTE 6 parejas (forman 12 cartas).
+## ProblemaVisual
+- Si `esNumerico: false` → necesita `opciones` array y `respuestaCorrecta` en ellas.
+- Si `esNumerico: true` → no pongas `opciones`, el usuario teclea.
+- `visual.cantidad` máximo 30.
 
-### ProblemaVisual
-```json
-{
-  "id": "...", "fichaId": "...", "subject": "...", "tipo": "ProblemaVisual", "nivel": 1,
-  "enunciado": "Hay 8 manzanas y caen 3. ¿Cuántas quedan?",
-  "visual": {
-    "tipo": "emojis",
-    "emoji": "🍎",
-    "cantidad": 8,
-    "operacion": "resta",
-    "cantidadOperacion": 3
-  },
-  "opciones": ["3", "4", "5", "6"],
-  "respuestaCorrecta": "5",
-  "esNumerico": false,
-  "tiempoEstimado": 45
-}
-```
-- `operacion`: `"suma"`, `"resta"` o `null`.
-- Si `esNumerico: true`, no pongas `opciones` (el usuario teclea).
+## ComprensionLectora
+- `texto` máximo 100 palabras (3º Primaria).
+- 3-4 preguntas. Solo tipos `EleccionMultiple` o `RellenarHueco` dentro.
+- Cada subpregunta `EleccionMultiple`: opciones es array de STRINGS (no objetos), respuestaCorrecta en opciones.
+- Cada subpregunta `RellenarHueco`: enunciado contiene `[___]`.
 
-### ComprensionLectora
-```json
-{
-  "id": "...", "fichaId": "...", "subject": "...", "tipo": "ComprensionLectora", "nivel": 1,
-  "enunciado": "Lee y responde:",
-  "texto": "Párrafo de 4-6 frases, vocabulario 3º Primaria, máximo 80 palabras.",
-  "preguntas": [
-    {
-      "tipo": "EleccionMultiple",
-      "enunciado": "¿Quién es el protagonista?",
-      "opciones": ["Ana", "Luis", "Marta", "Pedro"],
-      "respuestaCorrecta": "Ana"
-    },
-    {
-      "tipo": "RellenarHueco",
-      "enunciado": "El gato se llama [___].",
-      "respuestaCorrecta": "Misifu"
-    }
-  ],
-  "tiempoEstimado": 240
-}
-```
-- 3-4 preguntas por ficha. Solo `EleccionMultiple` o `RellenarHueco` permitidos dentro.
-- Usa ComprensionLectora en fichas de Lengua y Ciencias (cuando el material lo permita).
+# TABLA: TIPOS Y TIEMPO ESTIMADO
 
-# MODO BULK (varias fichas)
-
-Cuando te pida "genera todo de X" o "X fichas de X":
-
-1. **Primera respuesta**: NO generes fichas todavía. Devuelve un índice breve:
-   ```
-   Detectadas N fichas en el material de [Asignatura]:
-   1. [Título 1] (≈ X ejercicios disponibles)
-   2. [Título 2] (≈ Y ejercicios)
-   ...
-   ¿Cuántas fichas por tanda quieres? (sugerido: 2)
-   ```
-
-2. **Cuando el usuario confirme cantidad por tanda**: genera tanda 1 (array JSON de 2 fichas).
-3. **Al final del bloque JSON**, añade en texto plano:
-   ```
-   Tanda 1/N completada. Importa este JSON en la app y responde "sigue" para la siguiente tanda.
-   ```
-
-4. **Cuando responda "sigue"**: tanda 2. Y así.
-
-# MATERIAL MEZCLADO
-
-Si el usuario te pega texto en el chat (no usa archivos del Proyecto):
-- Trabaja SOLO con ese texto pegado.
-- No consultes archivos del Proyecto para esa petición.
-- Extrae todos los ejercicios que detectes.
+| Tipo | Tiempo (s) |
+|---|---|
+| EleccionMultiple | 30 |
+| RellenarHueco | 30 |
+| ArrastrarPalabras | 60 |
+| OrdenarFrase | 60 |
+| UnirColumnas | 90 |
+| ClasificarGrupos | 60 |
+| CompletarSerie | 35 |
+| SopaLetras | 180 |
+| MemoriaPareja | 180 |
+| ProblemaVisual | 45 |
+| ComprensionLectora | 240 |
 
 # ADAPTACIÓN DE EJERCICIOS RAROS
 
-Si encuentras un ejercicio que no encaja en ningún tipo:
-- **Dibujar / colorear** → ProblemaVisual con emojis, o EleccionMultiple visual.
-- **Redactar / escribir libre** → RellenarHueco con respuesta clave, o EleccionMultiple "cuál de estas frases es la mejor descripción".
-- **Repetir oralmente** → no incluir.
-- **Recortar / pegar** → adaptar a ClasificarGrupos.
+- V/F → EleccionMultiple con 2 opciones
+- Dibujar/colorear → ProblemaVisual con emojis o EleccionMultiple visual
+- Redactar libre → RellenarHueco con palabra clave, o EleccionMultiple "qué frase describe mejor"
+- Repetir oral → no incluir
+- Recortar/pegar → ClasificarGrupos
 
-NUNCA inventes un tipo nuevo. NUNCA dejes un ejercicio sin tipo válido.
+# MODO BULK (varias fichas)
 
-# CHECKLIST FINAL (verifica antes de responder)
+Si te piden "genera todo X":
+1. PRIMERA respuesta: índice de fichas detectadas + "¿cuántas fichas por tanda? (sugerido: 2)". SIN JSON aún.
+2. Tras confirmar: tanda 1 con array JSON.
+3. Después del bloque JSON, una línea: `Tanda 1/N completada. Importa y responde "sigue".`
 
-Antes de devolver el bloque JSON, verifica internamente:
-- [ ] JSON sintácticamente válido (sin comas finales, comillas balanceadas)
-- [ ] Cada ficha tiene: id, subject, titulo, nivel, contenido, ejemplos, palabrasClave, ejercicios
-- [ ] IDs únicos y bien formados ({prefijo}-NNN y {fichaId}-ex-MMM)
-- [ ] Cada ejercicio tiene id, fichaId, subject, tipo, nivel, tiempoEstimado
-- [ ] Distribución 3 nivel 1 + 3 nivel 2 + 2 nivel 3 por ficha (mínimo)
-- [ ] Tipos solo de la lista de 11 permitidos
-- [ ] Campos específicos del tipo presentes (ej. EleccionMultiple tiene opciones + respuestaCorrecta válida)
-- [ ] Vocabulario apto 3º Primaria
-- [ ] Inglés en inglés; resto en español de España
+# MATERIAL PEGADO
 
-# OUTPUT FINAL
+Si el usuario te pega texto: usa SOLO ese texto. No mires archivos del Proyecto para esa petición.
+
+# CHECKLIST FINAL (verifica cada punto ANTES de responder)
+
+Para CADA ejercicio del bloque, mentalmente verifica:
+
+GENERAL:
+- [ ] id, fichaId, subject, tipo, nivel, tiempoEstimado presentes
+- [ ] fichaId coincide con la ficha contenedora
+- [ ] subject coincide con la ficha
+- [ ] tipo está en la lista de 11
+- [ ] nivel es 1, 2 o 3
+
+POR TIPO:
+- [ ] EleccionMultiple: respuestaCorrecta en opciones; SIN emojis "✅/❌/✔" en opciones
+- [ ] RellenarHueco: enunciado contiene "[___]"; respuesta aparece en la ficha
+- [ ] ArrastrarPalabras: nº huecos = nº respuestas; sin duplicados en banco ni en respuestasCorrectas; cada respuesta en banco
+- [ ] OrdenarFrase: palabras de fraseCorrecta = palabrasDesordenadas (mismo multiconjunto)
+- [ ] UnirColumnas: exactamente 4 parejas, sin duplicados
+- [ ] ClasificarGrupos: 2-3 grupos, todos con items, grupoId de cada item existe
+- [ ] CompletarSerie: exactamente 1 null en serie; respuestaCorrecta en opciones
+- [ ] SopaLetras: cuadrícula 8x8; cada palabra aparece en fila/columna (mayúsculas, sin tildes)
+- [ ] MemoriaPareja: exactamente 6 parejas; sin valores duplicados
+- [ ] ProblemaVisual: opciones presentes si no esNumerico; cantidad ≤ 30
+- [ ] ComprensionLectora: texto ≤ 100 palabras; preguntas solo EleccionMultiple/RellenarHueco; cada subpregunta válida
+
+DISTRIBUCIÓN:
+- [ ] 8+ ejercicios por ficha, idealmente 3+3+2 niveles
+- [ ] Al menos 4 tipos distintos por ficha
+
+JSON:
+- [ ] Sintácticamente válido (sin comas finales, comillas balanceadas)
+- [ ] IDs únicos entre TODAS las fichas y ejercicios del bloque
+
+# OUTPUT
 
 ```json
 [
-  { /* ficha 1 completa con sus ejercicios */ },
-  { /* ficha 2 completa con sus ejercicios */ }
+  { /* ficha 1 con sus ejercicios */ },
+  { /* ficha 2 con sus ejercicios */ }
 ]
 ```
 
-(Si estás en modo bulk paginado, debajo del bloque JSON añade el separador "Tanda X/Y completada. Responde 'sigue'…")
+(Si modo bulk: añade después del bloque la línea "Tanda X/Y completada. Responde 'sigue'.")
 
 Espera mi primera petición.
 ```
@@ -383,15 +265,21 @@ Espera mi primera petición.
 
 ---
 
-## ✅ Después de importar
+## ✅ Si la app te muestra errores al importar
 
-- La app muestra inmediatamente las fichas nuevas en la asignatura.
-- Si encuentras algún ejercicio mal, puedes:
-  - Regenerar esa ficha y reimportar con modo "Añadir" (sustituye por ID)
-  - O usar modo "Reemplazar todo" para empezar de cero esa asignatura
+El validador ahora detecta TODO esto automáticamente. Si ves errores:
 
-## 🛟 Si Claude se equivoca de formato
+1. Copia la lista de errores que muestra la app.
+2. Pégala en el chat de Claude: `"Corrige estos errores y regenera la tanda: [lista]"`.
+3. Claude regenera. Importa de nuevo.
 
-Pídele en el mismo chat: `"El JSON no es válido, revisa el checklist y regenera la última tanda"`.
-
-El validador de la app te dirá exactamente qué campo falla, así puedes copiarlo al chat y pedir que lo arregle.
+Bugs típicos que ahora se detectan:
+- Emoji "✅" delatando respuesta (✅/❌/🟢/🔴 prohibidos)
+- ArrastrarPalabras con respuestas duplicadas o palabras no en banco
+- OrdenarFrase con palabras que no coinciden entre fraseCorrecta y palabrasDesordenadas
+- SopaLetras donde la palabra no aparece realmente en la cuadrícula
+- MemoriaPareja con != 6 parejas
+- ClasificarGrupos con grupos vacíos o grupoId inválidos
+- IDs duplicados entre fichas
+- Respuestas que no aparecen en el contenido de la ficha
+- Y muchos más

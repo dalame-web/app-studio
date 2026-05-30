@@ -165,11 +165,9 @@ export default function PantallaImportar({ onClose }) {
 
         {/* Resultado validación */}
         {validacion && !resultado && (
-          <div className={`rounded-2xl border-2 p-4 ${
-            validacion.valida ? 'bg-green-50 border-green-300' : 'bg-red-50 border-red-300'
-          }`}>
+          <>
             {validacion.valida ? (
-              <>
+              <div className="rounded-2xl border-2 bg-green-50 border-green-300 p-4">
                 <p className="font-bold text-green-800 mb-1">✅ Validación correcta</p>
                 <p className="text-sm text-green-700">
                   Se importarán <strong>{validacion.stats.numFichas}</strong> fichas con{' '}
@@ -182,16 +180,29 @@ export default function PantallaImportar({ onClose }) {
                     </li>
                   ))}
                 </ul>
-              </>
+              </div>
             ) : (
-              <>
-                <p className="font-bold text-red-800 mb-2">❌ {validacion.errores.length} error{validacion.errores.length === 1 ? '' : 'es'} encontrado{validacion.errores.length === 1 ? '' : 's'}</p>
-                <ul className="text-sm text-red-700 list-disc list-inside space-y-1 max-h-60 overflow-y-auto">
+              <div className="rounded-2xl border-2 bg-red-50 border-red-300 p-4">
+                <p className="font-bold text-red-800 mb-2">
+                  ❌ {validacion.errores.length} error{validacion.errores.length === 1 ? '' : 'es'} crítico{validacion.errores.length === 1 ? '' : 's'} (impide importar)
+                </p>
+                <ul className="text-sm text-red-700 list-disc list-inside space-y-1 max-h-72 overflow-y-auto">
                   {validacion.errores.map((err, i) => <li key={i}>{err}</li>)}
                 </ul>
-              </>
+              </div>
             )}
-          </div>
+
+            {validacion.warnings?.length > 0 && (
+              <div className="rounded-2xl border-2 bg-amber-50 border-amber-300 p-4">
+                <p className="font-bold text-amber-800 mb-2">
+                  ⚠️ {validacion.warnings.length} aviso{validacion.warnings.length === 1 ? '' : 's'} (no bloquea importación, pero revisa)
+                </p>
+                <ul className="text-sm text-amber-700 list-disc list-inside space-y-1 max-h-48 overflow-y-auto">
+                  {validacion.warnings.map((w, i) => <li key={i}>{w}</li>)}
+                </ul>
+              </div>
+            )}
+          </>
         )}
 
         {/* Resultado import */}

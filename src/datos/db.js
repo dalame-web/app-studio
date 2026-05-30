@@ -193,6 +193,42 @@ export async function getAllEjerciciosBySubject(subject) {
   return all.filter(e => e.subject === subject);
 }
 
+// ── Export (genera ejercicios.json completo desde IndexedDB) ─────────────────
+
+/**
+ * Lee todas las fichas + ejercicios de IndexedDB y devuelve el JSON completo
+ * listo para reemplazar public/ejercicios.json.
+ */
+export async function exportarContenidoCompleto() {
+  const db = await getDB();
+  const fichas = await db.getAll('fichas');
+  const ejercicios = await db.getAll('ejercicios');
+
+  // Agrupar ejercicios por fichaId
+  const ejPorFicha = {};
+  for (const ej of ejercicios) {
+    if (!ejPorFicha[ej.fichaId]) ejPorFicha[ej.fichaId] = [];
+    ejPorFicha[ej.fichaId].push(ej);
+  }
+
+  // Reconstruir fichas con ejercicios embebidos
+  const fichasConEjercicios = fichas
+    .sort((a, b) => a.subject.localeCompare(b.subject) || a.id.localeCompare(b.id))
+    .map(f => ({
+      ...f,
+      ejercicios: (ejPorFicha[f.id] ?? []).sort((a, b) => (a.nivel ?? 1) - (b.nivel ?? 1)),
+    }));
+
+  const fecha = new Date().toISOString().slice(0, 10);
+  const version = `${fecha}-${Date.now().toString(36)}`;
+
+  return {
+    version,
+    fecha,
+    fichas: fichasConEjercicios,
+  };
+}
+
 // ── Import (manual upload from admin) ───────────────────────────────────────
 
 /**

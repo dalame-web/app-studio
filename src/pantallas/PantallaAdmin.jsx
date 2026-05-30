@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import useSesionStore from '../store/sesionStore';
 import useGamificacionStore from '../store/gamificacionStore';
-import { getAllSubjectStats, getRecentSessions } from '../datos/db';
+import { getAllSubjectStats, getRecentSessions, exportarContenidoCompleto } from '../datos/db';
 import { ASIGNATURAS } from './PantallaInicio';
 import { BtnVolver } from './PantallaFichas';
 import PantallaImportar from './PantallaImportar';
@@ -38,10 +38,11 @@ export default function PantallaAdmin() {
   const irA           = useSesionStore(s => s.irA);
   const { xpTotal, rachaDias, rachaMaxima, insignias } = useGamificacionStore();
 
-  const [stats, setStats]         = useState([]);
-  const [detalle, setDetalle]     = useState(null);
+  const [stats, setStats]               = useState([]);
+  const [detalle, setDetalle]           = useState(null);
   const [detalleStats, setDetalleStats] = useState(null);
   const [importarAbierto, setImportarAbierto] = useState(false);
+  const [exportEstado, setExportEstado] = useState(null); // null | 'copiado' | 'descargado' | 'error' | 'vacio'
 
   useEffect(() => {
     if (!profileId) return;
@@ -56,6 +57,39 @@ export default function PantallaAdmin() {
 
   function recargarStats() {
     getAllSubjectStats(profileId).then(setStats);
+  }
+
+  async function handlePublicar() {
+    try {
+      const contenido = await exportarContenidoCompleto();
+      if (!contenido.fichas || contenido.fichas.length === 0) {
+        setExportEstado('vacio');
+        setTimeout(() => setExportEstado(null), 3000);
+        return;
+      }
+      const jsonStr = JSON.stringify(contenido, null, 2);
+
+      // Intentar copiar al portapapeles
+      try {
+        await navigator.clipboard.writeText(jsonStr);
+        setExportEstado('copiado');
+      } catch {
+        // Si falla clipboard, descargar como fichero
+        const blob = new Blob([jsonStr], { type: 'application/json' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'ejercicios.json';
+        a.click();
+        URL.revokeObjectURL(url);
+        setExportEstado('descargado');
+      }
+      setTimeout(() => setExportEstado(null), 6000);
+    } catch (e) {
+      console.error(e);
+      setExportEstado('error');
+      setTimeout(() => setExportEstado(null), 3000);
+    }
   }
 
   // Si el import está abierto, mostrarlo a pantalla completa
@@ -132,13 +166,54 @@ export default function PantallaAdmin() {
 
       <main className="flex-1 overflow-y-auto p-4 max-w-2xl mx-auto w-full space-y-4">
         {/* Acciones de contenido */}
-        <button
-          onClick={() => setImportarAbierto(true)}
-          className="w-full bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 text-white font-bold py-4 px-5 rounded-2xl shadow-md flex items-center justify-center gap-3 transition-all active:scale-95"
-        >
-          <span className="text-2xl">📥</span>
-          <span>Importar contenido nuevo</span>
-        </button>
+        <div className="flex gap-3">
+          <button
+            onClick={() => setImportarAbierto(true)}
+            className="flex-1 bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 text-white font-bold py-4 px-3 rounded-2xl shadow-md flex flex-col items-center gap-1 transition-all active:scale-95"
+          >
+            <span className="text-2xl">📥</span>
+            <span className="text-sm">Importar</span>
+          </button>
+
+          <button
+            onClick={handlePublicar}
+            className="flex-1 bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white font-bold py-4 px-3 rounded-2xl shadow-md flex flex-col items-center gap-1 transition-all active:scale-95"
+          >
+            <span className="text-2xl">📤</span>
+            <span className="text-sm">Publicar</span>
+          </button>
+        </div>
+
+        {/* Estado exportación */}
+        {exportEstado === 'copiado' && (
+          <div className="bg-emerald-50 border-2 border-emerald-300 rounded-2xl p-4 text-sm">
+            <p className="font-bold text-emerald-800 mb-1">✅ JSON copiado al portapapeles</p>
+            <p className="text-emerald-700">Ahora ve a Claude Code y escribe:</p>
+            <code className="block mt-2 bg-white rounded-lg px-3 py-2 text-xs text-gray-800 border border-gray-200">
+              "actualiza ejercicios con esto:" y pega el contenido
+            </code>
+            <p className="text-emerald-600 text-xs mt-2">Claude Code actualizará ejercicios.json y hará el push a GitHub automáticamente. Todos los dispositivos recibirán el contenido en ~1 minuto.</p>
+          </div>
+        )}
+        {exportEstado === 'descargado' && (
+          <div className="bg-blue-50 border-2 border-blue-300 rounded-2xl p-4 text-sm">
+            <p className="font-bold text-blue-800 mb-1">📁 Descargado ejercicios.json</p>
+            <p className="text-blue-700">Arrastra el archivo descargado a Claude Code y escribe:</p>
+            <code className="block mt-2 bg-white rounded-lg px-3 py-2 text-xs text-gray-800 border border-gray-200">
+              "actualiza ejercicios con este archivo"
+            </code>
+          </div>
+        )}
+        {exportEstado === 'vacio' && (
+          <div className="bg-amber-50 border-2 border-amber-300 rounded-2xl p-3 text-sm text-amber-700">
+            ⚠️ No hay fichas importadas todavía. Importa primero con el botón 📥.
+          </div>
+        )}
+        {exportEstado === 'error' && (
+          <div className="bg-red-50 border-2 border-red-300 rounded-2xl p-3 text-sm text-red-700">
+            ❌ Error al exportar. Revisa la consola.
+          </div>
+        )}
 
         {/* Global summary */}
         <div className="bg-white rounded-2xl shadow-sm p-4 flex flex-wrap gap-4 justify-around">

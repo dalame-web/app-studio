@@ -33,6 +33,10 @@ export default function PantallaInicio() {
   const [pin, setPin]           = useState('');
   const [pinError, setPinError] = useState(false);
 
+  // PWA install prompt
+  const [installEvt, setInstallEvt]   = useState(null);
+  const [yaInstalada, setYaInstalada] = useState(false);
+
   useEffect(() => {
     if (!profileId) return;
     getAllSubjectStats(profileId).then(all => {
@@ -41,6 +45,34 @@ export default function PantallaInicio() {
       setStats(map);
     });
   }, [profileId]);
+
+  useEffect(() => {
+    // Guardar el evento beforeinstallprompt para usarlo más tarde
+    const handler = (e) => { e.preventDefault(); setInstallEvt(e); };
+    window.addEventListener('beforeinstallprompt', handler);
+
+    // Detectar si ya está instalada
+    const instalada = window.matchMedia('(display-mode: standalone)').matches
+      || navigator.standalone === true;
+    setYaInstalada(instalada);
+
+    // Cuando se instala, ocultar el botón
+    const onInstall = () => setYaInstalada(true);
+    window.addEventListener('appinstalled', onInstall);
+
+    return () => {
+      window.removeEventListener('beforeinstallprompt', handler);
+      window.removeEventListener('appinstalled', onInstall);
+    };
+  }, []);
+
+  async function handleInstalar() {
+    if (!installEvt) return;
+    installEvt.prompt();
+    const { outcome } = await installEvt.userChoice;
+    if (outcome === 'accepted') setYaInstalada(true);
+    setInstallEvt(null);
+  }
 
   function abrirAdmin() { setPinModal(true); setPin(''); setPinError(false); }
 
@@ -78,6 +110,17 @@ export default function PantallaInicio() {
       <div className="text-center px-4 py-6">
         <h1 className="text-4xl font-extrabold text-blue-900 drop-shadow-sm">¡A aprender!</h1>
         <p className="text-blue-700 mt-1 text-lg">¿Qué asignatura practicamos hoy?</p>
+
+        {/* Botón instalar PWA — solo visible si el navegador lo permite y no está instalada */}
+        {installEvt && !yaInstalada && (
+          <button
+            onClick={handleInstalar}
+            className="mt-4 inline-flex items-center gap-2 bg-white border-2 border-blue-300 text-blue-700 font-bold px-5 py-2.5 rounded-2xl shadow-md hover:bg-blue-50 active:scale-95 transition-all animate-aparecer"
+          >
+            <span className="text-xl">📲</span>
+            Instalar app
+          </button>
+        )}
       </div>
 
       {/* Subject grid */}
@@ -147,3 +190,4 @@ export default function PantallaInicio() {
     </div>
   );
 }
+

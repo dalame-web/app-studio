@@ -1,0 +1,29 @@
+{
+  "name": "¡A Aprender! — 2º Primaria",
+  "short_name": "A Aprender",
+  "description": "App educativa offline para niños de 2º Primaria: Matemáticas, Lengua, Ciencias, Inglés y más.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "theme_color": "#0ea5e9",
+  "background_color": "#e0f2fe",
+  "lang": "es",
+  "categories": ["education", "kids"],
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ],
+  "screenshots": [],
+  "prefer_related_applications": false
+}

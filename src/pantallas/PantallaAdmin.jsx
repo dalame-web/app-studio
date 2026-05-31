@@ -1,11 +1,10 @@
 import { useState, useEffect } from 'react';
 import useSesionStore from '../store/sesionStore';
 import useGamificacionStore from '../store/gamificacionStore';
-import { getAllSubjectStats, getRecentSessions, exportarContenidoCompleto } from '../datos/db';
+import { getAllSubjectStats, getRecentSessions } from '../datos/db';
 import { checkAndSyncContent } from '../datos/contentSync';
 import { ASIGNATURAS } from './PantallaInicio';
 import { BtnVolver } from './PantallaFichas';
-import PantallaImportar from './PantallaImportar';
 
 function Semaforo({ accuracy }) {
   if (accuracy === null || accuracy === undefined) return <span className="text-gray-300 text-2xl">⚪</span>;
@@ -42,9 +41,7 @@ export default function PantallaAdmin() {
   const [stats, setStats]               = useState([]);
   const [detalle, setDetalle]           = useState(null);
   const [detalleStats, setDetalleStats] = useState(null);
-  const [importarAbierto, setImportarAbierto] = useState(false);
-  const [exportEstado, setExportEstado] = useState(null); // null | 'copiado' | 'descargado' | 'error' | 'vacio'
-  const [updateEstado, setUpdateEstado] = useState(null); // null | 'comprobando' | 'actualizado' | 'sinCambios' | 'offline' | 'error'
+  const [updateEstado, setUpdateEstado] = useState(null);
 
   useEffect(() => {
     if (!profileId) return;
@@ -76,44 +73,6 @@ export default function PantallaAdmin() {
       setUpdateEstado('error');
     }
     setTimeout(() => setUpdateEstado(null), 5000);
-  }
-
-  async function handlePublicar() {
-    try {
-      const contenido = await exportarContenidoCompleto();
-      if (!contenido.fichas || contenido.fichas.length === 0) {
-        setExportEstado('vacio');
-        setTimeout(() => setExportEstado(null), 3000);
-        return;
-      }
-      const jsonStr = JSON.stringify(contenido, null, 2);
-
-      // Intentar copiar al portapapeles
-      try {
-        await navigator.clipboard.writeText(jsonStr);
-        setExportEstado('copiado');
-      } catch {
-        // Si falla clipboard, descargar como fichero
-        const blob = new Blob([jsonStr], { type: 'application/json' });
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = 'ejercicios.json';
-        a.click();
-        URL.revokeObjectURL(url);
-        setExportEstado('descargado');
-      }
-      setTimeout(() => setExportEstado(null), 6000);
-    } catch (e) {
-      console.error(e);
-      setExportEstado('error');
-      setTimeout(() => setExportEstado(null), 3000);
-    }
-  }
-
-  // Si el import está abierto, mostrarlo a pantalla completa
-  if (importarAbierto) {
-    return <PantallaImportar onClose={() => { setImportarAbierto(false); recargarStats(); }} />;
   }
 
   const meta = (id) => ASIGNATURAS.find(a => a.id === id);
@@ -184,38 +143,19 @@ export default function PantallaAdmin() {
       </header>
 
       <main className="flex-1 overflow-y-auto p-4 max-w-2xl mx-auto w-full space-y-4">
-        {/* Acciones de contenido */}
-        <div className="flex gap-3">
-          <button
-            onClick={() => setImportarAbierto(true)}
-            className="flex-1 bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 text-white font-bold py-4 px-3 rounded-2xl shadow-md flex flex-col items-center gap-1 transition-all active:scale-95"
-          >
-            <span className="text-2xl">📥</span>
-            <span className="text-sm">Importar</span>
-          </button>
+        {/* Actualización de contenido */}
+        <button
+          onClick={handleComprobarActualizacion}
+          disabled={updateEstado === 'comprobando'}
+          className="w-full bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-600 hover:to-blue-700 disabled:from-gray-400 disabled:to-gray-500 text-white font-bold py-4 px-5 rounded-2xl shadow-md flex items-center justify-center gap-3 transition-all active:scale-95"
+        >
+          <span className="text-2xl">{updateEstado === 'comprobando' ? '⏳' : '🔄'}</span>
+          <span>{updateEstado === 'comprobando' ? 'Buscando actualizaciones…' : 'Comprobar contenido nuevo'}</span>
+        </button>
 
-          <button
-            onClick={handlePublicar}
-            className="flex-1 bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white font-bold py-4 px-3 rounded-2xl shadow-md flex flex-col items-center gap-1 transition-all active:scale-95"
-          >
-            <span className="text-2xl">📤</span>
-            <span className="text-sm">Publicar</span>
-          </button>
-
-          <button
-            onClick={handleComprobarActualizacion}
-            disabled={updateEstado === 'comprobando'}
-            className="flex-1 bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-600 hover:to-blue-700 disabled:from-gray-400 disabled:to-gray-500 text-white font-bold py-4 px-3 rounded-2xl shadow-md flex flex-col items-center gap-1 transition-all active:scale-95"
-          >
-            <span className="text-2xl">{updateEstado === 'comprobando' ? '⏳' : '🔄'}</span>
-            <span className="text-sm">{updateEstado === 'comprobando' ? 'Buscando…' : 'Actualizar'}</span>
-          </button>
-        </div>
-
-        {/* Resultado comprobación de actualización */}
         {updateEstado === 'actualizado' && (
           <div className="bg-green-50 border-2 border-green-300 rounded-2xl p-3 text-sm text-green-800 font-semibold text-center animate-aparecer">
-            ✅ ¡Contenido actualizado! Se han descargado nuevas fichas y ejercicios.
+            ✅ ¡Contenido actualizado! Nuevas fichas y ejercicios descargados.
           </div>
         )}
         {updateEstado === 'sinCambios' && (
@@ -225,43 +165,12 @@ export default function PantallaAdmin() {
         )}
         {updateEstado === 'offline' && (
           <div className="bg-amber-50 border-2 border-amber-300 rounded-2xl p-3 text-sm text-amber-700 text-center animate-aparecer">
-            📡 Sin conexión. Conéctate a internet e inténtalo de nuevo.
+            📡 Sin conexión. Conéctate e inténtalo de nuevo.
           </div>
         )}
         {updateEstado === 'error' && (
           <div className="bg-red-50 border-2 border-red-300 rounded-2xl p-3 text-sm text-red-700 text-center animate-aparecer">
-            ❌ Error al comprobar actualizaciones. Inténtalo de nuevo.
-          </div>
-        )}
-
-        {/* Estado exportación */}
-        {exportEstado === 'copiado' && (
-          <div className="bg-emerald-50 border-2 border-emerald-300 rounded-2xl p-4 text-sm">
-            <p className="font-bold text-emerald-800 mb-1">✅ JSON copiado al portapapeles</p>
-            <p className="text-emerald-700">Ahora ve a Claude Code y escribe:</p>
-            <code className="block mt-2 bg-white rounded-lg px-3 py-2 text-xs text-gray-800 border border-gray-200">
-              "actualiza ejercicios con esto:" y pega el contenido
-            </code>
-            <p className="text-emerald-600 text-xs mt-2">Claude Code actualizará ejercicios.json y hará el push a GitHub automáticamente. Todos los dispositivos recibirán el contenido en ~1 minuto.</p>
-          </div>
-        )}
-        {exportEstado === 'descargado' && (
-          <div className="bg-blue-50 border-2 border-blue-300 rounded-2xl p-4 text-sm">
-            <p className="font-bold text-blue-800 mb-1">📁 Descargado ejercicios.json</p>
-            <p className="text-blue-700">Arrastra el archivo descargado a Claude Code y escribe:</p>
-            <code className="block mt-2 bg-white rounded-lg px-3 py-2 text-xs text-gray-800 border border-gray-200">
-              "actualiza ejercicios con este archivo"
-            </code>
-          </div>
-        )}
-        {exportEstado === 'vacio' && (
-          <div className="bg-amber-50 border-2 border-amber-300 rounded-2xl p-3 text-sm text-amber-700">
-            ⚠️ No hay fichas importadas todavía. Importa primero con el botón 📥.
-          </div>
-        )}
-        {exportEstado === 'error' && (
-          <div className="bg-red-50 border-2 border-red-300 rounded-2xl p-3 text-sm text-red-700">
-            ❌ Error al exportar. Revisa la consola.
+            ❌ Error al comprobar. Inténtalo de nuevo.
           </div>
         )}
 

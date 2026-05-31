@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import useSesionStore from '../store/sesionStore';
 import useGamificacionStore from '../store/gamificacionStore';
 import { getAllSubjectStats, getRecentSessions, exportarContenidoCompleto } from '../datos/db';
+import { checkAndSyncContent } from '../datos/contentSync';
 import { ASIGNATURAS } from './PantallaInicio';
 import { BtnVolver } from './PantallaFichas';
 import PantallaImportar from './PantallaImportar';
@@ -43,6 +44,7 @@ export default function PantallaAdmin() {
   const [detalleStats, setDetalleStats] = useState(null);
   const [importarAbierto, setImportarAbierto] = useState(false);
   const [exportEstado, setExportEstado] = useState(null); // null | 'copiado' | 'descargado' | 'error' | 'vacio'
+  const [updateEstado, setUpdateEstado] = useState(null); // null | 'comprobando' | 'actualizado' | 'sinCambios' | 'offline' | 'error'
 
   useEffect(() => {
     if (!profileId) return;
@@ -57,6 +59,23 @@ export default function PantallaAdmin() {
 
   function recargarStats() {
     getAllSubjectStats(profileId).then(setStats);
+  }
+
+  async function handleComprobarActualizacion() {
+    if (!navigator.onLine) {
+      setUpdateEstado('offline');
+      setTimeout(() => setUpdateEstado(null), 4000);
+      return;
+    }
+    setUpdateEstado('comprobando');
+    try {
+      const hayNuevo = await checkAndSyncContent();
+      setUpdateEstado(hayNuevo ? 'actualizado' : 'sinCambios');
+      if (hayNuevo) recargarStats();
+    } catch {
+      setUpdateEstado('error');
+    }
+    setTimeout(() => setUpdateEstado(null), 5000);
   }
 
   async function handlePublicar() {
@@ -182,7 +201,38 @@ export default function PantallaAdmin() {
             <span className="text-2xl">📤</span>
             <span className="text-sm">Publicar</span>
           </button>
+
+          <button
+            onClick={handleComprobarActualizacion}
+            disabled={updateEstado === 'comprobando'}
+            className="flex-1 bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-600 hover:to-blue-700 disabled:from-gray-400 disabled:to-gray-500 text-white font-bold py-4 px-3 rounded-2xl shadow-md flex flex-col items-center gap-1 transition-all active:scale-95"
+          >
+            <span className="text-2xl">{updateEstado === 'comprobando' ? '⏳' : '🔄'}</span>
+            <span className="text-sm">{updateEstado === 'comprobando' ? 'Buscando…' : 'Actualizar'}</span>
+          </button>
         </div>
+
+        {/* Resultado comprobación de actualización */}
+        {updateEstado === 'actualizado' && (
+          <div className="bg-green-50 border-2 border-green-300 rounded-2xl p-3 text-sm text-green-800 font-semibold text-center animate-aparecer">
+            ✅ ¡Contenido actualizado! Se han descargado nuevas fichas y ejercicios.
+          </div>
+        )}
+        {updateEstado === 'sinCambios' && (
+          <div className="bg-gray-50 border border-gray-200 rounded-2xl p-3 text-sm text-gray-600 text-center animate-aparecer">
+            ✓ Ya tienes la versión más reciente del contenido.
+          </div>
+        )}
+        {updateEstado === 'offline' && (
+          <div className="bg-amber-50 border-2 border-amber-300 rounded-2xl p-3 text-sm text-amber-700 text-center animate-aparecer">
+            📡 Sin conexión. Conéctate a internet e inténtalo de nuevo.
+          </div>
+        )}
+        {updateEstado === 'error' && (
+          <div className="bg-red-50 border-2 border-red-300 rounded-2xl p-3 text-sm text-red-700 text-center animate-aparecer">
+            ❌ Error al comprobar actualizaciones. Inténtalo de nuevo.
+          </div>
+        )}
 
         {/* Estado exportación */}
         {exportEstado === 'copiado' && (

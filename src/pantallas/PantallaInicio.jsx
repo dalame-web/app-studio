@@ -34,8 +34,9 @@ export default function PantallaInicio() {
   const [pinError, setPinError] = useState(false);
 
   // PWA install prompt
-  const [installEvt, setInstallEvt]   = useState(null);
-  const [yaInstalada, setYaInstalada] = useState(false);
+  const [installEvt, setInstallEvt]       = useState(null);
+  const [yaInstalada, setYaInstalada]     = useState(false);
+  const [modalInstalar, setModalInstalar] = useState(false);
 
   useEffect(() => {
     if (!profileId) return;
@@ -47,16 +48,15 @@ export default function PantallaInicio() {
   }, [profileId]);
 
   useEffect(() => {
-    // Guardar el evento beforeinstallprompt para usarlo más tarde
+    // Guardar prompt nativo si llega (no llega en Family Link)
     const handler = (e) => { e.preventDefault(); setInstallEvt(e); };
     window.addEventListener('beforeinstallprompt', handler);
 
-    // Detectar si ya está instalada
+    // Detectar si ya está instalada como app standalone
     const instalada = window.matchMedia('(display-mode: standalone)').matches
       || navigator.standalone === true;
     setYaInstalada(instalada);
 
-    // Cuando se instala, ocultar el botón
     const onInstall = () => setYaInstalada(true);
     window.addEventListener('appinstalled', onInstall);
 
@@ -67,11 +67,16 @@ export default function PantallaInicio() {
   }, []);
 
   async function handleInstalar() {
-    if (!installEvt) return;
-    installEvt.prompt();
-    const { outcome } = await installEvt.userChoice;
-    if (outcome === 'accepted') setYaInstalada(true);
-    setInstallEvt(null);
+    if (installEvt) {
+      // Navegador soporta prompt nativo (PC, Android sin Family Link)
+      installEvt.prompt();
+      const { outcome } = await installEvt.userChoice;
+      if (outcome === 'accepted') setYaInstalada(true);
+      setInstallEvt(null);
+    } else {
+      // Family Link u otro navegador: mostrar instrucciones manuales
+      setModalInstalar(true);
+    }
   }
 
   function abrirAdmin() { setPinModal(true); setPin(''); setPinError(false); }
@@ -111,8 +116,8 @@ export default function PantallaInicio() {
         <h1 className="text-4xl font-extrabold text-blue-900 drop-shadow-sm">¡A aprender!</h1>
         <p className="text-blue-700 mt-1 text-lg">¿Qué asignatura practicamos hoy?</p>
 
-        {/* Botón instalar PWA — solo visible si el navegador lo permite y no está instalada */}
-        {installEvt && !yaInstalada && (
+        {/* Botón instalar PWA — visible siempre que no esté instalada */}
+        {!yaInstalada && (
           <button
             onClick={handleInstalar}
             className="mt-4 inline-flex items-center gap-2 bg-white border-2 border-blue-300 text-blue-700 font-bold px-5 py-2.5 rounded-2xl shadow-md hover:bg-blue-50 active:scale-95 transition-all animate-aparecer"
@@ -150,6 +155,44 @@ export default function PantallaInicio() {
           })}
         </div>
       </main>
+
+      {/* Modal instrucciones instalación manual (Family Link / Safari) */}
+      {modalInstalar && (
+        <Modal title="Instalar app 📲" onClose={() => setModalInstalar(false)}>
+          <div className="space-y-4 text-sm">
+            <p className="text-gray-600">Añade la app a la pantalla de inicio siguiendo estos pasos:</p>
+
+            <div className="bg-blue-50 rounded-2xl p-4 space-y-3">
+              <p className="font-bold text-blue-800">En Chrome (Android):</p>
+              <ol className="space-y-2 text-blue-700">
+                <li className="flex gap-2"><span className="font-bold shrink-0">1.</span> Toca el menú <span className="font-mono bg-white px-1 rounded">⋮</span> (arriba a la derecha)</li>
+                <li className="flex gap-2"><span className="font-bold shrink-0">2.</span> Selecciona <strong>"Añadir a pantalla de inicio"</strong></li>
+                <li className="flex gap-2"><span className="font-bold shrink-0">3.</span> Pulsa <strong>"Añadir"</strong> para confirmar</li>
+              </ol>
+            </div>
+
+            <div className="bg-gray-50 rounded-2xl p-4 space-y-3">
+              <p className="font-bold text-gray-700">En Safari (iPhone/iPad):</p>
+              <ol className="space-y-2 text-gray-600">
+                <li className="flex gap-2"><span className="font-bold shrink-0">1.</span> Toca el botón <span className="font-mono bg-white px-1 rounded border">⬆️</span> (compartir, abajo)</li>
+                <li className="flex gap-2"><span className="font-bold shrink-0">2.</span> Selecciona <strong>"Añadir a inicio"</strong></li>
+                <li className="flex gap-2"><span className="font-bold shrink-0">3.</span> Pulsa <strong>"Añadir"</strong></li>
+              </ol>
+            </div>
+
+            <p className="text-xs text-gray-400 text-center">
+              Si la tablet tiene control parental activo,<br/>es posible que necesites aprobación del adulto.
+            </p>
+
+            <button
+              onClick={() => setModalInstalar(false)}
+              className="w-full py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-2xl transition-colors"
+            >
+              Entendido ✓
+            </button>
+          </div>
+        </Modal>
+      )}
 
       {/* PIN Modal */}
       {pinModal && (

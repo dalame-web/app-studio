@@ -1,16 +1,2147 @@
 {
-  "version": "1.0.0",
-  "fecha": "2026-05-28",
+  "version": "2026-06-01-1",
+  "fecha": "2026-06-01",
   "fichas": [
+    {
+      "id": "cie-001",
+      "subject": "ciencias",
+      "titulo": "Los animales vertebrados",
+      "nivel": 1,
+      "contenido": "Los animales vertebrados tienen columna vertebral. Se dividen en cinco grupos: mamíferos, aves, peces, reptiles y anfibios. Los mamíferos tienen pelo y dan leche a sus crías. Las aves tienen plumas y ponen huevos.",
+      "ejemplos": [
+        "Mamíferos: perro, gato, ballena",
+        "Aves: águila, paloma, pingüino",
+        "Peces: salmón, tiburón, atún",
+        "Reptiles: serpiente, cocodrilo",
+        "Anfibios: rana, salamandra"
+      ],
+      "palabrasClave": [
+        "vertebrado",
+        "mamífero",
+        "ave",
+        "pez",
+        "reptil",
+        "anfibio"
+      ],
+      "tiposEjercicio": [
+        "EleccionMultiple",
+        "ClasificarGrupos",
+        "UnirColumnas",
+        "SopaLetras"
+      ],
+      "ejerciciosDerivar": 8,
+      "ejercicios": [
+        {
+          "id": "cie-001-ex-001",
+          "fichaId": "cie-001",
+          "subject": "ciencias",
+          "tipo": "EleccionMultiple",
+          "nivel": 1,
+          "enunciado": "¿A qué grupo pertenece el perro?",
+          "opciones": [
+            {
+              "texto": "🐕 Mamífero",
+              "emoji": ""
+            },
+            {
+              "texto": "🐦 Ave",
+              "emoji": ""
+            },
+            {
+              "texto": "🐟 Pez",
+              "emoji": ""
+            },
+            {
+              "texto": "🐊 Reptil",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "🐕 Mamífero",
+          "tiempoEstimado": 30
+        },
+        {
+          "id": "cie-001-ex-002",
+          "fichaId": "cie-001",
+          "subject": "ciencias",
+          "tipo": "ClasificarGrupos",
+          "nivel": 1,
+          "enunciado": "Clasifica los animales en su grupo",
+          "grupos": [
+            {
+              "id": "mamiferos",
+              "nombre": "Mamíferos 🐕"
+            },
+            {
+              "id": "aves",
+              "nombre": "Aves 🐦"
+            },
+            {
+              "id": "peces",
+              "nombre": "Peces 🐟"
+            }
+          ],
+          "items": [
+            {
+              "id": "1",
+              "texto": "Gato 🐈",
+              "grupoId": "mamiferos"
+            },
+            {
+              "id": "2",
+              "texto": "Águila 🦅",
+              "grupoId": "aves"
+            },
+            {
+              "id": "3",
+              "texto": "Salmón 🐟",
+              "grupoId": "peces"
+            },
+            {
+              "id": "4",
+              "texto": "Ballena 🐋",
+              "grupoId": "mamiferos"
+            },
+            {
+              "id": "5",
+              "texto": "Paloma 🕊️",
+              "grupoId": "aves"
+            },
+            {
+              "id": "6",
+              "texto": "Atún 🐠",
+              "grupoId": "peces"
+            }
+          ],
+          "tiempoEstimado": 90
+        },
+        {
+          "id": "cie-001-ex-003",
+          "fichaId": "cie-001",
+          "subject": "ciencias",
+          "tipo": "UnirColumnas",
+          "nivel": 1,
+          "enunciado": "Une cada animal con su característica",
+          "parejas": [
+            {
+              "izquierda": "Perro 🐕",
+              "derecha": "Tiene pelo"
+            },
+            {
+              "izquierda": "Águila 🦅",
+              "derecha": "Tiene plumas"
+            },
+            {
+              "izquierda": "Salmón 🐟",
+              "derecha": "Tiene escamas"
+            },
+            {
+              "izquierda": "Rana 🐸",
+              "derecha": "Vive en agua y tierra"
+            }
+          ],
+          "tiempoEstimado": 90
+        },
+        {
+          "id": "cie-001-ex-004",
+          "fichaId": "cie-001",
+          "subject": "ciencias",
+          "tipo": "SopaLetras",
+          "nivel": 1,
+          "enunciado": "Encuentra los grupos de animales vertebrados",
+          "palabras": [
+            "AVE",
+            "PEZ",
+            "RANA",
+            "GATO"
+          ],
+          "cuadricula": [
+            [
+              "A",
+              "V",
+              "E",
+              "X",
+              "Z",
+              "L",
+              "M",
+              "Q"
+            ],
+            [
+              "P",
+              "E",
+              "Z",
+              "Y",
+              "Q",
+              "W",
+              "N",
+              "R"
+            ],
+            [
+              "R",
+              "A",
+              "N",
+              "A",
+              "U",
+              "I",
+              "O",
+              "T"
+            ],
+            [
+              "G",
+              "A",
+              "T",
+              "O",
+              "J",
+              "K",
+              "L",
+              "P"
+            ],
+            [
+              "S",
+              "F",
+              "G",
+              "H",
+              "J",
+              "K",
+              "L",
+              "A"
+            ],
+            [
+              "D",
+              "G",
+              "H",
+              "J",
+              "K",
+              "L",
+              "M",
+              "N"
+            ],
+            [
+              "F",
+              "G",
+              "H",
+              "J",
+              "K",
+              "L",
+              "M",
+              "N"
+            ],
+            [
+              "R",
+              "H",
+              "J",
+              "K",
+              "L",
+              "M",
+              "N",
+              "O"
+            ]
+          ],
+          "tiempoEstimado": 180
+        },
+        {
+          "id": "cie-001-ex-005",
+          "fichaId": "cie-001",
+          "subject": "ciencias",
+          "tipo": "EleccionMultiple",
+          "nivel": 1,
+          "enunciado": "¿Cuál de estos animales es un ave?",
+          "opciones": [
+            {
+              "texto": "🐦 Paloma",
+              "emoji": ""
+            },
+            {
+              "texto": "🐟 Sardina",
+              "emoji": ""
+            },
+            {
+              "texto": "🐊 Cocodrilo",
+              "emoji": ""
+            },
+            {
+              "texto": "🐸 Rana",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "🐦 Paloma",
+          "tiempoEstimado": 30
+        },
+        {
+          "id": "cie-001-ex-006",
+          "fichaId": "cie-001",
+          "subject": "ciencias",
+          "tipo": "RellenarHueco",
+          "nivel": 2,
+          "enunciado": "Los animales vertebrados tienen [___] vertebral",
+          "respuestaCorrecta": "columna",
+          "tiempoEstimado": 30
+        },
+        {
+          "id": "cie-001-ex-007",
+          "fichaId": "cie-001",
+          "subject": "ciencias",
+          "tipo": "MemoriaPareja",
+          "nivel": 2,
+          "enunciado": "Empareja cada animal con su grupo",
+          "parejas": [
+            {
+              "a": "🐕 Perro",
+              "b": "Mamífero"
+            },
+            {
+              "a": "🦅 Águila",
+              "b": "Ave"
+            },
+            {
+              "a": "🐟 Salmón",
+              "b": "Pez"
+            },
+            {
+              "a": "🐸 Rana",
+              "b": "Anfibio"
+            },
+            {
+              "a": "🐍 Serpiente",
+              "b": "Reptil"
+            },
+            {
+              "a": "🐬 Delfín",
+              "b": "Mamífero"
+            }
+          ],
+          "tiempoEstimado": 180
+        },
+        {
+          "id": "cie-001-ex-008",
+          "fichaId": "cie-001",
+          "subject": "ciencias",
+          "tipo": "ClasificarGrupos",
+          "nivel": 2,
+          "enunciado": "Clasifica según si ponen huevos o no",
+          "grupos": [
+            {
+              "id": "huevos",
+              "nombre": "Ponen huevos 🥚"
+            },
+            {
+              "id": "crias",
+              "nombre": "Paren crías 🐣"
+            }
+          ],
+          "items": [
+            {
+              "id": "1",
+              "texto": "Gallina 🐔",
+              "grupoId": "huevos"
+            },
+            {
+              "id": "2",
+              "texto": "Perro 🐕",
+              "grupoId": "crias"
+            },
+            {
+              "id": "3",
+              "texto": "Serpiente 🐍",
+              "grupoId": "huevos"
+            },
+            {
+              "id": "4",
+              "texto": "Ballena 🐋",
+              "grupoId": "crias"
+            }
+          ],
+          "tiempoEstimado": 60
+        }
+      ]
+    },
+    {
+      "id": "cie-002",
+      "subject": "ciencias",
+      "titulo": "Las plantas y sus partes",
+      "nivel": 1,
+      "contenido": "Las plantas son seres vivos que producen su propio alimento mediante la fotosíntesis. Las partes principales de una planta son: raíz, tallo, hojas, flores y fruto. Las raíces absorben el agua del suelo.",
+      "ejemplos": [
+        "La raíz absorbe agua y minerales",
+        "El tallo sostiene la planta",
+        "Las hojas realizan la fotosíntesis",
+        "Las flores producen los frutos"
+      ],
+      "palabrasClave": [
+        "raíz",
+        "tallo",
+        "hoja",
+        "flor",
+        "fruto",
+        "fotosíntesis"
+      ],
+      "tiposEjercicio": [
+        "EleccionMultiple",
+        "UnirColumnas",
+        "RellenarHueco",
+        "OrdenarFrase"
+      ],
+      "ejerciciosDerivar": 8,
+      "ejercicios": [
+        {
+          "id": "cie-002-ex-001",
+          "fichaId": "cie-002",
+          "subject": "ciencias",
+          "tipo": "EleccionMultiple",
+          "nivel": 1,
+          "enunciado": "¿Qué parte de la planta absorbe el agua del suelo?",
+          "opciones": [
+            {
+              "texto": "🌿 La hoja",
+              "emoji": ""
+            },
+            {
+              "texto": "🌺 La flor",
+              "emoji": ""
+            },
+            {
+              "texto": "🌱 La raíz",
+              "emoji": ""
+            },
+            {
+              "texto": "🌳 El tallo",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "🌱 La raíz",
+          "tiempoEstimado": 30
+        },
+        {
+          "id": "cie-002-ex-002",
+          "fichaId": "cie-002",
+          "subject": "ciencias",
+          "tipo": "UnirColumnas",
+          "nivel": 1,
+          "enunciado": "Une cada parte de la planta con su función",
+          "parejas": [
+            {
+              "izquierda": "Raíz 🌱",
+              "derecha": "Absorbe agua"
+            },
+            {
+              "izquierda": "Tallo 🌿",
+              "derecha": "Sostiene la planta"
+            },
+            {
+              "izquierda": "Hoja 🍃",
+              "derecha": "Hace fotosíntesis"
+            },
+            {
+              "izquierda": "Flor 🌸",
+              "derecha": "Produce el fruto"
+            }
+          ],
+          "tiempoEstimado": 90
+        },
+        {
+          "id": "cie-002-ex-003",
+          "fichaId": "cie-002",
+          "subject": "ciencias",
+          "tipo": "RellenarHueco",
+          "nivel": 1,
+          "enunciado": "Las plantas producen su alimento mediante la [___]",
+          "respuestaCorrecta": "fotosíntesis",
+          "tiempoEstimado": 35
+        },
+        {
+          "id": "cie-002-ex-004",
+          "fichaId": "cie-002",
+          "subject": "ciencias",
+          "tipo": "OrdenarFrase",
+          "nivel": 1,
+          "enunciado": "Ordena las palabras para describir una planta",
+          "palabrasDesordenadas": [
+            "tiene",
+            "La planta",
+            "y",
+            "hojas",
+            "raíces"
+          ],
+          "fraseCorrecta": "La planta tiene hojas y raíces",
+          "tiempoEstimado": 60
+        },
+        {
+          "id": "cie-002-ex-005",
+          "fichaId": "cie-002",
+          "subject": "ciencias",
+          "tipo": "EleccionMultiple",
+          "nivel": 1,
+          "enunciado": "¿Qué necesitan las plantas para vivir?",
+          "opciones": [
+            {
+              "texto": "☀️ Luz solar, agua y CO₂",
+              "emoji": ""
+            },
+            {
+              "texto": "🌙 Oscuridad y frío",
+              "emoji": ""
+            },
+            {
+              "texto": "🍖 Carne y grasa",
+              "emoji": ""
+            },
+            {
+              "texto": "💨 Solo aire",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "☀️ Luz solar, agua y CO₂",
+          "tiempoEstimado": 30
+        },
+        {
+          "id": "cie-002-ex-006",
+          "fichaId": "cie-002",
+          "subject": "ciencias",
+          "tipo": "MemoriaPareja",
+          "nivel": 2,
+          "enunciado": "Empareja cada parte con su imagen",
+          "parejas": [
+            {
+              "a": "🌱 Raíz",
+              "b": "Bajo tierra"
+            },
+            {
+              "a": "🌳 Tallo",
+              "b": "Sostén"
+            },
+            {
+              "a": "🍃 Hoja",
+              "b": "Verde y plana"
+            },
+            {
+              "a": "🌸 Flor",
+              "b": "Colorida"
+            },
+            {
+              "a": "🍎 Fruto",
+              "b": "Semillas dentro"
+            },
+            {
+              "a": "💧 Agua",
+              "b": "La absorbe la raíz"
+            }
+          ],
+          "tiempoEstimado": 180
+        },
+        {
+          "id": "cie-002-ex-007",
+          "fichaId": "cie-002",
+          "subject": "ciencias",
+          "tipo": "ClasificarGrupos",
+          "nivel": 2,
+          "enunciado": "Clasifica los elementos",
+          "grupos": [
+            {
+              "id": "partes",
+              "nombre": "Partes de la planta 🌿"
+            },
+            {
+              "id": "necesidades",
+              "nombre": "Lo que necesitan 🌞"
+            }
+          ],
+          "items": [
+            {
+              "id": "1",
+              "texto": "Raíz 🌱",
+              "grupoId": "partes"
+            },
+            {
+              "id": "2",
+              "texto": "Agua 💧",
+              "grupoId": "necesidades"
+            },
+            {
+              "id": "3",
+              "texto": "Hoja 🍃",
+              "grupoId": "partes"
+            },
+            {
+              "id": "4",
+              "texto": "Luz solar ☀️",
+              "grupoId": "necesidades"
+            }
+          ],
+          "tiempoEstimado": 60
+        },
+        {
+          "id": "cie-002-ex-008",
+          "fichaId": "cie-002",
+          "subject": "ciencias",
+          "tipo": "RellenarHueco",
+          "nivel": 2,
+          "enunciado": "Las flores producen los [___] de la planta",
+          "respuestaCorrecta": "frutos",
+          "tiempoEstimado": 30
+        }
+      ]
+    },
+    {
+      "id": "ing-001",
+      "subject": "ingles",
+      "titulo": "Colors and numbers",
+      "nivel": 1,
+      "contenido": "Colors help us describe things around us. Numbers help us count. In English: red, blue, green, yellow, orange, purple. Numbers: one, two, three, four, five, six, seven, eight, nine, ten.",
+      "ejemplos": [
+        "The sky is blue",
+        "I have three cats",
+        "The apple is red",
+        "She has five pencils"
+      ],
+      "palabrasClave": [
+        "red",
+        "blue",
+        "green",
+        "yellow",
+        "one",
+        "two",
+        "three",
+        "four",
+        "five"
+      ],
+      "tiposEjercicio": [
+        "EleccionMultiple",
+        "RellenarHueco",
+        "UnirColumnas",
+        "CompletarSerie"
+      ],
+      "ejerciciosDerivar": 8,
+      "ejercicios": [
+        {
+          "id": "ing-001-ex-001",
+          "fichaId": "ing-001",
+          "subject": "ingles",
+          "tipo": "EleccionMultiple",
+          "nivel": 1,
+          "enunciado": "What color is the sky? 🌤️",
+          "opciones": [
+            {
+              "texto": "Blue",
+              "emoji": "🔵"
+            },
+            {
+              "texto": "Red",
+              "emoji": "🔴"
+            },
+            {
+              "texto": "Green",
+              "emoji": "🟢"
+            },
+            {
+              "texto": "Yellow",
+              "emoji": "🟡"
+            }
+          ],
+          "respuestaCorrecta": "Blue",
+          "tiempoEstimado": 30
+        },
+        {
+          "id": "ing-001-ex-002",
+          "fichaId": "ing-001",
+          "subject": "ingles",
+          "tipo": "CompletarSerie",
+          "nivel": 1,
+          "enunciado": "Complete the number sequence",
+          "serie": [
+            "one",
+            "two",
+            null,
+            "four",
+            "five"
+          ],
+          "opciones": [
+            "six",
+            "three",
+            "zero"
+          ],
+          "respuestaCorrecta": "three",
+          "tiempoEstimado": 35
+        },
+        {
+          "id": "ing-001-ex-003",
+          "fichaId": "ing-001",
+          "subject": "ingles",
+          "tipo": "UnirColumnas",
+          "nivel": 1,
+          "enunciado": "Match the color with its object",
+          "parejas": [
+            {
+              "izquierda": "Red 🔴",
+              "derecha": "Apple 🍎"
+            },
+            {
+              "izquierda": "Yellow 🟡",
+              "derecha": "Sun ☀️"
+            },
+            {
+              "izquierda": "Green 🟢",
+              "derecha": "Tree 🌳"
+            },
+            {
+              "izquierda": "Blue 🔵",
+              "derecha": "Sea 🌊"
+            }
+          ],
+          "tiempoEstimado": 90
+        },
+        {
+          "id": "ing-001-ex-004",
+          "fichaId": "ing-001",
+          "subject": "ingles",
+          "tipo": "RellenarHueco",
+          "nivel": 1,
+          "enunciado": "The banana is [___]",
+          "respuestaCorrecta": "yellow",
+          "tiempoEstimado": 30
+        },
+        {
+          "id": "ing-001-ex-005",
+          "fichaId": "ing-001",
+          "subject": "ingles",
+          "tipo": "EleccionMultiple",
+          "nivel": 1,
+          "enunciado": "How many fingers do we have in one hand? ✋",
+          "opciones": [
+            {
+              "texto": "Three",
+              "emoji": ""
+            },
+            {
+              "texto": "Four",
+              "emoji": ""
+            },
+            {
+              "texto": "Five",
+              "emoji": ""
+            },
+            {
+              "texto": "Six",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "Five",
+          "tiempoEstimado": 30
+        },
+        {
+          "id": "ing-001-ex-006",
+          "fichaId": "ing-001",
+          "subject": "ingles",
+          "tipo": "MemoriaPareja",
+          "nivel": 2,
+          "enunciado": "Match the number with its word",
+          "parejas": [
+            {
+              "a": "1",
+              "b": "one"
+            },
+            {
+              "a": "2",
+              "b": "two"
+            },
+            {
+              "a": "3",
+              "b": "three"
+            },
+            {
+              "a": "4",
+              "b": "four"
+            },
+            {
+              "a": "5",
+              "b": "five"
+            },
+            {
+              "a": "6",
+              "b": "six"
+            }
+          ],
+          "tiempoEstimado": 180
+        },
+        {
+          "id": "ing-001-ex-007",
+          "fichaId": "ing-001",
+          "subject": "ingles",
+          "tipo": "RellenarHueco",
+          "nivel": 2,
+          "enunciado": "Two plus three is [___]",
+          "respuestaCorrecta": "five",
+          "tiempoEstimado": 30
+        },
+        {
+          "id": "ing-001-ex-008",
+          "fichaId": "ing-001",
+          "subject": "ingles",
+          "tipo": "ClasificarGrupos",
+          "nivel": 2,
+          "enunciado": "Classify the words",
+          "grupos": [
+            {
+              "id": "colors",
+              "nombre": "Colors 🎨"
+            },
+            {
+              "id": "numbers",
+              "nombre": "Numbers 🔢"
+            }
+          ],
+          "items": [
+            {
+              "id": "1",
+              "texto": "red",
+              "grupoId": "colors"
+            },
+            {
+              "id": "2",
+              "texto": "seven",
+              "grupoId": "numbers"
+            },
+            {
+              "id": "3",
+              "texto": "blue",
+              "grupoId": "colors"
+            },
+            {
+              "id": "4",
+              "texto": "nine",
+              "grupoId": "numbers"
+            }
+          ],
+          "tiempoEstimado": 60
+        }
+      ]
+    },
+    {
+      "id": "ing-002",
+      "subject": "ingles",
+      "titulo": "School objects",
+      "nivel": 1,
+      "contenido": "School objects are things we use to learn. In English: pencil, pen, book, ruler, eraser, notebook, bag, scissors. We can say 'This is a pencil' or 'I have a book'.",
+      "ejemplos": [
+        "This is a pencil ✏️",
+        "I have a ruler 📏",
+        "She has a book 📚",
+        "He uses an eraser"
+      ],
+      "palabrasClave": [
+        "pencil",
+        "book",
+        "ruler",
+        "eraser",
+        "bag",
+        "notebook",
+        "scissors"
+      ],
+      "tiposEjercicio": [
+        "EleccionMultiple",
+        "OrdenarFrase",
+        "UnirColumnas",
+        "ClasificarGrupos"
+      ],
+      "ejerciciosDerivar": 8,
+      "ejercicios": [
+        {
+          "id": "ing-002-ex-001",
+          "fichaId": "ing-002",
+          "subject": "ingles",
+          "tipo": "EleccionMultiple",
+          "nivel": 1,
+          "enunciado": "What is this? ✏️",
+          "opciones": [
+            {
+              "texto": "A pencil",
+              "emoji": ""
+            },
+            {
+              "texto": "A ruler",
+              "emoji": ""
+            },
+            {
+              "texto": "An eraser",
+              "emoji": ""
+            },
+            {
+              "texto": "A book",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "A pencil",
+          "tiempoEstimado": 30
+        },
+        {
+          "id": "ing-002-ex-002",
+          "fichaId": "ing-002",
+          "subject": "ingles",
+          "tipo": "OrdenarFrase",
+          "nivel": 1,
+          "enunciado": "Order the words to make a sentence",
+          "palabrasDesordenadas": [
+            "pencil",
+            "is",
+            "This",
+            "a"
+          ],
+          "fraseCorrecta": "This is a pencil",
+          "tiempoEstimado": 60
+        },
+        {
+          "id": "ing-002-ex-003",
+          "fichaId": "ing-002",
+          "subject": "ingles",
+          "tipo": "UnirColumnas",
+          "nivel": 1,
+          "enunciado": "Match the object with its picture",
+          "parejas": [
+            {
+              "izquierda": "Pencil",
+              "derecha": "✏️"
+            },
+            {
+              "izquierda": "Book",
+              "derecha": "📚"
+            },
+            {
+              "izquierda": "Scissors",
+              "derecha": "✂️"
+            },
+            {
+              "izquierda": "Bag",
+              "derecha": "🎒"
+            }
+          ],
+          "tiempoEstimado": 90
+        },
+        {
+          "id": "ing-002-ex-004",
+          "fichaId": "ing-002",
+          "subject": "ingles",
+          "tipo": "RellenarHueco",
+          "nivel": 1,
+          "enunciado": "I write with a [___]",
+          "respuestaCorrecta": "pencil",
+          "tiempoEstimado": 30
+        },
+        {
+          "id": "ing-002-ex-005",
+          "fichaId": "ing-002",
+          "subject": "ingles",
+          "tipo": "EleccionMultiple",
+          "nivel": 1,
+          "enunciado": "What do you use to measure? 📏",
+          "opciones": [
+            {
+              "texto": "A pencil",
+              "emoji": ""
+            },
+            {
+              "texto": "A ruler",
+              "emoji": ""
+            },
+            {
+              "texto": "An eraser",
+              "emoji": ""
+            },
+            {
+              "texto": "A bag",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "A ruler",
+          "tiempoEstimado": 30
+        },
+        {
+          "id": "ing-002-ex-006",
+          "fichaId": "ing-002",
+          "subject": "ingles",
+          "tipo": "SopaLetras",
+          "nivel": 2,
+          "enunciado": "Find the school objects",
+          "palabras": [
+            "PEN",
+            "BAG",
+            "BOOK",
+            "RULER"
+          ],
+          "cuadricula": [
+            [
+              "P",
+              "E",
+              "N",
+              "X",
+              "Z",
+              "L",
+              "M",
+              "Q"
+            ],
+            [
+              "B",
+              "A",
+              "G",
+              "Y",
+              "Q",
+              "W",
+              "N",
+              "R"
+            ],
+            [
+              "B",
+              "O",
+              "O",
+              "K",
+              "U",
+              "I",
+              "O",
+              "T"
+            ],
+            [
+              "R",
+              "U",
+              "L",
+              "E",
+              "R",
+              "K",
+              "L",
+              "P"
+            ],
+            [
+              "S",
+              "F",
+              "G",
+              "H",
+              "J",
+              "K",
+              "L",
+              "A"
+            ],
+            [
+              "D",
+              "G",
+              "H",
+              "J",
+              "K",
+              "L",
+              "M",
+              "N"
+            ],
+            [
+              "F",
+              "G",
+              "H",
+              "J",
+              "K",
+              "L",
+              "M",
+              "N"
+            ],
+            [
+              "R",
+              "H",
+              "J",
+              "K",
+              "L",
+              "M",
+              "N",
+              "O"
+            ]
+          ],
+          "tiempoEstimado": 180
+        },
+        {
+          "id": "ing-002-ex-007",
+          "fichaId": "ing-002",
+          "subject": "ingles",
+          "tipo": "OrdenarFrase",
+          "nivel": 2,
+          "enunciado": "Order the words",
+          "palabrasDesordenadas": [
+            "have",
+            "I",
+            "bag",
+            "a",
+            "red"
+          ],
+          "fraseCorrecta": "I have a red bag",
+          "tiempoEstimado": 60
+        },
+        {
+          "id": "ing-002-ex-008",
+          "fichaId": "ing-002",
+          "subject": "ingles",
+          "tipo": "MemoriaPareja",
+          "nivel": 2,
+          "enunciado": "Match the object with its name",
+          "parejas": [
+            {
+              "a": "✏️",
+              "b": "Pencil"
+            },
+            {
+              "a": "📚",
+              "b": "Book"
+            },
+            {
+              "a": "📏",
+              "b": "Ruler"
+            },
+            {
+              "a": "🎒",
+              "b": "Bag"
+            },
+            {
+              "a": "✂️",
+              "b": "Scissors"
+            },
+            {
+              "a": "🖊️",
+              "b": "Pen"
+            }
+          ],
+          "tiempoEstimado": 180
+        }
+      ]
+    },
+    {
+      "id": "len-001",
+      "subject": "lengua",
+      "titulo": "La comunicación: verbal y no verbal",
+      "nivel": 1,
+      "contenido": "La comunicación es la acción de intercambiar información entre personas. La comunicación puede ser verbal, cuando utilizamos palabras o signos, o no verbal, cuando utilizamos imágenes, sonidos o gestos. La comunicación verbal puede ser oral (si hablamos) o escrita (si escribimos). La comunicación no verbal usa imágenes, sonidos o gestos para transmitir mensajes.",
+      "ejemplos": [
+        "Comunicación verbal oral: saludar a otra persona con un ¡Hola!",
+        "Comunicación verbal escrita: mandar un mensaje de texto.",
+        "Comunicación no verbal con imagen: un cartel con figuras en un centro comercial.",
+        "Comunicación no verbal con sonido: la sirena de una ambulancia.",
+        "Comunicación no verbal con gesto: un policía levantando la mano para indicar que hay que parar."
+      ],
+      "palabrasClave": [
+        "comunicación",
+        "verbal",
+        "no verbal",
+        "oral",
+        "escrita",
+        "palabras",
+        "signos",
+        "imágenes",
+        "sonidos",
+        "gestos",
+        "intercambiar",
+        "información"
+      ],
+      "tiposEjercicio": [
+        "EleccionMultiple",
+        "RellenarHueco",
+        "ClasificarGrupos",
+        "UnirColumnas",
+        "ArrastrarPalabras",
+        "OrdenarFrase",
+        "MemoriaPareja",
+        "SopaLetras"
+      ],
+      "ejerciciosDerivar": 18,
+      "ejercicios": [
+        {
+          "id": "len-001-ex-001",
+          "fichaId": "len-001",
+          "subject": "lengua",
+          "tipo": "EleccionMultiple",
+          "nivel": 1,
+          "tiempoEstimado": 30,
+          "enunciado": "¿Qué es la comunicación?",
+          "opciones": [
+            {
+              "texto": "La acción de intercambiar información entre personas",
+              "emoji": ""
+            },
+            {
+              "texto": "La acción de dibujar imágenes bonitas",
+              "emoji": ""
+            },
+            {
+              "texto": "La acción de leer libros en silencio",
+              "emoji": ""
+            },
+            {
+              "texto": "La acción de escuchar música",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "La acción de intercambiar información entre personas"
+        },
+        {
+          "id": "len-001-ex-002",
+          "fichaId": "len-001",
+          "subject": "lengua",
+          "tipo": "EleccionMultiple",
+          "nivel": 1,
+          "tiempoEstimado": 30,
+          "enunciado": "¿Qué usamos en la comunicación verbal?",
+          "opciones": [
+            {
+              "texto": "Palabras o signos",
+              "emoji": ""
+            },
+            {
+              "texto": "Imágenes y gestos",
+              "emoji": ""
+            },
+            {
+              "texto": "Sonidos y colores",
+              "emoji": ""
+            },
+            {
+              "texto": "Dibujos y música",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "Palabras o signos"
+        },
+        {
+          "id": "len-001-ex-003",
+          "fichaId": "len-001",
+          "subject": "lengua",
+          "tipo": "EleccionMultiple",
+          "nivel": 1,
+          "tiempoEstimado": 30,
+          "enunciado": "Un policía levanta la mano para indicar que hay que parar. ¿Qué tipo de comunicación es?",
+          "opciones": [
+            {
+              "texto": "No verbal",
+              "emoji": ""
+            },
+            {
+              "texto": "Verbal oral",
+              "emoji": ""
+            },
+            {
+              "texto": "Verbal escrita",
+              "emoji": ""
+            },
+            {
+              "texto": "Verbal",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "No verbal"
+        },
+        {
+          "id": "len-001-ex-004",
+          "fichaId": "len-001",
+          "subject": "lengua",
+          "tipo": "EleccionMultiple",
+          "nivel": 2,
+          "tiempoEstimado": 30,
+          "enunciado": "Mandar un mensaje de texto es un ejemplo de comunicación...",
+          "opciones": [
+            {
+              "texto": "Verbal escrita",
+              "emoji": ""
+            },
+            {
+              "texto": "Verbal oral",
+              "emoji": ""
+            },
+            {
+              "texto": "No verbal con gestos",
+              "emoji": ""
+            },
+            {
+              "texto": "No verbal con sonidos",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "Verbal escrita"
+        },
+        {
+          "id": "len-001-ex-005",
+          "fichaId": "len-001",
+          "subject": "lengua",
+          "tipo": "RellenarHueco",
+          "nivel": 1,
+          "tiempoEstimado": 30,
+          "enunciado": "La comunicación es la acción de intercambiar [___] entre personas.",
+          "respuestaCorrecta": "información"
+        },
+        {
+          "id": "len-001-ex-006",
+          "fichaId": "len-001",
+          "subject": "lengua",
+          "tipo": "RellenarHueco",
+          "nivel": 1,
+          "tiempoEstimado": 30,
+          "enunciado": "Cuando hablamos, la comunicación verbal se llama comunicación [___].",
+          "respuestaCorrecta": "oral"
+        },
+        {
+          "id": "len-001-ex-007",
+          "fichaId": "len-001",
+          "subject": "lengua",
+          "tipo": "RellenarHueco",
+          "nivel": 2,
+          "tiempoEstimado": 30,
+          "enunciado": "La comunicación no verbal utiliza imágenes, [___] o gestos.",
+          "respuestaCorrecta": "sonidos"
+        },
+        {
+          "id": "len-001-ex-008",
+          "fichaId": "len-001",
+          "subject": "lengua",
+          "tipo": "ArrastrarPalabras",
+          "nivel": 2,
+          "tiempoEstimado": 60,
+          "fraseConHuecos": "Si hablamos, usamos la comunicación [___]. Si escribimos, usamos la comunicación [___].",
+          "banco": [
+            "oral",
+            "escrita",
+            "gestual",
+            "visual"
+          ],
+          "respuestasCorrectas": [
+            "oral",
+            "escrita"
+          ]
+        },
+        {
+          "id": "len-001-ex-009",
+          "fichaId": "len-001",
+          "subject": "lengua",
+          "tipo": "ArrastrarPalabras",
+          "nivel": 2,
+          "tiempoEstimado": 60,
+          "fraseConHuecos": "La comunicación no verbal usa [___], sonidos o [___].",
+          "banco": [
+            "imágenes",
+            "gestos",
+            "palabras",
+            "signos"
+          ],
+          "respuestasCorrectas": [
+            "imágenes",
+            "gestos"
+          ]
+        },
+        {
+          "id": "len-001-ex-010",
+          "fichaId": "len-001",
+          "subject": "lengua",
+          "tipo": "ClasificarGrupos",
+          "nivel": 2,
+          "tiempoEstimado": 60,
+          "enunciado": "Clasifica cada ejemplo según el tipo de comunicación:",
+          "grupos": [
+            {
+              "id": "verbal",
+              "nombre": "Verbal"
+            },
+            {
+              "id": "no_verbal",
+              "nombre": "No verbal"
+            }
+          ],
+          "items": [
+            {
+              "id": "1",
+              "texto": "Lectura de una revista",
+              "grupoId": "verbal"
+            },
+            {
+              "id": "2",
+              "texto": "Sirena de una ambulancia",
+              "grupoId": "no_verbal"
+            },
+            {
+              "id": "3",
+              "texto": "Saludar con un ¡Hola!",
+              "grupoId": "verbal"
+            },
+            {
+              "id": "4",
+              "texto": "Un cartel con imágenes",
+              "grupoId": "no_verbal"
+            },
+            {
+              "id": "5",
+              "texto": "Mandar un mensaje de texto",
+              "grupoId": "verbal"
+            },
+            {
+              "id": "6",
+              "texto": "Un policía levantando la mano",
+              "grupoId": "no_verbal"
+            }
+          ]
+        },
+        {
+          "id": "len-001-ex-011",
+          "fichaId": "len-001",
+          "subject": "lengua",
+          "tipo": "ClasificarGrupos",
+          "nivel": 2,
+          "tiempoEstimado": 60,
+          "enunciado": "Clasifica la comunicación verbal según si es oral o escrita:",
+          "grupos": [
+            {
+              "id": "oral",
+              "nombre": "Verbal oral"
+            },
+            {
+              "id": "escrita",
+              "nombre": "Verbal escrita"
+            }
+          ],
+          "items": [
+            {
+              "id": "1",
+              "texto": "Saludar con un ¡Hola!",
+              "grupoId": "oral"
+            },
+            {
+              "id": "2",
+              "texto": "Lectura de una revista",
+              "grupoId": "escrita"
+            },
+            {
+              "id": "3",
+              "texto": "Conversación entre padres e hijos",
+              "grupoId": "oral"
+            },
+            {
+              "id": "4",
+              "texto": "Mensaje de texto en el móvil",
+              "grupoId": "escrita"
+            }
+          ]
+        },
+        {
+          "id": "len-001-ex-012",
+          "fichaId": "len-001",
+          "subject": "lengua",
+          "tipo": "UnirColumnas",
+          "nivel": 2,
+          "tiempoEstimado": 90,
+          "enunciado": "Une cada ejemplo con el tipo de comunicación no verbal que usa:",
+          "parejas": [
+            {
+              "izquierda": "Un cartel con figuras en un centro comercial",
+              "derecha": "Imágenes"
+            },
+            {
+              "izquierda": "La sirena de una ambulancia",
+              "derecha": "Sonidos"
+            },
+            {
+              "izquierda": "Un policía levantando la mano",
+              "derecha": "Gestos"
+            },
+            {
+              "izquierda": "La música que suena para salir al recreo",
+              "derecha": "Señal sonora"
+            }
+          ]
+        },
+        {
+          "id": "len-001-ex-013",
+          "fichaId": "len-001",
+          "subject": "lengua",
+          "tipo": "OrdenarFrase",
+          "nivel": 2,
+          "tiempoEstimado": 60,
+          "enunciado": "Ordena las palabras para formar una oración correcta:",
+          "palabrasDesordenadas": [
+            "verbal",
+            "la",
+            "comunicación",
+            "palabras",
+            "usa"
+          ],
+          "fraseCorrecta": "La comunicación verbal usa palabras"
+        },
+        {
+          "id": "len-001-ex-014",
+          "fichaId": "len-001",
+          "subject": "lengua",
+          "tipo": "OrdenarFrase",
+          "nivel": 2,
+          "tiempoEstimado": 60,
+          "enunciado": "Ordena las palabras para formar una oración correcta:",
+          "palabrasDesordenadas": [
+            "gestos",
+            "no",
+            "usa",
+            "verbal",
+            "la",
+            "comunicación"
+          ],
+          "fraseCorrecta": "La comunicación no verbal usa gestos"
+        },
+        {
+          "id": "len-001-ex-015",
+          "fichaId": "len-001",
+          "subject": "lengua",
+          "tipo": "MemoriaPareja",
+          "nivel": 3,
+          "tiempoEstimado": 180,
+          "enunciado": "Empareja cada ejemplo con su tipo de comunicación:",
+          "parejas": [
+            {
+              "a": "Saludar con ¡Hola!",
+              "b": "Verbal oral"
+            },
+            {
+              "a": "Lectura de una revista",
+              "b": "Verbal escrita"
+            },
+            {
+              "a": "Sirena de ambulancia",
+              "b": "No verbal sonidos"
+            },
+            {
+              "a": "Policía levantando la mano",
+              "b": "No verbal gestos"
+            },
+            {
+              "a": "Cartel con figuras",
+              "b": "No verbal imágenes"
+            },
+            {
+              "a": "Mensaje de texto",
+              "b": "Verbal escrita 2"
+            }
+          ]
+        },
+        {
+          "id": "len-001-ex-016",
+          "fichaId": "len-001",
+          "subject": "lengua",
+          "tipo": "EleccionMultiple",
+          "nivel": 3,
+          "tiempoEstimado": 30,
+          "enunciado": "La sirena de un coche de bomberos es un ejemplo de comunicación no verbal que usa...",
+          "opciones": [
+            {
+              "texto": "Sonidos",
+              "emoji": ""
+            },
+            {
+              "texto": "Gestos",
+              "emoji": ""
+            },
+            {
+              "texto": "Imágenes",
+              "emoji": ""
+            },
+            {
+              "texto": "Palabras",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "Sonidos"
+        },
+        {
+          "id": "len-001-ex-017",
+          "fichaId": "len-001",
+          "subject": "lengua",
+          "tipo": "EleccionMultiple",
+          "nivel": 3,
+          "tiempoEstimado": 30,
+          "enunciado": "Una persona poniendo cara de enfado es un ejemplo de comunicación no verbal que usa...",
+          "opciones": [
+            {
+              "texto": "Gestos",
+              "emoji": ""
+            },
+            {
+              "texto": "Sonidos",
+              "emoji": ""
+            },
+            {
+              "texto": "Imágenes",
+              "emoji": ""
+            },
+            {
+              "texto": "Signos escritos",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "Gestos"
+        },
+        {
+          "id": "len-001-ex-018",
+          "fichaId": "len-001",
+          "subject": "lengua",
+          "tipo": "SopaLetras",
+          "nivel": 3,
+          "tiempoEstimado": 180,
+          "enunciado": "Encuentra estas palabras relacionadas con la comunicación:",
+          "palabras": [
+            "VERBAL",
+            "ORAL",
+            "GESTOS",
+            "SIGNOS"
+          ],
+          "cuadricula": [
+            [
+              "V",
+              "E",
+              "R",
+              "B",
+              "A",
+              "L",
+              "X",
+              "Z"
+            ],
+            [
+              "O",
+              "R",
+              "A",
+              "L",
+              "M",
+              "N",
+              "P",
+              "Q"
+            ],
+            [
+              "G",
+              "E",
+              "S",
+              "T",
+              "O",
+              "S",
+              "B",
+              "C"
+            ],
+            [
+              "S",
+              "I",
+              "G",
+              "N",
+              "O",
+              "S",
+              "D",
+              "E"
+            ],
+            [
+              "F",
+              "G",
+              "H",
+              "J",
+              "K",
+              "L",
+              "M",
+              "N"
+            ],
+            [
+              "O",
+              "P",
+              "Q",
+              "R",
+              "S",
+              "T",
+              "U",
+              "V"
+            ],
+            [
+              "W",
+              "X",
+              "Y",
+              "Z",
+              "A",
+              "B",
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "F",
+              "G",
+              "H",
+              "I",
+              "J",
+              "K",
+              "L"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "len-002",
+      "subject": "lengua",
+      "titulo": "Las lenguas y sus hablantes",
+      "nivel": 1,
+      "contenido": "Una lengua es una manera que tenemos las personas para comunicarnos. Es un conjunto de palabras y reglas que usamos para hablar, escribir y entendernos entre nosotros. Cada país o región tiene su propia lengua. Hay muchas lenguas en el mundo que cambian y evolucionan. Algunas de las lenguas más habladas son el inglés, el español, el francés, el chino, el hindi y el árabe. El chino es la lengua más hablada en el mundo.",
+      "ejemplos": [
+        "Inglés: hablado en Estados Unidos, Reino Unido y Australia.",
+        "Español: hablado en España, México y muchos países de América Latina.",
+        "Francés: hablado en Francia, Bélgica, Suiza, Luxemburgo y Mónaco.",
+        "Chino: la lengua más hablada en el mundo, principalmente en China.",
+        "Hindi: hablado en la India.",
+        "Árabe: hablado en muchos países del Medio Oriente.",
+        "Bonjour = Francés, Ciao = Italiano, Konnichiwa = Japonés, Hola = Español, Salam = Árabe."
+      ],
+      "palabrasClave": [
+        "lengua",
+        "hablantes",
+        "comunicarnos",
+        "palabras",
+        "reglas",
+        "país",
+        "región",
+        "inglés",
+        "español",
+        "francés",
+        "chino",
+        "hindi",
+        "árabe",
+        "evolucionar"
+      ],
+      "tiposEjercicio": [
+        "EleccionMultiple",
+        "RellenarHueco",
+        "UnirColumnas",
+        "ClasificarGrupos",
+        "ArrastrarPalabras",
+        "MemoriaPareja",
+        "OrdenarFrase"
+      ],
+      "ejerciciosDerivar": 16,
+      "ejercicios": [
+        {
+          "id": "len-002-ex-001",
+          "fichaId": "len-002",
+          "subject": "lengua",
+          "tipo": "EleccionMultiple",
+          "nivel": 1,
+          "tiempoEstimado": 30,
+          "enunciado": "¿Qué es una lengua?",
+          "opciones": [
+            {
+              "texto": "Un conjunto de palabras y reglas para comunicarnos",
+              "emoji": ""
+            },
+            {
+              "texto": "Un tipo de comunicación no verbal",
+              "emoji": ""
+            },
+            {
+              "texto": "Una imagen que usamos para hablar",
+              "emoji": ""
+            },
+            {
+              "texto": "Un sonido que hacemos con la boca",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "Un conjunto de palabras y reglas para comunicarnos"
+        },
+        {
+          "id": "len-002-ex-002",
+          "fichaId": "len-002",
+          "subject": "lengua",
+          "tipo": "EleccionMultiple",
+          "nivel": 1,
+          "tiempoEstimado": 30,
+          "enunciado": "¿Cuál es la lengua más hablada en el mundo?",
+          "opciones": [
+            {
+              "texto": "Chino",
+              "emoji": ""
+            },
+            {
+              "texto": "Inglés",
+              "emoji": ""
+            },
+            {
+              "texto": "Español",
+              "emoji": ""
+            },
+            {
+              "texto": "Árabe",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "Chino"
+        },
+        {
+          "id": "len-002-ex-003",
+          "fichaId": "len-002",
+          "subject": "lengua",
+          "tipo": "EleccionMultiple",
+          "nivel": 1,
+          "tiempoEstimado": 30,
+          "enunciado": "¿En qué países se habla el francés?",
+          "opciones": [
+            {
+              "texto": "Francia, Bélgica, Suiza, Luxemburgo y Mónaco",
+              "emoji": ""
+            },
+            {
+              "texto": "España, México y América Latina",
+              "emoji": ""
+            },
+            {
+              "texto": "Estados Unidos, Reino Unido y Australia",
+              "emoji": ""
+            },
+            {
+              "texto": "China y la India",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "Francia, Bélgica, Suiza, Luxemburgo y Mónaco"
+        },
+        {
+          "id": "len-002-ex-004",
+          "fichaId": "len-002",
+          "subject": "lengua",
+          "tipo": "EleccionMultiple",
+          "nivel": 2,
+          "tiempoEstimado": 30,
+          "enunciado": "¿Qué significa \"Bonjour\"?",
+          "opciones": [
+            {
+              "texto": "Es un saludo en francés",
+              "emoji": ""
+            },
+            {
+              "texto": "Es un saludo en italiano",
+              "emoji": ""
+            },
+            {
+              "texto": "Es un saludo en árabe",
+              "emoji": ""
+            },
+            {
+              "texto": "Es un saludo en japonés",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "Es un saludo en francés"
+        },
+        {
+          "id": "len-002-ex-005",
+          "fichaId": "len-002",
+          "subject": "lengua",
+          "tipo": "EleccionMultiple",
+          "nivel": 2,
+          "tiempoEstimado": 30,
+          "enunciado": "¿En qué lengua se dice \"Ciao\" para saludar?",
+          "opciones": [
+            {
+              "texto": "Italiano",
+              "emoji": ""
+            },
+            {
+              "texto": "Francés",
+              "emoji": ""
+            },
+            {
+              "texto": "Español",
+              "emoji": ""
+            },
+            {
+              "texto": "Árabe",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "Italiano"
+        },
+        {
+          "id": "len-002-ex-006",
+          "fichaId": "len-002",
+          "subject": "lengua",
+          "tipo": "RellenarHueco",
+          "nivel": 1,
+          "tiempoEstimado": 30,
+          "enunciado": "Una lengua es un conjunto de palabras y [___] que usamos para comunicarnos.",
+          "respuestaCorrecta": "reglas"
+        },
+        {
+          "id": "len-002-ex-007",
+          "fichaId": "len-002",
+          "subject": "lengua",
+          "tipo": "RellenarHueco",
+          "nivel": 1,
+          "tiempoEstimado": 30,
+          "enunciado": "El [___] es la lengua más hablada en el mundo.",
+          "respuestaCorrecta": "chino"
+        },
+        {
+          "id": "len-002-ex-008",
+          "fichaId": "len-002",
+          "subject": "lengua",
+          "tipo": "RellenarHueco",
+          "nivel": 2,
+          "tiempoEstimado": 30,
+          "enunciado": "El hindi se habla principalmente en [___].",
+          "respuestaCorrecta": "la India"
+        },
+        {
+          "id": "len-002-ex-009",
+          "fichaId": "len-002",
+          "subject": "lengua",
+          "tipo": "UnirColumnas",
+          "nivel": 2,
+          "tiempoEstimado": 90,
+          "enunciado": "Une cada saludo con su lengua:",
+          "parejas": [
+            {
+              "izquierda": "Bonjour",
+              "derecha": "Francés"
+            },
+            {
+              "izquierda": "Ciao",
+              "derecha": "Italiano"
+            },
+            {
+              "izquierda": "Hola",
+              "derecha": "Español"
+            },
+            {
+              "izquierda": "Salam",
+              "derecha": "Árabe"
+            }
+          ]
+        },
+        {
+          "id": "len-002-ex-010",
+          "fichaId": "len-002",
+          "subject": "lengua",
+          "tipo": "UnirColumnas",
+          "nivel": 2,
+          "tiempoEstimado": 90,
+          "enunciado": "Une cada lengua con un país donde se habla:",
+          "parejas": [
+            {
+              "izquierda": "Inglés",
+              "derecha": "Australia"
+            },
+            {
+              "izquierda": "Español",
+              "derecha": "México"
+            },
+            {
+              "izquierda": "Francés",
+              "derecha": "Bélgica"
+            },
+            {
+              "izquierda": "Árabe",
+              "derecha": "Medio Oriente"
+            }
+          ]
+        },
+        {
+          "id": "len-002-ex-011",
+          "fichaId": "len-002",
+          "subject": "lengua",
+          "tipo": "ArrastrarPalabras",
+          "nivel": 2,
+          "tiempoEstimado": 60,
+          "fraseConHuecos": "El inglés se habla en Estados Unidos, Reino Unido y [___]. El español se habla en España, [___] y América Latina.",
+          "banco": [
+            "Australia",
+            "México",
+            "Francia",
+            "China"
+          ],
+          "respuestasCorrectas": [
+            "Australia",
+            "México"
+          ]
+        },
+        {
+          "id": "len-002-ex-012",
+          "fichaId": "len-002",
+          "subject": "lengua",
+          "tipo": "ClasificarGrupos",
+          "nivel": 2,
+          "tiempoEstimado": 60,
+          "enunciado": "Clasifica estos países según la lengua que se habla en ellos:",
+          "grupos": [
+            {
+              "id": "español",
+              "nombre": "Español"
+            },
+            {
+              "id": "ingles",
+              "nombre": "Inglés"
+            },
+            {
+              "id": "frances",
+              "nombre": "Francés"
+            }
+          ],
+          "items": [
+            {
+              "id": "1",
+              "texto": "España",
+              "grupoId": "español"
+            },
+            {
+              "id": "2",
+              "texto": "Australia",
+              "grupoId": "ingles"
+            },
+            {
+              "id": "3",
+              "texto": "Bélgica",
+              "grupoId": "frances"
+            },
+            {
+              "id": "4",
+              "texto": "México",
+              "grupoId": "español"
+            },
+            {
+              "id": "5",
+              "texto": "Reino Unido",
+              "grupoId": "ingles"
+            },
+            {
+              "id": "6",
+              "texto": "Mónaco",
+              "grupoId": "frances"
+            }
+          ]
+        },
+        {
+          "id": "len-002-ex-013",
+          "fichaId": "len-002",
+          "subject": "lengua",
+          "tipo": "OrdenarFrase",
+          "nivel": 2,
+          "tiempoEstimado": 60,
+          "enunciado": "Ordena las palabras para formar una oración correcta:",
+          "palabrasDesordenadas": [
+            "lengua",
+            "cada",
+            "propia",
+            "región",
+            "tiene",
+            "su"
+          ],
+          "fraseCorrecta": "Cada región tiene su propia lengua"
+        },
+        {
+          "id": "len-002-ex-014",
+          "fichaId": "len-002",
+          "subject": "lengua",
+          "tipo": "MemoriaPareja",
+          "nivel": 3,
+          "tiempoEstimado": 180,
+          "enunciado": "Empareja cada saludo con su lengua:",
+          "parejas": [
+            {
+              "a": "Bonjour",
+              "b": "Francés"
+            },
+            {
+              "a": "Ciao",
+              "b": "Italiano"
+            },
+            {
+              "a": "Konnichiwa",
+              "b": "Japonés"
+            },
+            {
+              "a": "Hola",
+              "b": "Español"
+            },
+            {
+              "a": "Salam",
+              "b": "Árabe"
+            },
+            {
+              "a": "Hindi",
+              "b": "India"
+            }
+          ]
+        },
+        {
+          "id": "len-002-ex-015",
+          "fichaId": "len-002",
+          "subject": "lengua",
+          "tipo": "EleccionMultiple",
+          "nivel": 3,
+          "tiempoEstimado": 30,
+          "enunciado": "¿Qué tienen en común todas las lenguas del mundo?",
+          "opciones": [
+            {
+              "texto": "Son conjuntos de palabras y reglas para comunicarnos",
+              "emoji": ""
+            },
+            {
+              "texto": "Se hablan en todos los países del mundo",
+              "emoji": ""
+            },
+            {
+              "texto": "Usan los mismos gestos para comunicarse",
+              "emoji": ""
+            },
+            {
+              "texto": "Nunca cambian ni evolucionan",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "Son conjuntos de palabras y reglas para comunicarnos"
+        },
+        {
+          "id": "len-002-ex-016",
+          "fichaId": "len-002",
+          "subject": "lengua",
+          "tipo": "EleccionMultiple",
+          "nivel": 3,
+          "tiempoEstimado": 30,
+          "enunciado": "¿Qué pasa con las lenguas del mundo con el tiempo?",
+          "opciones": [
+            {
+              "texto": "Cambian y evolucionan",
+              "emoji": ""
+            },
+            {
+              "texto": "Siempre son iguales",
+              "emoji": ""
+            },
+            {
+              "texto": "Desaparecen todas",
+              "emoji": ""
+            },
+            {
+              "texto": "Se convierten en imágenes",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "Cambian y evolucionan"
+        }
+      ]
+    },
     {
       "id": "mat-001",
       "subject": "matematicas",
       "titulo": "Sumas y restas hasta 100",
       "nivel": 1,
       "contenido": "Las sumas y restas son operaciones básicas. Sumar es juntar cantidades y restar es quitar una cantidad de otra. Por ejemplo, si tienes 25 caramelos y te dan 13 más, tienes 38 en total.",
-      "ejemplos": ["25 + 13 = 38", "50 - 20 = 30", "67 + 12 = 79", "100 - 45 = 55"],
-      "palabrasClave": ["suma", "resta", "resultado", "número", "total"],
-      "tiposEjercicio": ["EleccionMultiple", "RellenarHueco", "CompletarSerie", "ProblemaVisual"],
+      "ejemplos": [
+        "25 + 13 = 38",
+        "50 - 20 = 30",
+        "67 + 12 = 79",
+        "100 - 45 = 55"
+      ],
+      "palabrasClave": [
+        "suma",
+        "resta",
+        "resultado",
+        "número",
+        "total"
+      ],
+      "tiposEjercicio": [
+        "EleccionMultiple",
+        "RellenarHueco",
+        "CompletarSerie",
+        "ProblemaVisual"
+      ],
       "ejerciciosDerivar": 8,
       "ejercicios": [
         {
@@ -21,10 +2152,22 @@
           "nivel": 1,
           "enunciado": "¿Cuánto es 25 + 13?",
           "opciones": [
-            {"texto": "38", "emoji": "✅"},
-            {"texto": "37", "emoji": "❌"},
-            {"texto": "39", "emoji": "❌"},
-            {"texto": "35", "emoji": "❌"}
+            {
+              "texto": "38",
+              "emoji": "✅"
+            },
+            {
+              "texto": "37",
+              "emoji": "❌"
+            },
+            {
+              "texto": "39",
+              "emoji": "❌"
+            },
+            {
+              "texto": "35",
+              "emoji": "❌"
+            }
           ],
           "respuestaCorrecta": "38",
           "tiempoEstimado": 30
@@ -46,8 +2189,18 @@
           "tipo": "CompletarSerie",
           "nivel": 1,
           "enunciado": "Completa la serie de sumas de 5",
-          "serie": ["5", "10", "15", null, "25"],
-          "opciones": ["18", "20", "22"],
+          "serie": [
+            "5",
+            "10",
+            "15",
+            null,
+            "25"
+          ],
+          "opciones": [
+            "18",
+            "20",
+            "22"
+          ],
           "respuestaCorrecta": "20",
           "tiempoEstimado": 35
         },
@@ -65,7 +2218,12 @@
             "operacion": "resta",
             "cantidadOperacion": 3
           },
-          "opciones": ["3", "4", "5", "6"],
+          "opciones": [
+            "3",
+            "4",
+            "5",
+            "6"
+          ],
           "respuestaCorrecta": "5",
           "esNumerico": false,
           "tiempoEstimado": 45
@@ -78,10 +2236,22 @@
           "nivel": 1,
           "enunciado": "¿Cuál es el mayor de estos números?",
           "opciones": [
-            {"texto": "45", "emoji": ""},
-            {"texto": "54", "emoji": ""},
-            {"texto": "44", "emoji": ""},
-            {"texto": "55", "emoji": ""}
+            {
+              "texto": "45",
+              "emoji": ""
+            },
+            {
+              "texto": "54",
+              "emoji": ""
+            },
+            {
+              "texto": "44",
+              "emoji": ""
+            },
+            {
+              "texto": "55",
+              "emoji": ""
+            }
           ],
           "respuestaCorrecta": "55",
           "tiempoEstimado": 30
@@ -110,7 +2280,12 @@
             "operacion": "suma",
             "cantidadOperacion": 0
           },
-          "opciones": ["12", "13", "14", "15"],
+          "opciones": [
+            "12",
+            "13",
+            "14",
+            "15"
+          ],
           "respuestaCorrecta": "13",
           "esNumerico": false,
           "tiempoEstimado": 45
@@ -122,8 +2297,18 @@
           "tipo": "CompletarSerie",
           "nivel": 2,
           "enunciado": "Completa la serie de restas de 10",
-          "serie": ["100", "90", null, "70", "60"],
-          "opciones": ["75", "80", "85"],
+          "serie": [
+            "100",
+            "90",
+            null,
+            "70",
+            "60"
+          ],
+          "opciones": [
+            "75",
+            "80",
+            "85"
+          ],
           "respuestaCorrecta": "80",
           "tiempoEstimado": 35
         }
@@ -135,9 +2320,24 @@
       "titulo": "Multiplicaciones del 2 al 5",
       "nivel": 2,
       "contenido": "La multiplicación es una suma repetida. Por ejemplo, 3 × 4 significa sumar el 3 cuatro veces: 3+3+3+3=12. Las tablas de multiplicar nos ayudan a calcular rápidamente.",
-      "ejemplos": ["3 × 4 = 12", "5 × 5 = 25", "2 × 8 = 16", "4 × 3 = 12"],
-      "palabrasClave": ["multiplicación", "tabla", "producto", "veces"],
-      "tiposEjercicio": ["EleccionMultiple", "RellenarHueco", "CompletarSerie", "ProblemaVisual"],
+      "ejemplos": [
+        "3 × 4 = 12",
+        "5 × 5 = 25",
+        "2 × 8 = 16",
+        "4 × 3 = 12"
+      ],
+      "palabrasClave": [
+        "multiplicación",
+        "tabla",
+        "producto",
+        "veces"
+      ],
+      "tiposEjercicio": [
+        "EleccionMultiple",
+        "RellenarHueco",
+        "CompletarSerie",
+        "ProblemaVisual"
+      ],
       "ejerciciosDerivar": 8,
       "ejercicios": [
         {
@@ -148,10 +2348,22 @@
           "nivel": 2,
           "enunciado": "¿Cuánto es 3 × 4?",
           "opciones": [
-            {"texto": "12", "emoji": "✅"},
-            {"texto": "7", "emoji": "❌"},
-            {"texto": "14", "emoji": "❌"},
-            {"texto": "9", "emoji": "❌"}
+            {
+              "texto": "12",
+              "emoji": "✅"
+            },
+            {
+              "texto": "7",
+              "emoji": "❌"
+            },
+            {
+              "texto": "14",
+              "emoji": "❌"
+            },
+            {
+              "texto": "9",
+              "emoji": "❌"
+            }
           ],
           "respuestaCorrecta": "12",
           "tiempoEstimado": 30
@@ -173,8 +2385,18 @@
           "tipo": "CompletarSerie",
           "nivel": 2,
           "enunciado": "Completa la tabla del 3",
-          "serie": ["3", "6", "9", null, "15"],
-          "opciones": ["11", "12", "13"],
+          "serie": [
+            "3",
+            "6",
+            "9",
+            null,
+            "15"
+          ],
+          "opciones": [
+            "11",
+            "12",
+            "13"
+          ],
           "respuestaCorrecta": "12",
           "tiempoEstimado": 35
         },
@@ -192,7 +2414,12 @@
             "operacion": null,
             "cantidadOperacion": 0
           },
-          "opciones": ["10", "11", "12", "13"],
+          "opciones": [
+            "10",
+            "11",
+            "12",
+            "13"
+          ],
           "respuestaCorrecta": "12",
           "esNumerico": false,
           "tiempoEstimado": 45
@@ -215,10 +2442,22 @@
           "nivel": 3,
           "enunciado": "¿Cuánto es 5 × 7?",
           "opciones": [
-            {"texto": "35", "emoji": ""},
-            {"texto": "30", "emoji": ""},
-            {"texto": "25", "emoji": ""},
-            {"texto": "40", "emoji": ""}
+            {
+              "texto": "35",
+              "emoji": ""
+            },
+            {
+              "texto": "30",
+              "emoji": ""
+            },
+            {
+              "texto": "25",
+              "emoji": ""
+            },
+            {
+              "texto": "40",
+              "emoji": ""
+            }
           ],
           "respuestaCorrecta": "35",
           "tiempoEstimado": 30
@@ -230,8 +2469,18 @@
           "tipo": "CompletarSerie",
           "nivel": 3,
           "enunciado": "Completa la tabla del 4",
-          "serie": ["4", "8", "12", null, "20"],
-          "opciones": ["14", "15", "16"],
+          "serie": [
+            "4",
+            "8",
+            "12",
+            null,
+            "20"
+          ],
+          "opciones": [
+            "14",
+            "15",
+            "16"
+          ],
           "respuestaCorrecta": "16",
           "tiempoEstimado": 35
         },
@@ -248,467 +2497,29 @@
       ]
     },
     {
-      "id": "len-001",
-      "subject": "lengua",
-      "titulo": "Tipos de palabras: sustantivos y verbos",
-      "nivel": 1,
-      "contenido": "Los sustantivos son palabras que nombran personas, animales, cosas o lugares. Los verbos son palabras que indican acciones o estados. Por ejemplo, 'perro' es un sustantivo y 'correr' es un verbo.",
-      "ejemplos": ["Sustantivos: casa, niño, árbol", "Verbos: correr, comer, saltar", "El perro (sustantivo) corre (verbo)"],
-      "palabrasClave": ["sustantivo", "verbo", "acción", "nombre", "palabra"],
-      "tiposEjercicio": ["EleccionMultiple", "ClasificarGrupos", "OrdenarFrase", "RellenarHueco"],
-      "ejerciciosDerivar": 8,
-      "ejercicios": [
-        {
-          "id": "len-001-ex-001",
-          "fichaId": "len-001",
-          "subject": "lengua",
-          "tipo": "EleccionMultiple",
-          "nivel": 1,
-          "enunciado": "¿Cuál de estas palabras es un sustantivo?",
-          "opciones": [
-            {"texto": "🏠 casa", "emoji": ""},
-            {"texto": "🏃 correr", "emoji": ""},
-            {"texto": "🌟 brillar", "emoji": ""},
-            {"texto": "🎵 cantar", "emoji": ""}
-          ],
-          "respuestaCorrecta": "🏠 casa",
-          "tiempoEstimado": 30
-        },
-        {
-          "id": "len-001-ex-002",
-          "fichaId": "len-001",
-          "subject": "lengua",
-          "tipo": "ClasificarGrupos",
-          "nivel": 1,
-          "enunciado": "Clasifica las palabras en sustantivos y verbos",
-          "grupos": [
-            {"id": "sustantivos", "nombre": "Sustantivos 🏷️"},
-            {"id": "verbos", "nombre": "Verbos 🏃"}
-          ],
-          "items": [
-            {"id": "1", "texto": "perro 🐕", "grupoId": "sustantivos"},
-            {"id": "2", "texto": "correr 🏃", "grupoId": "verbos"},
-            {"id": "3", "texto": "casa 🏠", "grupoId": "sustantivos"},
-            {"id": "4", "texto": "comer 🍽️", "grupoId": "verbos"}
-          ],
-          "tiempoEstimado": 60
-        },
-        {
-          "id": "len-001-ex-003",
-          "fichaId": "len-001",
-          "subject": "lengua",
-          "tipo": "OrdenarFrase",
-          "nivel": 1,
-          "enunciado": "Ordena las palabras para formar una frase correcta",
-          "palabrasDesordenadas": ["gato", "El", "leche", "bebe"],
-          "fraseCorrecta": "El gato bebe leche",
-          "tiempoEstimado": 60
-        },
-        {
-          "id": "len-001-ex-004",
-          "fichaId": "len-001",
-          "subject": "lengua",
-          "tipo": "RellenarHueco",
-          "nivel": 1,
-          "enunciado": "El perro es un [___] (sustantivo o verbo)",
-          "respuestaCorrecta": "sustantivo",
-          "tiempoEstimado": 30
-        },
-        {
-          "id": "len-001-ex-005",
-          "fichaId": "len-001",
-          "subject": "lengua",
-          "tipo": "EleccionMultiple",
-          "nivel": 1,
-          "enunciado": "¿Cuál de estas palabras es un verbo?",
-          "opciones": [
-            {"texto": "🌳 árbol", "emoji": ""},
-            {"texto": "🎒 mochila", "emoji": ""},
-            {"texto": "💃 bailar", "emoji": ""},
-            {"texto": "🏠 ciudad", "emoji": ""}
-          ],
-          "respuestaCorrecta": "💃 bailar",
-          "tiempoEstimado": 30
-        },
-        {
-          "id": "len-001-ex-006",
-          "fichaId": "len-001",
-          "subject": "lengua",
-          "tipo": "ArrastrarPalabras",
-          "nivel": 2,
-          "enunciado": "Completa la frase con la palabra correcta",
-          "fraseConHuecos": "El [___] vuela por el cielo azul",
-          "banco": ["pájaro", "correr", "agua", "verde"],
-          "respuestasCorrectas": ["pájaro"],
-          "tiempoEstimado": 60
-        },
-        {
-          "id": "len-001-ex-007",
-          "fichaId": "len-001",
-          "subject": "lengua",
-          "tipo": "ClasificarGrupos",
-          "nivel": 2,
-          "enunciado": "Clasifica estas palabras",
-          "grupos": [
-            {"id": "sustantivos", "nombre": "Sustantivos"},
-            {"id": "verbos", "nombre": "Verbos"}
-          ],
-          "items": [
-            {"id": "5", "texto": "libro 📚", "grupoId": "sustantivos"},
-            {"id": "6", "texto": "leer 📖", "grupoId": "verbos"},
-            {"id": "7", "texto": "flor 🌸", "grupoId": "sustantivos"},
-            {"id": "8", "texto": "nadar 🏊", "grupoId": "verbos"}
-          ],
-          "tiempoEstimado": 60
-        },
-        {
-          "id": "len-001-ex-008",
-          "fichaId": "len-001",
-          "subject": "lengua",
-          "tipo": "SopaLetras",
-          "nivel": 2,
-          "enunciado": "Encuentra los sustantivos escondidos",
-          "palabras": ["GATO", "CASA", "LUNA", "NIÑO"],
-          "cuadricula": [
-            ["G","A","T","O","X","Z","L","M"],
-            ["C","A","S","A","Y","Q","W","N"],
-            ["L","U","N","A","H","U","I","O"],
-            ["N","I","Ñ","O","J","K","L","P"],
-            ["S","F","G","H","J","K","L","A"],
-            ["D","G","H","J","K","L","M","N"],
-            ["F","G","H","J","K","L","M","N"],
-            ["R","H","J","K","L","M","N","O"]
-          ],
-          "tiempoEstimado": 180
-        }
-      ]
-    },
-    {
-      "id": "len-002",
-      "subject": "lengua",
-      "titulo": "Comprensión lectora: Un día en el campo",
-      "nivel": 1,
-      "contenido": "La comprensión lectora es entender lo que leemos. Es importante leer despacio y pensar en las ideas principales del texto.",
-      "ejemplos": ["Lee el texto con atención", "Identifica los personajes", "Responde las preguntas con lo que has leído"],
-      "palabrasClave": ["texto", "personaje", "comprensión", "respuesta", "idea"],
-      "tiposEjercicio": ["ComprensionLectora"],
-      "ejerciciosDerivar": 1,
-      "ejercicios": [
-        {
-          "id": "len-002-ex-001",
-          "fichaId": "len-002",
-          "subject": "lengua",
-          "tipo": "ComprensionLectora",
-          "nivel": 1,
-          "enunciado": "Lee el texto y responde las preguntas",
-          "texto": "El sábado, Ana y su abuelo fueron al campo. Llevaron una mochila con bocadillos, agua y fruta. Cuando llegaron, vieron muchas flores de colores y oyeron cantar a los pájaros. El abuelo le enseñó a Ana el nombre de las plantas. Por la tarde, comieron bajo un árbol grande y Ana recogió unas piedras bonitas para llevar a casa.",
-          "preguntas": [
-            {
-              "tipo": "EleccionMultiple",
-              "enunciado": "¿Con quién fue Ana al campo?",
-              "opciones": ["Con su madre", "Con su abuelo", "Con su amiga", "Con su padre"],
-              "respuestaCorrecta": "Con su abuelo"
-            },
-            {
-              "tipo": "EleccionMultiple",
-              "enunciado": "¿Qué metieron en la mochila?",
-              "opciones": ["Juguetes y libros", "Bocadillos, agua y fruta", "Ropa y zapatos", "Solo agua"],
-              "respuestaCorrecta": "Bocadillos, agua y fruta"
-            },
-            {
-              "tipo": "RellenarHueco",
-              "enunciado": "Ana recogió unas [___] bonitas para llevar a casa",
-              "respuestaCorrecta": "piedras"
-            }
-          ],
-          "tiempoEstimado": 240
-        }
-      ]
-    },
-    {
-      "id": "cie-001",
-      "subject": "ciencias",
-      "titulo": "Los animales vertebrados",
-      "nivel": 1,
-      "contenido": "Los animales vertebrados tienen columna vertebral. Se dividen en cinco grupos: mamíferos, aves, peces, reptiles y anfibios. Los mamíferos tienen pelo y dan leche a sus crías. Las aves tienen plumas y ponen huevos.",
-      "ejemplos": ["Mamíferos: perro, gato, ballena", "Aves: águila, paloma, pingüino", "Peces: salmón, tiburón, atún", "Reptiles: serpiente, cocodrilo", "Anfibios: rana, salamandra"],
-      "palabrasClave": ["vertebrado", "mamífero", "ave", "pez", "reptil", "anfibio"],
-      "tiposEjercicio": ["EleccionMultiple", "ClasificarGrupos", "UnirColumnas", "SopaLetras"],
-      "ejerciciosDerivar": 8,
-      "ejercicios": [
-        {
-          "id": "cie-001-ex-001",
-          "fichaId": "cie-001",
-          "subject": "ciencias",
-          "tipo": "EleccionMultiple",
-          "nivel": 1,
-          "enunciado": "¿A qué grupo pertenece el perro?",
-          "opciones": [
-            {"texto": "🐕 Mamífero", "emoji": ""},
-            {"texto": "🐦 Ave", "emoji": ""},
-            {"texto": "🐟 Pez", "emoji": ""},
-            {"texto": "🐊 Reptil", "emoji": ""}
-          ],
-          "respuestaCorrecta": "🐕 Mamífero",
-          "tiempoEstimado": 30
-        },
-        {
-          "id": "cie-001-ex-002",
-          "fichaId": "cie-001",
-          "subject": "ciencias",
-          "tipo": "ClasificarGrupos",
-          "nivel": 1,
-          "enunciado": "Clasifica los animales en su grupo",
-          "grupos": [
-            {"id": "mamiferos", "nombre": "Mamíferos 🐕"},
-            {"id": "aves", "nombre": "Aves 🐦"},
-            {"id": "peces", "nombre": "Peces 🐟"}
-          ],
-          "items": [
-            {"id": "1", "texto": "Gato 🐈", "grupoId": "mamiferos"},
-            {"id": "2", "texto": "Águila 🦅", "grupoId": "aves"},
-            {"id": "3", "texto": "Salmón 🐟", "grupoId": "peces"},
-            {"id": "4", "texto": "Ballena 🐋", "grupoId": "mamiferos"},
-            {"id": "5", "texto": "Paloma 🕊️", "grupoId": "aves"},
-            {"id": "6", "texto": "Atún 🐠", "grupoId": "peces"}
-          ],
-          "tiempoEstimado": 90
-        },
-        {
-          "id": "cie-001-ex-003",
-          "fichaId": "cie-001",
-          "subject": "ciencias",
-          "tipo": "UnirColumnas",
-          "nivel": 1,
-          "enunciado": "Une cada animal con su característica",
-          "parejas": [
-            {"izquierda": "Perro 🐕", "derecha": "Tiene pelo"},
-            {"izquierda": "Águila 🦅", "derecha": "Tiene plumas"},
-            {"izquierda": "Salmón 🐟", "derecha": "Tiene escamas"},
-            {"izquierda": "Rana 🐸", "derecha": "Vive en agua y tierra"}
-          ],
-          "tiempoEstimado": 90
-        },
-        {
-          "id": "cie-001-ex-004",
-          "fichaId": "cie-001",
-          "subject": "ciencias",
-          "tipo": "SopaLetras",
-          "nivel": 1,
-          "enunciado": "Encuentra los grupos de animales vertebrados",
-          "palabras": ["AVE", "PEZ", "RANA", "GATO"],
-          "cuadricula": [
-            ["A","V","E","X","Z","L","M","Q"],
-            ["P","E","Z","Y","Q","W","N","R"],
-            ["R","A","N","A","U","I","O","T"],
-            ["G","A","T","O","J","K","L","P"],
-            ["S","F","G","H","J","K","L","A"],
-            ["D","G","H","J","K","L","M","N"],
-            ["F","G","H","J","K","L","M","N"],
-            ["R","H","J","K","L","M","N","O"]
-          ],
-          "tiempoEstimado": 180
-        },
-        {
-          "id": "cie-001-ex-005",
-          "fichaId": "cie-001",
-          "subject": "ciencias",
-          "tipo": "EleccionMultiple",
-          "nivel": 1,
-          "enunciado": "¿Cuál de estos animales es un ave?",
-          "opciones": [
-            {"texto": "🐦 Paloma", "emoji": ""},
-            {"texto": "🐟 Sardina", "emoji": ""},
-            {"texto": "🐊 Cocodrilo", "emoji": ""},
-            {"texto": "🐸 Rana", "emoji": ""}
-          ],
-          "respuestaCorrecta": "🐦 Paloma",
-          "tiempoEstimado": 30
-        },
-        {
-          "id": "cie-001-ex-006",
-          "fichaId": "cie-001",
-          "subject": "ciencias",
-          "tipo": "RellenarHueco",
-          "nivel": 2,
-          "enunciado": "Los animales vertebrados tienen [___] vertebral",
-          "respuestaCorrecta": "columna",
-          "tiempoEstimado": 30
-        },
-        {
-          "id": "cie-001-ex-007",
-          "fichaId": "cie-001",
-          "subject": "ciencias",
-          "tipo": "MemoriaPareja",
-          "nivel": 2,
-          "enunciado": "Empareja cada animal con su grupo",
-          "parejas": [
-            {"a": "🐕 Perro", "b": "Mamífero"},
-            {"a": "🦅 Águila", "b": "Ave"},
-            {"a": "🐟 Salmón", "b": "Pez"},
-            {"a": "🐸 Rana", "b": "Anfibio"},
-            {"a": "🐍 Serpiente", "b": "Reptil"},
-            {"a": "🐬 Delfín", "b": "Mamífero"}
-          ],
-          "tiempoEstimado": 180
-        },
-        {
-          "id": "cie-001-ex-008",
-          "fichaId": "cie-001",
-          "subject": "ciencias",
-          "tipo": "ClasificarGrupos",
-          "nivel": 2,
-          "enunciado": "Clasifica según si ponen huevos o no",
-          "grupos": [
-            {"id": "huevos", "nombre": "Ponen huevos 🥚"},
-            {"id": "crias", "nombre": "Paren crías 🐣"}
-          ],
-          "items": [
-            {"id": "1", "texto": "Gallina 🐔", "grupoId": "huevos"},
-            {"id": "2", "texto": "Perro 🐕", "grupoId": "crias"},
-            {"id": "3", "texto": "Serpiente 🐍", "grupoId": "huevos"},
-            {"id": "4", "texto": "Ballena 🐋", "grupoId": "crias"}
-          ],
-          "tiempoEstimado": 60
-        }
-      ]
-    },
-    {
-      "id": "cie-002",
-      "subject": "ciencias",
-      "titulo": "Las plantas y sus partes",
-      "nivel": 1,
-      "contenido": "Las plantas son seres vivos que producen su propio alimento mediante la fotosíntesis. Las partes principales de una planta son: raíz, tallo, hojas, flores y fruto. Las raíces absorben el agua del suelo.",
-      "ejemplos": ["La raíz absorbe agua y minerales", "El tallo sostiene la planta", "Las hojas realizan la fotosíntesis", "Las flores producen los frutos"],
-      "palabrasClave": ["raíz", "tallo", "hoja", "flor", "fruto", "fotosíntesis"],
-      "tiposEjercicio": ["EleccionMultiple", "UnirColumnas", "RellenarHueco", "OrdenarFrase"],
-      "ejerciciosDerivar": 8,
-      "ejercicios": [
-        {
-          "id": "cie-002-ex-001",
-          "fichaId": "cie-002",
-          "subject": "ciencias",
-          "tipo": "EleccionMultiple",
-          "nivel": 1,
-          "enunciado": "¿Qué parte de la planta absorbe el agua del suelo?",
-          "opciones": [
-            {"texto": "🌿 La hoja", "emoji": ""},
-            {"texto": "🌺 La flor", "emoji": ""},
-            {"texto": "🌱 La raíz", "emoji": ""},
-            {"texto": "🌳 El tallo", "emoji": ""}
-          ],
-          "respuestaCorrecta": "🌱 La raíz",
-          "tiempoEstimado": 30
-        },
-        {
-          "id": "cie-002-ex-002",
-          "fichaId": "cie-002",
-          "subject": "ciencias",
-          "tipo": "UnirColumnas",
-          "nivel": 1,
-          "enunciado": "Une cada parte de la planta con su función",
-          "parejas": [
-            {"izquierda": "Raíz 🌱", "derecha": "Absorbe agua"},
-            {"izquierda": "Tallo 🌿", "derecha": "Sostiene la planta"},
-            {"izquierda": "Hoja 🍃", "derecha": "Hace fotosíntesis"},
-            {"izquierda": "Flor 🌸", "derecha": "Produce el fruto"}
-          ],
-          "tiempoEstimado": 90
-        },
-        {
-          "id": "cie-002-ex-003",
-          "fichaId": "cie-002",
-          "subject": "ciencias",
-          "tipo": "RellenarHueco",
-          "nivel": 1,
-          "enunciado": "Las plantas producen su alimento mediante la [___]",
-          "respuestaCorrecta": "fotosíntesis",
-          "tiempoEstimado": 35
-        },
-        {
-          "id": "cie-002-ex-004",
-          "fichaId": "cie-002",
-          "subject": "ciencias",
-          "tipo": "OrdenarFrase",
-          "nivel": 1,
-          "enunciado": "Ordena las palabras para describir una planta",
-          "palabrasDesordenadas": ["tiene", "La planta", "y", "hojas", "raíces"],
-          "fraseCorrecta": "La planta tiene hojas y raíces",
-          "tiempoEstimado": 60
-        },
-        {
-          "id": "cie-002-ex-005",
-          "fichaId": "cie-002",
-          "subject": "ciencias",
-          "tipo": "EleccionMultiple",
-          "nivel": 1,
-          "enunciado": "¿Qué necesitan las plantas para vivir?",
-          "opciones": [
-            {"texto": "☀️ Luz solar, agua y CO₂", "emoji": ""},
-            {"texto": "🌙 Oscuridad y frío", "emoji": ""},
-            {"texto": "🍖 Carne y grasa", "emoji": ""},
-            {"texto": "💨 Solo aire", "emoji": ""}
-          ],
-          "respuestaCorrecta": "☀️ Luz solar, agua y CO₂",
-          "tiempoEstimado": 30
-        },
-        {
-          "id": "cie-002-ex-006",
-          "fichaId": "cie-002",
-          "subject": "ciencias",
-          "tipo": "MemoriaPareja",
-          "nivel": 2,
-          "enunciado": "Empareja cada parte con su imagen",
-          "parejas": [
-            {"a": "🌱 Raíz", "b": "Bajo tierra"},
-            {"a": "🌳 Tallo", "b": "Sostén"},
-            {"a": "🍃 Hoja", "b": "Verde y plana"},
-            {"a": "🌸 Flor", "b": "Colorida"},
-            {"a": "🍎 Fruto", "b": "Semillas dentro"},
-            {"a": "💧 Agua", "b": "La absorbe la raíz"}
-          ],
-          "tiempoEstimado": 180
-        },
-        {
-          "id": "cie-002-ex-007",
-          "fichaId": "cie-002",
-          "subject": "ciencias",
-          "tipo": "ClasificarGrupos",
-          "nivel": 2,
-          "enunciado": "Clasifica los elementos",
-          "grupos": [
-            {"id": "partes", "nombre": "Partes de la planta 🌿"},
-            {"id": "necesidades", "nombre": "Lo que necesitan 🌞"}
-          ],
-          "items": [
-            {"id": "1", "texto": "Raíz 🌱", "grupoId": "partes"},
-            {"id": "2", "texto": "Agua 💧", "grupoId": "necesidades"},
-            {"id": "3", "texto": "Hoja 🍃", "grupoId": "partes"},
-            {"id": "4", "texto": "Luz solar ☀️", "grupoId": "necesidades"}
-          ],
-          "tiempoEstimado": 60
-        },
-        {
-          "id": "cie-002-ex-008",
-          "fichaId": "cie-002",
-          "subject": "ciencias",
-          "tipo": "RellenarHueco",
-          "nivel": 2,
-          "enunciado": "Las flores producen los [___] de la planta",
-          "respuestaCorrecta": "frutos",
-          "tiempoEstimado": 30
-        }
-      ]
-    },
-    {
       "id": "soc-001",
       "subject": "social",
       "titulo": "Mi comunidad y sus servicios",
       "nivel": 1,
       "contenido": "Una comunidad es un grupo de personas que viven juntas en un lugar. Los servicios públicos como hospitales, colegios y parques ayudan a todos los vecinos. Los servicios privados son de empresas y hay que pagar por ellos.",
-      "ejemplos": ["Servicios públicos: hospital, colegio, parque, biblioteca", "Servicios privados: supermercado, cine, restaurante", "El ayuntamiento gestiona los servicios de la ciudad"],
-      "palabrasClave": ["comunidad", "servicio", "público", "privado", "vecino"],
-      "tiposEjercicio": ["EleccionMultiple", "ClasificarGrupos", "OrdenarFrase", "UnirColumnas"],
+      "ejemplos": [
+        "Servicios públicos: hospital, colegio, parque, biblioteca",
+        "Servicios privados: supermercado, cine, restaurante",
+        "El ayuntamiento gestiona los servicios de la ciudad"
+      ],
+      "palabrasClave": [
+        "comunidad",
+        "servicio",
+        "público",
+        "privado",
+        "vecino"
+      ],
+      "tiposEjercicio": [
+        "EleccionMultiple",
+        "ClasificarGrupos",
+        "OrdenarFrase",
+        "UnirColumnas"
+      ],
       "ejerciciosDerivar": 8,
       "ejercicios": [
         {
@@ -719,10 +2530,22 @@
           "nivel": 1,
           "enunciado": "¿Cuál de estos es un servicio público?",
           "opciones": [
-            {"texto": "🏥 Hospital", "emoji": ""},
-            {"texto": "🛒 Supermercado", "emoji": ""},
-            {"texto": "🎬 Cine", "emoji": ""},
-            {"texto": "🍕 Restaurante", "emoji": ""}
+            {
+              "texto": "🏥 Hospital",
+              "emoji": ""
+            },
+            {
+              "texto": "🛒 Supermercado",
+              "emoji": ""
+            },
+            {
+              "texto": "🎬 Cine",
+              "emoji": ""
+            },
+            {
+              "texto": "🍕 Restaurante",
+              "emoji": ""
+            }
           ],
           "respuestaCorrecta": "🏥 Hospital",
           "tiempoEstimado": 30
@@ -735,14 +2558,36 @@
           "nivel": 1,
           "enunciado": "Clasifica los servicios",
           "grupos": [
-            {"id": "publicos", "nombre": "Servicios públicos 🏛️"},
-            {"id": "privados", "nombre": "Servicios privados 🏪"}
+            {
+              "id": "publicos",
+              "nombre": "Servicios públicos 🏛️"
+            },
+            {
+              "id": "privados",
+              "nombre": "Servicios privados 🏪"
+            }
           ],
           "items": [
-            {"id": "1", "texto": "Colegio 🏫", "grupoId": "publicos"},
-            {"id": "2", "texto": "Supermercado 🛒", "grupoId": "privados"},
-            {"id": "3", "texto": "Parque 🌳", "grupoId": "publicos"},
-            {"id": "4", "texto": "Cine 🎬", "grupoId": "privados"}
+            {
+              "id": "1",
+              "texto": "Colegio 🏫",
+              "grupoId": "publicos"
+            },
+            {
+              "id": "2",
+              "texto": "Supermercado 🛒",
+              "grupoId": "privados"
+            },
+            {
+              "id": "3",
+              "texto": "Parque 🌳",
+              "grupoId": "publicos"
+            },
+            {
+              "id": "4",
+              "texto": "Cine 🎬",
+              "grupoId": "privados"
+            }
           ],
           "tiempoEstimado": 60
         },
@@ -754,10 +2599,22 @@
           "nivel": 1,
           "enunciado": "Une el servicio con quién lo gestiona",
           "parejas": [
-            {"izquierda": "Hospital 🏥", "derecha": "El Estado"},
-            {"izquierda": "Supermercado 🛒", "derecha": "Una empresa"},
-            {"izquierda": "Biblioteca 📚", "derecha": "El Ayuntamiento"},
-            {"izquierda": "Restaurante 🍽️", "derecha": "Un propietario"}
+            {
+              "izquierda": "Hospital 🏥",
+              "derecha": "El Estado"
+            },
+            {
+              "izquierda": "Supermercado 🛒",
+              "derecha": "Una empresa"
+            },
+            {
+              "izquierda": "Biblioteca 📚",
+              "derecha": "El Ayuntamiento"
+            },
+            {
+              "izquierda": "Restaurante 🍽️",
+              "derecha": "Un propietario"
+            }
           ],
           "tiempoEstimado": 90
         },
@@ -779,10 +2636,22 @@
           "nivel": 1,
           "enunciado": "¿Qué es una comunidad?",
           "opciones": [
-            {"texto": "👥 Un grupo de personas que viven juntas", "emoji": ""},
-            {"texto": "🏢 Un edificio de oficinas", "emoji": ""},
-            {"texto": "🌊 Un río o lago", "emoji": ""},
-            {"texto": "🚗 Un tipo de vehículo", "emoji": ""}
+            {
+              "texto": "👥 Un grupo de personas que viven juntas",
+              "emoji": ""
+            },
+            {
+              "texto": "🏢 Un edificio de oficinas",
+              "emoji": ""
+            },
+            {
+              "texto": "🌊 Un río o lago",
+              "emoji": ""
+            },
+            {
+              "texto": "🚗 Un tipo de vehículo",
+              "emoji": ""
+            }
           ],
           "respuestaCorrecta": "👥 Un grupo de personas que viven juntas",
           "tiempoEstimado": 30
@@ -794,7 +2663,13 @@
           "tipo": "OrdenarFrase",
           "nivel": 2,
           "enunciado": "Ordena las palabras",
-          "palabrasDesordenadas": ["los", "El hospital", "cuida", "vecinos", "a"],
+          "palabrasDesordenadas": [
+            "los",
+            "El hospital",
+            "cuida",
+            "vecinos",
+            "a"
+          ],
           "fraseCorrecta": "El hospital cuida a los vecinos",
           "tiempoEstimado": 60
         },
@@ -806,12 +2681,30 @@
           "nivel": 2,
           "enunciado": "Empareja el servicio con su símbolo",
           "parejas": [
-            {"a": "Hospital", "b": "🏥"},
-            {"a": "Colegio", "b": "🏫"},
-            {"a": "Biblioteca", "b": "📚"},
-            {"a": "Parque", "b": "🌳"},
-            {"a": "Bomberos", "b": "🚒"},
-            {"a": "Policía", "b": "👮"}
+            {
+              "a": "Hospital",
+              "b": "🏥"
+            },
+            {
+              "a": "Colegio",
+              "b": "🏫"
+            },
+            {
+              "a": "Biblioteca",
+              "b": "📚"
+            },
+            {
+              "a": "Parque",
+              "b": "🌳"
+            },
+            {
+              "a": "Bomberos",
+              "b": "🚒"
+            },
+            {
+              "a": "Policía",
+              "b": "👮"
+            }
           ],
           "tiempoEstimado": 180
         },
@@ -823,10 +2716,22 @@
           "nivel": 2,
           "enunciado": "¿Quién gestiona los parques públicos de una ciudad?",
           "opciones": [
-            {"texto": "🏛️ El Ayuntamiento", "emoji": ""},
-            {"texto": "🏢 Una empresa privada", "emoji": ""},
-            {"texto": "👨 Un solo vecino", "emoji": ""},
-            {"texto": "🌍 La Unión Europea", "emoji": ""}
+            {
+              "texto": "🏛️ El Ayuntamiento",
+              "emoji": ""
+            },
+            {
+              "texto": "🏢 Una empresa privada",
+              "emoji": ""
+            },
+            {
+              "texto": "👨 Un solo vecino",
+              "emoji": ""
+            },
+            {
+              "texto": "🌍 La Unión Europea",
+              "emoji": ""
+            }
           ],
           "respuestaCorrecta": "🏛️ El Ayuntamiento",
           "tiempoEstimado": 30
@@ -839,9 +2744,25 @@
       "titulo": "El tiempo y el calendario",
       "nivel": 1,
       "contenido": "El calendario nos ayuda a organizar el tiempo. Un año tiene 12 meses y 365 días (366 en año bisiesto). La semana tiene 7 días. Las cuatro estaciones del año son: primavera, verano, otoño e invierno.",
-      "ejemplos": ["Enero, febrero, marzo... son los meses del año", "Lunes, martes, miércoles... son los días de la semana", "Primavera: marzo-mayo. Verano: junio-agosto. Otoño: septiembre-noviembre. Invierno: diciembre-febrero"],
-      "palabrasClave": ["mes", "semana", "estación", "año", "calendario", "día"],
-      "tiposEjercicio": ["EleccionMultiple", "CompletarSerie", "UnirColumnas", "RellenarHueco"],
+      "ejemplos": [
+        "Enero, febrero, marzo... son los meses del año",
+        "Lunes, martes, miércoles... son los días de la semana",
+        "Primavera: marzo-mayo. Verano: junio-agosto. Otoño: septiembre-noviembre. Invierno: diciembre-febrero"
+      ],
+      "palabrasClave": [
+        "mes",
+        "semana",
+        "estación",
+        "año",
+        "calendario",
+        "día"
+      ],
+      "tiposEjercicio": [
+        "EleccionMultiple",
+        "CompletarSerie",
+        "UnirColumnas",
+        "RellenarHueco"
+      ],
       "ejerciciosDerivar": 8,
       "ejercicios": [
         {
@@ -851,8 +2772,18 @@
           "tipo": "CompletarSerie",
           "nivel": 1,
           "enunciado": "Completa los días de la semana",
-          "serie": ["Lunes", "Martes", "Miércoles", null, "Viernes"],
-          "opciones": ["Domingo", "Jueves", "Sábado"],
+          "serie": [
+            "Lunes",
+            "Martes",
+            "Miércoles",
+            null,
+            "Viernes"
+          ],
+          "opciones": [
+            "Domingo",
+            "Jueves",
+            "Sábado"
+          ],
           "respuestaCorrecta": "Jueves",
           "tiempoEstimado": 35
         },
@@ -874,10 +2805,22 @@
           "nivel": 1,
           "enunciado": "Une el mes con su estación del año",
           "parejas": [
-            {"izquierda": "Enero ❄️", "derecha": "Invierno"},
-            {"izquierda": "Abril 🌸", "derecha": "Primavera"},
-            {"izquierda": "Julio ☀️", "derecha": "Verano"},
-            {"izquierda": "Octubre 🍂", "derecha": "Otoño"}
+            {
+              "izquierda": "Enero ❄️",
+              "derecha": "Invierno"
+            },
+            {
+              "izquierda": "Abril 🌸",
+              "derecha": "Primavera"
+            },
+            {
+              "izquierda": "Julio ☀️",
+              "derecha": "Verano"
+            },
+            {
+              "izquierda": "Octubre 🍂",
+              "derecha": "Otoño"
+            }
           ],
           "tiempoEstimado": 90
         },
@@ -889,10 +2832,22 @@
           "nivel": 1,
           "enunciado": "¿Cuántos días tiene una semana?",
           "opciones": [
-            {"texto": "5 días", "emoji": ""},
-            {"texto": "6 días", "emoji": ""},
-            {"texto": "7 días", "emoji": ""},
-            {"texto": "8 días", "emoji": ""}
+            {
+              "texto": "5 días",
+              "emoji": ""
+            },
+            {
+              "texto": "6 días",
+              "emoji": ""
+            },
+            {
+              "texto": "7 días",
+              "emoji": ""
+            },
+            {
+              "texto": "8 días",
+              "emoji": ""
+            }
           ],
           "respuestaCorrecta": "7 días",
           "tiempoEstimado": 25
@@ -904,8 +2859,18 @@
           "tipo": "CompletarSerie",
           "nivel": 1,
           "enunciado": "Completa los meses del año",
-          "serie": ["Enero", "Febrero", null, "Abril", "Mayo"],
-          "opciones": ["Diciembre", "Marzo", "Junio"],
+          "serie": [
+            "Enero",
+            "Febrero",
+            null,
+            "Abril",
+            "Mayo"
+          ],
+          "opciones": [
+            "Diciembre",
+            "Marzo",
+            "Junio"
+          ],
           "respuestaCorrecta": "Marzo",
           "tiempoEstimado": 35
         },
@@ -917,10 +2882,22 @@
           "nivel": 1,
           "enunciado": "¿Cuál es la estación del año más calurosa?",
           "opciones": [
-            {"texto": "🌸 Primavera", "emoji": ""},
-            {"texto": "☀️ Verano", "emoji": ""},
-            {"texto": "🍂 Otoño", "emoji": ""},
-            {"texto": "❄️ Invierno", "emoji": ""}
+            {
+              "texto": "🌸 Primavera",
+              "emoji": ""
+            },
+            {
+              "texto": "☀️ Verano",
+              "emoji": ""
+            },
+            {
+              "texto": "🍂 Otoño",
+              "emoji": ""
+            },
+            {
+              "texto": "❄️ Invierno",
+              "emoji": ""
+            }
           ],
           "respuestaCorrecta": "☀️ Verano",
           "tiempoEstimado": 25
@@ -943,269 +2920,30 @@
           "nivel": 2,
           "enunciado": "Empareja la estación con su característica",
           "parejas": [
-            {"a": "Primavera 🌸", "b": "Florecen las flores"},
-            {"a": "Verano ☀️", "b": "Hace mucho calor"},
-            {"a": "Otoño 🍂", "b": "Caen las hojas"},
-            {"a": "Invierno ❄️", "b": "Hace frío y nieva"},
-            {"a": "Enero", "b": "Primer mes"},
-            {"a": "Diciembre", "b": "Último mes"}
-          ],
-          "tiempoEstimado": 180
-        }
-      ]
-    },
-    {
-      "id": "ing-001",
-      "subject": "ingles",
-      "titulo": "Colors and numbers",
-      "nivel": 1,
-      "contenido": "Colors help us describe things around us. Numbers help us count. In English: red, blue, green, yellow, orange, purple. Numbers: one, two, three, four, five, six, seven, eight, nine, ten.",
-      "ejemplos": ["The sky is blue", "I have three cats", "The apple is red", "She has five pencils"],
-      "palabrasClave": ["red", "blue", "green", "yellow", "one", "two", "three", "four", "five"],
-      "tiposEjercicio": ["EleccionMultiple", "RellenarHueco", "UnirColumnas", "CompletarSerie"],
-      "ejerciciosDerivar": 8,
-      "ejercicios": [
-        {
-          "id": "ing-001-ex-001",
-          "fichaId": "ing-001",
-          "subject": "ingles",
-          "tipo": "EleccionMultiple",
-          "nivel": 1,
-          "enunciado": "What color is the sky? 🌤️",
-          "opciones": [
-            {"texto": "Blue", "emoji": "🔵"},
-            {"texto": "Red", "emoji": "🔴"},
-            {"texto": "Green", "emoji": "🟢"},
-            {"texto": "Yellow", "emoji": "🟡"}
-          ],
-          "respuestaCorrecta": "Blue",
-          "tiempoEstimado": 30
-        },
-        {
-          "id": "ing-001-ex-002",
-          "fichaId": "ing-001",
-          "subject": "ingles",
-          "tipo": "CompletarSerie",
-          "nivel": 1,
-          "enunciado": "Complete the number sequence",
-          "serie": ["one", "two", null, "four", "five"],
-          "opciones": ["six", "three", "zero"],
-          "respuestaCorrecta": "three",
-          "tiempoEstimado": 35
-        },
-        {
-          "id": "ing-001-ex-003",
-          "fichaId": "ing-001",
-          "subject": "ingles",
-          "tipo": "UnirColumnas",
-          "nivel": 1,
-          "enunciado": "Match the color with its object",
-          "parejas": [
-            {"izquierda": "Red 🔴", "derecha": "Apple 🍎"},
-            {"izquierda": "Yellow 🟡", "derecha": "Sun ☀️"},
-            {"izquierda": "Green 🟢", "derecha": "Tree 🌳"},
-            {"izquierda": "Blue 🔵", "derecha": "Sea 🌊"}
-          ],
-          "tiempoEstimado": 90
-        },
-        {
-          "id": "ing-001-ex-004",
-          "fichaId": "ing-001",
-          "subject": "ingles",
-          "tipo": "RellenarHueco",
-          "nivel": 1,
-          "enunciado": "The banana is [___]",
-          "respuestaCorrecta": "yellow",
-          "tiempoEstimado": 30
-        },
-        {
-          "id": "ing-001-ex-005",
-          "fichaId": "ing-001",
-          "subject": "ingles",
-          "tipo": "EleccionMultiple",
-          "nivel": 1,
-          "enunciado": "How many fingers do we have in one hand? ✋",
-          "opciones": [
-            {"texto": "Three", "emoji": ""},
-            {"texto": "Four", "emoji": ""},
-            {"texto": "Five", "emoji": ""},
-            {"texto": "Six", "emoji": ""}
-          ],
-          "respuestaCorrecta": "Five",
-          "tiempoEstimado": 30
-        },
-        {
-          "id": "ing-001-ex-006",
-          "fichaId": "ing-001",
-          "subject": "ingles",
-          "tipo": "MemoriaPareja",
-          "nivel": 2,
-          "enunciado": "Match the number with its word",
-          "parejas": [
-            {"a": "1", "b": "one"},
-            {"a": "2", "b": "two"},
-            {"a": "3", "b": "three"},
-            {"a": "4", "b": "four"},
-            {"a": "5", "b": "five"},
-            {"a": "6", "b": "six"}
-          ],
-          "tiempoEstimado": 180
-        },
-        {
-          "id": "ing-001-ex-007",
-          "fichaId": "ing-001",
-          "subject": "ingles",
-          "tipo": "RellenarHueco",
-          "nivel": 2,
-          "enunciado": "Two plus three is [___]",
-          "respuestaCorrecta": "five",
-          "tiempoEstimado": 30
-        },
-        {
-          "id": "ing-001-ex-008",
-          "fichaId": "ing-001",
-          "subject": "ingles",
-          "tipo": "ClasificarGrupos",
-          "nivel": 2,
-          "enunciado": "Classify the words",
-          "grupos": [
-            {"id": "colors", "nombre": "Colors 🎨"},
-            {"id": "numbers", "nombre": "Numbers 🔢"}
-          ],
-          "items": [
-            {"id": "1", "texto": "red", "grupoId": "colors"},
-            {"id": "2", "texto": "seven", "grupoId": "numbers"},
-            {"id": "3", "texto": "blue", "grupoId": "colors"},
-            {"id": "4", "texto": "nine", "grupoId": "numbers"}
-          ],
-          "tiempoEstimado": 60
-        }
-      ]
-    },
-    {
-      "id": "ing-002",
-      "subject": "ingles",
-      "titulo": "School objects",
-      "nivel": 1,
-      "contenido": "School objects are things we use to learn. In English: pencil, pen, book, ruler, eraser, notebook, bag, scissors. We can say 'This is a pencil' or 'I have a book'.",
-      "ejemplos": ["This is a pencil ✏️", "I have a ruler 📏", "She has a book 📚", "He uses an eraser"],
-      "palabrasClave": ["pencil", "book", "ruler", "eraser", "bag", "notebook", "scissors"],
-      "tiposEjercicio": ["EleccionMultiple", "OrdenarFrase", "UnirColumnas", "ClasificarGrupos"],
-      "ejerciciosDerivar": 8,
-      "ejercicios": [
-        {
-          "id": "ing-002-ex-001",
-          "fichaId": "ing-002",
-          "subject": "ingles",
-          "tipo": "EleccionMultiple",
-          "nivel": 1,
-          "enunciado": "What is this? ✏️",
-          "opciones": [
-            {"texto": "A pencil", "emoji": ""},
-            {"texto": "A ruler", "emoji": ""},
-            {"texto": "An eraser", "emoji": ""},
-            {"texto": "A book", "emoji": ""}
-          ],
-          "respuestaCorrecta": "A pencil",
-          "tiempoEstimado": 30
-        },
-        {
-          "id": "ing-002-ex-002",
-          "fichaId": "ing-002",
-          "subject": "ingles",
-          "tipo": "OrdenarFrase",
-          "nivel": 1,
-          "enunciado": "Order the words to make a sentence",
-          "palabrasDesordenadas": ["pencil", "is", "This", "a"],
-          "fraseCorrecta": "This is a pencil",
-          "tiempoEstimado": 60
-        },
-        {
-          "id": "ing-002-ex-003",
-          "fichaId": "ing-002",
-          "subject": "ingles",
-          "tipo": "UnirColumnas",
-          "nivel": 1,
-          "enunciado": "Match the object with its picture",
-          "parejas": [
-            {"izquierda": "Pencil", "derecha": "✏️"},
-            {"izquierda": "Book", "derecha": "📚"},
-            {"izquierda": "Scissors", "derecha": "✂️"},
-            {"izquierda": "Bag", "derecha": "🎒"}
-          ],
-          "tiempoEstimado": 90
-        },
-        {
-          "id": "ing-002-ex-004",
-          "fichaId": "ing-002",
-          "subject": "ingles",
-          "tipo": "RellenarHueco",
-          "nivel": 1,
-          "enunciado": "I write with a [___]",
-          "respuestaCorrecta": "pencil",
-          "tiempoEstimado": 30
-        },
-        {
-          "id": "ing-002-ex-005",
-          "fichaId": "ing-002",
-          "subject": "ingles",
-          "tipo": "EleccionMultiple",
-          "nivel": 1,
-          "enunciado": "What do you use to measure? 📏",
-          "opciones": [
-            {"texto": "A pencil", "emoji": ""},
-            {"texto": "A ruler", "emoji": ""},
-            {"texto": "An eraser", "emoji": ""},
-            {"texto": "A bag", "emoji": ""}
-          ],
-          "respuestaCorrecta": "A ruler",
-          "tiempoEstimado": 30
-        },
-        {
-          "id": "ing-002-ex-006",
-          "fichaId": "ing-002",
-          "subject": "ingles",
-          "tipo": "SopaLetras",
-          "nivel": 2,
-          "enunciado": "Find the school objects",
-          "palabras": ["PEN", "BAG", "BOOK", "RULER"],
-          "cuadricula": [
-            ["P","E","N","X","Z","L","M","Q"],
-            ["B","A","G","Y","Q","W","N","R"],
-            ["B","O","O","K","U","I","O","T"],
-            ["R","U","L","E","R","K","L","P"],
-            ["S","F","G","H","J","K","L","A"],
-            ["D","G","H","J","K","L","M","N"],
-            ["F","G","H","J","K","L","M","N"],
-            ["R","H","J","K","L","M","N","O"]
-          ],
-          "tiempoEstimado": 180
-        },
-        {
-          "id": "ing-002-ex-007",
-          "fichaId": "ing-002",
-          "subject": "ingles",
-          "tipo": "OrdenarFrase",
-          "nivel": 2,
-          "enunciado": "Order the words",
-          "palabrasDesordenadas": ["have", "I", "bag", "a", "red"],
-          "fraseCorrecta": "I have a red bag",
-          "tiempoEstimado": 60
-        },
-        {
-          "id": "ing-002-ex-008",
-          "fichaId": "ing-002",
-          "subject": "ingles",
-          "tipo": "MemoriaPareja",
-          "nivel": 2,
-          "enunciado": "Match the object with its name",
-          "parejas": [
-            {"a": "✏️", "b": "Pencil"},
-            {"a": "📚", "b": "Book"},
-            {"a": "📏", "b": "Ruler"},
-            {"a": "🎒", "b": "Bag"},
-            {"a": "✂️", "b": "Scissors"},
-            {"a": "🖊️", "b": "Pen"}
+            {
+              "a": "Primavera 🌸",
+              "b": "Florecen las flores"
+            },
+            {
+              "a": "Verano ☀️",
+              "b": "Hace mucho calor"
+            },
+            {
+              "a": "Otoño 🍂",
+              "b": "Caen las hojas"
+            },
+            {
+              "a": "Invierno ❄️",
+              "b": "Hace frío y nieva"
+            },
+            {
+              "a": "Enero",
+              "b": "Primer mes"
+            },
+            {
+              "a": "Diciembre",
+              "b": "Último mes"
+            }
           ],
           "tiempoEstimado": 180
         }
@@ -1217,9 +2955,25 @@
       "titulo": "El respeto hacia los demás",
       "nivel": 1,
       "contenido": "El respeto es tratar a las personas con consideración y amabilidad. Respetar significa escuchar cuando alguien habla, no interrumpir, no burlarse de los demás y valorar las diferencias. El respeto hace que todos nos sintamos bien.",
-      "ejemplos": ["Escuchar sin interrumpir", "Pedir las cosas por favor", "No burlarse de las diferencias", "Respetar el turno en la cola"],
-      "palabrasClave": ["respeto", "amabilidad", "escuchar", "diferencias", "convivencia"],
-      "tiposEjercicio": ["EleccionMultiple", "OrdenarFrase", "RellenarHueco", "ClasificarGrupos"],
+      "ejemplos": [
+        "Escuchar sin interrumpir",
+        "Pedir las cosas por favor",
+        "No burlarse de las diferencias",
+        "Respetar el turno en la cola"
+      ],
+      "palabrasClave": [
+        "respeto",
+        "amabilidad",
+        "escuchar",
+        "diferencias",
+        "convivencia"
+      ],
+      "tiposEjercicio": [
+        "EleccionMultiple",
+        "OrdenarFrase",
+        "RellenarHueco",
+        "ClasificarGrupos"
+      ],
       "ejerciciosDerivar": 8,
       "ejercicios": [
         {
@@ -1230,10 +2984,22 @@
           "nivel": 1,
           "enunciado": "¿Qué debemos hacer cuando alguien está hablando?",
           "opciones": [
-            {"texto": "👂 Escuchar con atención", "emoji": ""},
-            {"texto": "🗣️ Hablar por encima", "emoji": ""},
-            {"texto": "🙈 Ignorarle", "emoji": ""},
-            {"texto": "📱 Mirar el móvil", "emoji": ""}
+            {
+              "texto": "👂 Escuchar con atención",
+              "emoji": ""
+            },
+            {
+              "texto": "🗣️ Hablar por encima",
+              "emoji": ""
+            },
+            {
+              "texto": "🙈 Ignorarle",
+              "emoji": ""
+            },
+            {
+              "texto": "📱 Mirar el móvil",
+              "emoji": ""
+            }
           ],
           "respuestaCorrecta": "👂 Escuchar con atención",
           "tiempoEstimado": 30
@@ -1246,14 +3012,36 @@
           "nivel": 1,
           "enunciado": "Clasifica las acciones",
           "grupos": [
-            {"id": "respetuosas", "nombre": "Acciones respetuosas ✅"},
-            {"id": "irrespetuosas", "nombre": "Acciones irrespetuosas ❌"}
+            {
+              "id": "respetuosas",
+              "nombre": "Acciones respetuosas ✅"
+            },
+            {
+              "id": "irrespetuosas",
+              "nombre": "Acciones irrespetuosas ❌"
+            }
           ],
           "items": [
-            {"id": "1", "texto": "Pedir por favor 🙏", "grupoId": "respetuosas"},
-            {"id": "2", "texto": "Burlarse de alguien 😝", "grupoId": "irrespetuosas"},
-            {"id": "3", "texto": "Escuchar a los demás 👂", "grupoId": "respetuosas"},
-            {"id": "4", "texto": "Interrumpir una conversación 🗣️", "grupoId": "irrespetuosas"}
+            {
+              "id": "1",
+              "texto": "Pedir por favor 🙏",
+              "grupoId": "respetuosas"
+            },
+            {
+              "id": "2",
+              "texto": "Burlarse de alguien 😝",
+              "grupoId": "irrespetuosas"
+            },
+            {
+              "id": "3",
+              "texto": "Escuchar a los demás 👂",
+              "grupoId": "respetuosas"
+            },
+            {
+              "id": "4",
+              "texto": "Interrumpir una conversación 🗣️",
+              "grupoId": "irrespetuosas"
+            }
           ],
           "tiempoEstimado": 60
         },
@@ -1274,7 +3062,13 @@
           "tipo": "OrdenarFrase",
           "nivel": 1,
           "enunciado": "Ordena para formar una frase sobre el respeto",
-          "palabrasDesordenadas": ["a", "Respetamos", "los demás", "tratando", "bien"],
+          "palabrasDesordenadas": [
+            "a",
+            "Respetamos",
+            "los demás",
+            "tratando",
+            "bien"
+          ],
           "fraseCorrecta": "Respetamos tratando bien a los demás",
           "tiempoEstimado": 60
         },
@@ -1286,10 +3080,22 @@
           "nivel": 1,
           "enunciado": "¿Qué significa respetar las diferencias?",
           "opciones": [
-            {"texto": "🌍 Valorar que cada persona es única", "emoji": ""},
-            {"texto": "😠 Criticar lo que es diferente", "emoji": ""},
-            {"texto": "🙈 Ignorar a quien es diferente", "emoji": ""},
-            {"texto": "😂 Reírse de las diferencias", "emoji": ""}
+            {
+              "texto": "🌍 Valorar que cada persona es única",
+              "emoji": ""
+            },
+            {
+              "texto": "😠 Criticar lo que es diferente",
+              "emoji": ""
+            },
+            {
+              "texto": "🙈 Ignorar a quien es diferente",
+              "emoji": ""
+            },
+            {
+              "texto": "😂 Reírse de las diferencias",
+              "emoji": ""
+            }
           ],
           "respuestaCorrecta": "🌍 Valorar que cada persona es única",
           "tiempoEstimado": 35
@@ -1302,12 +3108,30 @@
           "nivel": 2,
           "enunciado": "Empareja la situación con la acción correcta",
           "parejas": [
-            {"a": "Alguien habla 🗣️", "b": "Escucho 👂"},
-            {"a": "Quiero algo 🙋", "b": "Pido por favor 🙏"},
-            {"a": "Me ayudan ❤️", "b": "Doy las gracias 😊"},
-            {"a": "Cometo un error 😬", "b": "Pido perdón 🤝"},
-            {"a": "Alguien está triste 😢", "b": "Le consuelo 🤗"},
-            {"a": "Hay turno de espera ⏳", "b": "Espero mi turno 😌"}
+            {
+              "a": "Alguien habla 🗣️",
+              "b": "Escucho 👂"
+            },
+            {
+              "a": "Quiero algo 🙋",
+              "b": "Pido por favor 🙏"
+            },
+            {
+              "a": "Me ayudan ❤️",
+              "b": "Doy las gracias 😊"
+            },
+            {
+              "a": "Cometo un error 😬",
+              "b": "Pido perdón 🤝"
+            },
+            {
+              "a": "Alguien está triste 😢",
+              "b": "Le consuelo 🤗"
+            },
+            {
+              "a": "Hay turno de espera ⏳",
+              "b": "Espero mi turno 😌"
+            }
           ],
           "tiempoEstimado": 180
         },
@@ -1319,14 +3143,36 @@
           "nivel": 2,
           "enunciado": "¿Estas acciones muestran respeto?",
           "grupos": [
-            {"id": "si", "nombre": "Sí muestran respeto ✅"},
-            {"id": "no", "nombre": "No muestran respeto ❌"}
+            {
+              "id": "si",
+              "nombre": "Sí muestran respeto ✅"
+            },
+            {
+              "id": "no",
+              "nombre": "No muestran respeto ❌"
+            }
           ],
           "items": [
-            {"id": "1", "texto": "Ceder el asiento 🪑", "grupoId": "si"},
-            {"id": "2", "texto": "Tirar basura al suelo 🗑️", "grupoId": "no"},
-            {"id": "3", "texto": "Saludar al llegar 👋", "grupoId": "si"},
-            {"id": "4", "texto": "Hablar muy alto en la biblioteca 📢", "grupoId": "no"}
+            {
+              "id": "1",
+              "texto": "Ceder el asiento 🪑",
+              "grupoId": "si"
+            },
+            {
+              "id": "2",
+              "texto": "Tirar basura al suelo 🗑️",
+              "grupoId": "no"
+            },
+            {
+              "id": "3",
+              "texto": "Saludar al llegar 👋",
+              "grupoId": "si"
+            },
+            {
+              "id": "4",
+              "texto": "Hablar muy alto en la biblioteca 📢",
+              "grupoId": "no"
+            }
           ],
           "tiempoEstimado": 60
         },
@@ -1338,10 +3184,22 @@
           "nivel": 2,
           "enunciado": "¿Qué le pasa a una clase donde todos se respetan?",
           "opciones": [
-            {"texto": "😊 Todos están más contentos y aprenden mejor", "emoji": ""},
-            {"texto": "😠 Hay más peleas y discusiones", "emoji": ""},
-            {"texto": "🥱 Es muy aburrida", "emoji": ""},
-            {"texto": "😶 No cambia nada", "emoji": ""}
+            {
+              "texto": "😊 Todos están más contentos y aprenden mejor",
+              "emoji": ""
+            },
+            {
+              "texto": "😠 Hay más peleas y discusiones",
+              "emoji": ""
+            },
+            {
+              "texto": "🥱 Es muy aburrida",
+              "emoji": ""
+            },
+            {
+              "texto": "😶 No cambia nada",
+              "emoji": ""
+            }
           ],
           "respuestaCorrecta": "😊 Todos están más contentos y aprenden mejor",
           "tiempoEstimado": 35
@@ -1354,9 +3212,26 @@
       "titulo": "La cooperación y el trabajo en equipo",
       "nivel": 1,
       "contenido": "Cooperar significa trabajar juntos para alcanzar un objetivo común. Cuando cooperamos, todos aportamos nuestras ideas y habilidades. El trabajo en equipo nos hace más fuertes y permite resolver problemas que solos no podríamos.",
-      "ejemplos": ["Repartir las tareas del grupo", "Ayudar a un compañero que no entiende algo", "Escuchar las ideas de todos", "Celebrar juntos los éxitos del equipo"],
-      "palabrasClave": ["cooperación", "equipo", "ayuda", "compartir", "juntos", "objetivo"],
-      "tiposEjercicio": ["EleccionMultiple", "ClasificarGrupos", "OrdenarFrase", "RellenarHueco"],
+      "ejemplos": [
+        "Repartir las tareas del grupo",
+        "Ayudar a un compañero que no entiende algo",
+        "Escuchar las ideas de todos",
+        "Celebrar juntos los éxitos del equipo"
+      ],
+      "palabrasClave": [
+        "cooperación",
+        "equipo",
+        "ayuda",
+        "compartir",
+        "juntos",
+        "objetivo"
+      ],
+      "tiposEjercicio": [
+        "EleccionMultiple",
+        "ClasificarGrupos",
+        "OrdenarFrase",
+        "RellenarHueco"
+      ],
       "ejerciciosDerivar": 8,
       "ejercicios": [
         {
@@ -1367,10 +3242,22 @@
           "nivel": 1,
           "enunciado": "¿Qué significa cooperar?",
           "opciones": [
-            {"texto": "🤝 Trabajar juntos hacia un objetivo", "emoji": ""},
-            {"texto": "🏆 Ganar siempre yo solo", "emoji": ""},
-            {"texto": "🙅 No pedir ayuda nunca", "emoji": ""},
-            {"texto": "😤 Hacer solo lo que me apetece", "emoji": ""}
+            {
+              "texto": "🤝 Trabajar juntos hacia un objetivo",
+              "emoji": ""
+            },
+            {
+              "texto": "🏆 Ganar siempre yo solo",
+              "emoji": ""
+            },
+            {
+              "texto": "🙅 No pedir ayuda nunca",
+              "emoji": ""
+            },
+            {
+              "texto": "😤 Hacer solo lo que me apetece",
+              "emoji": ""
+            }
           ],
           "respuestaCorrecta": "🤝 Trabajar juntos hacia un objetivo",
           "tiempoEstimado": 30
@@ -1383,14 +3270,36 @@
           "nivel": 1,
           "enunciado": "Clasifica las acciones",
           "grupos": [
-            {"id": "cooperacion", "nombre": "Cooperación 🤝"},
-            {"id": "egoismos", "nombre": "Actitudes egoístas 😤"}
+            {
+              "id": "cooperacion",
+              "nombre": "Cooperación 🤝"
+            },
+            {
+              "id": "egoismos",
+              "nombre": "Actitudes egoístas 😤"
+            }
           ],
           "items": [
-            {"id": "1", "texto": "Compartir los materiales ✏️", "grupoId": "cooperacion"},
-            {"id": "2", "texto": "No dejar los juguetes 😠", "grupoId": "egoismos"},
-            {"id": "3", "texto": "Ayudar al que está atascado 🤗", "grupoId": "cooperacion"},
-            {"id": "4", "texto": "Guardarse toda la comida 🍱", "grupoId": "egoismos"}
+            {
+              "id": "1",
+              "texto": "Compartir los materiales ✏️",
+              "grupoId": "cooperacion"
+            },
+            {
+              "id": "2",
+              "texto": "No dejar los juguetes 😠",
+              "grupoId": "egoismos"
+            },
+            {
+              "id": "3",
+              "texto": "Ayudar al que está atascado 🤗",
+              "grupoId": "cooperacion"
+            },
+            {
+              "id": "4",
+              "texto": "Guardarse toda la comida 🍱",
+              "grupoId": "egoismos"
+            }
           ],
           "tiempoEstimado": 60
         },
@@ -1411,7 +3320,12 @@
           "tipo": "OrdenarFrase",
           "nivel": 1,
           "enunciado": "Ordena las palabras",
-          "palabrasDesordenadas": ["juntos", "Somos", "más", "fuertes"],
+          "palabrasDesordenadas": [
+            "juntos",
+            "Somos",
+            "más",
+            "fuertes"
+          ],
           "fraseCorrecta": "Somos más fuertes juntos",
           "tiempoEstimado": 45
         },
@@ -1423,10 +3337,22 @@
           "nivel": 1,
           "enunciado": "En un trabajo en equipo, ¿qué debemos hacer con las ideas de los demás?",
           "opciones": [
-            {"texto": "👂 Escucharlas y valorarlas", "emoji": ""},
-            {"texto": "😏 Ignorarlas", "emoji": ""},
-            {"texto": "😂 Reírnos de ellas", "emoji": ""},
-            {"texto": "😠 Enfadarnos si son distintas", "emoji": ""}
+            {
+              "texto": "👂 Escucharlas y valorarlas",
+              "emoji": ""
+            },
+            {
+              "texto": "😏 Ignorarlas",
+              "emoji": ""
+            },
+            {
+              "texto": "😂 Reírnos de ellas",
+              "emoji": ""
+            },
+            {
+              "texto": "😠 Enfadarnos si son distintas",
+              "emoji": ""
+            }
           ],
           "respuestaCorrecta": "👂 Escucharlas y valorarlas",
           "tiempoEstimado": 35
@@ -1439,8 +3365,15 @@
           "nivel": 2,
           "enunciado": "Completa la frase",
           "fraseConHuecos": "En equipo podemos conseguir [___] que solos no podríamos",
-          "banco": ["cosas", "nada", "pocas", "todos"],
-          "respuestasCorrectas": ["cosas"],
+          "banco": [
+            "cosas",
+            "nada",
+            "pocas",
+            "todos"
+          ],
+          "respuestasCorrectas": [
+            "cosas"
+          ],
           "tiempoEstimado": 60
         },
         {
@@ -1451,12 +3384,30 @@
           "nivel": 2,
           "enunciado": "Empareja la situación con la actitud cooperativa",
           "parejas": [
-            {"a": "Un compañero no entiende 😕", "b": "Le explico 💬"},
-            {"a": "Hay mucho trabajo 📚", "b": "Nos repartimos tareas 📋"},
-            {"a": "Alguien falta 😷", "b": "Le ayudamos 🤝"},
-            {"a": "Ganamos juntos 🏆", "b": "Celebramos todos 🎉"},
-            {"a": "Hay un problema 🤔", "b": "Buscamos solución juntos 💡"},
-            {"a": "Alguien se equivoca 😬", "b": "Lo animamos 💪"}
+            {
+              "a": "Un compañero no entiende 😕",
+              "b": "Le explico 💬"
+            },
+            {
+              "a": "Hay mucho trabajo 📚",
+              "b": "Nos repartimos tareas 📋"
+            },
+            {
+              "a": "Alguien falta 😷",
+              "b": "Le ayudamos 🤝"
+            },
+            {
+              "a": "Ganamos juntos 🏆",
+              "b": "Celebramos todos 🎉"
+            },
+            {
+              "a": "Hay un problema 🤔",
+              "b": "Buscamos solución juntos 💡"
+            },
+            {
+              "a": "Alguien se equivoca 😬",
+              "b": "Lo animamos 💪"
+            }
           ],
           "tiempoEstimado": 180
         },
@@ -1468,10 +3419,22 @@
           "nivel": 2,
           "enunciado": "¿Cuál es la mejor actitud cuando tu equipo comete un error?",
           "opciones": [
-            {"texto": "💪 Animarnos y buscar cómo mejorar", "emoji": ""},
-            {"texto": "😠 Echar la culpa a los demás", "emoji": ""},
-            {"texto": "🙅 Abandonar el equipo", "emoji": ""},
-            {"texto": "😤 Hacer yo solo lo que falta", "emoji": ""}
+            {
+              "texto": "💪 Animarnos y buscar cómo mejorar",
+              "emoji": ""
+            },
+            {
+              "texto": "😠 Echar la culpa a los demás",
+              "emoji": ""
+            },
+            {
+              "texto": "🙅 Abandonar el equipo",
+              "emoji": ""
+            },
+            {
+              "texto": "😤 Hacer yo solo lo que falta",
+              "emoji": ""
+            }
           ],
           "respuestaCorrecta": "💪 Animarnos y buscar cómo mejorar",
           "tiempoEstimado": 35

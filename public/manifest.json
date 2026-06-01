@@ -1,5 +1,12 @@
 {
-  "version": "1.0.0",
-  "fecha": "2026-05-28",
-  "asignaturas": ["matematicas", "lengua", "ciencias", "social", "ingles", "valores"]
+  "version": "2026-06-01-1",
+  "fecha": "2026-06-01",
+  "asignaturas": [
+    "ciencias",
+    "ingles",
+    "lengua",
+    "matematicas",
+    "social",
+    "valores"
+  ]
 }

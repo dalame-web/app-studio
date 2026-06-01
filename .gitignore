@@ -26,3 +26,12 @@ dist-ssr
 # Claude harness local
 .claude/
 
+# Local files (PDFs, docs, temp files)
+*.pdf
+Fichas/
+fichas-temp.md
+
+# Temporary downloads
+*.tmp
+*.temp
+

@@ -1,10 +1,12 @@
 // M1: badge duración por modo en cada ficha
 // G4: botón volver mejorado
 // L2: color lengua sincronizado con PantallaInicio
+// I2/I3: camino visual Duolingo + progreso por ficha
 import { useState, useEffect } from 'react';
 import useSesionStore from '../store/sesionStore';
 import { getFichasBySubject } from '../datos/db';
 import { ASIGNATURAS } from './PantallaInicio';
+import CaminoFichas from '../components/CaminoFichas';
 
 const MODO_INFO = {
   corto: {
@@ -42,11 +44,12 @@ export { BtnVolver };
 export default function PantallaFichas() {
   const asignatura       = useSesionStore(s => s.asignaturaActual);
   const seleccionarFicha = useSesionStore(s => s.seleccionarFicha);
+  const profileId        = useSesionStore(s => s.profileId);
   const irA              = useSesionStore(s => s.irA);
 
-  const [fichas, setFichas]   = useState([]);
+  const [fichas, setFichas]     = useState([]);
   const [cargando, setCargando] = useState(true);
-  const [modo, setModo]       = useState('corto');
+  const [modo, setModo]         = useState('corto');
 
   const meta = ASIGNATURAS.find(a => a.id === asignatura);
 
@@ -90,53 +93,18 @@ export default function PantallaFichas() {
         ))}
       </div>
 
-      {/* Fichas list */}
-      <main className="flex-1 overflow-y-auto px-4 pb-8">
+      {/* Camino visual estilo Duolingo */}
+      <main className="flex-1 overflow-y-auto pb-8">
         {cargando ? (
           <div className="flex items-center justify-center py-20 text-gray-400">Cargando fichas…</div>
-        ) : fichas.length === 0 ? (
-          <div className="flex flex-col items-center justify-center py-20 text-gray-400 gap-3">
-            <span className="text-5xl">📭</span>
-            <p className="text-center text-sm">Todavía no hay fichas para esta asignatura.<br />Genera el contenido con el script de desarrollo.</p>
-          </div>
         ) : (
-          <div className="space-y-3 max-w-2xl mx-auto">
-            {fichas.map(ficha => {
-              // M1: estimar nº ejercicios disponibles (sin DB lookup pesado)
-              const numEj = ficha.ejerciciosDerivar ?? 8;
-              return (
-                <button
-                  key={ficha.id}
-                  onClick={() => seleccionarFicha(ficha, modo)}
-                  className="w-full bg-white rounded-2xl shadow-sm hover:shadow-md active:scale-[0.98] border border-gray-100 p-4 text-left transition-all"
-                >
-                  <div className="flex items-start justify-between gap-2">
-                    <div className="flex-1">
-                      <h2 className="font-bold text-gray-800 text-base">{ficha.titulo}</h2>
-                      <p className="text-gray-400 text-sm mt-0.5 line-clamp-2">{ficha.contenido}</p>
-                    </div>
-                    <span className={`shrink-0 text-xs font-bold px-2 py-1 rounded-full ${
-                      ficha.nivel === 1 ? 'bg-green-100 text-green-700' :
-                      ficha.nivel === 2 ? 'bg-amber-100 text-amber-700' :
-                                          'bg-red-100 text-red-700'
-                    }`}>
-                      Nivel {ficha.nivel}
-                    </span>
-                  </div>
-
-                  {/* M1: badge modo */}
-                  <div className="mt-2 flex items-center gap-2 flex-wrap">
-                    <span className={`text-xs font-medium px-2 py-0.5 rounded-full border ${modoActual.color}`}>
-                      {modoActual.badge(numEj)}
-                    </span>
-                    {ficha.palabrasClave?.slice(0, 3).map(p => (
-                      <span key={p} className="text-xs bg-gray-100 text-gray-500 px-2 py-0.5 rounded-full">{p}</span>
-                    ))}
-                  </div>
-                </button>
-              );
-            })}
-          </div>
+          <CaminoFichas
+            fichas={fichas}
+            meta={meta}
+            profileId={profileId}
+            modo={modo}
+            onSelectFicha={seleccionarFicha}
+          />
         )}
       </main>
     </div>

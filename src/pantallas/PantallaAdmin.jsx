@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import useSesionStore from '../store/sesionStore';
 import useGamificacionStore from '../store/gamificacionStore';
-import { getAllSubjectStats, getRecentSessions } from '../datos/db';
+import { getAllSubjectStats, getRecentSessions, resetAllProgress } from '../datos/db';
 import { checkAndSyncContent } from '../datos/contentSync';
 import { ASIGNATURAS } from './PantallaInicio';
 import { BtnVolver } from './PantallaFichas';
@@ -42,6 +42,7 @@ export default function PantallaAdmin() {
   const [detalle, setDetalle]           = useState(null);
   const [detalleStats, setDetalleStats] = useState(null);
   const [updateEstado, setUpdateEstado] = useState(null);
+  const [resetEstado, setResetEstado]   = useState(null); // null | 'confirm' | 'done'
 
   useEffect(() => {
     if (!profileId) return;
@@ -73,6 +74,13 @@ export default function PantallaAdmin() {
       setUpdateEstado('error');
     }
     setTimeout(() => setUpdateEstado(null), 5000);
+  }
+
+  async function handleResetProgreso() {
+    if (resetEstado !== 'confirm') { setResetEstado('confirm'); return; }
+    await resetAllProgress(profileId);
+    setResetEstado('done');
+    setTimeout(() => setResetEstado(null), 3000);
   }
 
   const meta = (id) => ASIGNATURAS.find(a => a.id === id);
@@ -171,6 +179,28 @@ export default function PantallaAdmin() {
         {updateEstado === 'error' && (
           <div className="bg-red-50 border-2 border-red-300 rounded-2xl p-3 text-sm text-red-700 text-center animate-aparecer">
             ❌ Error al comprobar. Inténtalo de nuevo.
+          </div>
+        )}
+
+        {/* Reiniciar progreso */}
+        <button
+          onClick={handleResetProgreso}
+          className={`w-full font-bold py-4 px-5 rounded-2xl shadow-md flex items-center justify-center gap-3 transition-all active:scale-95 ${
+            resetEstado === 'confirm'
+              ? 'bg-red-500 hover:bg-red-600 text-white'
+              : 'bg-gray-100 hover:bg-gray-200 text-gray-600'
+          }`}
+        >
+          <span className="text-2xl">🗑️</span>
+          <span>
+            {resetEstado === 'confirm'
+              ? '¿Seguro? Toca de nuevo para confirmar'
+              : 'Reiniciar progreso del camino'}
+          </span>
+        </button>
+        {resetEstado === 'done' && (
+          <div className="bg-green-50 border border-green-300 rounded-2xl p-3 text-sm text-green-800 text-center animate-aparecer">
+            ✅ Progreso reiniciado. Las fichas vuelven a gris.
           </div>
         )}
 

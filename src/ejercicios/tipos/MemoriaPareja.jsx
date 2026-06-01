@@ -2,6 +2,7 @@
 import { useState, useCallback } from 'react';
 import BotonAudio from '../../components/BotonAudio';
 import ChipInstruccion from '../ChipInstruccion';
+import MediaRender from '../MediaRender';
 
 function mezclar(arr) {
   const a = [...arr];
@@ -56,6 +57,7 @@ export default function MemoriaPareja({ ejercicio, asignatura, onCorrecto }) {
       <div className="relative bg-white rounded-2xl shadow-sm p-4">
         <BotonAudio texto={ejercicio.enunciado ?? 'Encuentra los pares'} idioma={idioma} />
         <p className="text-base font-semibold text-gray-600 pr-12">{ejercicio.enunciado ?? 'Encuentra los pares de tarjetas:'}</p>
+        <MediaRender imagen={ejercicio.imagenEnunciado} svg={ejercicio.svgEnunciado} />
         {/* G6 */}
         <ChipInstruccion tipo="MemoriaPareja" />
         <p className="text-xs text-gray-400 mt-1">Intentos: {intentos} · Pares: {encontradas.size}/{parejas.length}</p>

@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import BotonAudio from '../../components/BotonAudio';
 import ChipInstruccion from '../ChipInstruccion';
+import MediaRender from '../MediaRender';
 
 function mezclar(arr) {
   const a = [...arr];
@@ -46,6 +47,7 @@ export default function OrdenarFrase({ ejercicio, intentos, fichaContenido, asig
       <div className="relative bg-white rounded-2xl shadow-sm p-5">
         <BotonAudio texto={ejercicio.enunciado ?? 'Ordena las palabras'} idioma={idioma} />
         <p className="text-base font-semibold text-gray-600 pr-12">{ejercicio.enunciado ?? 'Ordena las palabras para formar una frase:'}</p>
+        <MediaRender imagen={ejercicio.imagenEnunciado} svg={ejercicio.svgEnunciado} />
         {/* G6 */}
         <ChipInstruccion tipo="OrdenarFrase" />
         {pista && <p className="mt-2 text-sm text-amber-600 font-medium">{pista}</p>}

@@ -2,6 +2,7 @@
 import { useState, useRef } from 'react';
 import BotonAudio from '../../components/BotonAudio';
 import ChipInstruccion from '../ChipInstruccion';
+import MediaRender from '../MediaRender';
 
 function normalizar(s) {
   return s.trim().toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
@@ -48,6 +49,7 @@ export default function RellenarHueco({ ejercicio, intentos, fichaContenido, asi
           />
           {partes[1] && <span>{partes[1]}</span>}
         </div>
+        <MediaRender imagen={ejercicio.imagenEnunciado} svg={ejercicio.svgEnunciado} />
         {/* G6 */}
         <ChipInstruccion tipo="RellenarHueco" />
         {pista && <p className="mt-2 text-sm text-amber-600 font-medium">{pista}</p>}

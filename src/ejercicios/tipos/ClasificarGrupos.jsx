@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { DndContext, useDraggable, useDroppable, PointerSensor, useSensor, useSensors } from '@dnd-kit/core';
 import BotonAudio from '../../components/BotonAudio';
 import ChipInstruccion from '../ChipInstruccion';
+import MediaRender from '../MediaRender';
 
 function DraggableItem({ id, children }) {
   const { attributes, listeners, setNodeRef, transform, isDragging } = useDraggable({ id });
@@ -113,6 +114,7 @@ export default function ClasificarGrupos({ ejercicio, intentos, fichaContenido, 
         <div className="relative bg-white rounded-2xl shadow-sm p-5">
           <BotonAudio texto={ejercicio.enunciado ?? 'Clasifica los elementos'} idioma={idioma} />
           <p className="text-base font-semibold text-gray-600 pr-12">{ejercicio.enunciado ?? 'Arrastra cada elemento al grupo correcto:'}</p>
+          <MediaRender imagen={ejercicio.imagenEnunciado} svg={ejercicio.svgEnunciado} />
           {/* G6 */}
           <ChipInstruccion tipo="ClasificarGrupos" />
           {pista && <p className="mt-2 text-sm text-amber-600 font-medium">{pista}</p>}

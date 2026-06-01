@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { DndContext, useDraggable, useDroppable, PointerSensor, useSensor, useSensors } from '@dnd-kit/core';
 import BotonAudio from '../../components/BotonAudio';
 import ChipInstruccion from '../ChipInstruccion';
+import MediaRender from '../MediaRender';
 
 function Draggable({ id, children, usado }) {
   const { attributes, listeners, setNodeRef, transform, isDragging } = useDraggable({ id, disabled: usado });
@@ -91,6 +92,7 @@ export default function ArrastrarPalabras({ ejercicio, intentos, fichaContenido,
               </span>
             ))}
           </div>
+          <MediaRender imagen={ejercicio.imagenEnunciado} svg={ejercicio.svgEnunciado} />
           {/* G6 */}
           <ChipInstruccion tipo="ArrastrarPalabras" />
           {pista && <p className="mt-2 text-sm text-amber-600 font-medium">{pista}</p>}

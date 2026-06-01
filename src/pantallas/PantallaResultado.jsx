@@ -10,6 +10,8 @@ import {
   countTotalExercises,
   getSessionsForSubjectCount,
   getRecentSessions,
+  getFichaProgress,
+  upsertFichaProgress,
 } from '../datos/db';
 import { actualizarNivel } from '../datos/selector';
 
@@ -109,6 +111,30 @@ export default function PantallaResultado() {
     if (nuevas.length > 0) { setInsigniasNuevas(nuevas); setConfeti(true); }
 
     if (stars === 3) setConfeti(true);
+
+    // I2: guardar progreso de la ficha individual
+    if (fichaActual?.id) {
+      const prevFP   = await getFichaProgress(profileId, fichaActual.id);
+      const nuevaAcc = Math.max(prevFP?.bestAccuracy ?? 0, accuracy);
+      const esSuperada = nuevaAcc >= 0.7;
+      const updates = {
+        totalSessions: (prevFP?.totalSessions ?? 0) + 1,
+        bestAccuracy:  nuevaAcc,
+        superada:      esSuperada,
+      };
+      if (esSuperada && !prevFP?.superada) {
+        // Primera vez superada → programar repasos espaciados
+        const hoy = new Date();
+        updates.firstCompletedDate = hoy.toISOString();
+        updates.reviewDates = [
+          new Date(hoy.getTime() + 3  * 86400000).toISOString(),
+          new Date(hoy.getTime() + 7  * 86400000).toISOString(),
+          new Date(hoy.getTime() + 14 * 86400000).toISOString(),
+        ];
+        updates.reviewsDone = 0;
+      }
+      await upsertFichaProgress(profileId, fichaActual.id, updates);
+    }
   }
 
   const mensajeNivel = nivelInfo

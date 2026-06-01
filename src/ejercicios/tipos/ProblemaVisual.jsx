@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import BotonAudio from '../../components/BotonAudio';
 import ChipInstruccion from '../ChipInstruccion';
+import MediaRender from '../MediaRender';
 
 function VisualizadorEmoji({ visual }) {
   const { emoji = '🔵', cantidad = 5, operacion, cantidadOperacion = 0 } = visual;
@@ -48,6 +49,7 @@ export default function ProblemaVisual({ ejercicio, intentos, fichaContenido, as
         <p className={`text-base font-semibold text-gray-800 pr-12 leading-snug ${intentos === 1 ? 'text-amber-700' : ''}`}>
           {ejercicio.enunciado}
         </p>
+        <MediaRender imagen={ejercicio.imagenEnunciado} svg={ejercicio.svgEnunciado} />
         {/* G6 */}
         <ChipInstruccion tipo="ProblemaVisual" />
         {pista && <p className="mt-2 text-sm text-amber-600 font-medium">{pista}</p>}

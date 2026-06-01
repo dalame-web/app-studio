@@ -1,7 +1,8 @@
-// G6: instrucción + G9: iconos más grandes
+// G6: instrucción + G9: iconos más grandes + I1: soporte imágenes/SVG
 import { useState } from 'react';
 import BotonAudio from '../../components/BotonAudio';
 import ChipInstruccion from '../ChipInstruccion';
+import MediaRender from '../MediaRender';
 
 export default function EleccionMultiple({ ejercicio, intentos, fichaContenido, asignatura, onCorrecto, onIncorrecto }) {
   const [seleccionado, setSeleccionado] = useState(null);
@@ -31,6 +32,8 @@ export default function EleccionMultiple({ ejercicio, intentos, fichaContenido, 
         <p className={`text-lg font-semibold text-gray-800 pr-12 leading-snug ${intentos === 1 ? 'text-amber-700' : ''}`}>
           {ejercicio.enunciado}
         </p>
+        {/* I1: imagen/SVG en el enunciado */}
+        <MediaRender imagen={ejercicio.imagenEnunciado} svg={ejercicio.svgEnunciado} />
         {/* G6 */}
         <ChipInstruccion tipo="EleccionMultiple" />
         {pista && <p className="mt-2 text-sm text-amber-600 font-medium">{pista}</p>}
@@ -51,8 +54,10 @@ export default function EleccionMultiple({ ejercicio, intentos, fichaContenido, 
           }
           return (
             <button key={i} onClick={() => elegir(op)} className={clases}>
-              {/* G9: emoji más grande */}
+              {/* G9: emoji + I1: imagen/SVG en opción */}
               {op.emoji && <span className="text-4xl leading-none">{op.emoji}</span>}
+              {op.svg   && <span className="[&_svg]:max-h-16 [&_svg]:max-w-full" dangerouslySetInnerHTML={{ __html: op.svg }} />}
+              {op.imagen && <img src={op.imagen} alt={op.texto} className="max-h-16 object-contain" />}
               <span className="text-base leading-tight">{op.texto}</span>
             </button>
           );

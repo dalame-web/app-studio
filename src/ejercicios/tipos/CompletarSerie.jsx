@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import BotonAudio from '../../components/BotonAudio';
 import ChipInstruccion from '../ChipInstruccion';
+import MediaRender from '../MediaRender';
 
 export default function CompletarSerie({ ejercicio, intentos, fichaContenido, asignatura, onCorrecto, onIncorrecto }) {
   const [seleccionado, setSeleccionado] = useState(null);
@@ -35,6 +36,7 @@ export default function CompletarSerie({ ejercicio, intentos, fichaContenido, as
             </div>
           ))}
         </div>
+        <MediaRender imagen={ejercicio.imagenEnunciado} svg={ejercicio.svgEnunciado} />
         {/* G6 */}
         <ChipInstruccion tipo="CompletarSerie" />
         {pista && <p className="mt-2 text-sm text-amber-600 font-medium">{pista}</p>}

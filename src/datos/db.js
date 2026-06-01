@@ -1,7 +1,7 @@
 import { openDB } from 'idb';
 
 const DB_NAME = 'edu-app';
-const DB_VERSION = 1;
+const DB_VERSION = 2;
 
 let _db = null;
 
@@ -30,6 +30,12 @@ export async function getDB() {
         const exStore = db.createObjectStore('ejercicios', { keyPath: 'id' });
         exStore.createIndex('fichaId', 'fichaId');
         exStore.createIndex('subjectNivel', ['subject', 'nivel']);
+      }
+      if (oldVersion < 2) {
+        // v2: rastreo de progreso por ficha individual
+        const fpStore = db.createObjectStore('ficha_progress', { keyPath: 'id' });
+        fpStore.createIndex('profileId', 'profileId');
+        fpStore.createIndex('fichaId', 'fichaId');
       }
     },
   });
@@ -191,6 +197,43 @@ export async function getAllEjerciciosBySubject(subject) {
   const db = await getDB();
   const all = await db.getAll('ejercicios');
   return all.filter(e => e.subject === subject);
+}
+
+// ── Ficha progress ────────────────────────────────────────────────────────────
+
+const defaultFichaProgress = (profileId, fichaId) => ({
+  id: `${profileId}_${fichaId}`,
+  profileId,
+  fichaId,
+  firstCompletedDate: null,
+  bestAccuracy: 0,
+  totalSessions: 0,
+  superada: false,
+  reviewDates: [],   // ISO strings: +3d, +7d, +14d desde primera vez superada
+  reviewsDone: 0,
+});
+
+export async function getFichaProgress(profileId, fichaId) {
+  return (await getDB()).get('ficha_progress', `${profileId}_${fichaId}`);
+}
+
+export async function upsertFichaProgress(profileId, fichaId, updates) {
+  const db = await getDB();
+  const existing = (await db.get('ficha_progress', `${profileId}_${fichaId}`))
+    ?? defaultFichaProgress(profileId, fichaId);
+  await db.put('ficha_progress', { ...existing, ...updates });
+}
+
+export async function getAllFichaProgress(profileId) {
+  return (await getDB()).getAllFromIndex('ficha_progress', 'profileId', profileId);
+}
+
+export async function resetAllProgress(profileId) {
+  const db = await getDB();
+  const all = await db.getAllFromIndex('ficha_progress', 'profileId', profileId);
+  const tx = db.transaction('ficha_progress', 'readwrite');
+  for (const fp of all) await tx.store.delete(fp.id);
+  await tx.done;
 }
 
 // ── Export (genera ejercicios.json completo desde IndexedDB) ─────────────────

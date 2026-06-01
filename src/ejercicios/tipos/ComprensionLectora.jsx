@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import BotonAudio from '../../components/BotonAudio';
 import ChipInstruccion from '../ChipInstruccion';
+import MediaRender from '../MediaRender';
 import EleccionMultiple from './EleccionMultiple';
 import RellenarHueco from './RellenarHueco';
 
@@ -19,6 +20,7 @@ export default function ComprensionLectora({ ejercicio, intentos, fichaContenido
         <div className="relative bg-white rounded-2xl shadow-sm p-5">
           <BotonAudio texto={ejercicio.texto} idioma={idioma} />
           <p className="text-sm font-semibold text-indigo-600 mb-2 pr-12">Lee el siguiente texto:</p>
+          <MediaRender imagen={ejercicio.imagenEnunciado} svg={ejercicio.svgEnunciado} />
           {/* G6 */}
           <ChipInstruccion tipo="ComprensionLectora" />
           <p className="text-gray-800 text-base leading-relaxed mt-2">{ejercicio.texto}</p>

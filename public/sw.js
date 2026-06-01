@@ -1,5 +1,6 @@
 // Service Worker — App Educativa 2º Primaria
-const CACHE = 'edu-app-v1';
+// IMPORTANTE: cambiar el número de versión fuerza recarga en todos los dispositivos
+const CACHE = 'edu-app-v2';
 
 // Al instalar: cachea el shell básico
 self.addEventListener('install', event => {
@@ -32,8 +33,15 @@ self.addEventListener('fetch', event => {
 
   const url = new URL(event.request.url);
 
-  // manifest.json y ejercicios.json → network-first (para detectar versión nueva)
-  if (url.pathname.endsWith('manifest.json') || url.pathname.endsWith('ejercicios.json')) {
+  // index.html, raíz y datos JSON → network-first
+  // index.html NUNCA debe servirse desde caché: referencia hashes de JS/CSS que cambian en cada build
+  if (
+    url.pathname.endsWith('manifest.json') ||
+    url.pathname.endsWith('ejercicios.json') ||
+    url.pathname.endsWith('index.html') ||
+    url.pathname.endsWith('/app-studio/') ||
+    url.pathname === '/app-studio'
+  ) {
     event.respondWith(
       fetch(event.request)
         .then(response => {

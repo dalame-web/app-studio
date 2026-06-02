@@ -1,21 +1,37 @@
 /**
- * CaminoFichas — camino serpentino estilo Duolingo.
- * Nodos posicionados absolutamente con patrón de ola,
- * conectados por líneas SVG diagonales.
- * Soporta separadores de unidad (campo `unidad` en ficha).
+ * CaminoFichas — camino estilo Duolingo.
+ * - Ola suave centrada (28-72%)
+ * - Carretera SVG con curvas bezier sólidas
+ * - Banners de unidad a ancho completo
+ * - Nodo "EMPEZAR" en el primer pendiente
  */
 
 import { useEffect, useState } from 'react';
 import { getAllFichaProgress } from '../datos/db';
 import NodoFicha from './NodoFicha';
 
-// Patrón de ola: 8 posiciones X en % del contenedor
-// Crea un camino serpentino natural de izquierda a derecha y vuelta
-const WAVE_X = [12, 30, 50, 70, 88, 70, 50, 30];
+// Ola suave: máximo ±22% desde el centro (como Duolingo)
+const WAVE_X_PCT = [50, 38, 28, 38, 50, 62, 72, 62];
 
-// Altura reservada por cada item del camino (nodo o separador) en px
-const NODE_H  = 170;
-const SEP_H   = 80;
+// Sistema de coordenadas para el SVG (ancho fijo 360)
+const SVG_W = 360;
+const WAVE_X_PX = WAVE_X_PCT.map(p => (p / 100) * SVG_W);
+
+// Altura por item (px)
+const NODE_H = 160;
+const SEP_H  = 72;
+const PAD_TOP = 60;
+
+function buildBezierPath(pts) {
+  if (pts.length < 2) return '';
+  let d = `M ${pts[0].x} ${pts[0].y}`;
+  for (let i = 1; i < pts.length; i++) {
+    const p = pts[i - 1], c = pts[i];
+    const cy = (p.y + c.y) / 2;
+    d += ` C ${p.x},${cy} ${c.x},${cy} ${c.x},${c.y}`;
+  }
+  return d;
+}
 
 function hayRepasoHoy(fp) {
   if (!fp?.superada || !fp?.reviewDates?.length) return false;
@@ -25,6 +41,12 @@ function hayRepasoHoy(fp) {
     if (idx < (fp.reviewsDone ?? 0)) return false;
     return new Date(d) <= hoy;
   });
+}
+
+// Extraer el número de unidad del string "Unidad 3: ..." → "3"
+function labelCorto(label) {
+  const m = label?.match(/\d+/);
+  return m ? m[0] : '·';
 }
 
 export default function CaminoFichas({ fichas, meta, onSelectFicha, profileId, modo }) {
@@ -48,100 +70,115 @@ export default function CaminoFichas({ fichas, meta, onSelectFicha, profileId, m
     );
   }
 
-  // ── Construir lista de items (fichas + separadores de unidad) ──────────────
+  // ── Construir lista de items con separadores ──────────────────────────────
   const items = [];
   let prevUnit = undefined;
-
   fichas.forEach(ficha => {
-    const unit = ficha.unidad ?? null;
-    if (unit && unit !== prevUnit && prevUnit !== undefined) {
-      items.push({ type: 'separator', label: unit });
+    const u = ficha.unidad ?? null;
+    if (u !== null && u !== prevUnit) {
+      items.push({ type: 'sep', label: u });
+      prevUnit = u;
     }
     items.push({ type: 'ficha', ficha });
-    if (prevUnit === undefined && unit) prevUnit = unit;
-    else if (unit) prevUnit = unit;
   });
 
-  // ── Calcular posiciones de cada item ──────────────────────────────────────
-  let waveIdx  = 0;   // índice en WAVE_X (solo avanza en fichas)
-  let yOffset  = 60;  // px desde el top
-
+  // ── Calcular posiciones ───────────────────────────────────────────────────
+  let waveIdx = 0;
+  let y = PAD_TOP;
   const positions = items.map(item => {
-    if (item.type === 'separator') {
-      const pos = { type: 'separator', label: item.label, y: yOffset, x: 50 };
-      yOffset += SEP_H;
+    if (item.type === 'sep') {
+      const pos = { ...item, xPct: 50, xPx: SVG_W / 2, y };
+      y += SEP_H;
       return pos;
     }
-    const x = WAVE_X[waveIdx % WAVE_X.length];
-    const pos = { type: 'ficha', ficha: item.ficha, x, y: yOffset };
-    yOffset += NODE_H;
+    const xPx  = WAVE_X_PX[waveIdx % WAVE_X_PX.length];
+    const xPct = WAVE_X_PCT[waveIdx % WAVE_X_PCT.length];
+    const pos  = { ...item, xPx, xPct, y };
+    y += NODE_H;
     waveIdx++;
     return pos;
   });
 
-  // Nodo final si todas superadas
   const todasSuperadas = fichas.every(f => progreso[f.id]?.superada);
-  const finalY = yOffset + 20;
-  const totalHeight = finalY + (todasSuperadas ? NODE_H : 40);
+  const finalY    = y + 20;
+  const totalH    = finalY + (todasSuperadas ? NODE_H : 30);
 
-  // ── Solo posiciones de fichas para dibujar las líneas SVG ─────────────────
-  const fichaPositions = positions.filter(p => p.type === 'ficha');
+  // Nodos ficha para el path SVG
+  const fichaPos = positions.filter(p => p.type === 'ficha');
+
+  // Primer nodo no superado (para "EMPEZAR")
+  const proxFichaId = fichas.find(f => !progreso[f.id]?.superada)?.id ?? null;
 
   return (
     <div
-      className="relative w-full mx-auto overflow-visible"
-      style={{ maxWidth: 400, height: totalHeight }}
+      className="relative mx-auto w-full"
+      style={{ maxWidth: 420, minHeight: totalH }}
     >
-      {/* ── SVG: líneas conectoras entre nodos ─────────────────────────────── */}
+      {/* ── Carretera SVG (bezier sólido) ──────────────────────────────────── */}
       <svg
-        className="absolute inset-0 pointer-events-none overflow-visible"
+        className="absolute inset-0 pointer-events-none"
         width="100%"
-        height={totalHeight}
+        height={totalH}
+        viewBox={`0 0 ${SVG_W} ${totalH}`}
+        preserveAspectRatio="xMidYMid meet"
         style={{ zIndex: 0 }}
       >
-        {fichaPositions.map((pos, i) => {
-          if (i === 0) return null;
-          const prev = fichaPositions[i - 1];
-          return (
-            <line
-              key={i}
-              x1={`${prev.x}%`} y1={prev.y}
-              x2={`${pos.x}%`}  y2={pos.y}
-              stroke="#d1d5db"
-              strokeWidth="4"
-              strokeDasharray="10,7"
-              strokeLinecap="round"
-            />
-          );
-        })}
-
-        {/* Línea hacia el nodo final 🏆 si todas superadas */}
-        {todasSuperadas && fichaPositions.length > 0 && (
-          <line
-            x1={`${fichaPositions[fichaPositions.length - 1].x}%`}
-            y1={fichaPositions[fichaPositions.length - 1].y}
-            x2="50%"
-            y2={finalY}
+        {/* Sombra de la carretera */}
+        <path
+          d={buildBezierPath(fichaPos.map(p => ({ x: p.xPx, y: p.y })))}
+          stroke="#e5e7eb"
+          strokeWidth="14"
+          fill="none"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        {/* Carretera principal */}
+        <path
+          d={buildBezierPath(fichaPos.map(p => ({ x: p.xPx, y: p.y })))}
+          stroke="#f3f4f6"
+          strokeWidth="10"
+          fill="none"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        {/* Línea dorada hacia el trofeo final */}
+        {todasSuperadas && fichaPos.length > 0 && (
+          <path
+            d={`M ${fichaPos[fichaPos.length-1].xPx},${fichaPos[fichaPos.length-1].y} C ${fichaPos[fichaPos.length-1].xPx},${finalY - 40} ${SVG_W/2},${finalY - 40} ${SVG_W/2},${finalY}`}
             stroke="#fcd34d"
-            strokeWidth="4"
-            strokeDasharray="10,7"
+            strokeWidth="10"
+            fill="none"
             strokeLinecap="round"
           />
         )}
       </svg>
 
-      {/* ── Renderizar items (fichas + separadores) ──────────────────────────── */}
+      {/* ── Items (fichas + separadores) ────────────────────────────────────── */}
       {positions.map((pos, i) => {
-        if (pos.type === 'separator') {
+        if (pos.type === 'sep') {
           return (
             <div
               key={`sep-${i}`}
-              className="absolute flex items-center justify-center"
-              style={{ left: '50%', top: pos.y, transform: 'translate(-50%, -50%)', zIndex: 1 }}
+              className="absolute"
+              style={{
+                left: '5%',
+                width: '90%',
+                top: pos.y,
+                transform: 'translateY(-50%)',
+                zIndex: 3,
+              }}
             >
-              <div className={`flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold border-2 shadow-sm ${meta?.bg ?? 'bg-blue-50'} ${meta?.border ?? 'border-blue-300'} ${meta?.text ?? 'text-blue-800'}`}>
-                <span>{meta?.emoji}</span>
-                <span>{pos.label}</span>
+              <div className={`flex items-center gap-3 px-4 py-2.5 rounded-2xl shadow-sm border ${meta?.bg ?? 'bg-blue-50'} ${meta?.border ?? 'border-blue-200'}`}>
+                <span className={`w-7 h-7 rounded-full flex items-center justify-center text-xs font-black text-white ${
+                  meta?.bg?.replace('bg-', 'bg-')?.replace('-50', '-500')?.replace('-100', '-500') ?? 'bg-blue-500'
+                }`}>
+                  {labelCorto(pos.label)}
+                </span>
+                <div>
+                  <p className={`text-xs font-extrabold ${meta?.text ?? 'text-blue-800'} leading-tight`}>
+                    {pos.label}
+                  </p>
+                </div>
               </div>
             </div>
           );
@@ -152,15 +189,16 @@ export default function CaminoFichas({ fichas, meta, onSelectFicha, profileId, m
         const estado = !fp || fp.totalSessions === 0
           ? 'sin_empezar'
           : fp.superada ? 'superada' : 'en_progreso';
-        const repaso = hayRepasoHoy(fp);
+        const repaso    = hayRepasoHoy(fp);
+        const esProximo = ficha.id === proxFichaId;
 
         return (
           <div
             key={ficha.id}
             className="absolute"
             style={{
-              left: `${pos.x}%`,
-              top:  pos.y,
+              left: `${pos.xPct}%`,
+              top: pos.y,
               transform: 'translate(-50%, -50%)',
               zIndex: 2,
             }}
@@ -171,17 +209,23 @@ export default function CaminoFichas({ fichas, meta, onSelectFicha, profileId, m
               fichaProgress={fp}
               meta={meta}
               repasoHoy={repaso}
+              esProximo={esProximo}
               onClick={() => onSelectFicha(ficha, repaso ? 'repaso' : modo)}
             />
           </div>
         );
       })}
 
-      {/* ── Nodo final 🏆 ─────────────────────────────────────────────────── */}
+      {/* ── Trofeo final ─────────────────────────────────────────────────── */}
       {todasSuperadas && (
         <div
           className="absolute"
-          style={{ left: '50%', top: finalY, transform: 'translate(-50%, -50%)', zIndex: 2 }}
+          style={{
+            left: '50%',
+            top: finalY,
+            transform: 'translate(-50%, -50%)',
+            zIndex: 2,
+          }}
         >
           <div className="flex flex-col items-center gap-2">
             <div className="w-24 h-24 rounded-full bg-gradient-to-br from-yellow-300 to-orange-400 border-4 border-yellow-500 flex items-center justify-center text-5xl shadow-xl shadow-orange-200">

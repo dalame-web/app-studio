@@ -1,7 +1,7 @@
 /**
- * CaminoFichas — camino estilo Duolingo.
+ * CaminoFichas — camino estilo Duolingo (sin línea, solo nodos).
  * - Ola suave centrada (28-72%)
- * - Carretera SVG con curvas bezier sólidas
+ * - Sin carretera, los nodos marcan el camino visualmente
  * - Banners de unidad a ancho completo
  * - Nodo "EMPEZAR" en el primer pendiente
  */
@@ -13,25 +13,10 @@ import NodoFicha from './NodoFicha';
 // Ola suave: máximo ±22% desde el centro (como Duolingo)
 const WAVE_X_PCT = [50, 38, 28, 38, 50, 62, 72, 62];
 
-// Sistema de coordenadas para el SVG (ancho fijo 360)
-const SVG_W = 360;
-const WAVE_X_PX = WAVE_X_PCT.map(p => (p / 100) * SVG_W);
-
 // Altura por item (px)
-const NODE_H = 160;
-const SEP_H  = 72;
+const NODE_H  = 160;
+const SEP_H   = 72;
 const PAD_TOP = 60;
-
-function buildBezierPath(pts) {
-  if (pts.length < 2) return '';
-  let d = `M ${pts[0].x} ${pts[0].y}`;
-  for (let i = 1; i < pts.length; i++) {
-    const p = pts[i - 1], c = pts[i];
-    const cy = (p.y + c.y) / 2;
-    d += ` C ${p.x},${cy} ${c.x},${cy} ${c.x},${c.y}`;
-  }
-  return d;
-}
 
 function hayRepasoHoy(fp) {
   if (!fp?.superada || !fp?.reviewDates?.length) return false;
@@ -100,59 +85,20 @@ export default function CaminoFichas({ fichas, meta, onSelectFicha, profileId, m
   });
 
   const todasSuperadas = fichas.every(f => progreso[f.id]?.superada);
-  const finalY    = y + 20;
-  const totalH    = finalY + (todasSuperadas ? NODE_H : 30);
-
-  // Nodos ficha para el path SVG
-  const fichaPos = positions.filter(p => p.type === 'ficha');
+  const finalY  = y + 20;
+  const totalH  = finalY + (todasSuperadas ? NODE_H : 30);
 
   // Primer nodo no superado (para "EMPEZAR")
   const proxFichaId = fichas.find(f => !progreso[f.id]?.superada)?.id ?? null;
+
+  // Contador de fichas para pasar índice a NodoFicha
+  let fichaCounter = 0;
 
   return (
     <div
       className="relative mx-auto w-full"
       style={{ maxWidth: 420, minHeight: totalH }}
     >
-      {/* ── Carretera SVG (bezier sólido) ──────────────────────────────────── */}
-      <svg
-        className="absolute inset-0 pointer-events-none"
-        width="100%"
-        height={totalH}
-        viewBox={`0 0 ${SVG_W} ${totalH}`}
-        preserveAspectRatio="xMidYMid meet"
-        style={{ zIndex: 0 }}
-      >
-        {/* Sombra de la carretera */}
-        <path
-          d={buildBezierPath(fichaPos.map(p => ({ x: p.xPx, y: p.y })))}
-          stroke="#e5e7eb"
-          strokeWidth="14"
-          fill="none"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-        {/* Carretera principal */}
-        <path
-          d={buildBezierPath(fichaPos.map(p => ({ x: p.xPx, y: p.y })))}
-          stroke="#f3f4f6"
-          strokeWidth="10"
-          fill="none"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-        {/* Línea dorada hacia el trofeo final */}
-        {todasSuperadas && fichaPos.length > 0 && (
-          <path
-            d={`M ${fichaPos[fichaPos.length-1].xPx},${fichaPos[fichaPos.length-1].y} C ${fichaPos[fichaPos.length-1].xPx},${finalY - 40} ${SVG_W/2},${finalY - 40} ${SVG_W/2},${finalY}`}
-            stroke="#fcd34d"
-            strokeWidth="10"
-            fill="none"
-            strokeLinecap="round"
-          />
-        )}
-      </svg>
-
       {/* ── Items (fichas + separadores) ────────────────────────────────────── */}
       {positions.map((pos, i) => {
         if (pos.type === 'sep') {
@@ -184,13 +130,14 @@ export default function CaminoFichas({ fichas, meta, onSelectFicha, profileId, m
           );
         }
 
-        const ficha  = pos.ficha;
-        const fp     = progreso[ficha.id];
-        const estado = !fp || fp.totalSessions === 0
+        const ficha     = pos.ficha;
+        const fp        = progreso[ficha.id];
+        const estado    = !fp || fp.totalSessions === 0
           ? 'sin_empezar'
           : fp.superada ? 'superada' : 'en_progreso';
         const repaso    = hayRepasoHoy(fp);
         const esProximo = ficha.id === proxFichaId;
+        const fichaIdx  = fichaCounter++;
 
         return (
           <div
@@ -205,6 +152,7 @@ export default function CaminoFichas({ fichas, meta, onSelectFicha, profileId, m
           >
             <NodoFicha
               ficha={ficha}
+              fichaIdx={fichaIdx}
               estado={estado}
               fichaProgress={fp}
               meta={meta}

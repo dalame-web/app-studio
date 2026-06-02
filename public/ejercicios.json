@@ -1,5 +1,1150 @@
 {
-  "version": "2026-06-02-1",
+  "version": "2026-06-02-2",
   "fecha": "2026-06-02",
-  "fichas": []
+  "fichas": [
+    {
+      "id": "len-001",
+      "subject": "lengua",
+      "titulo": "La comunicación: verbal y no verbal",
+      "nivel": 1,
+      "contenido": "La comunicación es la acción de intercambiar información entre personas. La comunicación puede ser verbal, cuando utilizamos palabras o signos, o no verbal, cuando utilizamos imágenes, sonidos o gestos. La comunicación verbal se divide en oral (cuando hablamos) y escrita (cuando escribimos).",
+      "ejemplos": [
+        "Verbal oral: saludar a alguien con un ¡Hola!",
+        "Verbal escrita: mandar un mensaje de texto.",
+        "No verbal con imágenes: un cartel con una flecha.",
+        "No verbal con sonidos: la música que indica el recreo.",
+        "No verbal con gestos: un policía levantando la mano para parar el tráfico."
+      ],
+      "palabrasClave": [
+        "comunicación",
+        "verbal",
+        "no verbal",
+        "oral",
+        "escrita",
+        "imágenes",
+        "sonidos",
+        "gestos",
+        "intercambiar",
+        "información"
+      ],
+      "tiposEjercicio": [
+        "EleccionMultiple",
+        "ClasificarGrupos",
+        "UnirColumnas",
+        "RellenarHueco",
+        "MemoriaPareja",
+        "ArrastrarPalabras",
+        "OrdenarFrase",
+        "SopaLetras"
+      ],
+      "ejerciciosDerivar": 18,
+      "ejercicios": [
+        {
+          "id": "len-001-ex-001",
+          "fichaId": "len-001",
+          "subject": "lengua",
+          "tipo": "EleccionMultiple",
+          "nivel": 1,
+          "tiempoEstimado": 30,
+          "enunciado": "¿Qué es la comunicación?",
+          "opciones": [
+            {
+              "texto": "La acción de intercambiar información entre personas"
+            },
+            {
+              "texto": "La acción de escuchar música"
+            },
+            {
+              "texto": "La acción de leer un libro en silencio"
+            },
+            {
+              "texto": "La acción de caminar por la calle"
+            }
+          ],
+          "respuestaCorrecta": "La acción de intercambiar información entre personas"
+        },
+        {
+          "id": "len-001-ex-002",
+          "fichaId": "len-001",
+          "subject": "lengua",
+          "tipo": "EleccionMultiple",
+          "nivel": 1,
+          "tiempoEstimado": 30,
+          "enunciado": "¿Cuáles son los dos tipos de comunicación?",
+          "opciones": [
+            {
+              "texto": "Rápida y lenta"
+            },
+            {
+              "texto": "Verbal y no verbal"
+            },
+            {
+              "texto": "Oral y gestual"
+            },
+            {
+              "texto": "Escrita e ilustrada"
+            }
+          ],
+          "respuestaCorrecta": "Verbal y no verbal"
+        },
+        {
+          "id": "len-001-ex-003",
+          "fichaId": "len-001",
+          "subject": "lengua",
+          "tipo": "RellenarHueco",
+          "nivel": 1,
+          "tiempoEstimado": 30,
+          "enunciado": "La comunicación verbal que usamos cuando hablamos se llama comunicación [___].",
+          "respuestaCorrecta": "oral"
+        },
+        {
+          "id": "len-001-ex-004",
+          "fichaId": "len-001",
+          "subject": "lengua",
+          "tipo": "EleccionMultiple",
+          "nivel": 1,
+          "tiempoEstimado": 30,
+          "enunciado": "Mandar un mensaje de texto es un ejemplo de comunicación...",
+          "opciones": [
+            {
+              "texto": "no verbal"
+            },
+            {
+              "texto": "gestual"
+            },
+            {
+              "texto": "verbal escrita"
+            },
+            {
+              "texto": "verbal oral"
+            }
+          ],
+          "respuestaCorrecta": "verbal escrita"
+        },
+        {
+          "id": "len-001-ex-005",
+          "fichaId": "len-001",
+          "subject": "lengua",
+          "tipo": "RellenarHueco",
+          "nivel": 1,
+          "tiempoEstimado": 30,
+          "enunciado": "La comunicación no verbal usa imágenes, sonidos o [___].",
+          "respuestaCorrecta": "gestos"
+        },
+        {
+          "id": "len-001-ex-006",
+          "fichaId": "len-001",
+          "subject": "lengua",
+          "tipo": "ClasificarGrupos",
+          "nivel": 2,
+          "tiempoEstimado": 60,
+          "enunciado": "Clasifica cada ejemplo en su tipo de comunicación.",
+          "grupos": [
+            {
+              "id": "verbal",
+              "nombre": "Verbal"
+            },
+            {
+              "id": "noverbal",
+              "nombre": "No verbal"
+            }
+          ],
+          "items": [
+            {
+              "id": "i1",
+              "texto": "Leer una revista",
+              "grupoId": "verbal"
+            },
+            {
+              "id": "i2",
+              "texto": "La sirena de una ambulancia",
+              "grupoId": "noverbal"
+            },
+            {
+              "id": "i3",
+              "texto": "Un email",
+              "grupoId": "verbal"
+            },
+            {
+              "id": "i4",
+              "texto": "Un policía levantando la mano",
+              "grupoId": "noverbal"
+            },
+            {
+              "id": "i5",
+              "texto": "Noticia en un periódico",
+              "grupoId": "verbal"
+            },
+            {
+              "id": "i6",
+              "texto": "Luz verde de un semáforo",
+              "grupoId": "noverbal"
+            }
+          ]
+        },
+        {
+          "id": "len-001-ex-007",
+          "fichaId": "len-001",
+          "subject": "lengua",
+          "tipo": "ClasificarGrupos",
+          "nivel": 2,
+          "tiempoEstimado": 60,
+          "enunciado": "Clasifica cada ejemplo de comunicación verbal en su subtipo.",
+          "grupos": [
+            {
+              "id": "oral",
+              "nombre": "Verbal oral"
+            },
+            {
+              "id": "escrita",
+              "nombre": "Verbal escrita"
+            }
+          ],
+          "items": [
+            {
+              "id": "j1",
+              "texto": "Saludar con un ¡Hola!",
+              "grupoId": "oral"
+            },
+            {
+              "id": "j2",
+              "texto": "Un email",
+              "grupoId": "escrita"
+            },
+            {
+              "id": "j3",
+              "texto": "Conversación entre padres e hijos",
+              "grupoId": "oral"
+            },
+            {
+              "id": "j4",
+              "texto": "Ticket de compra",
+              "grupoId": "escrita"
+            },
+            {
+              "id": "j5",
+              "texto": "Noticia en un periódico",
+              "grupoId": "escrita"
+            },
+            {
+              "id": "j6",
+              "texto": "Hablar por teléfono",
+              "grupoId": "oral"
+            }
+          ]
+        },
+        {
+          "id": "len-001-ex-008",
+          "fichaId": "len-001",
+          "subject": "lengua",
+          "tipo": "UnirColumnas",
+          "nivel": 2,
+          "tiempoEstimado": 90,
+          "enunciado": "Une cada ejemplo con el tipo de comunicación no verbal que usa.",
+          "parejas": [
+            {
+              "izquierda": "Un cartel con una flecha",
+              "derecha": "Imágenes"
+            },
+            {
+              "izquierda": "La música del recreo",
+              "derecha": "Sonidos"
+            },
+            {
+              "izquierda": "Un policía dirigiendo el tráfico",
+              "derecha": "Gestos"
+            },
+            {
+              "izquierda": "La sirena de una ambulancia",
+              "derecha": "Sonido de aviso"
+            }
+          ]
+        },
+        {
+          "id": "len-001-ex-009",
+          "fichaId": "len-001",
+          "subject": "lengua",
+          "tipo": "ArrastrarPalabras",
+          "nivel": 2,
+          "tiempoEstimado": 60,
+          "enunciado": "Completa la definición arrastrando las palabras correctas.",
+          "fraseConHuecos": "La comunicación [___] usa palabras o signos, mientras que la comunicación [___] usa imágenes, sonidos o gestos.",
+          "banco": [
+            "verbal",
+            "no verbal",
+            "oral",
+            "escrita"
+          ],
+          "respuestasCorrectas": [
+            "verbal",
+            "no verbal"
+          ]
+        },
+        {
+          "id": "len-001-ex-010",
+          "fichaId": "len-001",
+          "subject": "lengua",
+          "tipo": "EleccionMultiple",
+          "nivel": 2,
+          "tiempoEstimado": 30,
+          "enunciado": "Mover la mano de un lado a otro para despedir a alguien es comunicación no verbal porque... Recuerda que la comunicación no verbal usa imágenes, sonidos o gestos.",
+          "opciones": [
+            {
+              "texto": "Usa palabras escritas"
+            },
+            {
+              "texto": "Usa un gesto en lugar de palabras"
+            },
+            {
+              "texto": "Usa sonidos para comunicar"
+            },
+            {
+              "texto": "Usa imágenes para comunicar"
+            }
+          ],
+          "respuestaCorrecta": "Usa un gesto en lugar de palabras"
+        },
+        {
+          "id": "len-001-ex-011",
+          "fichaId": "len-001",
+          "subject": "lengua",
+          "tipo": "EleccionMultiple",
+          "nivel": 2,
+          "tiempoEstimado": 30,
+          "enunciado": "¿Cuál de estos ejemplos NO es comunicación verbal?",
+          "opciones": [
+            {
+              "texto": "Un mensaje de texto"
+            },
+            {
+              "texto": "Una noticia en el periódico"
+            },
+            {
+              "texto": "La sirena de un coche de bomberos"
+            },
+            {
+              "texto": "Leer una revista"
+            }
+          ],
+          "respuestaCorrecta": "La sirena de un coche de bomberos"
+        },
+        {
+          "id": "len-001-ex-012",
+          "fichaId": "len-001",
+          "subject": "lengua",
+          "tipo": "OrdenarFrase",
+          "nivel": 2,
+          "tiempoEstimado": 60,
+          "enunciado": "Ordena las palabras para formar la definición correcta.",
+          "palabrasDesordenadas": [
+            "información",
+            "intercambiar",
+            "es",
+            "La",
+            "comunicación",
+            "la",
+            "acción",
+            "de"
+          ],
+          "fraseCorrecta": "La comunicación es la acción de intercambiar información"
+        },
+        {
+          "id": "len-001-ex-013",
+          "fichaId": "len-001",
+          "subject": "lengua",
+          "tipo": "MemoriaPareja",
+          "nivel": 3,
+          "tiempoEstimado": 180,
+          "enunciado": "Encuentra cada ejemplo con su tipo de comunicación.",
+          "parejas": [
+            {
+              "a": "Saludar con ¡Hola!",
+              "b": "Verbal oral"
+            },
+            {
+              "a": "Un email",
+              "b": "Verbal escrita"
+            },
+            {
+              "a": "La sirena de una ambulancia",
+              "b": "No verbal: sonido"
+            },
+            {
+              "a": "Un cartel con una flecha",
+              "b": "No verbal: imagen"
+            },
+            {
+              "a": "Un policía levantando la mano",
+              "b": "No verbal: gesto"
+            },
+            {
+              "a": "Ticket de compra",
+              "b": "Verbal escrita (documento)"
+            }
+          ]
+        },
+        {
+          "id": "len-001-ex-014",
+          "fichaId": "len-001",
+          "subject": "lengua",
+          "tipo": "SopaLetras",
+          "nivel": 3,
+          "tiempoEstimado": 180,
+          "enunciado": "Encuentra las palabras clave de la comunicación.",
+          "palabras": [
+            "VERBAL",
+            "GESTOS",
+            "ORAL",
+            "ESCRITA",
+            "SONIDOS"
+          ],
+          "cuadricula": [
+            [
+              "V",
+              "E",
+              "R",
+              "B",
+              "A",
+              "L",
+              "T",
+              "M"
+            ],
+            [
+              "G",
+              "E",
+              "S",
+              "T",
+              "O",
+              "S",
+              "R",
+              "A"
+            ],
+            [
+              "O",
+              "R",
+              "A",
+              "L",
+              "P",
+              "K",
+              "I",
+              "N"
+            ],
+            [
+              "E",
+              "S",
+              "C",
+              "R",
+              "I",
+              "T",
+              "A",
+              "D"
+            ],
+            [
+              "S",
+              "O",
+              "N",
+              "I",
+              "D",
+              "O",
+              "S",
+              "F"
+            ],
+            [
+              "C",
+              "L",
+              "A",
+              "V",
+              "E",
+              "R",
+              "U",
+              "B"
+            ],
+            [
+              "I",
+              "N",
+              "F",
+              "O",
+              "R",
+              "M",
+              "A",
+              "R"
+            ],
+            [
+              "P",
+              "A",
+              "L",
+              "A",
+              "B",
+              "R",
+              "A",
+              "S"
+            ]
+          ]
+        },
+        {
+          "id": "len-001-ex-015",
+          "fichaId": "len-001",
+          "subject": "lengua",
+          "tipo": "EleccionMultiple",
+          "nivel": 3,
+          "tiempoEstimado": 30,
+          "enunciado": "Una persona pone cara de enfado sin decir nada. ¿Qué tipo de comunicación es? Recuerda los tres recursos de la comunicación no verbal.",
+          "opciones": [
+            {
+              "texto": "Verbal oral"
+            },
+            {
+              "texto": "No verbal con gestos"
+            },
+            {
+              "texto": "Verbal escrita"
+            },
+            {
+              "texto": "No verbal con imágenes"
+            }
+          ],
+          "respuestaCorrecta": "No verbal con gestos"
+        },
+        {
+          "id": "len-001-ex-016",
+          "fichaId": "len-001",
+          "subject": "lengua",
+          "tipo": "EleccionMultiple",
+          "nivel": 3,
+          "tiempoEstimado": 30,
+          "enunciado": "Un árbitro enseña una tarjeta amarilla a un futbolista. ¿Qué tipo de recurso no verbal usa principalmente?",
+          "opciones": [
+            {
+              "texto": "Sonidos"
+            },
+            {
+              "texto": "Gestos"
+            },
+            {
+              "texto": "Imágenes"
+            },
+            {
+              "texto": "Palabras escritas"
+            }
+          ],
+          "respuestaCorrecta": "Imágenes"
+        },
+        {
+          "id": "len-001-ex-017",
+          "fichaId": "len-001",
+          "subject": "lengua",
+          "tipo": "ClasificarGrupos",
+          "nivel": 3,
+          "tiempoEstimado": 60,
+          "enunciado": "Clasifica estos ejemplos en los tres tipos de comunicación no verbal. Recuerda: imágenes, sonidos y gestos.",
+          "grupos": [
+            {
+              "id": "imagenes",
+              "nombre": "Imágenes"
+            },
+            {
+              "id": "sonidos",
+              "nombre": "Sonidos"
+            },
+            {
+              "id": "gestos",
+              "nombre": "Gestos"
+            }
+          ],
+          "items": [
+            {
+              "id": "k1",
+              "texto": "Luz verde de un semáforo",
+              "grupoId": "imagenes"
+            },
+            {
+              "id": "k2",
+              "texto": "La sirena de un coche de bomberos",
+              "grupoId": "sonidos"
+            },
+            {
+              "id": "k3",
+              "texto": "Chocar la mano",
+              "grupoId": "gestos"
+            },
+            {
+              "id": "k4",
+              "texto": "Melodía de una canción",
+              "grupoId": "sonidos"
+            },
+            {
+              "id": "k5",
+              "texto": "Cartel con figura de hombre y mujer",
+              "grupoId": "imagenes"
+            },
+            {
+              "id": "k6",
+              "texto": "Mirada de tristeza",
+              "grupoId": "gestos"
+            }
+          ]
+        },
+        {
+          "id": "len-001-ex-018",
+          "fichaId": "len-001",
+          "subject": "lengua",
+          "tipo": "EleccionMultiple",
+          "nivel": 3,
+          "tiempoEstimado": 30,
+          "enunciado": "¿Cuál de estas afirmaciones sobre la comunicación es CORRECTA?",
+          "opciones": [
+            {
+              "texto": "La comunicación oral es un tipo de comunicación no verbal"
+            },
+            {
+              "texto": "La comunicación escrita y la oral son dos tipos de comunicación verbal"
+            },
+            {
+              "texto": "Los gestos son un tipo de comunicación verbal"
+            },
+            {
+              "texto": "La comunicación no verbal solo usa imágenes"
+            }
+          ],
+          "respuestaCorrecta": "La comunicación escrita y la oral son dos tipos de comunicación verbal"
+        }
+      ]
+    },
+    {
+      "id": "len-002",
+      "subject": "lengua",
+      "titulo": "Las lenguas y sus hablantes",
+      "nivel": 1,
+      "contenido": "Una lengua es una manera que tenemos las personas para comunicarnos. Es un conjunto de palabras y reglas que usamos para hablar, escribir y entendernos entre nosotros. Cada país o región tiene su propia lengua. Hay muchas lenguas en el mundo que cambian y evolucionan. Algunas de las lenguas más habladas son el inglés, el español, el francés, el chino, el hindi y el árabe.",
+      "ejemplos": [
+        "Inglés: hablado en Estados Unidos, Reino Unido y Australia.",
+        "Español: hablado en España, México y muchos países de América Latina.",
+        "Francés: hablado en Francia, Bélgica, Suiza, Luxemburgo y Mónaco.",
+        "Chino: la lengua más hablada en el mundo, principalmente en China.",
+        "Hindi: hablado en la India.",
+        "Árabe: hablado en muchos países del Medio Oriente."
+      ],
+      "palabrasClave": [
+        "lengua",
+        "hablantes",
+        "inglés",
+        "español",
+        "francés",
+        "chino",
+        "hindi",
+        "árabe",
+        "países",
+        "comunicarnos",
+        "palabras",
+        "reglas"
+      ],
+      "tiposEjercicio": [
+        "EleccionMultiple",
+        "UnirColumnas",
+        "RellenarHueco",
+        "ClasificarGrupos",
+        "SopaLetras",
+        "MemoriaPareja",
+        "CompletarSerie",
+        "ArrastrarPalabras",
+        "OrdenarFrase"
+      ],
+      "ejerciciosDerivar": 17,
+      "ejercicios": [
+        {
+          "id": "len-002-ex-001",
+          "fichaId": "len-002",
+          "subject": "lengua",
+          "tipo": "EleccionMultiple",
+          "nivel": 1,
+          "tiempoEstimado": 30,
+          "enunciado": "¿Qué es una lengua?",
+          "opciones": [
+            {
+              "texto": "Un conjunto de palabras y reglas para comunicarnos"
+            },
+            {
+              "texto": "Un tipo de escritura con dibujos"
+            },
+            {
+              "texto": "Una señal de tráfico internacional"
+            },
+            {
+              "texto": "Un instrumento musical"
+            }
+          ],
+          "respuestaCorrecta": "Un conjunto de palabras y reglas para comunicarnos"
+        },
+        {
+          "id": "len-002-ex-002",
+          "fichaId": "len-002",
+          "subject": "lengua",
+          "tipo": "RellenarHueco",
+          "nivel": 1,
+          "tiempoEstimado": 30,
+          "enunciado": "El [___] es la lengua más hablada en el mundo.",
+          "respuestaCorrecta": "chino"
+        },
+        {
+          "id": "len-002-ex-003",
+          "fichaId": "len-002",
+          "subject": "lengua",
+          "tipo": "EleccionMultiple",
+          "nivel": 1,
+          "tiempoEstimado": 30,
+          "enunciado": "¿En qué país se habla principalmente el hindi?",
+          "opciones": [
+            {
+              "texto": "China"
+            },
+            {
+              "texto": "México"
+            },
+            {
+              "texto": "La India"
+            },
+            {
+              "texto": "Australia"
+            }
+          ],
+          "respuestaCorrecta": "La India"
+        },
+        {
+          "id": "len-002-ex-004",
+          "fichaId": "len-002",
+          "subject": "lengua",
+          "tipo": "EleccionMultiple",
+          "nivel": 1,
+          "tiempoEstimado": 30,
+          "enunciado": "El español se habla en España, México y...",
+          "opciones": [
+            {
+              "texto": "muchos países de América Latina"
+            },
+            {
+              "texto": "muchos países del Medio Oriente"
+            },
+            {
+              "texto": "Francia, Bélgica y Suiza"
+            },
+            {
+              "texto": "Estados Unidos y Australia"
+            }
+          ],
+          "respuestaCorrecta": "muchos países de América Latina"
+        },
+        {
+          "id": "len-002-ex-005",
+          "fichaId": "len-002",
+          "subject": "lengua",
+          "tipo": "RellenarHueco",
+          "nivel": 1,
+          "tiempoEstimado": 30,
+          "enunciado": "El árabe se habla en muchos países del Medio [___].",
+          "respuestaCorrecta": "Oriente"
+        },
+        {
+          "id": "len-002-ex-006",
+          "fichaId": "len-002",
+          "subject": "lengua",
+          "tipo": "UnirColumnas",
+          "nivel": 2,
+          "tiempoEstimado": 90,
+          "enunciado": "Une cada saludo con su lengua.",
+          "parejas": [
+            {
+              "izquierda": "Bonjour",
+              "derecha": "Francés"
+            },
+            {
+              "izquierda": "Ciao",
+              "derecha": "Italiano"
+            },
+            {
+              "izquierda": "Hola",
+              "derecha": "Español"
+            },
+            {
+              "izquierda": "Salam",
+              "derecha": "Árabe"
+            }
+          ]
+        },
+        {
+          "id": "len-002-ex-007",
+          "fichaId": "len-002",
+          "subject": "lengua",
+          "tipo": "UnirColumnas",
+          "nivel": 2,
+          "tiempoEstimado": 90,
+          "enunciado": "Une cada lengua con los países donde se habla.",
+          "parejas": [
+            {
+              "izquierda": "Inglés",
+              "derecha": "Reino Unido y Australia"
+            },
+            {
+              "izquierda": "Francés",
+              "derecha": "Francia y Bélgica"
+            },
+            {
+              "izquierda": "Chino",
+              "derecha": "China"
+            },
+            {
+              "izquierda": "Hindi",
+              "derecha": "La India"
+            }
+          ]
+        },
+        {
+          "id": "len-002-ex-008",
+          "fichaId": "len-002",
+          "subject": "lengua",
+          "tipo": "EleccionMultiple",
+          "nivel": 2,
+          "tiempoEstimado": 30,
+          "enunciado": "¿En cuántos países del siguiente grupo se habla francés? Recuerda los países que aparecen en el material: Francia, Bélgica, Suiza, Luxemburgo y Mónaco.",
+          "opciones": [
+            {
+              "texto": "En 3 países"
+            },
+            {
+              "texto": "En 4 países"
+            },
+            {
+              "texto": "En 5 países"
+            },
+            {
+              "texto": "En 2 países"
+            }
+          ],
+          "respuestaCorrecta": "En 5 países"
+        },
+        {
+          "id": "len-002-ex-009",
+          "fichaId": "len-002",
+          "subject": "lengua",
+          "tipo": "ArrastrarPalabras",
+          "nivel": 2,
+          "tiempoEstimado": 60,
+          "enunciado": "Completa la definición arrastrando las palabras.",
+          "fraseConHuecos": "Una lengua es un conjunto de [___] y [___] que usamos para comunicarnos.",
+          "banco": [
+            "palabras",
+            "reglas",
+            "gestos",
+            "colores"
+          ],
+          "respuestasCorrectas": [
+            "palabras",
+            "reglas"
+          ]
+        },
+        {
+          "id": "len-002-ex-010",
+          "fichaId": "len-002",
+          "subject": "lengua",
+          "tipo": "ClasificarGrupos",
+          "nivel": 2,
+          "tiempoEstimado": 60,
+          "enunciado": "Clasifica estos países según la lengua que se habla principalmente en ellos.",
+          "grupos": [
+            {
+              "id": "espanol",
+              "nombre": "Español"
+            },
+            {
+              "id": "ingles",
+              "nombre": "Inglés"
+            },
+            {
+              "id": "frances",
+              "nombre": "Francés"
+            }
+          ],
+          "items": [
+            {
+              "id": "p1",
+              "texto": "México",
+              "grupoId": "espanol"
+            },
+            {
+              "id": "p2",
+              "texto": "Australia",
+              "grupoId": "ingles"
+            },
+            {
+              "id": "p3",
+              "texto": "Bélgica",
+              "grupoId": "frances"
+            },
+            {
+              "id": "p4",
+              "texto": "España",
+              "grupoId": "espanol"
+            },
+            {
+              "id": "p5",
+              "texto": "Reino Unido",
+              "grupoId": "ingles"
+            },
+            {
+              "id": "p6",
+              "texto": "Suiza",
+              "grupoId": "frances"
+            }
+          ]
+        },
+        {
+          "id": "len-002-ex-011",
+          "fichaId": "len-002",
+          "subject": "lengua",
+          "tipo": "OrdenarFrase",
+          "nivel": 2,
+          "tiempoEstimado": 60,
+          "enunciado": "Ordena las palabras para formar una oración correcta sobre las lenguas.",
+          "palabrasDesordenadas": [
+            "país",
+            "Cada",
+            "su",
+            "tiene",
+            "o",
+            "propia",
+            "región",
+            "lengua"
+          ],
+          "fraseCorrecta": "Cada país o región tiene su propia lengua"
+        },
+        {
+          "id": "len-002-ex-012",
+          "fichaId": "len-002",
+          "subject": "lengua",
+          "tipo": "CompletarSerie",
+          "nivel": 2,
+          "tiempoEstimado": 35,
+          "enunciado": "¿Qué lengua falta en esta serie de lenguas más habladas del mundo?",
+          "serie": [
+            "Inglés",
+            "Español",
+            null,
+            "Chino",
+            "Hindi"
+          ],
+          "opciones": [
+            "Francés",
+            "Italiano",
+            "Ruso",
+            "Alemán"
+          ],
+          "respuestaCorrecta": "Francés"
+        },
+        {
+          "id": "len-002-ex-013",
+          "fichaId": "len-002",
+          "subject": "lengua",
+          "tipo": "SopaLetras",
+          "nivel": 3,
+          "tiempoEstimado": 180,
+          "enunciado": "Encuentra estas lenguas en la sopa de letras.",
+          "palabras": [
+            "CHINO",
+            "HINDI",
+            "ARABE",
+            "INGLES",
+            "FRANCES"
+          ],
+          "cuadricula": [
+            [
+              "F",
+              "R",
+              "A",
+              "N",
+              "C",
+              "E",
+              "S",
+              "P"
+            ],
+            [
+              "I",
+              "N",
+              "G",
+              "L",
+              "E",
+              "S",
+              "A",
+              "O"
+            ],
+            [
+              "H",
+              "I",
+              "N",
+              "D",
+              "I",
+              "R",
+              "B",
+              "M"
+            ],
+            [
+              "C",
+              "H",
+              "I",
+              "N",
+              "O",
+              "T",
+              "E",
+              "U"
+            ],
+            [
+              "A",
+              "R",
+              "A",
+              "B",
+              "E",
+              "K",
+              "L",
+              "N"
+            ],
+            [
+              "E",
+              "S",
+              "P",
+              "A",
+              "N",
+              "O",
+              "L",
+              "D"
+            ],
+            [
+              "P",
+              "A",
+              "L",
+              "A",
+              "B",
+              "R",
+              "A",
+              "O"
+            ],
+            [
+              "R",
+              "E",
+              "G",
+              "L",
+              "A",
+              "S",
+              "V",
+              "W"
+            ]
+          ]
+        },
+        {
+          "id": "len-002-ex-014",
+          "fichaId": "len-002",
+          "subject": "lengua",
+          "tipo": "MemoriaPareja",
+          "nivel": 3,
+          "tiempoEstimado": 180,
+          "enunciado": "Encuentra cada lengua con un país donde se habla.",
+          "parejas": [
+            {
+              "a": "Inglés",
+              "b": "Australia"
+            },
+            {
+              "a": "Español",
+              "b": "México"
+            },
+            {
+              "a": "Francés",
+              "b": "Mónaco"
+            },
+            {
+              "a": "Chino",
+              "b": "China"
+            },
+            {
+              "a": "Hindi",
+              "b": "La India"
+            },
+            {
+              "a": "Árabe",
+              "b": "Medio Oriente"
+            }
+          ]
+        },
+        {
+          "id": "len-002-ex-015",
+          "fichaId": "len-002",
+          "subject": "lengua",
+          "tipo": "EleccionMultiple",
+          "nivel": 3,
+          "tiempoEstimado": 30,
+          "enunciado": "¿Cuál de estas afirmaciones sobre las lenguas es CORRECTA según lo que has estudiado?",
+          "opciones": [
+            {
+              "texto": "El español es la lengua más hablada del mundo"
+            },
+            {
+              "texto": "Las lenguas no cambian con el tiempo"
+            },
+            {
+              "texto": "Cada país o región tiene su propia lengua"
+            },
+            {
+              "texto": "El francés solo se habla en Francia"
+            }
+          ],
+          "respuestaCorrecta": "Cada país o región tiene su propia lengua"
+        },
+        {
+          "id": "len-002-ex-016",
+          "fichaId": "len-002",
+          "subject": "lengua",
+          "tipo": "EleccionMultiple",
+          "nivel": 3,
+          "tiempoEstimado": 30,
+          "enunciado": "¿Cuál de estos países NO aparece en el material como lugar donde se habla francés?",
+          "opciones": [
+            {
+              "texto": "Bélgica"
+            },
+            {
+              "texto": "Luxemburgo"
+            },
+            {
+              "texto": "Portugal"
+            },
+            {
+              "texto": "Mónaco"
+            }
+          ],
+          "respuestaCorrecta": "Portugal"
+        },
+        {
+          "id": "len-002-ex-017",
+          "fichaId": "len-002",
+          "subject": "lengua",
+          "tipo": "EleccionMultiple",
+          "nivel": 3,
+          "tiempoEstimado": 30,
+          "enunciado": "¿Para qué usamos una lengua? Recuerda la definición completa.",
+          "opciones": [
+            {
+              "texto": "Solo para escribir textos largos"
+            },
+            {
+              "texto": "Para hablar, escribir y entendernos entre nosotros"
+            },
+            {
+              "texto": "Solo para comunicarnos con gestos"
+            },
+            {
+              "texto": "Para aprender matemáticas"
+            }
+          ],
+          "respuestaCorrecta": "Para hablar, escribir y entendernos entre nosotros"
+        }
+      ]
+    }
+  ]
 }

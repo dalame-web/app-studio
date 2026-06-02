@@ -72,13 +72,12 @@ export default function CaminoFichas({ fichas, meta, onSelectFicha, profileId, m
   let y = PAD_TOP;
   const positions = items.map(item => {
     if (item.type === 'sep') {
-      const pos = { ...item, xPct: 50, xPx: SVG_W / 2, y };
+      const pos = { ...item, xPct: 50, y };
       y += SEP_H;
       return pos;
     }
-    const xPx  = WAVE_X_PX[waveIdx % WAVE_X_PX.length];
     const xPct = WAVE_X_PCT[waveIdx % WAVE_X_PCT.length];
-    const pos  = { ...item, xPx, xPct, y };
+    const pos  = { ...item, xPct, y };
     y += NODE_H;
     waveIdx++;
     return pos;

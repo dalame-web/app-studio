@@ -1,5 +1,5 @@
 {
-  "version": "2026-06-02-3",
+  "version": "2026-06-02-4",
   "fecha": "2026-06-02",
   "fichas": [
     {
@@ -2119,6 +2119,463 @@
             }
           ],
           "respuestaCorrecta": "Seguido: mismo párrafo · Aparte: línea siguiente · Final: fin del texto"
+        }
+      ]
+    },
+    {
+      "id": "len-005",
+      "subject": "lengua",
+      "titulo": "La carta",
+      "nivel": 2,
+      "contenido": "La carta es un medio de comunicación escrita y consta de cinco partes: 1) Fecha y lugar desde donde se escribe. 2) Saludo a la persona a la que se dirige. 3) Cuerpo de la carta, donde se narra lo que se quiere contar. 4) Despedida. 5) Firma.",
+      "ejemplos": [
+        "Fecha y lugar: Gasconia, a 3 de marzo del año de Nuestro Señor 1625",
+        "Saludo: Muy noble y respetado señor:",
+        "Cuerpo: Me atrevo, con la humildad de un padre...",
+        "Despedida: Quedo, con el mayor respeto,",
+        "Firma: Señor D'Artagnan padre",
+        "Saludos posibles: estimada, hola, querido, apreciada",
+        "Despedidas posibles: un abrazo, un beso, espero tus noticias, te echo de menos, nos vemos pronto, escribe pronto, atentamente"
+      ],
+      "palabrasClave": [
+        "carta",
+        "fecha",
+        "lugar",
+        "saludo",
+        "cuerpo",
+        "despedida",
+        "firma",
+        "comunicación escrita",
+        "cinco partes"
+      ],
+      "tiposEjercicio": [
+        "EleccionMultiple",
+        "UnirColumnas",
+        "RellenarHueco",
+        "ArrastrarPalabras",
+        "CompletarSerie",
+        "ClasificarGrupos",
+        "MemoriaPareja"
+      ],
+      "ejerciciosDerivar": 17,
+      "ejercicios": [
+        {
+          "id": "len-005-ex-001",
+          "fichaId": "len-005",
+          "subject": "lengua",
+          "tipo": "EleccionMultiple",
+          "nivel": 1,
+          "tiempoEstimado": 30,
+          "enunciado": "¿Qué es una carta?",
+          "opciones": [
+            {
+              "texto": "Un medio de comunicación escrita"
+            },
+            {
+              "texto": "Un tipo de comunicación no verbal"
+            },
+            {
+              "texto": "Un medio de comunicación oral"
+            },
+            {
+              "texto": "Un tipo de noticia en el periódico"
+            }
+          ],
+          "respuestaCorrecta": "Un medio de comunicación escrita"
+        },
+        {
+          "id": "len-005-ex-002",
+          "fichaId": "len-005",
+          "subject": "lengua",
+          "tipo": "EleccionMultiple",
+          "nivel": 1,
+          "tiempoEstimado": 30,
+          "enunciado": "¿Cuántas partes tiene una carta?",
+          "opciones": [
+            {
+              "texto": "Tres partes"
+            },
+            {
+              "texto": "Cuatro partes"
+            },
+            {
+              "texto": "Cinco partes"
+            },
+            {
+              "texto": "Seis partes"
+            }
+          ],
+          "respuestaCorrecta": "Cinco partes"
+        },
+        {
+          "id": "len-005-ex-003",
+          "fichaId": "len-005",
+          "subject": "lengua",
+          "tipo": "RellenarHueco",
+          "nivel": 1,
+          "tiempoEstimado": 30,
+          "enunciado": "La primera parte de una carta es la [___] y el lugar desde donde se escribe.",
+          "respuestaCorrecta": "fecha"
+        },
+        {
+          "id": "len-005-ex-004",
+          "fichaId": "len-005",
+          "subject": "lengua",
+          "tipo": "EleccionMultiple",
+          "nivel": 1,
+          "tiempoEstimado": 30,
+          "enunciado": "¿Cómo se llama la parte de la carta donde cuentas lo que quieres decir?",
+          "opciones": [
+            {
+              "texto": "Saludo"
+            },
+            {
+              "texto": "Firma"
+            },
+            {
+              "texto": "Cuerpo"
+            },
+            {
+              "texto": "Despedida"
+            }
+          ],
+          "respuestaCorrecta": "Cuerpo"
+        },
+        {
+          "id": "len-005-ex-005",
+          "fichaId": "len-005",
+          "subject": "lengua",
+          "tipo": "RellenarHueco",
+          "nivel": 1,
+          "tiempoEstimado": 30,
+          "enunciado": "La última parte de una carta es la [___] con tu nombre.",
+          "respuestaCorrecta": "firma"
+        },
+        {
+          "id": "len-005-ex-006",
+          "fichaId": "len-005",
+          "subject": "lengua",
+          "tipo": "UnirColumnas",
+          "nivel": 2,
+          "tiempoEstimado": 90,
+          "enunciado": "Une cada parte de la carta con lo que contiene.",
+          "parejas": [
+            {
+              "izquierda": "Fecha y lugar",
+              "derecha": "Gasconia, a 3 de marzo"
+            },
+            {
+              "izquierda": "Saludo",
+              "derecha": "Muy noble y respetado señor:"
+            },
+            {
+              "izquierda": "Despedida",
+              "derecha": "Quedo, con el mayor respeto,"
+            },
+            {
+              "izquierda": "Firma",
+              "derecha": "Señor D'Artagnan padre"
+            }
+          ]
+        },
+        {
+          "id": "len-005-ex-007",
+          "fichaId": "len-005",
+          "subject": "lengua",
+          "tipo": "UnirColumnas",
+          "nivel": 2,
+          "tiempoEstimado": 90,
+          "enunciado": "Une cada número con la parte de la carta que va en ese lugar.",
+          "parejas": [
+            {
+              "izquierda": "1ª parte",
+              "derecha": "Fecha y lugar"
+            },
+            {
+              "izquierda": "2ª parte",
+              "derecha": "Saludo"
+            },
+            {
+              "izquierda": "3ª parte",
+              "derecha": "Cuerpo"
+            },
+            {
+              "izquierda": "4ª parte",
+              "derecha": "Despedida"
+            }
+          ]
+        },
+        {
+          "id": "len-005-ex-008",
+          "fichaId": "len-005",
+          "subject": "lengua",
+          "tipo": "ClasificarGrupos",
+          "nivel": 2,
+          "tiempoEstimado": 60,
+          "enunciado": "Clasifica estas palabras según si son saludos o despedidas de carta.",
+          "grupos": [
+            {
+              "id": "saludo",
+              "nombre": "Saludo"
+            },
+            {
+              "id": "despedida",
+              "nombre": "Despedida"
+            }
+          ],
+          "items": [
+            {
+              "id": "c1",
+              "texto": "Querido",
+              "grupoId": "saludo"
+            },
+            {
+              "id": "c2",
+              "texto": "Un beso",
+              "grupoId": "despedida"
+            },
+            {
+              "id": "c3",
+              "texto": "Estimada",
+              "grupoId": "saludo"
+            },
+            {
+              "id": "c4",
+              "texto": "Atentamente",
+              "grupoId": "despedida"
+            },
+            {
+              "id": "c5",
+              "texto": "Apreciada",
+              "grupoId": "saludo"
+            },
+            {
+              "id": "c6",
+              "texto": "Nos vemos pronto",
+              "grupoId": "despedida"
+            }
+          ]
+        },
+        {
+          "id": "len-005-ex-009",
+          "fichaId": "len-005",
+          "subject": "lengua",
+          "tipo": "ArrastrarPalabras",
+          "nivel": 2,
+          "tiempoEstimado": 60,
+          "enunciado": "Completa la descripción de las partes de la carta.",
+          "fraseConHuecos": "Después del saludo viene el [___] de la carta, y después del cuerpo viene la [___].",
+          "banco": [
+            "cuerpo",
+            "despedida",
+            "firma",
+            "fecha"
+          ],
+          "respuestasCorrectas": [
+            "cuerpo",
+            "despedida"
+          ]
+        },
+        {
+          "id": "len-005-ex-010",
+          "fichaId": "len-005",
+          "subject": "lengua",
+          "tipo": "EleccionMultiple",
+          "nivel": 2,
+          "tiempoEstimado": 30,
+          "enunciado": "Juan escribe: \"Tengo muchas ganas de verte\". ¿En qué parte de la carta va esta frase? Recuerda que el cuerpo es donde cuentas lo que quieres decir.",
+          "opciones": [
+            {
+              "texto": "En el saludo"
+            },
+            {
+              "texto": "En la despedida"
+            },
+            {
+              "texto": "En el cuerpo"
+            },
+            {
+              "texto": "En la fecha"
+            }
+          ],
+          "respuestaCorrecta": "En el cuerpo"
+        },
+        {
+          "id": "len-005-ex-011",
+          "fichaId": "len-005",
+          "subject": "lengua",
+          "tipo": "EleccionMultiple",
+          "nivel": 2,
+          "tiempoEstimado": 30,
+          "enunciado": "¿Cuál de estas opciones es una despedida correcta para una carta?",
+          "opciones": [
+            {
+              "texto": "Querida tía Marta:"
+            },
+            {
+              "texto": "Madrid, 4 de abril de 2018"
+            },
+            {
+              "texto": "Espero tus noticias"
+            },
+            {
+              "texto": "Juan"
+            }
+          ],
+          "respuestaCorrecta": "Espero tus noticias"
+        },
+        {
+          "id": "len-005-ex-012",
+          "fichaId": "len-005",
+          "subject": "lengua",
+          "tipo": "CompletarSerie",
+          "nivel": 2,
+          "tiempoEstimado": 35,
+          "enunciado": "¿Qué parte de la carta falta en esta secuencia?",
+          "serie": [
+            "Saludo",
+            "Cuerpo",
+            null,
+            "Firma"
+          ],
+          "opciones": [
+            "Título",
+            "Despedida",
+            "Índice",
+            "Fecha"
+          ],
+          "respuestaCorrecta": "Despedida"
+        },
+        {
+          "id": "len-005-ex-013",
+          "fichaId": "len-005",
+          "subject": "lengua",
+          "tipo": "EleccionMultiple",
+          "nivel": 3,
+          "tiempoEstimado": 30,
+          "enunciado": "En la carta de D'Artagnan padre aparece \"Gasconia, a 3 de marzo del año 1625\". ¿A qué parte de la carta pertenece? Recuerda cuál es la primera parte.",
+          "opciones": [
+            {
+              "texto": "Al saludo"
+            },
+            {
+              "texto": "Al cuerpo"
+            },
+            {
+              "texto": "A la fecha y lugar"
+            },
+            {
+              "texto": "A la despedida"
+            }
+          ],
+          "respuestaCorrecta": "A la fecha y lugar"
+        },
+        {
+          "id": "len-005-ex-014",
+          "fichaId": "len-005",
+          "subject": "lengua",
+          "tipo": "EleccionMultiple",
+          "nivel": 3,
+          "tiempoEstimado": 30,
+          "enunciado": "¿Cuál de estos saludos NO aparece en el vocabulario de la carta estudiado?",
+          "opciones": [
+            {
+              "texto": "Estimada"
+            },
+            {
+              "texto": "Apreciada"
+            },
+            {
+              "texto": "Encantado"
+            },
+            {
+              "texto": "Querido"
+            }
+          ],
+          "respuestaCorrecta": "Encantado"
+        },
+        {
+          "id": "len-005-ex-015",
+          "fichaId": "len-005",
+          "subject": "lengua",
+          "tipo": "MemoriaPareja",
+          "nivel": 3,
+          "tiempoEstimado": 180,
+          "enunciado": "Une cada parte de la carta con su descripción.",
+          "parejas": [
+            {
+              "a": "Fecha y lugar",
+              "b": "Lo primero que se escribe"
+            },
+            {
+              "a": "Saludo",
+              "b": "Nombre de la persona a quien va dirigida"
+            },
+            {
+              "a": "Cuerpo",
+              "b": "Lo que quieres contar"
+            },
+            {
+              "a": "Despedida",
+              "b": "Un abrazo, atentamente..."
+            },
+            {
+              "a": "Firma",
+              "b": "Tu nombre al final"
+            },
+            {
+              "a": "Carta",
+              "b": "Comunicación escrita con cinco partes"
+            }
+          ]
+        },
+        {
+          "id": "len-005-ex-016",
+          "fichaId": "len-005",
+          "subject": "lengua",
+          "tipo": "EleccionMultiple",
+          "nivel": 3,
+          "tiempoEstimado": 30,
+          "enunciado": "¿Cuál de estas afirmaciones sobre la carta es CORRECTA?",
+          "opciones": [
+            {
+              "texto": "La firma va antes de la despedida"
+            },
+            {
+              "texto": "El saludo va después del cuerpo"
+            },
+            {
+              "texto": "La fecha y el lugar van al principio de la carta"
+            },
+            {
+              "texto": "El cuerpo es la primera parte de la carta"
+            }
+          ],
+          "respuestaCorrecta": "La fecha y el lugar van al principio de la carta"
+        },
+        {
+          "id": "len-005-ex-017",
+          "fichaId": "len-005",
+          "subject": "lengua",
+          "tipo": "EleccionMultiple",
+          "nivel": 3,
+          "tiempoEstimado": 30,
+          "enunciado": "¿Cuál de estas despedidas NO aparece en el vocabulario estudiado?",
+          "opciones": [
+            {
+              "texto": "Te echo de menos"
+            },
+            {
+              "texto": "Escribe pronto"
+            },
+            {
+              "texto": "Con todo mi cariño"
+            },
+            {
+              "texto": "Un abrazo"
+            }
+          ],
+          "respuestaCorrecta": "Con todo mi cariño"
         }
       ]
     }

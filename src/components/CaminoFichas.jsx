@@ -1,14 +1,10 @@
 /**
- * CaminoFichas — camino estilo Duolingo con nodos en zigzag.
- * Muestra fichas de una asignatura con estado visual de progreso.
+ * CaminoFichas — camino estilo Duolingo con nodos en zigzag izquierda/derecha.
  */
 
 import { useEffect, useState } from 'react';
 import { getAllFichaProgress } from '../datos/db';
 import NodoFicha from './NodoFicha';
-
-// Offsets horizontales en % para crear efecto zigzag (4 posiciones cíclicas)
-const ZIGZAG = [8, 35, 62, 35];
 
 function hayRepasoHoy(fp) {
   if (!fp?.superada || !fp?.reviewDates?.length) return false;
@@ -36,17 +32,15 @@ export default function CaminoFichas({ fichas, meta, onSelectFicha, profileId, m
     return (
       <div className="flex flex-col items-center justify-center py-20 text-gray-400 gap-3">
         <span className="text-5xl">📭</span>
-        <p className="text-center text-sm">
-          Todavía no hay fichas para esta asignatura.
-        </p>
+        <p className="text-center text-sm">Todavía no hay fichas para esta asignatura.</p>
       </div>
     );
   }
 
-  const todasSuperadas = fichas.every(f => progreso[f.id]?.superada);
+  const todasSuperadas = fichas.length > 0 && fichas.every(f => progreso[f.id]?.superada);
 
   return (
-    <div className="py-6 px-4 max-w-sm mx-auto">
+    <div className="py-6 px-2 max-w-md mx-auto w-full">
       {fichas.map((ficha, idx) => {
         const fp     = progreso[ficha.id];
         const estado = !fp || fp.totalSessions === 0
@@ -55,24 +49,19 @@ export default function CaminoFichas({ fichas, meta, onSelectFicha, profileId, m
             ? 'superada'
             : 'en_progreso';
         const repaso = hayRepasoHoy(fp);
-        const offset = ZIGZAG[idx % ZIGZAG.length];
+        const isLeft = idx % 2 === 0;
 
         return (
-          <div key={ficha.id} className="relative mb-8">
-            {/* Línea conectora con nodo anterior */}
+          <div key={ficha.id}>
+            {/* Conector entre nodos — línea vertical centrada */}
             {idx > 0 && (
-              <div
-                className="absolute w-0.5 border-l-2 border-dashed border-gray-300"
-                style={{
-                  top: '-2rem',
-                  height: '2rem',
-                  left: `calc(${ZIGZAG[(idx - 1) % ZIGZAG.length]}% + 2rem)`,
-                }}
-              />
+              <div className="flex justify-center py-1">
+                <div className="h-10 w-1 border-l-[3px] border-dashed border-gray-300" />
+              </div>
             )}
 
-            {/* Nodo */}
-            <div style={{ marginLeft: `${offset}%` }}>
+            {/* Fila del nodo — alterna izquierda/derecha */}
+            <div className={`flex ${isLeft ? 'justify-start pl-8' : 'justify-end pr-8'}`}>
               <NodoFicha
                 ficha={ficha}
                 estado={estado}
@@ -86,19 +75,23 @@ export default function CaminoFichas({ fichas, meta, onSelectFicha, profileId, m
         );
       })}
 
-      {/* Nodo final: Repaso completo (solo si todas superadas) */}
+      {/* Conector + nodo final cuando todas superadas */}
       {todasSuperadas && (
-        <div className="flex justify-center mt-4">
-          <div className="flex flex-col items-center gap-2">
-            <div className="w-0.5 h-8 border-l-2 border-dashed border-yellow-300 mx-auto" />
-            <div className="bg-gradient-to-b from-yellow-300 to-orange-400 rounded-full w-20 h-20 flex items-center justify-center text-4xl shadow-lg shadow-orange-200 border-4 border-yellow-400">
-              🏆
-            </div>
-            <span className="text-sm font-bold text-orange-700 text-center">
-              ¡Camino<br/>completado!
-            </span>
+        <>
+          <div className="flex justify-center py-1">
+            <div className="h-10 w-1 border-l-[3px] border-dashed border-yellow-400" />
           </div>
-        </div>
+          <div className="flex justify-center">
+            <div className="flex flex-col items-center gap-2">
+              <div className="w-24 h-24 rounded-full bg-gradient-to-br from-yellow-300 to-orange-400 border-4 border-yellow-500 flex items-center justify-center text-5xl shadow-xl shadow-orange-200">
+                🏆
+              </div>
+              <span className="text-base font-extrabold text-orange-700 text-center leading-tight">
+                ¡Camino<br/>completado!
+              </span>
+            </div>
+          </div>
+        </>
       )}
     </div>
   );

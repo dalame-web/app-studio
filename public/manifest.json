@@ -1,12 +1,5 @@
 {
-  "version": "2026-06-01-2",
-  "fecha": "2026-06-01",
-  "asignaturas": [
-    "ciencias",
-    "ingles",
-    "lengua",
-    "matematicas",
-    "social",
-    "valores"
-  ]
+  "version": "2026-06-02-1",
+  "fecha": "2026-06-02",
+  "asignaturas": []
 }

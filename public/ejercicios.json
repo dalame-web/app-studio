@@ -1,5 +1,5 @@
 {
-  "version": "2026-06-02-2",
+  "version": "2026-06-02-3",
   "fecha": "2026-06-02",
   "fichas": [
     {
@@ -1143,6 +1143,982 @@
             }
           ],
           "respuestaCorrecta": "Para hablar, escribir y entendernos entre nosotros"
+        }
+      ]
+    },
+    {
+      "id": "len-003",
+      "subject": "lengua",
+      "titulo": "El abecedario y el orden alfabético",
+      "nivel": 1,
+      "contenido": "El abecedario está formado por 27 letras: 5 vocales y 22 consonantes. Para ordenar palabras alfabéticamente, primero se compara la primera letra de cada palabra. Si las dos primeras letras son iguales, se compara la segunda letra, y así sucesivamente.",
+      "ejemplos": [
+        "A B C D E F G H I J K L M N Ñ O P Q R S T U V W X Y Z",
+        "mariposa, cuaderno, pájaro → cuaderno, mariposa, pájaro",
+        "mariposa, materia, montaña → mariposa, materia, montaña"
+      ],
+      "palabrasClave": [
+        "abecedario",
+        "letras",
+        "vocales",
+        "consonantes",
+        "orden alfabético",
+        "primera letra",
+        "segunda letra"
+      ],
+      "tiposEjercicio": [
+        "EleccionMultiple",
+        "RellenarHueco",
+        "CompletarSerie",
+        "OrdenarFrase",
+        "SopaLetras",
+        "ClasificarGrupos",
+        "MemoriaPareja"
+      ],
+      "ejerciciosDerivar": 17,
+      "ejercicios": [
+        {
+          "id": "len-003-ex-001",
+          "fichaId": "len-003",
+          "subject": "lengua",
+          "tipo": "EleccionMultiple",
+          "nivel": 1,
+          "tiempoEstimado": 30,
+          "enunciado": "¿Cuántas letras tiene el abecedario?",
+          "opciones": [
+            {
+              "texto": "25 letras"
+            },
+            {
+              "texto": "26 letras"
+            },
+            {
+              "texto": "27 letras"
+            },
+            {
+              "texto": "28 letras"
+            }
+          ],
+          "respuestaCorrecta": "27 letras"
+        },
+        {
+          "id": "len-003-ex-002",
+          "fichaId": "len-003",
+          "subject": "lengua",
+          "tipo": "EleccionMultiple",
+          "nivel": 1,
+          "tiempoEstimado": 30,
+          "enunciado": "¿Cuántas vocales tiene el abecedario?",
+          "opciones": [
+            {
+              "texto": "4 vocales"
+            },
+            {
+              "texto": "5 vocales"
+            },
+            {
+              "texto": "6 vocales"
+            },
+            {
+              "texto": "7 vocales"
+            }
+          ],
+          "respuestaCorrecta": "5 vocales"
+        },
+        {
+          "id": "len-003-ex-003",
+          "fichaId": "len-003",
+          "subject": "lengua",
+          "tipo": "RellenarHueco",
+          "nivel": 1,
+          "tiempoEstimado": 30,
+          "enunciado": "El abecedario tiene 5 vocales y 22 [___].",
+          "respuestaCorrecta": "consonantes"
+        },
+        {
+          "id": "len-003-ex-004",
+          "fichaId": "len-003",
+          "subject": "lengua",
+          "tipo": "EleccionMultiple",
+          "nivel": 1,
+          "tiempoEstimado": 30,
+          "enunciado": "¿Qué letra va después de la N en el abecedario?",
+          "opciones": [
+            {
+              "texto": "M"
+            },
+            {
+              "texto": "O"
+            },
+            {
+              "texto": "Ñ"
+            },
+            {
+              "texto": "P"
+            }
+          ],
+          "respuestaCorrecta": "Ñ"
+        },
+        {
+          "id": "len-003-ex-005",
+          "fichaId": "len-003",
+          "subject": "lengua",
+          "tipo": "RellenarHueco",
+          "nivel": 1,
+          "tiempoEstimado": 30,
+          "enunciado": "Para ordenar palabras alfabéticamente, primero comparamos la [___] letra de cada palabra.",
+          "respuestaCorrecta": "primera"
+        },
+        {
+          "id": "len-003-ex-006",
+          "fichaId": "len-003",
+          "subject": "lengua",
+          "tipo": "CompletarSerie",
+          "nivel": 1,
+          "tiempoEstimado": 35,
+          "enunciado": "¿Qué letra falta en esta serie del abecedario?",
+          "serie": [
+            "C",
+            null,
+            "E",
+            "F",
+            "G"
+          ],
+          "opciones": [
+            "A",
+            "B",
+            "D",
+            "H"
+          ],
+          "respuestaCorrecta": "D"
+        },
+        {
+          "id": "len-003-ex-007",
+          "fichaId": "len-003",
+          "subject": "lengua",
+          "tipo": "CompletarSerie",
+          "nivel": 1,
+          "tiempoEstimado": 35,
+          "enunciado": "¿Qué letra falta en esta serie del abecedario?",
+          "serie": [
+            "P",
+            "Q",
+            null,
+            "S",
+            "T"
+          ],
+          "opciones": [
+            "O",
+            "R",
+            "U",
+            "N"
+          ],
+          "respuestaCorrecta": "R"
+        },
+        {
+          "id": "len-003-ex-008",
+          "fichaId": "len-003",
+          "subject": "lengua",
+          "tipo": "ClasificarGrupos",
+          "nivel": 2,
+          "tiempoEstimado": 60,
+          "enunciado": "Clasifica estas letras en vocales o consonantes.",
+          "grupos": [
+            {
+              "id": "vocal",
+              "nombre": "Vocal"
+            },
+            {
+              "id": "consonante",
+              "nombre": "Consonante"
+            }
+          ],
+          "items": [
+            {
+              "id": "l1",
+              "texto": "A",
+              "grupoId": "vocal"
+            },
+            {
+              "id": "l2",
+              "texto": "B",
+              "grupoId": "consonante"
+            },
+            {
+              "id": "l3",
+              "texto": "E",
+              "grupoId": "vocal"
+            },
+            {
+              "id": "l4",
+              "texto": "M",
+              "grupoId": "consonante"
+            },
+            {
+              "id": "l5",
+              "texto": "I",
+              "grupoId": "vocal"
+            },
+            {
+              "id": "l6",
+              "texto": "Ñ",
+              "grupoId": "consonante"
+            }
+          ]
+        },
+        {
+          "id": "len-003-ex-009",
+          "fichaId": "len-003",
+          "subject": "lengua",
+          "tipo": "OrdenarFrase",
+          "nivel": 2,
+          "tiempoEstimado": 60,
+          "enunciado": "Ordena estas palabras alfabéticamente (de menor a mayor).",
+          "palabrasDesordenadas": [
+            "pájaro",
+            "cuaderno",
+            "mariposa"
+          ],
+          "fraseCorrecta": "cuaderno mariposa pájaro"
+        },
+        {
+          "id": "len-003-ex-010",
+          "fichaId": "len-003",
+          "subject": "lengua",
+          "tipo": "EleccionMultiple",
+          "nivel": 2,
+          "tiempoEstimado": 30,
+          "enunciado": "¿En qué orden alfabético correcto van estas palabras: policía, futbolista, explorador, astronauta?",
+          "opciones": [
+            {
+              "texto": "astronauta, explorador, futbolista, policía"
+            },
+            {
+              "texto": "explorador, astronauta, policía, futbolista"
+            },
+            {
+              "texto": "futbolista, astronauta, explorador, policía"
+            },
+            {
+              "texto": "astronauta, futbolista, explorador, policía"
+            }
+          ],
+          "respuestaCorrecta": "astronauta, explorador, futbolista, policía"
+        },
+        {
+          "id": "len-003-ex-011",
+          "fichaId": "len-003",
+          "subject": "lengua",
+          "tipo": "EleccionMultiple",
+          "nivel": 2,
+          "tiempoEstimado": 30,
+          "enunciado": "Dos palabras empiezan por la misma letra. ¿Qué debes comparar para ordenarlas? Recuerda los pasos del orden alfabético.",
+          "opciones": [
+            {
+              "texto": "La última letra de cada palabra"
+            },
+            {
+              "texto": "El número de letras que tiene cada palabra"
+            },
+            {
+              "texto": "La segunda letra de cada palabra"
+            },
+            {
+              "texto": "Si la palabra es larga o corta"
+            }
+          ],
+          "respuestaCorrecta": "La segunda letra de cada palabra"
+        },
+        {
+          "id": "len-003-ex-012",
+          "fichaId": "len-003",
+          "subject": "lengua",
+          "tipo": "EleccionMultiple",
+          "nivel": 2,
+          "tiempoEstimado": 30,
+          "enunciado": "¿Cuál de estas palabras iría la primera en orden alfabético: mariposa, materia, montaña?",
+          "opciones": [
+            {
+              "texto": "montaña"
+            },
+            {
+              "texto": "materia"
+            },
+            {
+              "texto": "mariposa"
+            },
+            {
+              "texto": "Las tres van igual"
+            }
+          ],
+          "respuestaCorrecta": "mariposa"
+        },
+        {
+          "id": "len-003-ex-013",
+          "fichaId": "len-003",
+          "subject": "lengua",
+          "tipo": "OrdenarFrase",
+          "nivel": 2,
+          "tiempoEstimado": 60,
+          "enunciado": "Ordena estos personajes de Los tres mosqueteros alfabéticamente.",
+          "palabrasDesordenadas": [
+            "Porthos",
+            "Athos",
+            "Aramis",
+            "Milady"
+          ],
+          "fraseCorrecta": "Aramis Athos Milady Porthos"
+        },
+        {
+          "id": "len-003-ex-014",
+          "fichaId": "len-003",
+          "subject": "lengua",
+          "tipo": "SopaLetras",
+          "nivel": 3,
+          "tiempoEstimado": 180,
+          "enunciado": "Encuentra estas vocales del abecedario escritas como palabras.",
+          "palabras": [
+            "VOCAL",
+            "LETRA",
+            "ORDEN",
+            "ABECE"
+          ],
+          "cuadricula": [
+            [
+              "V",
+              "O",
+              "C",
+              "A",
+              "L",
+              "T",
+              "M",
+              "P"
+            ],
+            [
+              "L",
+              "E",
+              "T",
+              "R",
+              "A",
+              "S",
+              "K",
+              "O"
+            ],
+            [
+              "O",
+              "R",
+              "D",
+              "E",
+              "N",
+              "A",
+              "B",
+              "C"
+            ],
+            [
+              "A",
+              "B",
+              "E",
+              "C",
+              "E",
+              "D",
+              "A",
+              "R"
+            ],
+            [
+              "I",
+              "O",
+              "F",
+              "G",
+              "H",
+              "I",
+              "J",
+              "K"
+            ],
+            [
+              "L",
+              "M",
+              "N",
+              "O",
+              "P",
+              "Q",
+              "R",
+              "S"
+            ],
+            [
+              "T",
+              "U",
+              "V",
+              "W",
+              "X",
+              "Y",
+              "Z",
+              "A"
+            ],
+            [
+              "B",
+              "C",
+              "D",
+              "E",
+              "F",
+              "G",
+              "H",
+              "I"
+            ]
+          ]
+        },
+        {
+          "id": "len-003-ex-015",
+          "fichaId": "len-003",
+          "subject": "lengua",
+          "tipo": "MemoriaPareja",
+          "nivel": 3,
+          "tiempoEstimado": 180,
+          "enunciado": "Encuentra cada letra con la que va justo después en el abecedario.",
+          "parejas": [
+            {
+              "a": "C → ...",
+              "b": "D"
+            },
+            {
+              "a": "N → ...",
+              "b": "Ñ"
+            },
+            {
+              "a": "Ñ → ...",
+              "b": "O"
+            },
+            {
+              "a": "Q → ...",
+              "b": "R"
+            },
+            {
+              "a": "V → ...",
+              "b": "W"
+            },
+            {
+              "a": "Y → ...",
+              "b": "Z"
+            }
+          ]
+        },
+        {
+          "id": "len-003-ex-016",
+          "fichaId": "len-003",
+          "subject": "lengua",
+          "tipo": "EleccionMultiple",
+          "nivel": 3,
+          "tiempoEstimado": 30,
+          "enunciado": "¿Cuántas consonantes tiene el abecedario? Recuerda: el abecedario tiene 27 letras y 5 son vocales.",
+          "opciones": [
+            {
+              "texto": "20 consonantes"
+            },
+            {
+              "texto": "21 consonantes"
+            },
+            {
+              "texto": "22 consonantes"
+            },
+            {
+              "texto": "23 consonantes"
+            }
+          ],
+          "respuestaCorrecta": "22 consonantes"
+        },
+        {
+          "id": "len-003-ex-017",
+          "fichaId": "len-003",
+          "subject": "lengua",
+          "tipo": "EleccionMultiple",
+          "nivel": 3,
+          "tiempoEstimado": 30,
+          "enunciado": "¿En qué orden alfabético correcto van estos nombres: Rafa, Ariadna, Javi, Kora?",
+          "opciones": [
+            {
+              "texto": "Ariadna, Javi, Kora, Rafa"
+            },
+            {
+              "texto": "Javi, Ariadna, Rafa, Kora"
+            },
+            {
+              "texto": "Ariadna, Kora, Javi, Rafa"
+            },
+            {
+              "texto": "Kora, Ariadna, Javi, Rafa"
+            }
+          ],
+          "respuestaCorrecta": "Ariadna, Javi, Kora, Rafa"
+        }
+      ]
+    },
+    {
+      "id": "len-004",
+      "subject": "lengua",
+      "titulo": "El punto y el párrafo",
+      "nivel": 2,
+      "contenido": "Un párrafo es un conjunto de oraciones escritas que comparten un tema. Los párrafos se inician siempre con letra mayúscula y finalizan con un punto y aparte. El punto indica el final de una oración. Hay tres tipos de punto: el punto seguido separa oraciones que pertenecen al mismo párrafo; el punto y aparte separa párrafos y se escribe en la línea siguiente; el punto final se escribe al final de un texto.",
+      "ejemplos": [
+        "Punto seguido: separa oraciones dentro del mismo párrafo.",
+        "Punto y aparte: separa párrafos, la siguiente oración va en línea nueva.",
+        "Punto final: indica que el texto ha terminado completamente."
+      ],
+      "palabrasClave": [
+        "párrafo",
+        "punto seguido",
+        "punto y aparte",
+        "punto final",
+        "oración",
+        "mayúscula",
+        "texto",
+        "línea siguiente"
+      ],
+      "tiposEjercicio": [
+        "EleccionMultiple",
+        "RellenarHueco",
+        "ClasificarGrupos",
+        "UnirColumnas",
+        "ArrastrarPalabras",
+        "MemoriaPareja",
+        "OrdenarFrase"
+      ],
+      "ejerciciosDerivar": 18,
+      "ejercicios": [
+        {
+          "id": "len-004-ex-001",
+          "fichaId": "len-004",
+          "subject": "lengua",
+          "tipo": "EleccionMultiple",
+          "nivel": 1,
+          "tiempoEstimado": 30,
+          "enunciado": "¿Qué es un párrafo?",
+          "opciones": [
+            {
+              "texto": "Una sola oración muy larga"
+            },
+            {
+              "texto": "Un conjunto de oraciones escritas que comparten un tema"
+            },
+            {
+              "texto": "El título de un texto"
+            },
+            {
+              "texto": "Una palabra importante del texto"
+            }
+          ],
+          "respuestaCorrecta": "Un conjunto de oraciones escritas que comparten un tema"
+        },
+        {
+          "id": "len-004-ex-002",
+          "fichaId": "len-004",
+          "subject": "lengua",
+          "tipo": "EleccionMultiple",
+          "nivel": 1,
+          "tiempoEstimado": 30,
+          "enunciado": "¿Con qué letra deben empezar siempre los párrafos?",
+          "opciones": [
+            {
+              "texto": "Con letra minúscula"
+            },
+            {
+              "texto": "Con letra mayúscula"
+            },
+            {
+              "texto": "Con cualquier letra"
+            },
+            {
+              "texto": "Con una vocal siempre"
+            }
+          ],
+          "respuestaCorrecta": "Con letra mayúscula"
+        },
+        {
+          "id": "len-004-ex-003",
+          "fichaId": "len-004",
+          "subject": "lengua",
+          "tipo": "RellenarHueco",
+          "nivel": 1,
+          "tiempoEstimado": 30,
+          "enunciado": "El punto indica el [___] de una oración.",
+          "respuestaCorrecta": "final"
+        },
+        {
+          "id": "len-004-ex-004",
+          "fichaId": "len-004",
+          "subject": "lengua",
+          "tipo": "EleccionMultiple",
+          "nivel": 1,
+          "tiempoEstimado": 30,
+          "enunciado": "¿Cuántos tipos de punto hay?",
+          "opciones": [
+            {
+              "texto": "Dos tipos"
+            },
+            {
+              "texto": "Cuatro tipos"
+            },
+            {
+              "texto": "Tres tipos"
+            },
+            {
+              "texto": "Un solo tipo"
+            }
+          ],
+          "respuestaCorrecta": "Tres tipos"
+        },
+        {
+          "id": "len-004-ex-005",
+          "fichaId": "len-004",
+          "subject": "lengua",
+          "tipo": "RellenarHueco",
+          "nivel": 1,
+          "tiempoEstimado": 30,
+          "enunciado": "El punto [___] se escribe al final de un texto.",
+          "respuestaCorrecta": "final"
+        },
+        {
+          "id": "len-004-ex-006",
+          "fichaId": "len-004",
+          "subject": "lengua",
+          "tipo": "UnirColumnas",
+          "nivel": 2,
+          "tiempoEstimado": 90,
+          "enunciado": "Une cada tipo de punto con su definición.",
+          "parejas": [
+            {
+              "izquierda": "Punto seguido",
+              "derecha": "Separa oraciones del mismo párrafo"
+            },
+            {
+              "izquierda": "Punto y aparte",
+              "derecha": "Separa párrafos, línea siguiente"
+            },
+            {
+              "izquierda": "Punto final",
+              "derecha": "Se escribe al final del texto"
+            },
+            {
+              "izquierda": "Párrafo",
+              "derecha": "Empieza con mayúscula y acaba con punto y aparte"
+            }
+          ]
+        },
+        {
+          "id": "len-004-ex-007",
+          "fichaId": "len-004",
+          "subject": "lengua",
+          "tipo": "ClasificarGrupos",
+          "nivel": 2,
+          "tiempoEstimado": 60,
+          "enunciado": "Clasifica cada descripción con el tipo de punto al que corresponde.",
+          "grupos": [
+            {
+              "id": "seguido",
+              "nombre": "Punto seguido"
+            },
+            {
+              "id": "aparte",
+              "nombre": "Punto y aparte"
+            },
+            {
+              "id": "final",
+              "nombre": "Punto final"
+            }
+          ],
+          "items": [
+            {
+              "id": "d1",
+              "texto": "Separa oraciones del mismo párrafo",
+              "grupoId": "seguido"
+            },
+            {
+              "id": "d2",
+              "texto": "Se escribe en la línea siguiente",
+              "grupoId": "aparte"
+            },
+            {
+              "id": "d3",
+              "texto": "Indica que el texto se ha terminado",
+              "grupoId": "final"
+            },
+            {
+              "id": "d4",
+              "texto": "Separa párrafos entre sí",
+              "grupoId": "aparte"
+            },
+            {
+              "id": "d5",
+              "texto": "La siguiente oración sigue en la misma línea",
+              "grupoId": "seguido"
+            },
+            {
+              "id": "d6",
+              "texto": "Solo aparece una vez en todo el texto",
+              "grupoId": "final"
+            }
+          ]
+        },
+        {
+          "id": "len-004-ex-008",
+          "fichaId": "len-004",
+          "subject": "lengua",
+          "tipo": "ArrastrarPalabras",
+          "nivel": 2,
+          "tiempoEstimado": 60,
+          "enunciado": "Completa la definición de párrafo arrastrando las palabras correctas.",
+          "fraseConHuecos": "Un párrafo es un conjunto de [___] escritas que comparten un [___].",
+          "banco": [
+            "oraciones",
+            "tema",
+            "puntos",
+            "título"
+          ],
+          "respuestasCorrectas": [
+            "oraciones",
+            "tema"
+          ]
+        },
+        {
+          "id": "len-004-ex-009",
+          "fichaId": "len-004",
+          "subject": "lengua",
+          "tipo": "EleccionMultiple",
+          "nivel": 2,
+          "tiempoEstimado": 30,
+          "enunciado": "¿Qué punto usarías para separar dos oraciones que hablan del mismo tema dentro del mismo párrafo? Recuerda que el punto seguido no cambia de párrafo.",
+          "opciones": [
+            {
+              "texto": "Punto y aparte"
+            },
+            {
+              "texto": "Punto final"
+            },
+            {
+              "texto": "Punto seguido"
+            },
+            {
+              "texto": "No se usa ningún punto"
+            }
+          ],
+          "respuestaCorrecta": "Punto seguido"
+        },
+        {
+          "id": "len-004-ex-010",
+          "fichaId": "len-004",
+          "subject": "lengua",
+          "tipo": "EleccionMultiple",
+          "nivel": 2,
+          "tiempoEstimado": 30,
+          "enunciado": "Has terminado de escribir tu redacción entera. ¿Qué punto pones al final? Recuerda los tres tipos de punto y cuándo se usa cada uno.",
+          "opciones": [
+            {
+              "texto": "Punto seguido"
+            },
+            {
+              "texto": "Punto y aparte"
+            },
+            {
+              "texto": "Punto final"
+            },
+            {
+              "texto": "No se pone ningún punto"
+            }
+          ],
+          "respuestaCorrecta": "Punto final"
+        },
+        {
+          "id": "len-004-ex-011",
+          "fichaId": "len-004",
+          "subject": "lengua",
+          "tipo": "EleccionMultiple",
+          "nivel": 2,
+          "tiempoEstimado": 30,
+          "enunciado": "Acabas un párrafo y quieres empezar uno nuevo con otra idea. ¿Qué punto usas y dónde escribes la siguiente oración?",
+          "opciones": [
+            {
+              "texto": "Punto seguido y continúo en la misma línea"
+            },
+            {
+              "texto": "Punto y aparte y escribo en la línea siguiente"
+            },
+            {
+              "texto": "Punto final y no escribo más"
+            },
+            {
+              "texto": "Punto seguido y escribo en la línea siguiente"
+            }
+          ],
+          "respuestaCorrecta": "Punto y aparte y escribo en la línea siguiente"
+        },
+        {
+          "id": "len-004-ex-012",
+          "fichaId": "len-004",
+          "subject": "lengua",
+          "tipo": "OrdenarFrase",
+          "nivel": 2,
+          "tiempoEstimado": 60,
+          "enunciado": "Ordena las palabras para formar la definición correcta de párrafo.",
+          "palabrasDesordenadas": [
+            "con",
+            "Los",
+            "mayúscula",
+            "párrafos",
+            "letra",
+            "inician",
+            "siempre",
+            "se"
+          ],
+          "fraseCorrecta": "Los párrafos se inician siempre con letra mayúscula"
+        },
+        {
+          "id": "len-004-ex-013",
+          "fichaId": "len-004",
+          "subject": "lengua",
+          "tipo": "MemoriaPareja",
+          "nivel": 3,
+          "tiempoEstimado": 180,
+          "enunciado": "Une cada tipo de punto con lo que indica.",
+          "parejas": [
+            {
+              "a": "Punto seguido",
+              "b": "Mismas ideas, mismo párrafo"
+            },
+            {
+              "a": "Punto y aparte",
+              "b": "Nueva idea, línea siguiente"
+            },
+            {
+              "a": "Punto final",
+              "b": "El texto ha terminado"
+            },
+            {
+              "a": "Párrafo",
+              "b": "Empieza con mayúscula"
+            },
+            {
+              "a": "Oración",
+              "b": "Acaba con algún tipo de punto"
+            },
+            {
+              "a": "Texto",
+              "b": "Acaba con punto final"
+            }
+          ]
+        },
+        {
+          "id": "len-004-ex-014",
+          "fichaId": "len-004",
+          "subject": "lengua",
+          "tipo": "EleccionMultiple",
+          "nivel": 3,
+          "tiempoEstimado": 30,
+          "enunciado": "¿Cuál de estas afirmaciones sobre el párrafo es CORRECTA?",
+          "opciones": [
+            {
+              "texto": "Un párrafo puede empezar con letra minúscula"
+            },
+            {
+              "texto": "Un párrafo finaliza con un punto y aparte"
+            },
+            {
+              "texto": "Un párrafo solo puede tener una oración"
+            },
+            {
+              "texto": "Un párrafo siempre termina con punto final"
+            }
+          ],
+          "respuestaCorrecta": "Un párrafo finaliza con un punto y aparte"
+        },
+        {
+          "id": "len-004-ex-015",
+          "fichaId": "len-004",
+          "subject": "lengua",
+          "tipo": "EleccionMultiple",
+          "nivel": 3,
+          "tiempoEstimado": 30,
+          "enunciado": "¿Cuál de estas afirmaciones sobre el punto seguido es CORRECTA? Recuerda que no cambia de párrafo.",
+          "opciones": [
+            {
+              "texto": "Separa dos párrafos distintos"
+            },
+            {
+              "texto": "Se escribe en la línea siguiente"
+            },
+            {
+              "texto": "Separa oraciones que pertenecen al mismo párrafo"
+            },
+            {
+              "texto": "Solo aparece una vez en todo el texto"
+            }
+          ],
+          "respuestaCorrecta": "Separa oraciones que pertenecen al mismo párrafo"
+        },
+        {
+          "id": "len-004-ex-016",
+          "fichaId": "len-004",
+          "subject": "lengua",
+          "tipo": "EleccionMultiple",
+          "nivel": 3,
+          "tiempoEstimado": 30,
+          "enunciado": "Un texto tiene tres párrafos. ¿Cuántos puntos y aparte hay como mínimo? Recuerda que cada párrafo termina con punto y aparte, excepto el último que lleva punto final.",
+          "opciones": [
+            {
+              "texto": "Uno"
+            },
+            {
+              "texto": "Dos"
+            },
+            {
+              "texto": "Tres"
+            },
+            {
+              "texto": "Ninguno"
+            }
+          ],
+          "respuestaCorrecta": "Dos"
+        },
+        {
+          "id": "len-004-ex-017",
+          "fichaId": "len-004",
+          "subject": "lengua",
+          "tipo": "ArrastrarPalabras",
+          "nivel": 3,
+          "tiempoEstimado": 60,
+          "enunciado": "Completa las definiciones de los tres tipos de punto.",
+          "fraseConHuecos": "El punto [___] separa oraciones del mismo párrafo. El punto y aparte se escribe en la línea [___].",
+          "banco": [
+            "seguido",
+            "siguiente",
+            "final",
+            "anterior"
+          ],
+          "respuestasCorrectas": [
+            "seguido",
+            "siguiente"
+          ]
+        },
+        {
+          "id": "len-004-ex-018",
+          "fichaId": "len-004",
+          "subject": "lengua",
+          "tipo": "EleccionMultiple",
+          "nivel": 3,
+          "tiempoEstimado": 30,
+          "enunciado": "¿Cuál de estas opciones describe correctamente los tres tipos de punto en orden?",
+          "opciones": [
+            {
+              "texto": "Seguido: mismo párrafo · Aparte: línea siguiente · Final: fin del texto"
+            },
+            {
+              "texto": "Seguido: fin del texto · Aparte: mismo párrafo · Final: línea siguiente"
+            },
+            {
+              "texto": "Seguido: línea siguiente · Aparte: fin del texto · Final: mismo párrafo"
+            },
+            {
+              "texto": "Seguido: nueva idea · Aparte: mismo párrafo · Final: línea siguiente"
+            }
+          ],
+          "respuestaCorrecta": "Seguido: mismo párrafo · Aparte: línea siguiente · Final: fin del texto"
         }
       ]
     }

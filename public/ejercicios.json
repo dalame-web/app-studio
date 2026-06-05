@@ -1,5 +1,5 @@
 {
-  "version": "2026-06-05-2",
+  "version": "2026-06-05-3",
   "fecha": "2026-06-05",
   "fichas": [
     {
@@ -4073,6 +4073,514 @@
             "XXXX"
           ],
           "respuestaCorrecta": "XXX"
+        }
+      ]
+    },
+    {
+      "id": "mat-005",
+      "subject": "matematicas",
+      "titulo": "Números romanos: resta y repetición",
+      "nivel": 2,
+      "contenido": "La regla de resta dice que cuando un símbolo pequeño va antes de uno mayor, se resta. Solo se permiten ciertas combinaciones: I antes de V o X da 4 (IV) y 9 (IX); X antes de L o C da 40 (XL) y 90 (XC); C antes de D o M da 400 (CD) y 900 (CM). Ejemplos: IV = 5 - 1 = 4, IX = 10 - 1 = 9, XL = 50 - 10 = 40. La regla de repetición dice que algunas letras pueden repetirse hasta 3 veces seguidas: I→III, X→XXX, C→CCC, M→MMM. Pero V, L y D no se repiten nunca.",
+      "ejemplos": [
+        "IV = 5 - 1 = 4",
+        "IX = 10 - 1 = 9",
+        "XL = 50 - 10 = 40",
+        "XC = 90, CD = 400, CM = 900"
+      ],
+      "palabrasClave": [
+        "resta",
+        "IV",
+        "IX",
+        "XL",
+        "XC",
+        "CD",
+        "CM",
+        "repetición",
+        "V L D no se repiten",
+        "símbolo pequeño antes de mayor"
+      ],
+      "tiposEjercicio": [
+        "EleccionMultiple",
+        "RellenarHueco",
+        "ClasificarGrupos",
+        "OrdenarFrase",
+        "MemoriaPareja",
+        "UnirColumnas",
+        "CompletarSerie"
+      ],
+      "ejerciciosDerivar": 18,
+      "ejercicios": [
+        {
+          "id": "mat-005-ex-001",
+          "fichaId": "mat-005",
+          "subject": "matematicas",
+          "tipo": "EleccionMultiple",
+          "nivel": 1,
+          "tiempoEstimado": 30,
+          "enunciado": "¿Cuándo se resta en los números romanos?",
+          "opciones": [
+            {
+              "texto": "Cuando un símbolo grande va antes de uno pequeño",
+              "emoji": ""
+            },
+            {
+              "texto": "Cuando un símbolo pequeño va antes de uno mayor",
+              "emoji": ""
+            },
+            {
+              "texto": "Cuando dos símbolos iguales van juntos",
+              "emoji": ""
+            },
+            {
+              "texto": "Cuando el símbolo va al final",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "Cuando un símbolo pequeño va antes de uno mayor"
+        },
+        {
+          "id": "mat-005-ex-002",
+          "fichaId": "mat-005",
+          "subject": "matematicas",
+          "tipo": "RellenarHueco",
+          "nivel": 1,
+          "tiempoEstimado": 30,
+          "enunciado": "IV = 5 - 1 = [___].",
+          "respuestaCorrecta": "4"
+        },
+        {
+          "id": "mat-005-ex-003",
+          "fichaId": "mat-005",
+          "subject": "matematicas",
+          "tipo": "EleccionMultiple",
+          "nivel": 1,
+          "tiempoEstimado": 30,
+          "enunciado": "¿Cuánto vale IX?",
+          "opciones": [
+            {
+              "texto": "11",
+              "emoji": ""
+            },
+            {
+              "texto": "9",
+              "emoji": ""
+            },
+            {
+              "texto": "8",
+              "emoji": ""
+            },
+            {
+              "texto": "10",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "9"
+        },
+        {
+          "id": "mat-005-ex-004",
+          "fichaId": "mat-005",
+          "subject": "matematicas",
+          "tipo": "RellenarHueco",
+          "nivel": 1,
+          "tiempoEstimado": 30,
+          "enunciado": "XL = 50 - 10 = [___].",
+          "respuestaCorrecta": "40"
+        },
+        {
+          "id": "mat-005-ex-005",
+          "fichaId": "mat-005",
+          "subject": "matematicas",
+          "tipo": "EleccionMultiple",
+          "nivel": 1,
+          "tiempoEstimado": 30,
+          "enunciado": "¿Cuáles son las letras que NUNCA se pueden repetir?",
+          "opciones": [
+            {
+              "texto": "I, X, C",
+              "emoji": ""
+            },
+            {
+              "texto": "V, L, D",
+              "emoji": ""
+            },
+            {
+              "texto": "I, V, X",
+              "emoji": ""
+            },
+            {
+              "texto": "C, D, M",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "V, L, D"
+        },
+        {
+          "id": "mat-005-ex-006",
+          "fichaId": "mat-005",
+          "subject": "matematicas",
+          "tipo": "UnirColumnas",
+          "nivel": 2,
+          "tiempoEstimado": 90,
+          "enunciado": "Une cada número romano con su valor:",
+          "parejas": [
+            {
+              "izquierda": "IV",
+              "derecha": "4"
+            },
+            {
+              "izquierda": "IX",
+              "derecha": "9"
+            },
+            {
+              "izquierda": "XL",
+              "derecha": "40"
+            },
+            {
+              "izquierda": "XC",
+              "derecha": "90"
+            }
+          ]
+        },
+        {
+          "id": "mat-005-ex-007",
+          "fichaId": "mat-005",
+          "subject": "matematicas",
+          "tipo": "ClasificarGrupos",
+          "nivel": 2,
+          "tiempoEstimado": 60,
+          "enunciado": "Clasifica cada número romano: ¿usa la regla de suma o la de resta?",
+          "grupos": [
+            {
+              "id": "suma",
+              "nombre": "Regla de suma"
+            },
+            {
+              "id": "resta",
+              "nombre": "Regla de resta"
+            }
+          ],
+          "items": [
+            {
+              "id": "1",
+              "texto": "VI",
+              "grupoId": "suma"
+            },
+            {
+              "id": "2",
+              "texto": "IV",
+              "grupoId": "resta"
+            },
+            {
+              "id": "3",
+              "texto": "XV",
+              "grupoId": "suma"
+            },
+            {
+              "id": "4",
+              "texto": "IX",
+              "grupoId": "resta"
+            },
+            {
+              "id": "5",
+              "texto": "LX",
+              "grupoId": "suma"
+            },
+            {
+              "id": "6",
+              "texto": "XL",
+              "grupoId": "resta"
+            }
+          ]
+        },
+        {
+          "id": "mat-005-ex-008",
+          "fichaId": "mat-005",
+          "subject": "matematicas",
+          "tipo": "EleccionMultiple",
+          "nivel": 2,
+          "tiempoEstimado": 30,
+          "enunciado": "¿Cuánto vale XC? Recuerda: X antes de C significa resta.",
+          "opciones": [
+            {
+              "texto": "110",
+              "emoji": ""
+            },
+            {
+              "texto": "80",
+              "emoji": ""
+            },
+            {
+              "texto": "90",
+              "emoji": ""
+            },
+            {
+              "texto": "100",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "90"
+        },
+        {
+          "id": "mat-005-ex-009",
+          "fichaId": "mat-005",
+          "subject": "matematicas",
+          "tipo": "OrdenarFrase",
+          "nivel": 2,
+          "tiempoEstimado": 60,
+          "enunciado": "Ordena las palabras para formar la regla de resta:",
+          "palabrasDesordenadas": [
+            "antes",
+            "pequeño",
+            "va",
+            "símbolo",
+            "mayor",
+            "de",
+            "Un",
+            "resta",
+            "se"
+          ],
+          "fraseCorrecta": "Un símbolo pequeño va antes de mayor se resta"
+        },
+        {
+          "id": "mat-005-ex-010",
+          "fichaId": "mat-005",
+          "subject": "matematicas",
+          "tipo": "RellenarHueco",
+          "nivel": 2,
+          "tiempoEstimado": 30,
+          "enunciado": "I antes de V o X da [___] y 9.",
+          "respuestaCorrecta": "4"
+        },
+        {
+          "id": "mat-005-ex-011",
+          "fichaId": "mat-005",
+          "subject": "matematicas",
+          "tipo": "CompletarSerie",
+          "nivel": 2,
+          "tiempoEstimado": 35,
+          "enunciado": "Completa las combinaciones de resta permitidas:",
+          "serie": [
+            "IV = 4",
+            "IX = 9",
+            "XL = 40",
+            null,
+            "CD = 400"
+          ],
+          "opciones": [
+            "XC = 80",
+            "XC = 90",
+            "XC = 100"
+          ],
+          "respuestaCorrecta": "XC = 90"
+        },
+        {
+          "id": "mat-005-ex-012",
+          "fichaId": "mat-005",
+          "subject": "matematicas",
+          "tipo": "EleccionMultiple",
+          "nivel": 2,
+          "tiempoEstimado": 30,
+          "enunciado": "¿Cuál de estas combinaciones de resta NO está permitida?",
+          "opciones": [
+            {
+              "texto": "IV",
+              "emoji": ""
+            },
+            {
+              "texto": "XL",
+              "emoji": ""
+            },
+            {
+              "texto": "VX",
+              "emoji": ""
+            },
+            {
+              "texto": "CM",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "VX"
+        },
+        {
+          "id": "mat-005-ex-013",
+          "fichaId": "mat-005",
+          "subject": "matematicas",
+          "tipo": "MemoriaPareja",
+          "nivel": 3,
+          "tiempoEstimado": 180,
+          "enunciado": "Empareja cada número romano con su valor:",
+          "parejas": [
+            {
+              "a": "IV",
+              "b": "4"
+            },
+            {
+              "a": "IX",
+              "b": "9"
+            },
+            {
+              "a": "XL",
+              "b": "40"
+            },
+            {
+              "a": "XC",
+              "b": "90"
+            },
+            {
+              "a": "CD",
+              "b": "400"
+            },
+            {
+              "a": "CM",
+              "b": "900"
+            }
+          ]
+        },
+        {
+          "id": "mat-005-ex-014",
+          "fichaId": "mat-005",
+          "subject": "matematicas",
+          "tipo": "EleccionMultiple",
+          "nivel": 3,
+          "tiempoEstimado": 30,
+          "enunciado": "¿Cuál de estos números romanos está MAL escrito?",
+          "opciones": [
+            {
+              "texto": "IV",
+              "emoji": ""
+            },
+            {
+              "texto": "IX",
+              "emoji": ""
+            },
+            {
+              "texto": "IC",
+              "emoji": ""
+            },
+            {
+              "texto": "XC",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "IC"
+        },
+        {
+          "id": "mat-005-ex-015",
+          "fichaId": "mat-005",
+          "subject": "matematicas",
+          "tipo": "RellenarHueco",
+          "nivel": 3,
+          "tiempoEstimado": 30,
+          "enunciado": "El número 900 en romano es [___].",
+          "respuestaCorrecta": "CM"
+        },
+        {
+          "id": "mat-005-ex-016",
+          "fichaId": "mat-005",
+          "subject": "matematicas",
+          "tipo": "EleccionMultiple",
+          "nivel": 3,
+          "tiempoEstimado": 30,
+          "enunciado": "¿Qué diferencia hay entre IV y VI?",
+          "opciones": [
+            {
+              "texto": "Son iguales, los dos valen 6",
+              "emoji": ""
+            },
+            {
+              "texto": "IV = 4 (resta) y VI = 6 (suma)",
+              "emoji": ""
+            },
+            {
+              "texto": "IV = 6 (suma) y VI = 4 (resta)",
+              "emoji": ""
+            },
+            {
+              "texto": "Los dos valen 4",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "IV = 4 (resta) y VI = 6 (suma)"
+        },
+        {
+          "id": "mat-005-ex-017",
+          "fichaId": "mat-005",
+          "subject": "matematicas",
+          "tipo": "ClasificarGrupos",
+          "nivel": 3,
+          "tiempoEstimado": 60,
+          "enunciado": "Clasifica: ¿el número romano está bien escrito o mal escrito?",
+          "grupos": [
+            {
+              "id": "bien",
+              "nombre": "✅ Bien escrito"
+            },
+            {
+              "id": "mal",
+              "nombre": "❌ Mal escrito"
+            }
+          ],
+          "items": [
+            {
+              "id": "1",
+              "texto": "IX",
+              "grupoId": "bien"
+            },
+            {
+              "id": "2",
+              "texto": "VV",
+              "grupoId": "mal"
+            },
+            {
+              "id": "3",
+              "texto": "XL",
+              "grupoId": "bien"
+            },
+            {
+              "id": "4",
+              "texto": "LL",
+              "grupoId": "mal"
+            },
+            {
+              "id": "5",
+              "texto": "CM",
+              "grupoId": "bien"
+            },
+            {
+              "id": "6",
+              "texto": "DD",
+              "grupoId": "mal"
+            }
+          ]
+        },
+        {
+          "id": "mat-005-ex-018",
+          "fichaId": "mat-005",
+          "subject": "matematicas",
+          "tipo": "EleccionMultiple",
+          "nivel": 3,
+          "tiempoEstimado": 30,
+          "enunciado": "¿Cuánto vale CD? Recuerda: C antes de D significa resta.",
+          "opciones": [
+            {
+              "texto": "600",
+              "emoji": ""
+            },
+            {
+              "texto": "500",
+              "emoji": ""
+            },
+            {
+              "texto": "400",
+              "emoji": ""
+            },
+            {
+              "texto": "300",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "400"
         }
       ]
     }

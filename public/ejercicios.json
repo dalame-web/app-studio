@@ -1,5 +1,5 @@
 {
-  "version": "2026-06-05-1",
+  "version": "2026-06-05-2",
   "fecha": "2026-06-05",
   "fichas": [
     {
@@ -3072,6 +3072,1007 @@
             }
           ],
           "respuestaCorrecta": "No hay moda porque ninguno se repite más que los otros dos"
+        }
+      ]
+    },
+    {
+      "id": "mat-003",
+      "subject": "matematicas",
+      "titulo": "Gráfico de barras",
+      "nivel": 1,
+      "contenido": "Un gráfico de barras es como un dibujo que nos ayuda a ver fácilmente cuántos hay de cada cosa. Cada barra representa una categoría, y la altura de la barra muestra cuántos hay de esa categoría. Por ejemplo, para mostrar los caramelos de cada color: Rojo=6, Verde=2, Azul=3, Amarillo=4. En lugar de solo decir los números, hacemos un dibujo con barras.",
+      "ejemplos": [
+        "Caramelos: Rojo=6, Verde=2, Azul=3, Amarillo=4. La barra del rojo es la más alta.",
+        "La mesa de clase mide 1 metro de alto → la barra llegaría hasta el 1."
+      ],
+      "palabrasClave": [
+        "gráfico de barras",
+        "barra",
+        "altura",
+        "categoría",
+        "representa"
+      ],
+      "tiposEjercicio": [
+        "EleccionMultiple",
+        "RellenarHueco",
+        "ProblemaVisual",
+        "CompletarSerie",
+        "ClasificarGrupos",
+        "UnirColumnas"
+      ],
+      "ejerciciosDerivar": 16,
+      "ejercicios": [
+        {
+          "id": "mat-003-ex-001",
+          "fichaId": "mat-003",
+          "subject": "matematicas",
+          "tipo": "EleccionMultiple",
+          "nivel": 1,
+          "tiempoEstimado": 30,
+          "enunciado": "¿Para qué sirve un gráfico de barras?",
+          "opciones": [
+            {
+              "texto": "Para sumar todos los números",
+              "emoji": ""
+            },
+            {
+              "texto": "Para ver fácilmente cuántos hay de cada cosa",
+              "emoji": ""
+            },
+            {
+              "texto": "Para ordenar los datos de menor a mayor",
+              "emoji": ""
+            },
+            {
+              "texto": "Para encontrar el número del centro",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "Para ver fácilmente cuántos hay de cada cosa"
+        },
+        {
+          "id": "mat-003-ex-002",
+          "fichaId": "mat-003",
+          "subject": "matematicas",
+          "tipo": "RellenarHueco",
+          "nivel": 1,
+          "tiempoEstimado": 30,
+          "enunciado": "En un gráfico de barras, cada barra [___] una categoría.",
+          "respuestaCorrecta": "representa"
+        },
+        {
+          "id": "mat-003-ex-003",
+          "fichaId": "mat-003",
+          "subject": "matematicas",
+          "tipo": "EleccionMultiple",
+          "nivel": 1,
+          "tiempoEstimado": 30,
+          "enunciado": "En el gráfico de caramelos: Rojo=6, Verde=2, Azul=3, Amarillo=4. ¿Qué barra es la más alta?",
+          "opciones": [
+            {
+              "texto": "Verde",
+              "emoji": ""
+            },
+            {
+              "texto": "Azul",
+              "emoji": ""
+            },
+            {
+              "texto": "Rojo",
+              "emoji": ""
+            },
+            {
+              "texto": "Amarillo",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "Rojo"
+        },
+        {
+          "id": "mat-003-ex-004",
+          "fichaId": "mat-003",
+          "subject": "matematicas",
+          "tipo": "RellenarHueco",
+          "nivel": 1,
+          "tiempoEstimado": 30,
+          "enunciado": "La [___] de la barra muestra cuántos hay de esa categoría.",
+          "respuestaCorrecta": "altura"
+        },
+        {
+          "id": "mat-003-ex-005",
+          "fichaId": "mat-003",
+          "subject": "matematicas",
+          "tipo": "EleccionMultiple",
+          "nivel": 1,
+          "tiempoEstimado": 30,
+          "enunciado": "En el gráfico de caramelos, ¿qué barra es la más baja?",
+          "opciones": [
+            {
+              "texto": "Rojo",
+              "emoji": ""
+            },
+            {
+              "texto": "Verde",
+              "emoji": ""
+            },
+            {
+              "texto": "Amarillo",
+              "emoji": ""
+            },
+            {
+              "texto": "Azul",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "Verde"
+        },
+        {
+          "id": "mat-003-ex-006",
+          "fichaId": "mat-003",
+          "subject": "matematicas",
+          "tipo": "UnirColumnas",
+          "nivel": 2,
+          "tiempoEstimado": 90,
+          "enunciado": "Une cada color con el número de caramelos que tiene en el gráfico:",
+          "parejas": [
+            {
+              "izquierda": "Rojo",
+              "derecha": "6"
+            },
+            {
+              "izquierda": "Verde",
+              "derecha": "2"
+            },
+            {
+              "izquierda": "Azul",
+              "derecha": "3"
+            },
+            {
+              "izquierda": "Amarillo",
+              "derecha": "4"
+            }
+          ]
+        },
+        {
+          "id": "mat-003-ex-007",
+          "fichaId": "mat-003",
+          "subject": "matematicas",
+          "tipo": "EleccionMultiple",
+          "nivel": 2,
+          "tiempoEstimado": 30,
+          "enunciado": "En el gráfico de caramelos, ¿cuántos caramelos amarillos hay?",
+          "opciones": [
+            {
+              "texto": "2",
+              "emoji": ""
+            },
+            {
+              "texto": "6",
+              "emoji": ""
+            },
+            {
+              "texto": "4",
+              "emoji": ""
+            },
+            {
+              "texto": "3",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "4"
+        },
+        {
+          "id": "mat-003-ex-008",
+          "fichaId": "mat-003",
+          "subject": "matematicas",
+          "tipo": "ClasificarGrupos",
+          "nivel": 2,
+          "tiempoEstimado": 60,
+          "enunciado": "Clasifica las barras del gráfico según su altura:",
+          "grupos": [
+            {
+              "id": "alta",
+              "nombre": "Barra alta (más de 3)"
+            },
+            {
+              "id": "baja",
+              "nombre": "Barra baja (3 o menos)"
+            }
+          ],
+          "items": [
+            {
+              "id": "1",
+              "texto": "Rojo (6)",
+              "grupoId": "alta"
+            },
+            {
+              "id": "2",
+              "texto": "Verde (2)",
+              "grupoId": "baja"
+            },
+            {
+              "id": "3",
+              "texto": "Azul (3)",
+              "grupoId": "baja"
+            },
+            {
+              "id": "4",
+              "texto": "Amarillo (4)",
+              "grupoId": "alta"
+            }
+          ]
+        },
+        {
+          "id": "mat-003-ex-009",
+          "fichaId": "mat-003",
+          "subject": "matematicas",
+          "tipo": "EleccionMultiple",
+          "nivel": 2,
+          "tiempoEstimado": 30,
+          "enunciado": "¿Qué diferencia hay entre el gráfico de barras y simplemente escribir los números?",
+          "opciones": [
+            {
+              "texto": "El gráfico solo sirve para colores",
+              "emoji": ""
+            },
+            {
+              "texto": "El gráfico ayuda a ver la información más fácilmente con un dibujo",
+              "emoji": ""
+            },
+            {
+              "texto": "El gráfico siempre tiene exactamente 4 barras",
+              "emoji": ""
+            },
+            {
+              "texto": "El gráfico solo muestra el número más grande",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "El gráfico ayuda a ver la información más fácilmente con un dibujo"
+        },
+        {
+          "id": "mat-003-ex-010",
+          "fichaId": "mat-003",
+          "subject": "matematicas",
+          "tipo": "CompletarSerie",
+          "nivel": 2,
+          "tiempoEstimado": 35,
+          "enunciado": "Completa los datos del gráfico de caramelos:",
+          "serie": [
+            "Rojo: 6",
+            null,
+            "Azul: 3",
+            "Amarillo: 4"
+          ],
+          "opciones": [
+            "Verde: 1",
+            "Verde: 2",
+            "Verde: 5"
+          ],
+          "respuestaCorrecta": "Verde: 2"
+        },
+        {
+          "id": "mat-003-ex-011",
+          "fichaId": "mat-003",
+          "subject": "matematicas",
+          "tipo": "ProblemaVisual",
+          "nivel": 2,
+          "tiempoEstimado": 45,
+          "enunciado": "En el gráfico hay 6 rojos y 2 verdes. ¿Cuántos caramelos más tiene el rojo que el verde?",
+          "visual": {
+            "tipo": "emojis",
+            "emoji": "🍬",
+            "cantidad": 6,
+            "operacion": "resta",
+            "cantidadOperacion": 2
+          },
+          "respuestaCorrecta": "4",
+          "esNumerico": true
+        },
+        {
+          "id": "mat-003-ex-012",
+          "fichaId": "mat-003",
+          "subject": "matematicas",
+          "tipo": "ComprensionLectora",
+          "nivel": 2,
+          "tiempoEstimado": 240,
+          "enunciado": "Lee y responde:",
+          "texto": "Un gráfico de barras es un dibujo que nos ayuda a ver cuántos hay de cada cosa. Cada barra representa una categoría. La altura de la barra muestra el número. En el gráfico de caramelos, la barra del rojo llega hasta el 6, la del verde hasta el 2, la del azul hasta el 3 y la del amarillo hasta el 4.",
+          "preguntas": [
+            {
+              "tipo": "EleccionMultiple",
+              "enunciado": "¿Qué muestra la altura de una barra?",
+              "opciones": [
+                "El color de la categoría",
+                "El número de esa categoría",
+                "El nombre del gráfico",
+                "Cuántas barras hay"
+              ],
+              "respuestaCorrecta": "El número de esa categoría"
+            },
+            {
+              "tipo": "RellenarHueco",
+              "enunciado": "Cada barra [___] una categoría.",
+              "respuestaCorrecta": "representa"
+            },
+            {
+              "tipo": "EleccionMultiple",
+              "enunciado": "¿Hasta qué número llega la barra del azul?",
+              "opciones": [
+                "2",
+                "4",
+                "3",
+                "6"
+              ],
+              "respuestaCorrecta": "3"
+            }
+          ]
+        },
+        {
+          "id": "mat-003-ex-013",
+          "fichaId": "mat-003",
+          "subject": "matematicas",
+          "tipo": "EleccionMultiple",
+          "nivel": 3,
+          "tiempoEstimado": 30,
+          "enunciado": "En el gráfico: Rojo=6, Verde=2, Azul=3, Amarillo=4. ¿Cuántos caramelos hay en total?",
+          "opciones": [
+            {
+              "texto": "13",
+              "emoji": ""
+            },
+            {
+              "texto": "15",
+              "emoji": ""
+            },
+            {
+              "texto": "14",
+              "emoji": ""
+            },
+            {
+              "texto": "12",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "15"
+        },
+        {
+          "id": "mat-003-ex-014",
+          "fichaId": "mat-003",
+          "subject": "matematicas",
+          "tipo": "EleccionMultiple",
+          "nivel": 3,
+          "tiempoEstimado": 30,
+          "enunciado": "Si añadimos 3 caramelos azules más al gráfico, ¿hasta qué número llegaría la barra del azul?",
+          "opciones": [
+            {
+              "texto": "4",
+              "emoji": ""
+            },
+            {
+              "texto": "5",
+              "emoji": ""
+            },
+            {
+              "texto": "6",
+              "emoji": ""
+            },
+            {
+              "texto": "7",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "6"
+        },
+        {
+          "id": "mat-003-ex-015",
+          "fichaId": "mat-003",
+          "subject": "matematicas",
+          "tipo": "ProblemaVisual",
+          "nivel": 3,
+          "tiempoEstimado": 45,
+          "enunciado": "El gráfico tiene 4 barras: Rojo, Verde, Azul, Amarillo. ¿Cuántas barras tienen más de 3 caramelos?",
+          "visual": {
+            "tipo": "emojis",
+            "emoji": "📊",
+            "cantidad": 4,
+            "operacion": null,
+            "cantidadOperacion": 0
+          },
+          "opciones": [
+            "1",
+            "2",
+            "3",
+            "4"
+          ],
+          "respuestaCorrecta": "2",
+          "esNumerico": false
+        },
+        {
+          "id": "mat-003-ex-016",
+          "fichaId": "mat-003",
+          "subject": "matematicas",
+          "tipo": "EleccionMultiple",
+          "nivel": 3,
+          "tiempoEstimado": 30,
+          "enunciado": "En el gráfico de caramelos, ¿qué color tiene exactamente 1 caramelo menos que el amarillo?",
+          "opciones": [
+            {
+              "texto": "Rojo",
+              "emoji": ""
+            },
+            {
+              "texto": "Verde",
+              "emoji": ""
+            },
+            {
+              "texto": "Azul",
+              "emoji": ""
+            },
+            {
+              "texto": "Ninguno",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "Azul"
+        }
+      ]
+    },
+    {
+      "id": "mat-004",
+      "subject": "matematicas",
+      "titulo": "Números romanos: símbolos y regla de suma",
+      "nivel": 2,
+      "contenido": "Los romanos usaban solo 7 letras para representar todos los números: I=1, V=5, X=10, L=50, C=100, D=500, M=1000. La regla de suma dice que cuando un símbolo pequeño va después de uno mayor, se suma. Por ejemplo: VI = 5 + 1 = 6, XV = 10 + 5 = 15, LX = 50 + 10 = 60. Algunas letras pueden repetirse hasta 3 veces seguidas: I→III, X→XXX, C→CCC, M→MMM. Pero V, L y D no se repiten nunca.",
+      "ejemplos": [
+        "VI = 5 + 1 = 6",
+        "XV = 10 + 5 = 15",
+        "LX = 50 + 10 = 60",
+        "III = 1 + 1 + 1 = 3"
+      ],
+      "palabrasClave": [
+        "I",
+        "V",
+        "X",
+        "L",
+        "C",
+        "D",
+        "M",
+        "suma",
+        "símbolo pequeño después de mayor",
+        "repetición"
+      ],
+      "tiposEjercicio": [
+        "EleccionMultiple",
+        "RellenarHueco",
+        "UnirColumnas",
+        "ArrastrarPalabras",
+        "CompletarSerie",
+        "SopaLetras",
+        "ClasificarGrupos"
+      ],
+      "ejerciciosDerivar": 18,
+      "ejercicios": [
+        {
+          "id": "mat-004-ex-001",
+          "fichaId": "mat-004",
+          "subject": "matematicas",
+          "tipo": "EleccionMultiple",
+          "nivel": 1,
+          "tiempoEstimado": 30,
+          "enunciado": "¿Cuántas letras usaban los romanos para representar todos los números?",
+          "opciones": [
+            {
+              "texto": "5",
+              "emoji": ""
+            },
+            {
+              "texto": "10",
+              "emoji": ""
+            },
+            {
+              "texto": "7",
+              "emoji": ""
+            },
+            {
+              "texto": "9",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "7"
+        },
+        {
+          "id": "mat-004-ex-002",
+          "fichaId": "mat-004",
+          "subject": "matematicas",
+          "tipo": "UnirColumnas",
+          "nivel": 1,
+          "tiempoEstimado": 90,
+          "enunciado": "Une cada número romano con su valor:",
+          "parejas": [
+            {
+              "izquierda": "I",
+              "derecha": "1"
+            },
+            {
+              "izquierda": "V",
+              "derecha": "5"
+            },
+            {
+              "izquierda": "X",
+              "derecha": "10"
+            },
+            {
+              "izquierda": "L",
+              "derecha": "50"
+            }
+          ]
+        },
+        {
+          "id": "mat-004-ex-003",
+          "fichaId": "mat-004",
+          "subject": "matematicas",
+          "tipo": "EleccionMultiple",
+          "nivel": 1,
+          "tiempoEstimado": 30,
+          "enunciado": "¿Cuánto vale la letra C en números romanos?",
+          "opciones": [
+            {
+              "texto": "10",
+              "emoji": ""
+            },
+            {
+              "texto": "500",
+              "emoji": ""
+            },
+            {
+              "texto": "50",
+              "emoji": ""
+            },
+            {
+              "texto": "100",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "100"
+        },
+        {
+          "id": "mat-004-ex-004",
+          "fichaId": "mat-004",
+          "subject": "matematicas",
+          "tipo": "RellenarHueco",
+          "nivel": 1,
+          "tiempoEstimado": 30,
+          "enunciado": "La letra M en números romanos vale [___].",
+          "respuestaCorrecta": "1000"
+        },
+        {
+          "id": "mat-004-ex-005",
+          "fichaId": "mat-004",
+          "subject": "matematicas",
+          "tipo": "EleccionMultiple",
+          "nivel": 1,
+          "tiempoEstimado": 30,
+          "enunciado": "VI = 5 + 1. ¿Cuánto es VI?",
+          "opciones": [
+            {
+              "texto": "4",
+              "emoji": ""
+            },
+            {
+              "texto": "51",
+              "emoji": ""
+            },
+            {
+              "texto": "6",
+              "emoji": ""
+            },
+            {
+              "texto": "15",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "6"
+        },
+        {
+          "id": "mat-004-ex-006",
+          "fichaId": "mat-004",
+          "subject": "matematicas",
+          "tipo": "ArrastrarPalabras",
+          "nivel": 2,
+          "tiempoEstimado": 60,
+          "enunciado": "Completa la regla de suma:",
+          "fraseConHuecos": "Cuando un símbolo [___] va después de uno [___], se suma.",
+          "banco": [
+            "pequeño",
+            "mayor",
+            "primero",
+            "igual"
+          ],
+          "respuestasCorrectas": [
+            "pequeño",
+            "mayor"
+          ]
+        },
+        {
+          "id": "mat-004-ex-007",
+          "fichaId": "mat-004",
+          "subject": "matematicas",
+          "tipo": "EleccionMultiple",
+          "nivel": 2,
+          "tiempoEstimado": 30,
+          "enunciado": "XV = 10 + 5. Recuerda: símbolo pequeño después de mayor se suma. ¿Cuánto es XV?",
+          "opciones": [
+            {
+              "texto": "5",
+              "emoji": ""
+            },
+            {
+              "texto": "50",
+              "emoji": ""
+            },
+            {
+              "texto": "15",
+              "emoji": ""
+            },
+            {
+              "texto": "14",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "15"
+        },
+        {
+          "id": "mat-004-ex-008",
+          "fichaId": "mat-004",
+          "subject": "matematicas",
+          "tipo": "UnirColumnas",
+          "nivel": 2,
+          "tiempoEstimado": 90,
+          "enunciado": "Une cada número romano con su valor decimal:",
+          "parejas": [
+            {
+              "izquierda": "C",
+              "derecha": "100"
+            },
+            {
+              "izquierda": "D",
+              "derecha": "500"
+            },
+            {
+              "izquierda": "M",
+              "derecha": "1000"
+            },
+            {
+              "izquierda": "L",
+              "derecha": "50"
+            }
+          ]
+        },
+        {
+          "id": "mat-004-ex-009",
+          "fichaId": "mat-004",
+          "subject": "matematicas",
+          "tipo": "ClasificarGrupos",
+          "nivel": 2,
+          "tiempoEstimado": 60,
+          "enunciado": "Clasifica cada letra según si puede repetirse o no:",
+          "grupos": [
+            {
+              "id": "puede",
+              "nombre": "Puede repetirse"
+            },
+            {
+              "id": "nopuede",
+              "nombre": "NO puede repetirse"
+            }
+          ],
+          "items": [
+            {
+              "id": "1",
+              "texto": "I",
+              "grupoId": "puede"
+            },
+            {
+              "id": "2",
+              "texto": "V",
+              "grupoId": "nopuede"
+            },
+            {
+              "id": "3",
+              "texto": "X",
+              "grupoId": "puede"
+            },
+            {
+              "id": "4",
+              "texto": "L",
+              "grupoId": "nopuede"
+            },
+            {
+              "id": "5",
+              "texto": "C",
+              "grupoId": "puede"
+            },
+            {
+              "id": "6",
+              "texto": "D",
+              "grupoId": "nopuede"
+            }
+          ]
+        },
+        {
+          "id": "mat-004-ex-010",
+          "fichaId": "mat-004",
+          "subject": "matematicas",
+          "tipo": "EleccionMultiple",
+          "nivel": 2,
+          "tiempoEstimado": 30,
+          "enunciado": "LX = 50 + 10. ¿Cuánto es LX?",
+          "opciones": [
+            {
+              "texto": "40",
+              "emoji": ""
+            },
+            {
+              "texto": "510",
+              "emoji": ""
+            },
+            {
+              "texto": "60",
+              "emoji": ""
+            },
+            {
+              "texto": "15",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "60"
+        },
+        {
+          "id": "mat-004-ex-011",
+          "fichaId": "mat-004",
+          "subject": "matematicas",
+          "tipo": "CompletarSerie",
+          "nivel": 2,
+          "tiempoEstimado": 35,
+          "enunciado": "Completa la tabla de símbolos romanos:",
+          "serie": [
+            "I = 1",
+            "V = 5",
+            "X = 10",
+            null,
+            "C = 100"
+          ],
+          "opciones": [
+            "L = 50",
+            "L = 100",
+            "L = 500"
+          ],
+          "respuestaCorrecta": "L = 50"
+        },
+        {
+          "id": "mat-004-ex-012",
+          "fichaId": "mat-004",
+          "subject": "matematicas",
+          "tipo": "RellenarHueco",
+          "nivel": 2,
+          "tiempoEstimado": 30,
+          "enunciado": "Las letras V, L y D [___] se repiten nunca.",
+          "respuestaCorrecta": "no"
+        },
+        {
+          "id": "mat-004-ex-013",
+          "fichaId": "mat-004",
+          "subject": "matematicas",
+          "tipo": "EleccionMultiple",
+          "nivel": 3,
+          "tiempoEstimado": 30,
+          "enunciado": "¿Cuál de estos números romanos está MAL escrito porque repite una letra que no puede repetirse?",
+          "opciones": [
+            {
+              "texto": "III",
+              "emoji": ""
+            },
+            {
+              "texto": "XXX",
+              "emoji": ""
+            },
+            {
+              "texto": "VV",
+              "emoji": ""
+            },
+            {
+              "texto": "CCC",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "VV"
+        },
+        {
+          "id": "mat-004-ex-014",
+          "fichaId": "mat-004",
+          "subject": "matematicas",
+          "tipo": "EleccionMultiple",
+          "nivel": 3,
+          "tiempoEstimado": 30,
+          "enunciado": "¿Cuánto vale VIII? Recuerda: símbolo pequeño después de mayor se suma.",
+          "opciones": [
+            {
+              "texto": "7",
+              "emoji": ""
+            },
+            {
+              "texto": "9",
+              "emoji": ""
+            },
+            {
+              "texto": "8",
+              "emoji": ""
+            },
+            {
+              "texto": "13",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "8"
+        },
+        {
+          "id": "mat-004-ex-015",
+          "fichaId": "mat-004",
+          "subject": "matematicas",
+          "tipo": "RellenarHueco",
+          "nivel": 3,
+          "tiempoEstimado": 30,
+          "enunciado": "El número 15 en romano es [___].",
+          "respuestaCorrecta": "XV"
+        },
+        {
+          "id": "mat-004-ex-016",
+          "fichaId": "mat-004",
+          "subject": "matematicas",
+          "tipo": "SopaLetras",
+          "nivel": 3,
+          "tiempoEstimado": 180,
+          "enunciado": "Encuentra los 5 símbolos romanos escondidos:",
+          "palabras": [
+            "ROMAN",
+            "SUMA",
+            "VALOR",
+            "LETRA",
+            "CINCO"
+          ],
+          "cuadricula": [
+            [
+              "R",
+              "O",
+              "M",
+              "A",
+              "N",
+              "P",
+              "Q",
+              "Z"
+            ],
+            [
+              "S",
+              "U",
+              "M",
+              "A",
+              "B",
+              "C",
+              "D",
+              "E"
+            ],
+            [
+              "F",
+              "G",
+              "V",
+              "A",
+              "L",
+              "O",
+              "R",
+              "H"
+            ],
+            [
+              "I",
+              "J",
+              "K",
+              "L",
+              "E",
+              "T",
+              "R",
+              "A"
+            ],
+            [
+              "C",
+              "I",
+              "N",
+              "C",
+              "O",
+              "M",
+              "N",
+              "O"
+            ],
+            [
+              "P",
+              "Q",
+              "R",
+              "S",
+              "T",
+              "U",
+              "V",
+              "W"
+            ],
+            [
+              "X",
+              "Y",
+              "Z",
+              "A",
+              "B",
+              "C",
+              "D",
+              "E"
+            ],
+            [
+              "F",
+              "G",
+              "H",
+              "I",
+              "J",
+              "K",
+              "L",
+              "M"
+            ]
+          ]
+        },
+        {
+          "id": "mat-004-ex-017",
+          "fichaId": "mat-004",
+          "subject": "matematicas",
+          "tipo": "EleccionMultiple",
+          "nivel": 3,
+          "tiempoEstimado": 30,
+          "enunciado": "¿Cuál es el valor de LXV? (L=50, X=10, V=5 — todos van de mayor a menor, se suman)",
+          "opciones": [
+            {
+              "texto": "55",
+              "emoji": ""
+            },
+            {
+              "texto": "65",
+              "emoji": ""
+            },
+            {
+              "texto": "75",
+              "emoji": ""
+            },
+            {
+              "texto": "45",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "65"
+        },
+        {
+          "id": "mat-004-ex-018",
+          "fichaId": "mat-004",
+          "subject": "matematicas",
+          "tipo": "CompletarSerie",
+          "nivel": 3,
+          "tiempoEstimado": 35,
+          "enunciado": "Completa la serie de números romanos de 10 en 10:",
+          "serie": [
+            "X",
+            "XX",
+            null,
+            "XL",
+            "L"
+          ],
+          "opciones": [
+            "XXV",
+            "XXX",
+            "XXXX"
+          ],
+          "respuestaCorrecta": "XXX"
         }
       ]
     }

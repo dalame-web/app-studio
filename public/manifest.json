@@ -1,7 +1,8 @@
 {
-  "version": "2026-06-02-4",
-  "fecha": "2026-06-02",
+  "version": "2026-06-05-1",
+  "fecha": "2026-06-05",
   "asignaturas": [
-    "lengua"
+    "lengua",
+    "matematicas"
   ]
 }

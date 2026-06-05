@@ -1,6 +1,6 @@
 {
-  "version": "2026-06-02-4",
-  "fecha": "2026-06-02",
+  "version": "2026-06-05-1",
+  "fecha": "2026-06-05",
   "fichas": [
     {
       "id": "len-001",
@@ -2576,6 +2576,502 @@
             }
           ],
           "respuestaCorrecta": "Con todo mi cariño"
+        }
+      ]
+    },
+    {
+      "id": "mat-001",
+      "subject": "matematicas",
+      "titulo": "La moda",
+      "nivel": 1,
+      "contenido": "La moda es el número que más se repite dentro de un grupo de datos. Por ejemplo, si tienes una caja con caramelos de colores: 6 rojos, 2 verdes, 3 azules y 5 amarillos, el color que más aparece es el rojo (6), así que la moda es rojo. La moda es siempre el dato que aparece más veces en el grupo.",
+      "ejemplos": [
+        "Caramelos: Rojo=6, Verde=2, Azul=3, Amarillo=5 → La moda es rojo (aparece 6 veces).",
+        "Números: 2, 3, 3, 5, 7 → La moda es 3 porque se repite más."
+      ],
+      "palabrasClave": [
+        "moda",
+        "dato más repetido",
+        "grupo de datos",
+        "repite",
+        "más veces"
+      ],
+      "tiposEjercicio": [
+        "EleccionMultiple",
+        "RellenarHueco",
+        "ClasificarGrupos",
+        "ProblemaVisual",
+        "CompletarSerie"
+      ],
+      "ejerciciosDerivar": 18,
+      "ejercicios": [
+        {
+          "id": "mat-001-ex-001",
+          "fichaId": "mat-001",
+          "subject": "matematicas",
+          "tipo": "EleccionMultiple",
+          "nivel": 1,
+          "tiempoEstimado": 30,
+          "enunciado": "¿Qué es la moda?",
+          "opciones": [
+            {
+              "texto": "El número más grande del grupo",
+              "emoji": ""
+            },
+            {
+              "texto": "El número que más se repite",
+              "emoji": ""
+            },
+            {
+              "texto": "El número que está en el centro",
+              "emoji": ""
+            },
+            {
+              "texto": "El número más pequeño del grupo",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "El número que más se repite"
+        },
+        {
+          "id": "mat-001-ex-002",
+          "fichaId": "mat-001",
+          "subject": "matematicas",
+          "tipo": "RellenarHueco",
+          "nivel": 1,
+          "tiempoEstimado": 30,
+          "enunciado": "La moda es el número que más se [___] dentro de un grupo de datos.",
+          "respuestaCorrecta": "repite"
+        },
+        {
+          "id": "mat-001-ex-003",
+          "fichaId": "mat-001",
+          "subject": "matematicas",
+          "tipo": "EleccionMultiple",
+          "nivel": 1,
+          "tiempoEstimado": 30,
+          "enunciado": "Hay 6 rojos, 2 verdes, 3 azules y 5 amarillos. ¿Cuál es la moda?",
+          "opciones": [
+            {
+              "texto": "Verde",
+              "emoji": ""
+            },
+            {
+              "texto": "Azul",
+              "emoji": ""
+            },
+            {
+              "texto": "Amarillo",
+              "emoji": ""
+            },
+            {
+              "texto": "Rojo",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "Rojo"
+        },
+        {
+          "id": "mat-001-ex-004",
+          "fichaId": "mat-001",
+          "subject": "matematicas",
+          "tipo": "ProblemaVisual",
+          "nivel": 1,
+          "tiempoEstimado": 45,
+          "enunciado": "En una caja hay 🔴🔴🔴🔴🔴🔴 rojos, 🟢🟢 verdes y 🔵🔵🔵 azules. ¿Cuántos caramelos rojos hay?",
+          "visual": {
+            "tipo": "emojis",
+            "emoji": "🍬",
+            "cantidad": 6,
+            "operacion": null,
+            "cantidadOperacion": 0
+          },
+          "opciones": [
+            "4",
+            "5",
+            "6",
+            "7"
+          ],
+          "respuestaCorrecta": "6",
+          "esNumerico": false
+        },
+        {
+          "id": "mat-001-ex-005",
+          "fichaId": "mat-001",
+          "subject": "matematicas",
+          "tipo": "EleccionMultiple",
+          "nivel": 1,
+          "tiempoEstimado": 30,
+          "enunciado": "En la lista: 4, 7, 4, 9, 4. ¿Cuál es la moda?",
+          "opciones": [
+            {
+              "texto": "9",
+              "emoji": ""
+            },
+            {
+              "texto": "7",
+              "emoji": ""
+            },
+            {
+              "texto": "4",
+              "emoji": ""
+            },
+            {
+              "texto": "3",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "4"
+        },
+        {
+          "id": "mat-001-ex-006",
+          "fichaId": "mat-001",
+          "subject": "matematicas",
+          "tipo": "ClasificarGrupos",
+          "nivel": 2,
+          "tiempoEstimado": 60,
+          "enunciado": "Clasifica cada afirmación: ¿es verdad sobre la moda o no?",
+          "grupos": [
+            {
+              "id": "verdad",
+              "nombre": "✅ Es verdad"
+            },
+            {
+              "id": "falso",
+              "nombre": "❌ No es verdad"
+            }
+          ],
+          "items": [
+            {
+              "id": "1",
+              "texto": "Es el dato más repetido",
+              "grupoId": "verdad"
+            },
+            {
+              "id": "2",
+              "texto": "Es el número más grande",
+              "grupoId": "falso"
+            },
+            {
+              "id": "3",
+              "texto": "Puede ser un color o un número",
+              "grupoId": "verdad"
+            },
+            {
+              "id": "4",
+              "texto": "Es siempre el número del centro",
+              "grupoId": "falso"
+            },
+            {
+              "id": "5",
+              "texto": "Se busca en un grupo de datos",
+              "grupoId": "verdad"
+            },
+            {
+              "id": "6",
+              "texto": "Es el dato que menos aparece",
+              "grupoId": "falso"
+            }
+          ]
+        },
+        {
+          "id": "mat-001-ex-007",
+          "fichaId": "mat-001",
+          "subject": "matematicas",
+          "tipo": "EleccionMultiple",
+          "nivel": 2,
+          "tiempoEstimado": 30,
+          "enunciado": "Números: 8, 3, 5, 3, 9, 3. Recuerda que la moda es el que más se repite. ¿Cuál es la moda?",
+          "opciones": [
+            {
+              "texto": "3",
+              "emoji": ""
+            },
+            {
+              "texto": "5",
+              "emoji": ""
+            },
+            {
+              "texto": "8",
+              "emoji": ""
+            },
+            {
+              "texto": "9",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "3"
+        },
+        {
+          "id": "mat-001-ex-008",
+          "fichaId": "mat-001",
+          "subject": "matematicas",
+          "tipo": "RellenarHueco",
+          "nivel": 2,
+          "tiempoEstimado": 30,
+          "enunciado": "Caramelos: Rojo=6, Verde=2, Azul=3, Amarillo=5. La moda es [___] porque es el color que más aparece.",
+          "respuestaCorrecta": "Rojo"
+        },
+        {
+          "id": "mat-001-ex-009",
+          "fichaId": "mat-001",
+          "subject": "matematicas",
+          "tipo": "CompletarSerie",
+          "nivel": 2,
+          "tiempoEstimado": 35,
+          "enunciado": "Completa la tabla de caramelos de la ficha:",
+          "serie": [
+            "Rojo: 6",
+            "Verde: 2",
+            null,
+            "Amarillo: 5"
+          ],
+          "opciones": [
+            "Azul: 1",
+            "Azul: 3",
+            "Azul: 4"
+          ],
+          "respuestaCorrecta": "Azul: 3"
+        },
+        {
+          "id": "mat-001-ex-010",
+          "fichaId": "mat-001",
+          "subject": "matematicas",
+          "tipo": "EleccionMultiple",
+          "nivel": 2,
+          "tiempoEstimado": 30,
+          "enunciado": "Pedro anota las notas de sus exámenes: 7, 8, 7, 10, 7. ¿Cuál es la moda?",
+          "opciones": [
+            {
+              "texto": "10",
+              "emoji": ""
+            },
+            {
+              "texto": "8",
+              "emoji": ""
+            },
+            {
+              "texto": "7",
+              "emoji": ""
+            },
+            {
+              "texto": "6",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "7"
+        },
+        {
+          "id": "mat-001-ex-011",
+          "fichaId": "mat-001",
+          "subject": "matematicas",
+          "tipo": "EleccionMultiple",
+          "nivel": 2,
+          "tiempoEstimado": 30,
+          "enunciado": "¿Para qué sirve la moda?",
+          "opciones": [
+            {
+              "texto": "Para ordenar los datos de menor a mayor",
+              "emoji": ""
+            },
+            {
+              "texto": "Para saber cuál es el dato que más se repite",
+              "emoji": ""
+            },
+            {
+              "texto": "Para sumar todos los datos del grupo",
+              "emoji": ""
+            },
+            {
+              "texto": "Para encontrar el número del centro",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "Para saber cuál es el dato que más se repite"
+        },
+        {
+          "id": "mat-001-ex-012",
+          "fichaId": "mat-001",
+          "subject": "matematicas",
+          "tipo": "ProblemaVisual",
+          "nivel": 2,
+          "tiempoEstimado": 45,
+          "enunciado": "🌟🌟🌟🌟 🌙🌙 ☀️☀️☀️ En este grupo, ¿cuál es la moda? Recuerda: la moda es el símbolo que más veces aparece.",
+          "visual": {
+            "tipo": "emojis",
+            "emoji": "🌟",
+            "cantidad": 4,
+            "operacion": null,
+            "cantidadOperacion": 0
+          },
+          "opciones": [
+            "🌙",
+            "☀️",
+            "🌟",
+            "Ninguno"
+          ],
+          "respuestaCorrecta": "🌟",
+          "esNumerico": false
+        },
+        {
+          "id": "mat-001-ex-013",
+          "fichaId": "mat-001",
+          "subject": "matematicas",
+          "tipo": "ClasificarGrupos",
+          "nivel": 2,
+          "tiempoEstimado": 60,
+          "enunciado": "Grupo de datos: 5, 2, 5, 8, 5, 2. Clasifica cada número según cuántas veces aparece.",
+          "grupos": [
+            {
+              "id": "tres",
+              "nombre": "Aparece 3 veces"
+            },
+            {
+              "id": "dos",
+              "nombre": "Aparece 2 veces"
+            },
+            {
+              "id": "una",
+              "nombre": "Aparece 1 vez"
+            }
+          ],
+          "items": [
+            {
+              "id": "1",
+              "texto": "5",
+              "grupoId": "tres"
+            },
+            {
+              "id": "2",
+              "texto": "2",
+              "grupoId": "dos"
+            },
+            {
+              "id": "3",
+              "texto": "8",
+              "grupoId": "una"
+            },
+            {
+              "id": "4",
+              "texto": "¿Cuál es la moda?",
+              "grupoId": "tres"
+            }
+          ]
+        },
+        {
+          "id": "mat-001-ex-014",
+          "fichaId": "mat-001",
+          "subject": "matematicas",
+          "tipo": "RellenarHueco",
+          "nivel": 3,
+          "tiempoEstimado": 30,
+          "enunciado": "En el grupo: 1, 4, 1, 9, 1, 4. La moda es [___] porque aparece 3 veces.",
+          "respuestaCorrecta": "1"
+        },
+        {
+          "id": "mat-001-ex-015",
+          "fichaId": "mat-001",
+          "subject": "matematicas",
+          "tipo": "EleccionMultiple",
+          "nivel": 3,
+          "tiempoEstimado": 30,
+          "enunciado": "En una tienda venden: 3 manzanas, 6 peras, 3 naranjas, 6 plátanos, 6 uvas. ¿Cuál es la moda?",
+          "opciones": [
+            {
+              "texto": "Manzana",
+              "emoji": ""
+            },
+            {
+              "texto": "Naranja",
+              "emoji": ""
+            },
+            {
+              "texto": "Pera",
+              "emoji": ""
+            },
+            {
+              "texto": "No hay moda",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "Pera"
+        },
+        {
+          "id": "mat-001-ex-016",
+          "fichaId": "mat-001",
+          "subject": "matematicas",
+          "tipo": "EleccionMultiple",
+          "nivel": 3,
+          "tiempoEstimado": 30,
+          "enunciado": "Datos: 12, 7, 12, 9, 7, 12. La moda es 12. ¿Por qué NO es la moda el 7?",
+          "opciones": [
+            {
+              "texto": "Porque el 7 es más pequeño que el 12",
+              "emoji": ""
+            },
+            {
+              "texto": "Porque el 7 aparece solo 2 veces y el 12 aparece 3 veces",
+              "emoji": ""
+            },
+            {
+              "texto": "Porque el 7 no está en el centro del grupo",
+              "emoji": ""
+            },
+            {
+              "texto": "Porque el 12 es el último número del grupo",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "Porque el 7 aparece solo 2 veces y el 12 aparece 3 veces"
+        },
+        {
+          "id": "mat-001-ex-017",
+          "fichaId": "mat-001",
+          "subject": "matematicas",
+          "tipo": "CompletarSerie",
+          "nivel": 3,
+          "tiempoEstimado": 35,
+          "enunciado": "Fíjate en cuántas veces aparece cada dato y completa: Datos: 3, 5, 3, 7, 3. La moda es [___]",
+          "serie": [
+            "Dato 3 → aparece 3 veces",
+            null,
+            "Dato 5 → aparece 1 vez",
+            "Dato 7 → aparece 1 vez"
+          ],
+          "opciones": [
+            "La moda es 3",
+            "La moda es 5",
+            "La moda es 7"
+          ],
+          "respuestaCorrecta": "La moda es 3"
+        },
+        {
+          "id": "mat-001-ex-018",
+          "fichaId": "mat-001",
+          "subject": "matematicas",
+          "tipo": "EleccionMultiple",
+          "nivel": 3,
+          "tiempoEstimado": 30,
+          "enunciado": "Grupo: 4, 4, 7, 7, 9. Tanto el 4 como el 7 aparecen 2 veces. ¿Qué ocurre con la moda?",
+          "opciones": [
+            {
+              "texto": "La moda es 9 porque es el mayor",
+              "emoji": ""
+            },
+            {
+              "texto": "No hay moda porque ninguno se repite más que los otros dos",
+              "emoji": ""
+            },
+            {
+              "texto": "La moda es 4 porque va primero",
+              "emoji": ""
+            },
+            {
+              "texto": "La moda es 7 porque es el más grande de los dos",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "No hay moda porque ninguno se repite más que los otros dos"
         }
       ]
     }

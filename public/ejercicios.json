@@ -1,5 +1,5 @@
 {
-  "version": "2026-06-05-3",
+  "version": "2026-06-05-4",
   "fecha": "2026-06-05",
   "fichas": [
     {
@@ -4581,6 +4581,931 @@
             }
           ],
           "respuestaCorrecta": "400"
+        }
+      ]
+    },
+    {
+      "id": "mat-006",
+      "subject": "matematicas",
+      "titulo": "Números romanos: combinación y trucos",
+      "nivel": 3,
+      "contenido": "Los números romanos se construyen de izquierda a derecha, de mayor a menor. Para formar números compuestos se combinan los bloques de decenas y unidades. El truco 1 es recordar que V, L y D nunca se duplican: si ves VV, LL o DD, está mal. El truco 2 es que el símbolo pequeño antes resta y después suma: IX = 10-1, XI = 10+1. El truco 3 es pensar en bloques: divide el número en centenas, decenas y unidades y traduce cada bloque.",
+      "ejemplos": [
+        "24 = XX + IV → XXIV",
+        "58 = L + VIII → LVIII",
+        "93 = XC + III → XCIII",
+        "198 = C + XC + VIII → CXCVIII"
+      ],
+      "palabrasClave": [
+        "combinación",
+        "izquierda a derecha",
+        "mayor a menor",
+        "bloques",
+        "XXIV",
+        "LVIII",
+        "XCIII",
+        "CXCVIII",
+        "truco"
+      ],
+      "tiposEjercicio": [
+        "EleccionMultiple",
+        "RellenarHueco",
+        "ArrastrarPalabras",
+        "CompletarSerie",
+        "UnirColumnas",
+        "MemoriaPareja"
+      ],
+      "ejerciciosDerivar": 17,
+      "ejercicios": [
+        {
+          "id": "mat-006-ex-001",
+          "fichaId": "mat-006",
+          "subject": "matematicas",
+          "tipo": "EleccionMultiple",
+          "nivel": 1,
+          "tiempoEstimado": 30,
+          "enunciado": "¿En qué dirección se construyen los números romanos combinados?",
+          "opciones": [
+            {
+              "texto": "De derecha a izquierda",
+              "emoji": ""
+            },
+            {
+              "texto": "De izquierda a derecha",
+              "emoji": ""
+            },
+            {
+              "texto": "De menor a mayor",
+              "emoji": ""
+            },
+            {
+              "texto": "En cualquier orden",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "De izquierda a derecha"
+        },
+        {
+          "id": "mat-006-ex-002",
+          "fichaId": "mat-006",
+          "subject": "matematicas",
+          "tipo": "RellenarHueco",
+          "nivel": 1,
+          "tiempoEstimado": 30,
+          "enunciado": "24 = XX + IV → [___].",
+          "respuestaCorrecta": "XXIV"
+        },
+        {
+          "id": "mat-006-ex-003",
+          "fichaId": "mat-006",
+          "subject": "matematicas",
+          "tipo": "EleccionMultiple",
+          "nivel": 1,
+          "tiempoEstimado": 30,
+          "enunciado": "¿Cuánto vale XXIV?",
+          "opciones": [
+            {
+              "texto": "26",
+              "emoji": ""
+            },
+            {
+              "texto": "14",
+              "emoji": ""
+            },
+            {
+              "texto": "24",
+              "emoji": ""
+            },
+            {
+              "texto": "21",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "24"
+        },
+        {
+          "id": "mat-006-ex-004",
+          "fichaId": "mat-006",
+          "subject": "matematicas",
+          "tipo": "RellenarHueco",
+          "nivel": 1,
+          "tiempoEstimado": 30,
+          "enunciado": "58 = L + VIII → [___].",
+          "respuestaCorrecta": "LVIII"
+        },
+        {
+          "id": "mat-006-ex-005",
+          "fichaId": "mat-006",
+          "subject": "matematicas",
+          "tipo": "EleccionMultiple",
+          "nivel": 1,
+          "tiempoEstimado": 30,
+          "enunciado": "El truco 1 dice que V, L y D nunca se duplican. ¿Cuál de estos está MAL?",
+          "opciones": [
+            {
+              "texto": "III",
+              "emoji": ""
+            },
+            {
+              "texto": "XXX",
+              "emoji": ""
+            },
+            {
+              "texto": "LL",
+              "emoji": ""
+            },
+            {
+              "texto": "CCC",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "LL"
+        },
+        {
+          "id": "mat-006-ex-006",
+          "fichaId": "mat-006",
+          "subject": "matematicas",
+          "tipo": "ArrastrarPalabras",
+          "nivel": 2,
+          "tiempoEstimado": 60,
+          "enunciado": "Completa la regla de combinación:",
+          "fraseConHuecos": "Los números romanos se construyen de [___] a derecha, de [___] a menor.",
+          "banco": [
+            "izquierda",
+            "mayor",
+            "menor",
+            "derecha"
+          ],
+          "respuestasCorrectas": [
+            "izquierda",
+            "mayor"
+          ]
+        },
+        {
+          "id": "mat-006-ex-007",
+          "fichaId": "mat-006",
+          "subject": "matematicas",
+          "tipo": "EleccionMultiple",
+          "nivel": 2,
+          "tiempoEstimado": 30,
+          "enunciado": "93 = XC + III. ¿Cuál es el número romano correcto para 93?",
+          "opciones": [
+            {
+              "texto": "XCIII",
+              "emoji": ""
+            },
+            {
+              "texto": "CXIII",
+              "emoji": ""
+            },
+            {
+              "texto": "XCIV",
+              "emoji": ""
+            },
+            {
+              "texto": "LXIII",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "XCIII"
+        },
+        {
+          "id": "mat-006-ex-008",
+          "fichaId": "mat-006",
+          "subject": "matematicas",
+          "tipo": "UnirColumnas",
+          "nivel": 2,
+          "tiempoEstimado": 90,
+          "enunciado": "Une cada número decimal con su número romano:",
+          "parejas": [
+            {
+              "izquierda": "24",
+              "derecha": "XXIV"
+            },
+            {
+              "izquierda": "58",
+              "derecha": "LVIII"
+            },
+            {
+              "izquierda": "93",
+              "derecha": "XCIII"
+            },
+            {
+              "izquierda": "198",
+              "derecha": "CXCVIII"
+            }
+          ]
+        },
+        {
+          "id": "mat-006-ex-009",
+          "fichaId": "mat-006",
+          "subject": "matematicas",
+          "tipo": "EleccionMultiple",
+          "nivel": 2,
+          "tiempoEstimado": 30,
+          "enunciado": "El truco 2 dice: pequeño antes resta, después suma. ¿Cuánto es XI?",
+          "opciones": [
+            {
+              "texto": "9",
+              "emoji": ""
+            },
+            {
+              "texto": "10",
+              "emoji": ""
+            },
+            {
+              "texto": "11",
+              "emoji": ""
+            },
+            {
+              "texto": "12",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "11"
+        },
+        {
+          "id": "mat-006-ex-010",
+          "fichaId": "mat-006",
+          "subject": "matematicas",
+          "tipo": "CompletarSerie",
+          "nivel": 2,
+          "tiempoEstimado": 35,
+          "enunciado": "Completa la serie usando el truco de bloques:",
+          "serie": [
+            "24 → XXIV",
+            "58 → LVIII",
+            null,
+            "198 → CXCVIII"
+          ],
+          "opciones": [
+            "93 → XCIII",
+            "93 → XCIV",
+            "93 → LXIII"
+          ],
+          "respuestaCorrecta": "93 → XCIII"
+        },
+        {
+          "id": "mat-006-ex-011",
+          "fichaId": "mat-006",
+          "subject": "matematicas",
+          "tipo": "ArrastrarPalabras",
+          "nivel": 2,
+          "tiempoEstimado": 60,
+          "enunciado": "Completa el truco 3 con las palabras correctas:",
+          "fraseConHuecos": "Divide el número en [___], decenas y [___] y traduce cada bloque.",
+          "banco": [
+            "centenas",
+            "unidades",
+            "bloques",
+            "letras"
+          ],
+          "respuestasCorrectas": [
+            "centenas",
+            "unidades"
+          ]
+        },
+        {
+          "id": "mat-006-ex-012",
+          "fichaId": "mat-006",
+          "subject": "matematicas",
+          "tipo": "EleccionMultiple",
+          "nivel": 3,
+          "tiempoEstimado": 30,
+          "enunciado": "Usando el truco de bloques: 198 = 100 + 90 + 8. ¿Cuál es el bloque de las decenas?",
+          "opciones": [
+            {
+              "texto": "C",
+              "emoji": ""
+            },
+            {
+              "texto": "VIII",
+              "emoji": ""
+            },
+            {
+              "texto": "XC",
+              "emoji": ""
+            },
+            {
+              "texto": "CX",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "XC"
+        },
+        {
+          "id": "mat-006-ex-013",
+          "fichaId": "mat-006",
+          "subject": "matematicas",
+          "tipo": "RellenarHueco",
+          "nivel": 3,
+          "tiempoEstimado": 30,
+          "enunciado": "198 = C + XC + VIII → [___].",
+          "respuestaCorrecta": "CXCVIII"
+        },
+        {
+          "id": "mat-006-ex-014",
+          "fichaId": "mat-006",
+          "subject": "matematicas",
+          "tipo": "EleccionMultiple",
+          "nivel": 3,
+          "tiempoEstimado": 30,
+          "enunciado": "¿Cuánto vale CXCVIII?",
+          "opciones": [
+            {
+              "texto": "188",
+              "emoji": ""
+            },
+            {
+              "texto": "208",
+              "emoji": ""
+            },
+            {
+              "texto": "198",
+              "emoji": ""
+            },
+            {
+              "texto": "189",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "198"
+        },
+        {
+          "id": "mat-006-ex-015",
+          "fichaId": "mat-006",
+          "subject": "matematicas",
+          "tipo": "MemoriaPareja",
+          "nivel": 3,
+          "tiempoEstimado": 180,
+          "enunciado": "Empareja cada número con su forma romana:",
+          "parejas": [
+            {
+              "a": "24",
+              "b": "XXIV"
+            },
+            {
+              "a": "58",
+              "b": "LVIII"
+            },
+            {
+              "a": "93",
+              "b": "XCIII"
+            },
+            {
+              "a": "198",
+              "b": "CXCVIII"
+            },
+            {
+              "a": "IX antes resta",
+              "b": "XI después suma"
+            },
+            {
+              "a": "V, L, D",
+              "b": "no se repiten"
+            }
+          ]
+        },
+        {
+          "id": "mat-006-ex-016",
+          "fichaId": "mat-006",
+          "subject": "matematicas",
+          "tipo": "EleccionMultiple",
+          "nivel": 3,
+          "tiempoEstimado": 30,
+          "enunciado": "Para escribir 40 en romano usamos XL (resta). ¿Cómo se escribe 60?",
+          "opciones": [
+            {
+              "texto": "XC",
+              "emoji": ""
+            },
+            {
+              "texto": "LX",
+              "emoji": ""
+            },
+            {
+              "texto": "VX",
+              "emoji": ""
+            },
+            {
+              "texto": "LC",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "LX"
+        },
+        {
+          "id": "mat-006-ex-017",
+          "fichaId": "mat-006",
+          "subject": "matematicas",
+          "tipo": "EleccionMultiple",
+          "nivel": 3,
+          "tiempoEstimado": 30,
+          "enunciado": "Usando el truco de bloques, ¿cómo se descompone 58 antes de traducirlo?",
+          "opciones": [
+            {
+              "texto": "50 + 8",
+              "emoji": ""
+            },
+            {
+              "texto": "40 + 18",
+              "emoji": ""
+            },
+            {
+              "texto": "50 + 5 + 3",
+              "emoji": ""
+            },
+            {
+              "texto": "60 - 2",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "50 + 8"
+        }
+      ]
+    },
+    {
+      "id": "mat-007",
+      "subject": "matematicas",
+      "titulo": "Longitud: unidades de medida",
+      "nivel": 1,
+      "contenido": "La longitud es lo que usamos para saber cuánto mide algo. Sirve para saber si un objeto es largo, corto, alto o bajo. Usamos unidades de medida para medir la longitud. Las más importantes son: el metro (m), que es la unidad principal y se usa para medir cosas grandes como una puerta, una mesa o una habitación; el centímetro (cm), que es más pequeño que el metro y se usa para medir cosas pequeñas como un lápiz, una goma o un cuaderno; y el kilómetro (km), que es una unidad muy grande y se usa para medir distancias largas como de tu casa al cole o de una ciudad a otra. 100 centímetros = 1 metro. 1 kilómetro = 1000 metros.",
+      "ejemplos": [
+        "La mesa de clase mide 1 metro de alto.",
+        "Tu lápiz puede medir 15 centímetros.",
+        "El parque puede estar a 2 kilómetros de tu casa."
+      ],
+      "palabrasClave": [
+        "longitud",
+        "metro",
+        "centímetro",
+        "kilómetro",
+        "m",
+        "cm",
+        "km",
+        "100 cm = 1 m",
+        "1 km = 1000 m",
+        "unidades de medida"
+      ],
+      "tiposEjercicio": [
+        "EleccionMultiple",
+        "RellenarHueco",
+        "UnirColumnas",
+        "ClasificarGrupos",
+        "ArrastrarPalabras",
+        "MemoriaPareja",
+        "CompletarSerie"
+      ],
+      "ejerciciosDerivar": 18,
+      "ejercicios": [
+        {
+          "id": "mat-007-ex-001",
+          "fichaId": "mat-007",
+          "subject": "matematicas",
+          "tipo": "EleccionMultiple",
+          "nivel": 1,
+          "tiempoEstimado": 30,
+          "enunciado": "¿Para qué usamos la longitud?",
+          "opciones": [
+            {
+              "texto": "Para saber cuánto pesa algo",
+              "emoji": ""
+            },
+            {
+              "texto": "Para saber cuánto mide algo",
+              "emoji": ""
+            },
+            {
+              "texto": "Para saber cuánto tarda algo",
+              "emoji": ""
+            },
+            {
+              "texto": "Para saber cuánto cuesta algo",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "Para saber cuánto mide algo"
+        },
+        {
+          "id": "mat-007-ex-002",
+          "fichaId": "mat-007",
+          "subject": "matematicas",
+          "tipo": "RellenarHueco",
+          "nivel": 1,
+          "tiempoEstimado": 30,
+          "enunciado": "La unidad principal de longitud es el [___].",
+          "respuestaCorrecta": "metro"
+        },
+        {
+          "id": "mat-007-ex-003",
+          "fichaId": "mat-007",
+          "subject": "matematicas",
+          "tipo": "EleccionMultiple",
+          "nivel": 1,
+          "tiempoEstimado": 30,
+          "enunciado": "¿Cuál es el símbolo del centímetro?",
+          "opciones": [
+            {
+              "texto": "m",
+              "emoji": ""
+            },
+            {
+              "texto": "km",
+              "emoji": ""
+            },
+            {
+              "texto": "cm",
+              "emoji": ""
+            },
+            {
+              "texto": "ct",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "cm"
+        },
+        {
+          "id": "mat-007-ex-004",
+          "fichaId": "mat-007",
+          "subject": "matematicas",
+          "tipo": "RellenarHueco",
+          "nivel": 1,
+          "tiempoEstimado": 30,
+          "enunciado": "100 centímetros = [___] metro.",
+          "respuestaCorrecta": "1"
+        },
+        {
+          "id": "mat-007-ex-005",
+          "fichaId": "mat-007",
+          "subject": "matematicas",
+          "tipo": "EleccionMultiple",
+          "nivel": 1,
+          "tiempoEstimado": 30,
+          "enunciado": "¿Cuántos metros hay en 1 kilómetro?",
+          "opciones": [
+            {
+              "texto": "100",
+              "emoji": ""
+            },
+            {
+              "texto": "500",
+              "emoji": ""
+            },
+            {
+              "texto": "10",
+              "emoji": ""
+            },
+            {
+              "texto": "1000",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "1000"
+        },
+        {
+          "id": "mat-007-ex-006",
+          "fichaId": "mat-007",
+          "subject": "matematicas",
+          "tipo": "UnirColumnas",
+          "nivel": 2,
+          "tiempoEstimado": 90,
+          "enunciado": "Une cada unidad con lo que mide:",
+          "parejas": [
+            {
+              "izquierda": "Metro (m)",
+              "derecha": "Una puerta o una mesa"
+            },
+            {
+              "izquierda": "Centímetro (cm)",
+              "derecha": "Un lápiz o una goma"
+            },
+            {
+              "izquierda": "Kilómetro (km)",
+              "derecha": "De una ciudad a otra"
+            },
+            {
+              "izquierda": "15 cm",
+              "derecha": "Tu lápiz"
+            }
+          ]
+        },
+        {
+          "id": "mat-007-ex-007",
+          "fichaId": "mat-007",
+          "subject": "matematicas",
+          "tipo": "ClasificarGrupos",
+          "nivel": 2,
+          "tiempoEstimado": 60,
+          "enunciado": "Clasifica cada objeto según la unidad que usarías para medirlo:",
+          "grupos": [
+            {
+              "id": "cm",
+              "nombre": "Centímetros (cm)"
+            },
+            {
+              "id": "m",
+              "nombre": "Metros (m)"
+            },
+            {
+              "id": "km",
+              "nombre": "Kilómetros (km)"
+            }
+          ],
+          "items": [
+            {
+              "id": "1",
+              "texto": "Un lápiz",
+              "grupoId": "cm"
+            },
+            {
+              "id": "2",
+              "texto": "Una habitación",
+              "grupoId": "m"
+            },
+            {
+              "id": "3",
+              "texto": "De tu casa al cole",
+              "grupoId": "km"
+            },
+            {
+              "id": "4",
+              "texto": "Una goma",
+              "grupoId": "cm"
+            },
+            {
+              "id": "5",
+              "texto": "Una puerta",
+              "grupoId": "m"
+            },
+            {
+              "id": "6",
+              "texto": "De una ciudad a otra",
+              "grupoId": "km"
+            }
+          ]
+        },
+        {
+          "id": "mat-007-ex-008",
+          "fichaId": "mat-007",
+          "subject": "matematicas",
+          "tipo": "EleccionMultiple",
+          "nivel": 2,
+          "tiempoEstimado": 30,
+          "enunciado": "¿Qué unidad usarías para medir la distancia de tu casa al parque?",
+          "opciones": [
+            {
+              "texto": "Centímetros",
+              "emoji": ""
+            },
+            {
+              "texto": "Metros",
+              "emoji": ""
+            },
+            {
+              "texto": "Kilómetros",
+              "emoji": ""
+            },
+            {
+              "texto": "Milímetros",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "Kilómetros"
+        },
+        {
+          "id": "mat-007-ex-009",
+          "fichaId": "mat-007",
+          "subject": "matematicas",
+          "tipo": "ArrastrarPalabras",
+          "nivel": 2,
+          "tiempoEstimado": 60,
+          "enunciado": "Completa las equivalencias:",
+          "fraseConHuecos": "100 centímetros = 1 [___]. 1 kilómetro = 1000 [___].",
+          "banco": [
+            "metro",
+            "metros",
+            "kilómetro",
+            "centímetros"
+          ],
+          "respuestasCorrectas": [
+            "metro",
+            "metros"
+          ]
+        },
+        {
+          "id": "mat-007-ex-010",
+          "fichaId": "mat-007",
+          "subject": "matematicas",
+          "tipo": "EleccionMultiple",
+          "nivel": 2,
+          "tiempoEstimado": 30,
+          "enunciado": "La mesa de clase mide 1 metro de alto. ¿Cuántos centímetros son?",
+          "opciones": [
+            {
+              "texto": "10",
+              "emoji": ""
+            },
+            {
+              "texto": "1000",
+              "emoji": ""
+            },
+            {
+              "texto": "100",
+              "emoji": ""
+            },
+            {
+              "texto": "50",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "100"
+        },
+        {
+          "id": "mat-007-ex-011",
+          "fichaId": "mat-007",
+          "subject": "matematicas",
+          "tipo": "CompletarSerie",
+          "nivel": 2,
+          "tiempoEstimado": 35,
+          "enunciado": "Completa la tabla de unidades de longitud:",
+          "serie": [
+            "km → distancias largas",
+            null,
+            "cm → cosas pequeñas"
+          ],
+          "opciones": [
+            "m → cosas grandes",
+            "m → distancias largas",
+            "m → cosas muy pequeñas"
+          ],
+          "respuestaCorrecta": "m → cosas grandes"
+        },
+        {
+          "id": "mat-007-ex-012",
+          "fichaId": "mat-007",
+          "subject": "matematicas",
+          "tipo": "RellenarHueco",
+          "nivel": 2,
+          "tiempoEstimado": 30,
+          "enunciado": "El kilómetro se usa para medir [___] largas.",
+          "respuestaCorrecta": "distancias"
+        },
+        {
+          "id": "mat-007-ex-013",
+          "fichaId": "mat-007",
+          "subject": "matematicas",
+          "tipo": "EleccionMultiple",
+          "nivel": 3,
+          "tiempoEstimado": 30,
+          "enunciado": "¿Por qué necesitamos unidades de medida iguales para todos?",
+          "opciones": [
+            {
+              "texto": "Para que los números sean más grandes",
+              "emoji": ""
+            },
+            {
+              "texto": "Para que todos entendamos lo mismo cuando decimos una medida",
+              "emoji": ""
+            },
+            {
+              "texto": "Porque los metros son más fáciles de recordar",
+              "emoji": ""
+            },
+            {
+              "texto": "Para que solo los científicos puedan medir",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "Para que todos entendamos lo mismo cuando decimos una medida"
+        },
+        {
+          "id": "mat-007-ex-014",
+          "fichaId": "mat-007",
+          "subject": "matematicas",
+          "tipo": "EleccionMultiple",
+          "nivel": 3,
+          "tiempoEstimado": 30,
+          "enunciado": "El parque está a 2 kilómetros. ¿Cuántos metros son 2 kilómetros?",
+          "opciones": [
+            {
+              "texto": "200",
+              "emoji": ""
+            },
+            {
+              "texto": "20",
+              "emoji": ""
+            },
+            {
+              "texto": "2000",
+              "emoji": ""
+            },
+            {
+              "texto": "20000",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "2000"
+        },
+        {
+          "id": "mat-007-ex-015",
+          "fichaId": "mat-007",
+          "subject": "matematicas",
+          "tipo": "MemoriaPareja",
+          "nivel": 3,
+          "tiempoEstimado": 180,
+          "enunciado": "Empareja cada unidad con su símbolo y equivalencia:",
+          "parejas": [
+            {
+              "a": "metro",
+              "b": "m"
+            },
+            {
+              "a": "centímetro",
+              "b": "cm"
+            },
+            {
+              "a": "kilómetro",
+              "b": "km"
+            },
+            {
+              "a": "100 cm",
+              "b": "1 metro"
+            },
+            {
+              "a": "1000 m",
+              "b": "1 kilómetro"
+            },
+            {
+              "a": "lápiz o goma",
+              "b": "centímetros"
+            }
+          ]
+        },
+        {
+          "id": "mat-007-ex-016",
+          "fichaId": "mat-007",
+          "subject": "matematicas",
+          "tipo": "EleccionMultiple",
+          "nivel": 3,
+          "tiempoEstimado": 30,
+          "enunciado": "¿Cuál de estas medidas tiene sentido?",
+          "opciones": [
+            {
+              "texto": "Una goma mide 2 kilómetros",
+              "emoji": ""
+            },
+            {
+              "texto": "Una habitación mide 15 kilómetros",
+              "emoji": ""
+            },
+            {
+              "texto": "Un lápiz mide 15 centímetros",
+              "emoji": ""
+            },
+            {
+              "texto": "Una ciudad está a 3 centímetros",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "Un lápiz mide 15 centímetros"
+        },
+        {
+          "id": "mat-007-ex-017",
+          "fichaId": "mat-007",
+          "subject": "matematicas",
+          "tipo": "EleccionMultiple",
+          "nivel": 3,
+          "tiempoEstimado": 30,
+          "enunciado": "Si cada persona midiera con su propio pie, ¿qué pasaría?",
+          "opciones": [
+            {
+              "texto": "Todos obtendrían el mismo resultado",
+              "emoji": ""
+            },
+            {
+              "texto": "Sería un lío porque cada pie tiene un tamaño diferente",
+              "emoji": ""
+            },
+            {
+              "texto": "Los pies grandes medirían menos",
+              "emoji": ""
+            },
+            {
+              "texto": "Solo funcionaría para medir distancias largas",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "Sería un lío porque cada pie tiene un tamaño diferente"
+        },
+        {
+          "id": "mat-007-ex-018",
+          "fichaId": "mat-007",
+          "subject": "matematicas",
+          "tipo": "RellenarHueco",
+          "nivel": 3,
+          "tiempoEstimado": 30,
+          "enunciado": "El centímetro es más [___] que el metro y se usa para medir cosas pequeñas.",
+          "respuestaCorrecta": "pequeño"
         }
       ]
     }

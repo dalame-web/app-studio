@@ -24,13 +24,12 @@ function DraggableItem({ id, children }) {
   );
 }
 
-function DropZone({ id, label, items, error }) {
+function DropZone({ id, label, items }) {
   const { isOver, setNodeRef } = useDroppable({ id });
   return (
     <div
       ref={setNodeRef}
       className={`flex-1 min-h-28 rounded-2xl border-2 p-3 transition-all ${
-        error ? 'border-red-400 bg-red-50' :
         isOver ? 'border-blue-400 bg-blue-50' :
         'border-dashed border-gray-300 bg-gray-50'
       }`}
@@ -53,7 +52,6 @@ export default function ClasificarGrupos({ ejercicio, intentos, fichaContenido, 
     grupos.forEach(g => { init[g.id] = []; });
     return init;
   });
-  const [errorGrupo, setErrorGrupo] = useState(null);
   const idioma = asignatura === 'ingles' ? 'en-US' : 'es-ES';
   const sensors = useSensors(
     useSensor(PointerSensor, { activationConstraint: { distance: 8 } }),
@@ -64,33 +62,15 @@ export default function ClasificarGrupos({ ejercicio, intentos, fichaContenido, 
     if (!over) return;
     const itemId   = active.id;
     const targetId = over.id;
-
+    // Solo mover el item a la zona destino, sin verificar si es correcto.
+    // La verificación ocurre solo al pulsar "Comprobar".
     setUbicaciones(prev => {
       const nuevo = {};
       for (const key of Object.keys(prev)) {
         nuevo[key] = prev[key].filter(i => i.id !== itemId);
       }
       const item = items.find(i => i.id === itemId);
-      if (item) {
-        nuevo[targetId] = [...(nuevo[targetId] ?? []), item];
-      }
-      if (targetId !== 'banco' && item && item.grupoId !== targetId) {
-        setErrorGrupo(targetId);
-        setTimeout(() => {
-          setErrorGrupo(null);
-          setUbicaciones(prev2 => {
-            const rev = {};
-            for (const k of Object.keys(prev2)) {
-              rev[k] = prev2[k].filter(i => i.id !== itemId);
-            }
-            rev.banco = [...(rev.banco ?? []), item];
-            return rev;
-          });
-          onIncorrecto();
-        }, 700);
-      } else {
-        setErrorGrupo(null);
-      }
+      if (item) nuevo[targetId] = [...(nuevo[targetId] ?? []), item];
       return nuevo;
     });
   }
@@ -139,7 +119,6 @@ export default function ClasificarGrupos({ ejercicio, intentos, fichaContenido, 
               id={g.id}
               label={g.nombre}
               items={ubicaciones[g.id] ?? []}
-              error={errorGrupo === g.id}
             />
           ))}
         </div>

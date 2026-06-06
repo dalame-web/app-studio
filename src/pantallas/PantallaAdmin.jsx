@@ -102,8 +102,11 @@ export default function PantallaAdmin() {
         const keys = await caches.keys();
         await Promise.all(keys.map(k => caches.delete(k)));
       }
-      // 3. Recargar saltándose la caché del navegador
-      window.location.reload();
+      // 3. Navegar a la URL raíz con parámetro anti-caché
+      // (location.reload() puede reutilizar la caché HTTP del navegador;
+      //  una navegación nueva con ?_v=timestamp la salta siempre)
+      const base = window.location.origin + window.location.pathname.replace(/\/$/, '');
+      window.location.replace(base + '?_v=' + Date.now());
     } catch {
       setAppUpdEstado('error');
       setTimeout(() => setAppUpdEstado(null), 4000);

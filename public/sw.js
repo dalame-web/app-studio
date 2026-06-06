@@ -1,6 +1,6 @@
 // Service Worker — App Educativa 2º Primaria
 // IMPORTANTE: cambiar el número de versión fuerza recarga en todos los dispositivos
-const CACHE = 'edu-app-v2';
+const CACHE = 'edu-app-v3';
 
 // Al instalar: cachea el shell básico
 self.addEventListener('install', event => {

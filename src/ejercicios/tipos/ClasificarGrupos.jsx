@@ -12,13 +12,12 @@ function DraggableItem({ id, children }) {
     ...(transform ? { transform: `translate3d(${transform.x}px,${transform.y}px,0)` } : {}),
   };
   return (
-    // G7: padding reducido
     <div
       ref={setNodeRef}
       style={style}
       {...listeners}
       {...attributes}
-      className={`px-2.5 py-1.5 bg-white border-2 border-gray-200 rounded-lg text-xs font-semibold cursor-grab active:cursor-grabbing select-none shadow-sm transition-all ${isDragging ? 'shadow-lg border-blue-400 z-10 scale-105' : 'hover:border-blue-300'}`}
+      className={`inline-block px-2 py-1 bg-white border-2 border-gray-200 rounded-lg text-xs font-semibold cursor-grab active:cursor-grabbing select-none shadow-sm transition-colors ${isDragging ? 'shadow-lg border-blue-400 opacity-70' : 'hover:border-blue-300'}`}
     >
       {children}
     </div>
@@ -37,7 +36,7 @@ function DropZone({ id, label, items, error }) {
       }`}
     >
       <p className="text-xs font-bold text-gray-600 mb-2 text-center">{label}</p>
-      <div className="flex flex-col gap-1.5">
+      <div className="flex flex-wrap gap-1.5">
         {items.map(item => (
           <DraggableItem key={item.id} id={item.id}>{item.texto}</DraggableItem>
         ))}

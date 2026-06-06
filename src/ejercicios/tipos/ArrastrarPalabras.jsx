@@ -20,7 +20,7 @@ function Draggable({ id, children, usado }) {
       {...attributes}
       className={`px-2 py-1 rounded-lg border-2 text-xs font-semibold cursor-grab active:cursor-grabbing select-none transition-all ${
         usado ? 'border-gray-200 bg-gray-100 text-gray-400 cursor-not-allowed opacity-60' :
-        isDragging ? 'border-blue-400 bg-blue-50 shadow-md z-10 scale-105' :
+        isDragging ? 'border-blue-400 bg-blue-50 shadow-md z-10 opacity-70' :
         'border-gray-300 bg-white hover:border-blue-300 shadow-sm'
       }`}
     >

@@ -24,6 +24,7 @@ function Cargando() {
 export default function App() {
   const pantallaActual = useSesionStore(s => s.pantallaActual);
   const setProfileId   = useSesionStore(s => s.setProfileId);
+  const irA            = useSesionStore(s => s.irA);
   const cargarGami     = useGamificacionStore(s => s.cargar);
   const [listo, setListo] = useState(false);
 
@@ -39,6 +40,11 @@ export default function App() {
         const profile = await getOrCreateDefaultProfile();
         setProfileId(profile.id);
         await cargarGami(profile.id);
+        // Si venimos de "Actualizar app", volver al panel admin
+        if (sessionStorage.getItem('volver_admin')) {
+          sessionStorage.removeItem('volver_admin');
+          irA('admin');
+        }
       } catch (e) {
         console.error('[App] init error:', e);
       } finally {

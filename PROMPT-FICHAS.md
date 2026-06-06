@@ -31,9 +31,10 @@ python scripts/pdf-a-md.py ruta/al/archivo.pdf
 npm run publicar
 # → Pega el JSON → Enter x2
 # → Valida automáticamente
-# → Fusiona en public/ejercicios.json
+# → Escribe public/content/[asignatura].json + public/ejercicios.json
+# → Actualiza public/manifest.json con versión por asignatura
 # → git commit + push
-# → Todos los dispositivos reciben el contenido nuevo al abrir la app
+# → Todos los dispositivos descargan solo las asignaturas actualizadas
 ```
 
 ---
@@ -147,6 +148,24 @@ Reglas:
 Para nivel 2-3, la pista puede activar el recuerdo con contexto de la ficha.
 BIEN: "Recuerda que los demostrativos de distancia lejana empiezan por 'aquel'. ¿Cuál usarías aquí?"
 
+# REGLA DE ENUNCIADOS AUTOCONTENIDOS
+
+El enunciado debe incluir una pequeña explicación o ejemplo del concepto que evalúa.
+El alumno no debe tener que recordar la teoría para entender qué se le pregunta.
+
+NORMA: Incluye la definición breve o un ejemplo directo dentro del propio enunciado.
+
+  MAL: "¿Qué es la moda?"  · "¿Qué muestra la altura de una barra?"
+  BIEN: "La moda es el valor que más veces aparece en una lista. ¿Cuál es la moda de: 3, 5, 5, 7?"
+        "En un diagrama de barras, cada barra representa una categoría. ¿Qué indica la altura de la barra?"
+
+  ComprensionLectora — subpreguntas:
+    MAL: "¿A cuánto llegó el rojo?"
+    BIEN: "Según el texto, ¿cuántos votos recibió el color rojo en la encuesta?"
+
+PRUEBA: ¿Un alumno que nunca ha estudiado este tema puede entender QUÉ se le pide
+solo leyendo el enunciado? Si no → añade la definición o el ejemplo dentro del enunciado.
+
 # IDS
 
 Prefijos: matematicas→`mat`, lengua→`len`, ciencias→`cie`, social→`soc`, ingles→`ing`, valores→`val`.
@@ -189,7 +208,8 @@ Si el usuario indica que ya existen fichas (ej: len-001 a len-003), empieza desd
     {"texto": "Aquel", "emoji": ""},
     {"texto": "Aquella", "emoji": ""}
   ],
-  "respuestaCorrecta": "Este"
+  "respuestaCorrecta": "Este",
+  "pista": "Los demostrativos de cerca empiezan por 'est-'."
 }
 ```
 ⚠️ SIEMPRE exactamente 4 opciones.
@@ -216,7 +236,8 @@ Variante con SVG o imagen en las opciones (para contenido visual como figuras ge
   "id": "len-001-ex-002", "fichaId": "len-001", "subject": "lengua",
   "tipo": "RellenarHueco", "nivel": 1, "tiempoEstimado": 30,
   "enunciado": "[___] perro que está aquí a mi lado es muy simpático.",
-  "respuestaCorrecta": "Este"
+  "respuestaCorrecta": "Este",
+  "pista": "Piensa en qué demostrativo usamos cuando algo está muy cerca de nosotros."
 }
 ```
 ⚠️ El enunciado DEBE contener exactamente 1 `[___]` (3 guiones bajos entre corchetes). No dos.
@@ -582,8 +603,31 @@ UnirColumnas:
   → Lee los 4 valores de "derecha" en voz alta: ¿hay alguno repetido?
 
 MemoriaPareja:
-✦ Los 12 valores (6 "a" + 6 "b") deben ser todos distintos. Ninguno puede repetirse.
+✦ Los 12 valores (6 "a" + 6 "b") deben ser todos distintos. Ningún valor puede repetirse.
   → Lee los 6 valores de "a" y los 6 de "b": ¿alguno aparece dos veces?
+
+LECTURA DESDE EL ALUMNO — ejecuta en silencio antes de devolver el JSON:
+
+Simula que eres un niño de 8 años que NO ha estudiado el tema. Para cada ejercicio:
+
+PASO 1 — ¿La respuesta correcta ES la única correcta?
+  ¿Podría un alumno que sí sabe el tema justificar otra opción como también válida?
+  Si sí → revisar distractores o reformular el enunciado.
+
+PASO 2 — ¿Los distractores son claramente incorrectos?
+  ¿Algún distractor es también aceptable según el contenido de la ficha?
+  Si sí → reemplazarlo por uno más claramente incorrecto del mismo tipo semántico.
+
+PASO 3 — ¿El enunciado explica lo que evalúa?
+  ¿Incluye una definición breve o un ejemplo que permita entender la pregunta sin haber estudiado el tema?
+  Si no → añadir la explicación dentro del enunciado (ver REGLA DE ENUNCIADOS AUTOCONTENIDOS).
+
+PASO 4 — ¿La pista ayuda sin revelar?
+  ¿Un niño podría deducir la respuesta exacta leyendo solo la pista?
+  Si sí → reformular para activar el recuerdo sin delatar la respuesta.
+
+Orden: revisa primero todos los EleccionMultiple (mayor riesgo de distractor ambiguo),
+luego RellenarHueco, luego los demás. Sin generar texto para el usuario.
 
 AVISA AL USUARIO solo si no puedes resolver sin inventar:
 ⚠ "El material no tiene contenido suficiente para X ejercicios de calidad en [tipo]."

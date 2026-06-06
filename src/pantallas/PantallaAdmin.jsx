@@ -44,6 +44,7 @@ export default function PantallaAdmin() {
   const [updateEstado, setUpdateEstado] = useState(null);
   const [resetEstado, setResetEstado]   = useState(null); // null | 'confirm' | 'done'
   const [borrarEstado, setBorrarEstado] = useState(null); // null | 'confirm' | 'cargando' | 'done' | 'error'
+  const [appUpdEstado, setAppUpdEstado] = useState(null); // null | 'confirm' | 'cargando' | 'error'
 
   useEffect(() => {
     if (!profileId) return;
@@ -84,6 +85,29 @@ export default function PantallaAdmin() {
     recargarStats();
     setResetEstado('done');
     setTimeout(() => setResetEstado(null), 3000);
+  }
+
+  async function handleActualizarApp() {
+    if (appUpdEstado !== 'confirm') { setAppUpdEstado('confirm'); return; }
+    if (!navigator.onLine) { setAppUpdEstado('error'); setTimeout(() => setAppUpdEstado(null), 4000); return; }
+    setAppUpdEstado('cargando');
+    try {
+      // 1. Desregistrar todos los service workers
+      if ('serviceWorker' in navigator) {
+        const regs = await navigator.serviceWorker.getRegistrations();
+        await Promise.all(regs.map(r => r.unregister()));
+      }
+      // 2. Borrar todas las cachés del navegador
+      if ('caches' in window) {
+        const keys = await caches.keys();
+        await Promise.all(keys.map(k => caches.delete(k)));
+      }
+      // 3. Recargar saltándose la caché del navegador
+      window.location.reload();
+    } catch {
+      setAppUpdEstado('error');
+      setTimeout(() => setAppUpdEstado(null), 4000);
+    }
   }
 
   async function handleBorrarContenido() {
@@ -197,6 +221,31 @@ export default function PantallaAdmin() {
         {updateEstado === 'error' && (
           <div className="bg-red-50 border-2 border-red-300 rounded-2xl p-3 text-sm text-red-700 text-center animate-aparecer">
             ❌ Error al comprobar. Inténtalo de nuevo.
+          </div>
+        )}
+
+        {/* Actualizar app (forzar nueva versión) */}
+        <button
+          onClick={handleActualizarApp}
+          disabled={appUpdEstado === 'cargando'}
+          className={`w-full font-bold py-3 px-4 rounded-2xl shadow-sm flex items-center justify-center gap-2 transition-all active:scale-95 ${
+            appUpdEstado === 'confirm'
+              ? 'bg-emerald-500 hover:bg-emerald-600 text-white'
+              : appUpdEstado === 'cargando'
+              ? 'bg-gray-400 text-white cursor-not-allowed'
+              : 'bg-gray-100 hover:bg-gray-200 text-gray-600'
+          }`}
+        >
+          <span className="text-xl">{appUpdEstado === 'cargando' ? '⏳' : '⬆️'}</span>
+          <span>
+            {appUpdEstado === 'confirm'  ? '¿Seguro? Toca de nuevo para confirmar' :
+             appUpdEstado === 'cargando' ? 'Actualizando…' :
+             'Actualizar app a la última versión'}
+          </span>
+        </button>
+        {appUpdEstado === 'error' && (
+          <div className="bg-red-50 border-2 border-red-300 rounded-2xl p-3 text-sm text-red-700 text-center animate-aparecer">
+            ❌ No se pudo actualizar. Comprueba la conexión.
           </div>
         )}
 

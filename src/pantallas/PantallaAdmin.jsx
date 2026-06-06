@@ -192,7 +192,12 @@ export default function PantallaAdmin() {
     <div className="min-h-screen bg-gray-50 flex flex-col">
       <header className="flex items-center gap-3 px-4 py-4 bg-white border-b shadow-sm">
         <BtnVolver onClick={() => irA('inicio')} colorClass="text-gray-500 hover:bg-gray-100" />
-        <h1 className="text-xl font-extrabold text-gray-800">Panel de administración</h1>
+        <div className="flex-1 min-w-0">
+          <h1 className="text-xl font-extrabold text-gray-800">Panel de administración</h1>
+        </div>
+        <span className="text-xs font-bold text-gray-400 bg-gray-100 px-2 py-1 rounded-lg whitespace-nowrap">
+          v{__APP_VERSION__}
+        </span>
       </header>
 
       <main className="flex-1 overflow-y-auto p-4 max-w-2xl mx-auto w-full space-y-4">

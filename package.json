@@ -1,7 +1,7 @@
 {
   "name": "proyecto-app-studio",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.1.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -11,7 +11,10 @@
     "publicar": "node scripts/publicar.js",
     "pdf": "python scripts/convertir-carpeta.py",
     "pdf:ver": "python scripts/convertir-carpeta.py --verificar",
-    "vaciar": "node scripts/vaciar-contenido.js"
+    "vaciar": "node scripts/vaciar-contenido.js",
+    "v:patch": "npm version patch --no-git-tag-version && echo Versión lista. Haz commit + push.",
+    "v:minor": "npm version minor --no-git-tag-version && echo Versión lista. Haz commit + push.",
+    "v:major": "npm version major --no-git-tag-version && echo Versión lista. Haz commit + push."
   },
   "dependencies": {
     "@dnd-kit/core": "^6.3.1",

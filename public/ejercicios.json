@@ -1,5 +1,5 @@
 {
-  "version": "2026-06-06-1",
+  "version": "2026-06-06-2",
   "fecha": "2026-06-06",
   "fichas": [
     {
@@ -6633,6 +6633,1085 @@
             }
           ],
           "respuestaCorrecta": "5 cm"
+        }
+      ]
+    },
+    {
+      "id": "mat-010",
+      "subject": "matematicas",
+      "titulo": "Clasificación de triángulos",
+      "nivel": 2,
+      "contenido": "Los triángulos son figuras planas que tienen 3 lados, 3 vértices y 3 ángulos. La suma de sus ángulos siempre es 180°. Los triángulos se clasifican de dos maneras: según sus lados y según sus ángulos. Según sus lados: el equilátero tiene 3 lados iguales y todos sus ángulos son iguales (60°); el isósceles tiene 2 lados iguales y 1 lado diferente, y tiene 2 ángulos iguales; el escaleno tiene 3 lados diferentes y 3 ángulos diferentes. Según sus ángulos: el acutángulo tiene sus 3 ángulos agudos (menores de 90°); el rectángulo tiene 1 ángulo recto igual a 90° y los otros 2 son agudos; el obtusángulo tiene 1 ángulo obtuso mayor de 90° y los otros 2 son agudos.",
+      "ejemplos": [
+        "Triángulo equilátero: 3 lados iguales, los 3 ángulos miden 60°.",
+        "Triángulo isósceles: 2 lados iguales, 2 ángulos iguales.",
+        "Triángulo escaleno: 3 lados diferentes, 3 ángulos diferentes.",
+        "Triángulo acutángulo: los 3 ángulos son menores de 90°.",
+        "Triángulo rectángulo: tiene 1 ángulo que mide exactamente 90°.",
+        "Triángulo obtusángulo: tiene 1 ángulo mayor de 90°."
+      ],
+      "palabrasClave": [
+        "triángulo",
+        "equilátero",
+        "isósceles",
+        "escaleno",
+        "acutángulo",
+        "rectángulo",
+        "obtusángulo",
+        "lados",
+        "ángulos",
+        "180°",
+        "agudo",
+        "obtuso"
+      ],
+      "tiposEjercicio": [
+        "EleccionMultiple",
+        "RellenarHueco",
+        "ClasificarGrupos",
+        "UnirColumnas",
+        "MemoriaPareja",
+        "ArrastrarPalabras",
+        "SopaLetras"
+      ],
+      "ejerciciosDerivar": 18,
+      "ejercicios": [
+        {
+          "id": "mat-010-ex-001",
+          "fichaId": "mat-010",
+          "subject": "matematicas",
+          "tipo": "EleccionMultiple",
+          "nivel": 1,
+          "tiempoEstimado": 30,
+          "enunciado": "Los triángulos son figuras planas con 3 lados, 3 vértices y 3 ángulos. ¿Cuántos lados tiene un triángulo?",
+          "pista": "La palabra 'tri' significa tres.",
+          "opciones": [
+            {
+              "texto": "4",
+              "emoji": ""
+            },
+            {
+              "texto": "3",
+              "emoji": ""
+            },
+            {
+              "texto": "5",
+              "emoji": ""
+            },
+            {
+              "texto": "6",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "3"
+        },
+        {
+          "id": "mat-010-ex-002",
+          "fichaId": "mat-010",
+          "subject": "matematicas",
+          "tipo": "EleccionMultiple",
+          "nivel": 1,
+          "tiempoEstimado": 30,
+          "enunciado": "El triángulo equilátero tiene 3 lados iguales y todos sus ángulos miden 60°. ¿Cuánto mide cada ángulo del triángulo equilátero?",
+          "pista": "En el equilátero los 3 ángulos son iguales y la suma total es 180°: divide 180 entre 3.",
+          "opciones": [
+            {
+              "texto": "90°",
+              "emoji": ""
+            },
+            {
+              "texto": "45°",
+              "emoji": ""
+            },
+            {
+              "texto": "60°",
+              "emoji": ""
+            },
+            {
+              "texto": "180°",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "60°"
+        },
+        {
+          "id": "mat-010-ex-003",
+          "fichaId": "mat-010",
+          "subject": "matematicas",
+          "tipo": "RellenarHueco",
+          "nivel": 1,
+          "tiempoEstimado": 30,
+          "enunciado": "La suma de los ángulos de un triángulo siempre es [___]°.",
+          "pista": "Es un número que aparece en la fórmula A + B + C = ...",
+          "respuestaCorrecta": "180"
+        },
+        {
+          "id": "mat-010-ex-004",
+          "fichaId": "mat-010",
+          "subject": "matematicas",
+          "tipo": "EleccionMultiple",
+          "nivel": 1,
+          "tiempoEstimado": 30,
+          "enunciado": "El triángulo isósceles tiene 2 lados iguales y 1 lado diferente. ¿Cuántos lados iguales tiene el triángulo isósceles?",
+          "pista": "El isósceles tiene casi todos los lados iguales, pero no todos: le falta uno.",
+          "opciones": [
+            {
+              "texto": "3",
+              "emoji": ""
+            },
+            {
+              "texto": "1",
+              "emoji": ""
+            },
+            {
+              "texto": "2",
+              "emoji": ""
+            },
+            {
+              "texto": "0",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "2"
+        },
+        {
+          "id": "mat-010-ex-005",
+          "fichaId": "mat-010",
+          "subject": "matematicas",
+          "tipo": "EleccionMultiple",
+          "nivel": 1,
+          "tiempoEstimado": 30,
+          "enunciado": "El triángulo rectángulo tiene 1 ángulo recto igual a 90°. ¿Cuántos ángulos rectos tiene el triángulo rectángulo?",
+          "pista": "El triángulo rectángulo lleva la palabra 'recto' porque tiene exactamente ese número de ángulos rectos.",
+          "opciones": [
+            {
+              "texto": "3",
+              "emoji": ""
+            },
+            {
+              "texto": "2",
+              "emoji": ""
+            },
+            {
+              "texto": "0",
+              "emoji": ""
+            },
+            {
+              "texto": "1",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "1"
+        },
+        {
+          "id": "mat-010-ex-006",
+          "fichaId": "mat-010",
+          "subject": "matematicas",
+          "tipo": "ClasificarGrupos",
+          "nivel": 2,
+          "tiempoEstimado": 60,
+          "enunciado": "Clasifica estos triángulos según sus lados:",
+          "pista": "Equilátero: 3 lados iguales. Isósceles: 2 lados iguales. Escaleno: 0 lados iguales.",
+          "grupos": [
+            {
+              "id": "equilatero",
+              "nombre": "Equilátero"
+            },
+            {
+              "id": "isosceles",
+              "nombre": "Isósceles"
+            },
+            {
+              "id": "escaleno",
+              "nombre": "Escaleno"
+            }
+          ],
+          "items": [
+            {
+              "id": "1",
+              "texto": "3 lados iguales, ángulos de 60°",
+              "grupoId": "equilatero"
+            },
+            {
+              "id": "2",
+              "texto": "2 lados iguales, 1 diferente",
+              "grupoId": "isosceles"
+            },
+            {
+              "id": "3",
+              "texto": "3 lados diferentes",
+              "grupoId": "escaleno"
+            },
+            {
+              "id": "4",
+              "texto": "2 ángulos iguales, 1 diferente",
+              "grupoId": "isosceles"
+            },
+            {
+              "id": "5",
+              "texto": "3 ángulos diferentes",
+              "grupoId": "escaleno"
+            },
+            {
+              "id": "6",
+              "texto": "Todos sus ángulos miden 60°",
+              "grupoId": "equilatero"
+            }
+          ]
+        },
+        {
+          "id": "mat-010-ex-007",
+          "fichaId": "mat-010",
+          "subject": "matematicas",
+          "tipo": "UnirColumnas",
+          "nivel": 2,
+          "tiempoEstimado": 90,
+          "enunciado": "Une cada triángulo (según sus ángulos) con su descripción:",
+          "pista": "Acutángulo: todos menores de 90°. Rectángulo: uno igual a 90°. Obtusángulo: uno mayor de 90°.",
+          "parejas": [
+            {
+              "izquierda": "Acutángulo",
+              "derecha": "3 ángulos menores de 90°"
+            },
+            {
+              "izquierda": "Rectángulo (ángulos)",
+              "derecha": "1 ángulo igual a 90°"
+            },
+            {
+              "izquierda": "Obtusángulo",
+              "derecha": "1 ángulo mayor de 90°"
+            },
+            {
+              "izquierda": "Equilátero",
+              "derecha": "3 ángulos de 60°"
+            }
+          ]
+        },
+        {
+          "id": "mat-010-ex-008",
+          "fichaId": "mat-010",
+          "subject": "matematicas",
+          "tipo": "ArrastrarPalabras",
+          "nivel": 2,
+          "tiempoEstimado": 60,
+          "enunciado": "Completa las frases con el tipo de triángulo correcto según sus lados:",
+          "pista": "Piensa en cuántos lados iguales tiene cada triángulo.",
+          "fraseConHuecos": "El triángulo [___] tiene 3 lados iguales. El triángulo [___] tiene 3 lados diferentes.",
+          "banco": [
+            "equilátero",
+            "escaleno",
+            "isósceles",
+            "acutángulo"
+          ],
+          "respuestasCorrectas": [
+            "equilátero",
+            "escaleno"
+          ]
+        },
+        {
+          "id": "mat-010-ex-009",
+          "fichaId": "mat-010",
+          "subject": "matematicas",
+          "tipo": "EleccionMultiple",
+          "nivel": 2,
+          "tiempoEstimado": 30,
+          "enunciado": "El triángulo obtusángulo tiene 1 ángulo obtuso (mayor de 90°) y los otros 2 son agudos. ¿Qué tipo de ángulo tiene el triángulo obtusángulo?",
+          "pista": "Un ángulo obtuso es más abierto que un ángulo recto. Mide más de 90°.",
+          "opciones": [
+            {
+              "texto": "1 ángulo recto",
+              "emoji": ""
+            },
+            {
+              "texto": "3 ángulos agudos",
+              "emoji": ""
+            },
+            {
+              "texto": "1 ángulo obtuso",
+              "emoji": ""
+            },
+            {
+              "texto": "2 ángulos obtusos",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "1 ángulo obtuso"
+        },
+        {
+          "id": "mat-010-ex-010",
+          "fichaId": "mat-010",
+          "subject": "matematicas",
+          "tipo": "RellenarHueco",
+          "nivel": 2,
+          "tiempoEstimado": 30,
+          "enunciado": "El triángulo isósceles tiene 2 lados iguales y también tiene 2 [___] iguales.",
+          "pista": "En el isósceles, los lados iguales forman también ángulos iguales en su base.",
+          "respuestaCorrecta": "ángulos"
+        },
+        {
+          "id": "mat-010-ex-011",
+          "fichaId": "mat-010",
+          "subject": "matematicas",
+          "tipo": "ClasificarGrupos",
+          "nivel": 2,
+          "tiempoEstimado": 60,
+          "enunciado": "Clasifica estos triángulos según sus ángulos:",
+          "pista": "Acutángulo: todos los ángulos son menores de 90°. Rectángulo: tiene uno de 90°. Obtusángulo: tiene uno mayor de 90°.",
+          "grupos": [
+            {
+              "id": "acutangulo",
+              "nombre": "Acutángulo"
+            },
+            {
+              "id": "rectangulo_ang",
+              "nombre": "Rectángulo"
+            },
+            {
+              "id": "obtusangulo",
+              "nombre": "Obtusángulo"
+            }
+          ],
+          "items": [
+            {
+              "id": "1",
+              "texto": "3 ángulos de 60°",
+              "grupoId": "acutangulo"
+            },
+            {
+              "id": "2",
+              "texto": "Un ángulo de 90°",
+              "grupoId": "rectangulo_ang"
+            },
+            {
+              "id": "3",
+              "texto": "Un ángulo de 110°",
+              "grupoId": "obtusangulo"
+            },
+            {
+              "id": "4",
+              "texto": "Ángulos de 50°, 60° y 70°",
+              "grupoId": "acutangulo"
+            },
+            {
+              "id": "5",
+              "texto": "Un ángulo mayor de 90°",
+              "grupoId": "obtusangulo"
+            },
+            {
+              "id": "6",
+              "texto": "Un ángulo recto y 2 agudos",
+              "grupoId": "rectangulo_ang"
+            }
+          ]
+        },
+        {
+          "id": "mat-010-ex-012",
+          "fichaId": "mat-010",
+          "subject": "matematicas",
+          "tipo": "EleccionMultiple",
+          "nivel": 2,
+          "tiempoEstimado": 30,
+          "enunciado": "Los triángulos se clasifican de dos maneras: según sus lados y según sus ángulos. ¿Cuáles son las dos maneras de clasificar un triángulo?",
+          "pista": "Una clasificación fijándose en las medidas de los bordes y otra fijándose en las aperturas de las esquinas.",
+          "opciones": [
+            {
+              "texto": "Según su color y su tamaño",
+              "emoji": ""
+            },
+            {
+              "texto": "Según sus lados y según sus ángulos",
+              "emoji": ""
+            },
+            {
+              "texto": "Según sus vértices y su perímetro",
+              "emoji": ""
+            },
+            {
+              "texto": "Según su posición y su forma",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "Según sus lados y según sus ángulos"
+        },
+        {
+          "id": "mat-010-ex-013",
+          "fichaId": "mat-010",
+          "subject": "matematicas",
+          "tipo": "SopaLetras",
+          "nivel": 3,
+          "tiempoEstimado": 180,
+          "enunciado": "Encuentra estas palabras relacionadas con los triángulos:",
+          "pista": "Busca: ESCALENO, ANGULOS, AGUDO, LADOS (todas en horizontal).",
+          "palabras": [
+            "ESCALENO",
+            "ANGULOS",
+            "AGUDO",
+            "LADOS"
+          ],
+          "cuadricula": [
+            [
+              "E",
+              "S",
+              "C",
+              "A",
+              "L",
+              "E",
+              "N",
+              "O"
+            ],
+            [
+              "B",
+              "K",
+              "R",
+              "T",
+              "M",
+              "P",
+              "Q",
+              "V"
+            ],
+            [
+              "W",
+              "X",
+              "Y",
+              "Z",
+              "A",
+              "B",
+              "C",
+              "D"
+            ],
+            [
+              "A",
+              "N",
+              "G",
+              "U",
+              "L",
+              "O",
+              "S",
+              "X"
+            ],
+            [
+              "F",
+              "H",
+              "I",
+              "J",
+              "K",
+              "L",
+              "M",
+              "N"
+            ],
+            [
+              "A",
+              "G",
+              "U",
+              "D",
+              "O",
+              "P",
+              "Q",
+              "R"
+            ],
+            [
+              "S",
+              "T",
+              "U",
+              "V",
+              "W",
+              "X",
+              "Y",
+              "Z"
+            ],
+            [
+              "L",
+              "A",
+              "D",
+              "O",
+              "S",
+              "B",
+              "C",
+              "D"
+            ]
+          ]
+        },
+        {
+          "id": "mat-010-ex-014",
+          "fichaId": "mat-010",
+          "subject": "matematicas",
+          "tipo": "MemoriaPareja",
+          "nivel": 3,
+          "tiempoEstimado": 180,
+          "enunciado": "Empareja cada triángulo con su definición:",
+          "pista": "Recuerda cuántos lados o qué tipo de ángulo tiene cada triángulo.",
+          "parejas": [
+            {
+              "a": "Equilátero",
+              "b": "3 lados iguales"
+            },
+            {
+              "a": "Isósceles",
+              "b": "2 lados iguales"
+            },
+            {
+              "a": "Escaleno",
+              "b": "3 lados diferentes"
+            },
+            {
+              "a": "Acutángulo",
+              "b": "3 ángulos agudos"
+            },
+            {
+              "a": "Obtusángulo",
+              "b": "1 ángulo obtuso"
+            },
+            {
+              "a": "Rectángulo",
+              "b": "1 ángulo de 90°"
+            }
+          ]
+        },
+        {
+          "id": "mat-010-ex-015",
+          "fichaId": "mat-010",
+          "subject": "matematicas",
+          "tipo": "EleccionMultiple",
+          "nivel": 3,
+          "tiempoEstimado": 30,
+          "enunciado": "Un triángulo tiene lados de 5 cm, 5 cm y 8 cm. Según sus lados, ¿qué tipo de triángulo es?",
+          "pista": "Cuenta cuántos lados son iguales: dos miden 5 cm y uno mide 8 cm.",
+          "opciones": [
+            {
+              "texto": "Escaleno",
+              "emoji": ""
+            },
+            {
+              "texto": "Equilátero",
+              "emoji": ""
+            },
+            {
+              "texto": "Isósceles",
+              "emoji": ""
+            },
+            {
+              "texto": "Acutángulo",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "Isósceles"
+        },
+        {
+          "id": "mat-010-ex-016",
+          "fichaId": "mat-010",
+          "subject": "matematicas",
+          "tipo": "EleccionMultiple",
+          "nivel": 3,
+          "tiempoEstimado": 30,
+          "enunciado": "La suma de los ángulos de un triángulo es siempre 180°. Un triángulo tiene ángulos de 90° y 45°. ¿Cuánto mide el tercer ángulo?",
+          "pista": "Suma los dos ángulos que conoces y réstalos a 180°: 180 - 90 - 45.",
+          "opciones": [
+            {
+              "texto": "55°",
+              "emoji": ""
+            },
+            {
+              "texto": "35°",
+              "emoji": ""
+            },
+            {
+              "texto": "45°",
+              "emoji": ""
+            },
+            {
+              "texto": "50°",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "45°"
+        },
+        {
+          "id": "mat-010-ex-017",
+          "fichaId": "mat-010",
+          "subject": "matematicas",
+          "tipo": "EleccionMultiple",
+          "nivel": 3,
+          "tiempoEstimado": 30,
+          "enunciado": "El triángulo acutángulo tiene los 3 ángulos agudos (menores de 90°). ¿Cuál de estos grupos de ángulos corresponde a un triángulo acutángulo?",
+          "pista": "Comprueba que los tres ángulos sean menores de 90° y que sumen 180°.",
+          "opciones": [
+            {
+              "texto": "60°, 60°, 60°",
+              "emoji": ""
+            },
+            {
+              "texto": "90°, 45°, 45°",
+              "emoji": ""
+            },
+            {
+              "texto": "100°, 40°, 40°",
+              "emoji": ""
+            },
+            {
+              "texto": "90°, 60°, 30°",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "60°, 60°, 60°"
+        },
+        {
+          "id": "mat-010-ex-018",
+          "fichaId": "mat-010",
+          "subject": "matematicas",
+          "tipo": "RellenarHueco",
+          "nivel": 3,
+          "tiempoEstimado": 30,
+          "enunciado": "El triángulo escaleno tiene 3 lados diferentes y también tiene 3 [___] diferentes.",
+          "pista": "En el escaleno ningún lado es igual, y lo mismo le pasa a sus aperturas en cada esquina.",
+          "respuestaCorrecta": "ángulos"
+        }
+      ]
+    },
+    {
+      "id": "mat-011",
+      "subject": "matematicas",
+      "titulo": "Desarrollo del cubo",
+      "nivel": 2,
+      "contenido": "Un cubo tiene 6 caras iguales (por lo general, cuadrados). Un desarrollo del cubo es una figura plana que, al doblarse por las aristas, forma el cubo. Existen varias formas diferentes de desarrollar (desplegar) un cubo. Todos los desarrollos tienen 6 cuadrados iguales y al doblarlos forman el cubo. Hay 6 tipos de desarrollo: Tipo 1 (forma de cruz clásica), Tipo 2 (otra forma en cruz), Tipo 3 (cruz desplazada), Tipo 4 (forma de escalera 1), Tipo 5 (forma de escalera 2) y Tipo 6 (forma en zig-zag). No todas las figuras con 6 cuadrados forman un cubo: los cuadrados deben estar en la posición correcta para que al doblarlos las caras queden en su lugar.",
+      "ejemplos": [
+        "Tipo 1: forma de cruz clásica — al doblarla forma un cubo.",
+        "Tipo 4: forma de escalera 1 — al doblarla forma un cubo.",
+        "Tipo 6: forma en zig-zag — al doblarla forma un cubo.",
+        "Una figura con 6 cuadrados mal colocados NO forma un cubo."
+      ],
+      "palabrasClave": [
+        "cubo",
+        "desarrollo",
+        "cara",
+        "arista",
+        "cuadrado",
+        "doblar",
+        "cruz",
+        "escalera",
+        "zig-zag",
+        "6 caras"
+      ],
+      "tiposEjercicio": [
+        "EleccionMultiple",
+        "RellenarHueco",
+        "ClasificarGrupos",
+        "UnirColumnas",
+        "MemoriaPareja"
+      ],
+      "ejerciciosDerivar": 15,
+      "ejercicios": [
+        {
+          "id": "mat-011-ex-001",
+          "fichaId": "mat-011",
+          "subject": "matematicas",
+          "tipo": "EleccionMultiple",
+          "nivel": 1,
+          "tiempoEstimado": 30,
+          "enunciado": "Un cubo tiene 6 caras iguales. ¿Cuántas caras tiene un cubo?",
+          "pista": "Piensa en una caja: tiene una cara arriba, una abajo y cuatro a los lados.",
+          "opciones": [
+            {
+              "texto": "4",
+              "emoji": ""
+            },
+            {
+              "texto": "8",
+              "emoji": ""
+            },
+            {
+              "texto": "6",
+              "emoji": ""
+            },
+            {
+              "texto": "5",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "6"
+        },
+        {
+          "id": "mat-011-ex-002",
+          "fichaId": "mat-011",
+          "subject": "matematicas",
+          "tipo": "EleccionMultiple",
+          "nivel": 1,
+          "tiempoEstimado": 30,
+          "enunciado": "Un desarrollo del cubo es una figura plana que, al doblarse por las aristas, forma el cubo. ¿Qué es un desarrollo del cubo?",
+          "pista": "Imagina que abres una caja de cartón y la dejas plana: eso es un desarrollo.",
+          "opciones": [
+            {
+              "texto": "Un cubo cortado por la mitad",
+              "emoji": ""
+            },
+            {
+              "texto": "Una figura plana que al doblarse forma el cubo",
+              "emoji": ""
+            },
+            {
+              "texto": "Un dibujo del cubo visto desde arriba",
+              "emoji": ""
+            },
+            {
+              "texto": "Una cara suelta del cubo",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "Una figura plana que al doblarse forma el cubo"
+        },
+        {
+          "id": "mat-011-ex-003",
+          "fichaId": "mat-011",
+          "subject": "matematicas",
+          "tipo": "RellenarHueco",
+          "nivel": 1,
+          "tiempoEstimado": 30,
+          "enunciado": "Todos los desarrollos del cubo tienen [___] cuadrados iguales.",
+          "pista": "Es el mismo número que las caras del cubo.",
+          "respuestaCorrecta": "6"
+        },
+        {
+          "id": "mat-011-ex-004",
+          "fichaId": "mat-011",
+          "subject": "matematicas",
+          "tipo": "EleccionMultiple",
+          "nivel": 1,
+          "tiempoEstimado": 30,
+          "enunciado": "Las aristas de un cubo son los bordes por donde se dobla el desarrollo. ¿Por dónde se dobla el desarrollo para formar el cubo?",
+          "pista": "Las aristas son las líneas que separan las caras del cubo.",
+          "opciones": [
+            {
+              "texto": "Por los vértices",
+              "emoji": ""
+            },
+            {
+              "texto": "Por las aristas",
+              "emoji": ""
+            },
+            {
+              "texto": "Por las caras",
+              "emoji": ""
+            },
+            {
+              "texto": "Por el centro",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "Por las aristas"
+        },
+        {
+          "id": "mat-011-ex-005",
+          "fichaId": "mat-011",
+          "subject": "matematicas",
+          "tipo": "EleccionMultiple",
+          "nivel": 1,
+          "tiempoEstimado": 30,
+          "enunciado": "Existen 6 tipos de desarrollo del cubo. ¿Cuántos tipos diferentes de desarrollo del cubo existen?",
+          "pista": "Hay tantos tipos como caras tiene el cubo.",
+          "opciones": [
+            {
+              "texto": "4",
+              "emoji": ""
+            },
+            {
+              "texto": "3",
+              "emoji": ""
+            },
+            {
+              "texto": "8",
+              "emoji": ""
+            },
+            {
+              "texto": "6",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "6"
+        },
+        {
+          "id": "mat-011-ex-006",
+          "fichaId": "mat-011",
+          "subject": "matematicas",
+          "tipo": "UnirColumnas",
+          "nivel": 2,
+          "tiempoEstimado": 90,
+          "enunciado": "Une cada tipo de desarrollo con su descripción:",
+          "pista": "Recuerda las formas: cruz, escalera y zig-zag.",
+          "parejas": [
+            {
+              "izquierda": "Tipo 1",
+              "derecha": "Forma de cruz clásica"
+            },
+            {
+              "izquierda": "Tipo 4",
+              "derecha": "Forma de escalera 1"
+            },
+            {
+              "izquierda": "Tipo 5",
+              "derecha": "Forma de escalera 2"
+            },
+            {
+              "izquierda": "Tipo 6",
+              "derecha": "Forma en zig-zag"
+            }
+          ]
+        },
+        {
+          "id": "mat-011-ex-007",
+          "fichaId": "mat-011",
+          "subject": "matematicas",
+          "tipo": "EleccionMultiple",
+          "nivel": 2,
+          "tiempoEstimado": 30,
+          "enunciado": "No todas las figuras con 6 cuadrados forman un cubo. ¿Qué condición deben cumplir los cuadrados para que el desarrollo forme un cubo?",
+          "pista": "No basta con tener 6 cuadrados: también importa dónde está cada uno.",
+          "opciones": [
+            {
+              "texto": "Deben ser de colores diferentes",
+              "emoji": ""
+            },
+            {
+              "texto": "Deben estar en la posición correcta",
+              "emoji": ""
+            },
+            {
+              "texto": "Deben tener el mismo tamaño que el cubo",
+              "emoji": ""
+            },
+            {
+              "texto": "Deben estar todos en fila",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "Deben estar en la posición correcta"
+        },
+        {
+          "id": "mat-011-ex-008",
+          "fichaId": "mat-011",
+          "subject": "matematicas",
+          "tipo": "RellenarHueco",
+          "nivel": 2,
+          "tiempoEstimado": 30,
+          "enunciado": "Un desarrollo del cubo es una figura [___] que al doblarse forma el cubo.",
+          "pista": "Al contrario de un sólido como el cubo, el desarrollo está extendido sobre una superficie.",
+          "respuestaCorrecta": "plana"
+        },
+        {
+          "id": "mat-011-ex-009",
+          "fichaId": "mat-011",
+          "subject": "matematicas",
+          "tipo": "ClasificarGrupos",
+          "nivel": 2,
+          "tiempoEstimado": 60,
+          "enunciado": "Clasifica los tipos de desarrollo según su forma:",
+          "pista": "Piensa en la forma que tiene cada desarrollo al verlo extendido: ¿se parece a una cruz, a una escalera o a un zig-zag?",
+          "grupos": [
+            {
+              "id": "cruz",
+              "nombre": "Forma de cruz"
+            },
+            {
+              "id": "escalera",
+              "nombre": "Forma de escalera"
+            },
+            {
+              "id": "zigzag",
+              "nombre": "Forma en zig-zag"
+            }
+          ],
+          "items": [
+            {
+              "id": "1",
+              "texto": "Tipo 1: cruz clásica",
+              "grupoId": "cruz"
+            },
+            {
+              "id": "2",
+              "texto": "Tipo 2: otra forma en cruz",
+              "grupoId": "cruz"
+            },
+            {
+              "id": "3",
+              "texto": "Tipo 3: cruz desplazada",
+              "grupoId": "cruz"
+            },
+            {
+              "id": "4",
+              "texto": "Tipo 4: escalera 1",
+              "grupoId": "escalera"
+            },
+            {
+              "id": "5",
+              "texto": "Tipo 5: escalera 2",
+              "grupoId": "escalera"
+            },
+            {
+              "id": "6",
+              "texto": "Tipo 6: zig-zag",
+              "grupoId": "zigzag"
+            }
+          ]
+        },
+        {
+          "id": "mat-011-ex-010",
+          "fichaId": "mat-011",
+          "subject": "matematicas",
+          "tipo": "EleccionMultiple",
+          "nivel": 2,
+          "tiempoEstimado": 30,
+          "enunciado": "Los Tipos 1, 2 y 3 de desarrollo del cubo tienen forma de cruz. ¿Cuántos tipos de desarrollo tienen forma de cruz?",
+          "pista": "Repasa los nombres: Tipo 1 es cruz clásica, Tipo 2 es otra forma en cruz, Tipo 3 es cruz desplazada.",
+          "opciones": [
+            {
+              "texto": "2",
+              "emoji": ""
+            },
+            {
+              "texto": "4",
+              "emoji": ""
+            },
+            {
+              "texto": "3",
+              "emoji": ""
+            },
+            {
+              "texto": "1",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "3"
+        },
+        {
+          "id": "mat-011-ex-011",
+          "fichaId": "mat-011",
+          "subject": "matematicas",
+          "tipo": "EleccionMultiple",
+          "nivel": 2,
+          "tiempoEstimado": 30,
+          "enunciado": "Un cubo tiene 6 caras iguales que son cuadrados. Si cada cara mide 3 cm de lado, ¿cuántas caras cuadradas tiene el cubo en total?",
+          "pista": "El número de caras del cubo no cambia aunque cambien sus medidas.",
+          "opciones": [
+            {
+              "texto": "3",
+              "emoji": ""
+            },
+            {
+              "texto": "6",
+              "emoji": ""
+            },
+            {
+              "texto": "8",
+              "emoji": ""
+            },
+            {
+              "texto": "4",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "6"
+        },
+        {
+          "id": "mat-011-ex-012",
+          "fichaId": "mat-011",
+          "subject": "matematicas",
+          "tipo": "MemoriaPareja",
+          "nivel": 3,
+          "tiempoEstimado": 180,
+          "enunciado": "Empareja cada tipo de desarrollo con su forma:",
+          "pista": "Recuerda los 6 tipos: tres son cruces, dos son escaleras y uno es zig-zag.",
+          "parejas": [
+            {
+              "a": "Tipo 1",
+              "b": "Cruz clásica"
+            },
+            {
+              "a": "Tipo 2",
+              "b": "Otra forma en cruz"
+            },
+            {
+              "a": "Tipo 3",
+              "b": "Cruz desplazada"
+            },
+            {
+              "a": "Tipo 4",
+              "b": "Escalera 1"
+            },
+            {
+              "a": "Tipo 5",
+              "b": "Escalera 2"
+            },
+            {
+              "a": "Tipo 6",
+              "b": "Zig-zag"
+            }
+          ]
+        },
+        {
+          "id": "mat-011-ex-013",
+          "fichaId": "mat-011",
+          "subject": "matematicas",
+          "tipo": "EleccionMultiple",
+          "nivel": 3,
+          "tiempoEstimado": 30,
+          "enunciado": "Un desarrollo del cubo tiene 6 cuadrados en posición correcta. Si una figura tiene 6 cuadrados pero mal colocados, ¿qué ocurrirá al doblarla?",
+          "pista": "Recuerda: no todas las figuras con 6 cuadrados forman un cubo.",
+          "opciones": [
+            {
+              "texto": "Formará un cubo igualmente",
+              "emoji": ""
+            },
+            {
+              "texto": "No formará un cubo",
+              "emoji": ""
+            },
+            {
+              "texto": "Formará un rectángulo",
+              "emoji": ""
+            },
+            {
+              "texto": "Formará una pirámide",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "No formará un cubo"
+        },
+        {
+          "id": "mat-011-ex-014",
+          "fichaId": "mat-011",
+          "subject": "matematicas",
+          "tipo": "EleccionMultiple",
+          "nivel": 3,
+          "tiempoEstimado": 30,
+          "enunciado": "Hay 6 tipos de desarrollo del cubo. Los Tipos 4 y 5 tienen forma de escalera y el Tipo 6 tiene forma de zig-zag. ¿Cuántos tipos de desarrollo NO tienen forma de cruz?",
+          "pista": "Primero cuenta los que sí tienen forma de cruz (Tipos 1, 2 y 3). Luego resta al total.",
+          "opciones": [
+            {
+              "texto": "2",
+              "emoji": ""
+            },
+            {
+              "texto": "4",
+              "emoji": ""
+            },
+            {
+              "texto": "3",
+              "emoji": ""
+            },
+            {
+              "texto": "1",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "3"
+        },
+        {
+          "id": "mat-011-ex-015",
+          "fichaId": "mat-011",
+          "subject": "matematicas",
+          "tipo": "RellenarHueco",
+          "nivel": 3,
+          "tiempoEstimado": 30,
+          "enunciado": "El Tipo 6 de desarrollo del cubo tiene forma de [___].",
+          "pista": "Es una forma que sube y baja como una letra Z.",
+          "respuestaCorrecta": "zig-zag"
         }
       ]
     }

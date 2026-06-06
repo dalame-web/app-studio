@@ -7,7 +7,10 @@ import MediaRender from '../MediaRender';
 
 function DraggableItem({ id, children }) {
   const { attributes, listeners, setNodeRef, transform, isDragging } = useDraggable({ id });
-  const style = transform ? { transform: `translate3d(${transform.x}px,${transform.y}px,0)` } : undefined;
+  const style = {
+    touchAction: 'none',
+    ...(transform ? { transform: `translate3d(${transform.x}px,${transform.y}px,0)` } : {}),
+  };
   return (
     // G7: padding reducido
     <div

@@ -256,12 +256,21 @@ export async function resetAllProgress(profileId) {
 
 export async function clearContent() {
   const db = await getDB();
+
+  // Borrar fichas y ejercicios
   const tx = db.transaction(['fichas', 'ejercicios'], 'readwrite');
   await tx.objectStore('fichas').clear();
   await tx.objectStore('ejercicios').clear();
   await tx.done;
-  // Eliminar la versión guardada → el próximo checkAndSyncContent descargará de cero
-  await db.delete('content_version', 'current');
+
+  // Borrar TODOS los registros de versión (tanto 'current' como 'subject_*')
+  // para que el próximo sync descargue de cero sin creer que ya está actualizado
+  const allVersions = await db.getAll('content_version');
+  if (allVersions.length > 0) {
+    const tx2 = db.transaction('content_version', 'readwrite');
+    for (const v of allVersions) await tx2.store.delete(v.id);
+    await tx2.done;
+  }
 }
 
 // ── Export (genera ejercicios.json completo desde IndexedDB) ─────────────────

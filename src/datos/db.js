@@ -163,19 +163,18 @@ export async function upsertGamificacion(profileId, updates) {
 
 // ── Content ───────────────────────────────────────────────────────────────────
 
-export async function getContentVersion() {
-  return (await getDB()).get('content_version', 'current');
+export async function getContentVersion(key = 'current') {
+  return (await getDB()).get('content_version', key);
 }
 
-export async function setContentVersion(version) {
-  await (await getDB()).put('content_version', { id: 'current', version, descargadoEn: Date.now() });
+export async function setContentVersion(version, key = 'current') {
+  await (await getDB()).put('content_version', { id: key, version, descargadoEn: Date.now() });
 }
 
+// storeContent NO borra todo — hace upsert por ficha/ejercicio para no perder otras asignaturas
 export async function storeContent(fichas, ejercicios) {
   const db = await getDB();
   const tx = db.transaction(['fichas', 'ejercicios'], 'readwrite');
-  await tx.objectStore('fichas').clear();
-  await tx.objectStore('ejercicios').clear();
   for (const f of fichas) await tx.objectStore('fichas').put(f);
   for (const e of ejercicios) await tx.objectStore('ejercicios').put(e);
   await tx.done;
@@ -230,10 +229,39 @@ export async function getAllFichaProgress(profileId) {
 
 export async function resetAllProgress(profileId) {
   const db = await getDB();
-  const all = await db.getAllFromIndex('ficha_progress', 'profileId', profileId);
-  const tx = db.transaction('ficha_progress', 'readwrite');
-  for (const fp of all) await tx.store.delete(fp.id);
+
+  // Borrar ficha_progress
+  const fpAll = await db.getAllFromIndex('ficha_progress', 'profileId', profileId);
+  const tx1 = db.transaction('ficha_progress', 'readwrite');
+  for (const fp of fpAll) await tx1.store.delete(fp.id);
+  await tx1.done;
+
+  // Borrar subject_stats del perfil
+  const allStats = await db.getAll('subject_stats');
+  const tx2 = db.transaction('subject_stats', 'readwrite');
+  for (const s of allStats) {
+    if (s.profileId === profileId) await tx2.store.delete(s.profileId_subject);
+  }
+  await tx2.done;
+
+  // Resetear gamificacion a ceros
+  await upsertGamificacion(profileId, {
+    xpTotal: 0,
+    rachaDias: 0,
+    rachaMaxima: 0,
+    ultimaSesionFecha: null,
+    insignias: [],
+  });
+}
+
+export async function clearContent() {
+  const db = await getDB();
+  const tx = db.transaction(['fichas', 'ejercicios'], 'readwrite');
+  await tx.objectStore('fichas').clear();
+  await tx.objectStore('ejercicios').clear();
   await tx.done;
+  // Eliminar la versión guardada → el próximo checkAndSyncContent descargará de cero
+  await db.delete('content_version', 'current');
 }
 
 // ── Export (genera ejercicios.json completo desde IndexedDB) ─────────────────

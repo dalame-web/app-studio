@@ -40,7 +40,8 @@ export default function OrdenarFrase({ ejercicio, intentos, fichaContenido, asig
     else { onIncorrecto(); }
   }
 
-  const pista = intentos >= 2 ? `Frase: ${ejercicio.fraseCorrecta}` : intentos === 1 ? 'Fíjate en qué palabra va primero.' : null;
+  const pistaTexto = ejercicio.pista ?? 'Fíjate en qué palabra va primero.';
+  const pista = intentos === 1 ? pistaTexto : intentos >= 2 ? `Frase: ${ejercicio.fraseCorrecta}` : null;
 
   return (
     <div className="flex flex-col gap-4 py-4">

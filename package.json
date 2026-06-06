@@ -8,7 +8,10 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "publicar": "node scripts/publicar.js"
+    "publicar": "node scripts/publicar.js",
+    "pdf": "python scripts/convertir-carpeta.py",
+    "pdf:ver": "python scripts/convertir-carpeta.py --verificar",
+    "vaciar": "node scripts/vaciar-contenido.js"
   },
   "dependencies": {
     "@dnd-kit/core": "^6.3.1",

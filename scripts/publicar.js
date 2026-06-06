@@ -9,7 +9,7 @@
  *   npm run publicar -- '[{...}]'       → JSON como argumento de texto
  */
 
-import { readFileSync, writeFileSync, existsSync } from 'fs';
+import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'fs';
 import { createInterface } from 'readline';
 import { execSync } from 'child_process';
 import { join, dirname } from 'path';
@@ -19,6 +19,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, '..');
 const EJERCICIOS_PATH = join(ROOT, 'public', 'ejercicios.json');
 const MANIFEST_PATH   = join(ROOT, 'public', 'manifest.json');
+const CONTENT_DIR     = join(ROOT, 'public', 'content');
 
 // ── Colores consola ──────────────────────────────────────────────────────────
 const C = {
@@ -132,9 +133,9 @@ function fusionar(fichasExistentes, fichasNuevas) {
 
 // ── Generar versión incremental ──────────────────────────────────────────────
 
-function nuevaVersion(manifestExistente) {
-  const fecha = new Date().toISOString().slice(0, 10);
-  const versionActual = manifestExistente?.version ?? '';
+function nuevaVersion(manifestOVersion, fechaBase) {
+  const fecha = fechaBase ?? new Date().toISOString().slice(0, 10);
+  const versionActual = (typeof manifestOVersion === 'string' ? manifestOVersion : manifestOVersion?.version) ?? '';
   const prefijo = `${fecha}-`;
   const contador = versionActual.startsWith(prefijo)
     ? parseInt(versionActual.slice(prefijo.length), 10) + 1
@@ -197,17 +198,29 @@ async function main() {
   const asignaturas = [...new Set(fichasFusionadas.map(f => f.subject))].sort();
 
   // 6. Escribir ficheros
-  const nuevoEjercicios = {
-    version,
-    fecha: new Date().toISOString().slice(0, 10),
-    fichas: fichasFusionadas.sort((a, b) => a.subject.localeCompare(b.subject) || a.id.localeCompare(b.id)),
-  };
-  writeFileSync(EJERCICIOS_PATH, JSON.stringify(nuevoEjercicios, null, 2), 'utf8');
+  const fecha = new Date().toISOString().slice(0, 10);
+  const fichasOrdenadas = fichasFusionadas.sort((a, b) => a.subject.localeCompare(b.subject) || a.id.localeCompare(b.id));
 
-  const nuevoManifest = { ...manifest, version, fecha: nuevoEjercicios.fecha, asignaturas };
+  // 6a. ejercicios.json (archivo unificado — retrocompatibilidad)
+  writeFileSync(EJERCICIOS_PATH, JSON.stringify({ version, fecha, fichas: fichasOrdenadas }, null, 2), 'utf8');
+
+  // 6b. Archivos por asignatura en public/content/
+  if (!existsSync(CONTENT_DIR)) mkdirSync(CONTENT_DIR, { recursive: true });
+  const asignaturasObj = {};
+  for (const subject of asignaturas) {
+    // Calcular versión por asignatura (basada en si hay cambios)
+    const asigVersion = nuevaVersion(manifest?.asignaturas?.[subject] ?? null, fecha);
+    const fichasSubject = fichasOrdenadas.filter(f => f.subject === subject);
+    const hayNuevosEnSubject = resultado.fichas.some(f => f.subject === subject);
+    const versionSubject = hayNuevosEnSubject ? asigVersion : (manifest?.asignaturas?.[subject]?.version ?? asigVersion);
+    asignaturasObj[subject] = { version: versionSubject };
+    writeFileSync(join(CONTENT_DIR, `${subject}.json`), JSON.stringify({ version: versionSubject, subject, fichas: fichasSubject }, null, 2), 'utf8');
+  }
+
+  const nuevoManifest = { ...manifest, version, fecha, asignaturas: asignaturasObj };
   writeFileSync(MANIFEST_PATH, JSON.stringify(nuevoManifest, null, 2), 'utf8');
 
-  ok(`Escritos: ejercicios.json (${fichasFusionadas.length} fichas) + manifest.json (v${version})`);
+  ok(`Escritos: ejercicios.json (${fichasFusionadas.length} fichas) + ${asignaturas.length} archivos por asignatura + manifest.json (v${version})`);
   if (añadidas.length) info(`Fichas nuevas: ${añadidas.join(', ')}`);
   if (sustituidas.length) info(`Fichas sustituidas: ${sustituidas.join(', ')}`);
 
@@ -229,7 +242,7 @@ async function main() {
   const commitMsg = `content: ${añadidas.length + sustituidas.length} ficha${añadidas.length + sustituidas.length > 1 ? 's' : ''} (${asigLabel})`;
 
   try {
-    execSync('git add public/ejercicios.json public/manifest.json', { cwd: ROOT, stdio: 'pipe' });
+    execSync('git add public/ejercicios.json public/manifest.json public/content/', { cwd: ROOT, stdio: 'pipe' });
     execSync(`git commit -m "${commitMsg}"`, { cwd: ROOT, stdio: 'pipe' });
     ok(`Commit: "${commitMsg}"`);
   } catch (e) {

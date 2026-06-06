@@ -6,18 +6,45 @@ import MediaRender from '../MediaRender';
 
 function VisualizadorEmoji({ visual }) {
   const { emoji = '🔵', cantidad = 5, operacion, cantidadOperacion = 0 } = visual;
-  const mostrar = Math.max(0, operacion === 'resta' ? cantidad - cantidadOperacion : cantidad);
   return (
     <div className="bg-amber-50 rounded-2xl p-4 text-center">
-      <div className="flex flex-wrap justify-center gap-1 text-4xl mb-2">
-        {Array.from({ length: mostrar }).map((_, i) => <span key={i}>{emoji}</span>)}
+      <div className="flex flex-wrap justify-center gap-1 text-4xl mb-1">
+        {Array.from({ length: cantidad }).map((_, i) => (
+          <span key={i} className={
+            operacion === 'resta' && i >= (cantidad - cantidadOperacion) ? 'opacity-25' : ''
+          }>{emoji}</span>
+        ))}
       </div>
       {operacion && (
-        <p className="text-sm text-gray-500 font-medium">
+        <p className="text-sm text-gray-500 font-medium mt-1">
           {operacion === 'resta' ? `${cantidad} − ${cantidadOperacion} = ?` :
            operacion === 'suma'  ? `${cantidad} + ${cantidadOperacion} = ?` : ''}
         </p>
       )}
+    </div>
+  );
+}
+
+function VisualizadorBarras({ barras }) {
+  const max = Math.max(...barras.map(b => b.valor));
+  const n = barras.length;
+  const barW = Math.floor(220 / n) - 6;
+  return (
+    <div className="bg-amber-50 rounded-2xl p-4">
+      <svg viewBox="0 0 260 140" className="w-full max-w-xs mx-auto">
+        {barras.map((b, i) => {
+          const h = Math.round((b.valor / max) * 95);
+          const x = i * (barW + 6) + 10;
+          return (
+            <g key={i}>
+              <rect x={x} y={100 - h} width={barW} height={h} fill={b.color} rx="3" />
+              <text x={x + barW / 2} y={118} textAnchor="middle" fontSize="10" fill="#555">{b.label}</text>
+              <text x={x + barW / 2} y={97 - h} textAnchor="middle" fontSize="11" fontWeight="bold" fill={b.color}>{b.valor}</text>
+            </g>
+          );
+        })}
+        <line x1="8" y1="100" x2="252" y2="100" stroke="#d1d5db" strokeWidth="1.5" />
+      </svg>
     </div>
   );
 }
@@ -40,7 +67,8 @@ export default function ProblemaVisual({ ejercicio, intentos, fichaContenido, as
     else { onIncorrecto(); setValor(''); }
   }
 
-  const pista = intentos >= 2 ? `Respuesta: ${ejercicio.respuestaCorrecta}` : intentos === 1 ? 'Fíjate bien en la imagen.' : null;
+  const pistaTexto = ejercicio.pista ?? 'Fíjate bien en el enunciado.';
+  const pista = intentos === 1 ? pistaTexto : intentos >= 2 ? `Respuesta: ${ejercicio.respuestaCorrecta}` : null;
 
   return (
     <div className="flex flex-col gap-4 py-4">
@@ -55,7 +83,10 @@ export default function ProblemaVisual({ ejercicio, intentos, fichaContenido, as
         {pista && <p className="mt-2 text-sm text-amber-600 font-medium">{pista}</p>}
       </div>
 
-      {ejercicio.visual && <VisualizadorEmoji visual={ejercicio.visual} />}
+      {ejercicio.visual?.tipo === 'barras'
+        ? <VisualizadorBarras barras={ejercicio.visual.barras} />
+        : ejercicio.visual && <VisualizadorEmoji visual={ejercicio.visual} />
+      }
 
       {esNumerico ? (
         <div className="flex gap-3">

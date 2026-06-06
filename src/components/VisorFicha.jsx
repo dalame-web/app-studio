@@ -5,17 +5,16 @@ import { createSession } from '../datos/db';
 import { BtnVolver } from '../pantallas/PantallaFichas';
 
 export default function VisorFicha() {
-  const ficha = useSesionStore(s => s.fichaActual);
-  const profileId = useSesionStore(s => s.profileId);
+  const ficha      = useSesionStore(s => s.fichaActual);
+  const profileId  = useSesionStore(s => s.profileId);
   const asignatura = useSesionStore(s => s.asignaturaActual);
-  const modo = useSesionStore(s => s.modoSesion);
   const iniciarSesion = useSesionStore(s => s.iniciarSesion);
-  const irA = useSesionStore(s => s.irA);
+  const irA        = useSesionStore(s => s.irA);
 
   if (!ficha) return null;
 
   async function handleEmpezar() {
-    const ejercicios = await seleccionarEjercicios(profileId, ficha.id, asignatura, modo);
+    const { ejercicios, baseLength } = await seleccionarEjercicios(profileId, ficha.id, asignatura);
     if (ejercicios.length === 0) {
       alert('No hay ejercicios disponibles para esta ficha todavía.');
       return;
@@ -24,20 +23,18 @@ export default function VisorFicha() {
       profileId,
       subject: asignatura,
       fichaId: ficha.id,
-      modo,
       startTime: Date.now(),
       totalExercises: ejercicios.length,
       correctCount: 0,
       incorrectCount: 0,
     });
-    iniciarSesion(sesionId, ejercicios);
+    iniciarSesion(sesionId, ejercicios, baseLength);
   }
 
   const textoFicha = [ficha.titulo, ficha.contenido, ...(ficha.ejemplos ?? [])].join('. ');
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-indigo-50 to-white flex flex-col">
-      {/* G4: botón volver mejorado */}
       <div className="p-4 flex items-center gap-2">
         <BtnVolver onClick={() => irA('fichas')} colorClass="text-indigo-500 hover:bg-indigo-100" />
         <span className="text-indigo-400 text-sm font-medium">{asignatura}</span>
@@ -79,9 +76,6 @@ export default function VisorFicha() {
         >
           ¡Ya estoy listo! 🚀
         </button>
-        <p className="text-center text-gray-400 text-sm mt-2">
-          Modo: {modo === 'corto' ? '⚡ Sesión corta (5-10 min)' : '📖 Repaso largo'}
-        </p>
       </div>
     </div>
   );

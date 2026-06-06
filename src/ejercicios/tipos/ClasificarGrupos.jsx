@@ -1,6 +1,6 @@
 // G6: instrucción + G7: elementos más pequeños
 import { useState } from 'react';
-import { DndContext, useDraggable, useDroppable, PointerSensor, useSensor, useSensors } from '@dnd-kit/core';
+import { DndContext, useDraggable, useDroppable, PointerSensor, TouchSensor, useSensor, useSensors } from '@dnd-kit/core';
 import BotonAudio from '../../components/BotonAudio';
 import ChipInstruccion from '../ChipInstruccion';
 import MediaRender from '../MediaRender';
@@ -53,7 +53,10 @@ export default function ClasificarGrupos({ ejercicio, intentos, fichaContenido, 
   });
   const [errorGrupo, setErrorGrupo] = useState(null);
   const idioma = asignatura === 'ingles' ? 'en-US' : 'es-ES';
-  const sensors = useSensors(useSensor(PointerSensor, { activationConstraint: { distance: 5 } }));
+  const sensors = useSensors(
+    useSensor(PointerSensor, { activationConstraint: { distance: 8 } }),
+    useSensor(TouchSensor,   { activationConstraint: { delay: 150, tolerance: 5 } }),
+  );
 
   function handleDragEnd({ active, over }) {
     if (!over) return;
@@ -106,7 +109,8 @@ export default function ClasificarGrupos({ ejercicio, intentos, fichaContenido, 
     }
   }
 
-  const pista = intentos >= 2 ? 'Revisa dónde va cada elemento.' : intentos === 1 ? 'Fíjate en las categorías.' : null;
+  const pistaTexto = ejercicio.pista ?? 'Fíjate en las categorías.';
+  const pista = intentos === 1 ? pistaTexto : intentos >= 2 ? 'Revisa dónde va cada elemento.' : null;
 
   return (
     <DndContext sensors={sensors} onDragEnd={handleDragEnd}>

@@ -15,7 +15,8 @@ export default function CompletarSerie({ ejercicio, intentos, fichaContenido, as
     else { onIncorrecto(); setTimeout(() => setSeleccionado(null), 700); }
   }
 
-  const pista = intentos >= 2 ? `Respuesta: ${ejercicio.respuestaCorrecta}` : intentos === 1 ? 'Fíjate en el patrón de la serie.' : null;
+  const pistaTexto = ejercicio.pista ?? 'Fíjate en el patrón de la serie.';
+  const pista = intentos === 1 ? pistaTexto : intentos >= 2 ? `Respuesta: ${ejercicio.respuestaCorrecta}` : null;
 
   return (
     <div className="flex flex-col gap-4 py-4">

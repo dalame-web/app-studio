@@ -19,11 +19,8 @@ export default function EleccionMultiple({ ejercicio, intentos, fichaContenido, 
     setTimeout(() => setSeleccionado(null), 700);
   }
 
-  const pista = intentos === 1
-    ? 'Pista: busca la respuesta en la ficha.'
-    : intentos >= 2
-    ? `Respuesta correcta: ${ejercicio.respuestaCorrecta}`
-    : null;
+  const pistaTexto = ejercicio.pista ?? 'Pista: busca la respuesta en la ficha.';
+  const pista = intentos === 1 ? pistaTexto : intentos >= 2 ? `Respuesta correcta: ${ejercicio.respuestaCorrecta}` : null;
 
   return (
     <div className="flex flex-col gap-4 py-4">

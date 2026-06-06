@@ -9,12 +9,15 @@ import { ASIGNATURAS } from './PantallaInicio';
 import { BtnVolver } from './PantallaFichas';
 
 export default function PantallaEjercicio() {
-  const ejercicios   = useSesionStore(s => s.ejercicios);
-  const ejercicioIdx = useSesionStore(s => s.ejercicioIdx);
-  const correctas    = useSesionStore(s => s.correctas);
-  const asignatura   = useSesionStore(s => s.asignaturaActual);
-  const fichaActual  = useSesionStore(s => s.fichaActual);
-  const volverAInicio = useSesionStore(s => s.volverAInicio);
+  const ejercicios          = useSesionStore(s => s.ejercicios);
+  const ejercicioIdx        = useSesionStore(s => s.ejercicioIdx);
+  const ejerciciosBaseLength = useSesionStore(s => s.ejerciciosBaseLength);
+  const correctas           = useSesionStore(s => s.correctas);
+  const asignatura          = useSesionStore(s => s.asignaturaActual);
+  const fichaActual         = useSesionStore(s => s.fichaActual);
+  const volverAInicio       = useSesionStore(s => s.volverAInicio);
+
+  const esRepasoParcial = ejercicioIdx >= ejerciciosBaseLength && ejerciciosBaseLength > 0;
 
   const [modalSalir, setModalSalir] = useState(false);
 
@@ -44,8 +47,14 @@ export default function PantallaEjercicio() {
           {/* M2: chip asignatura visual */}
           <div className={`flex items-center gap-1.5 px-3 py-1 rounded-full text-sm font-bold ${meta?.bg ?? 'bg-gray-100'} ${meta?.text ?? 'text-gray-700'}`}>
             <span>{meta?.emoji}</span>
-            <span className="truncate max-w-[160px]">{fichaActual?.titulo ?? meta?.nombre}</span>
+            <span className="truncate max-w-[140px]">{fichaActual?.titulo ?? meta?.nombre}</span>
           </div>
+
+          {esRepasoParcial && (
+            <span className="text-xs font-bold text-orange-500 bg-orange-50 border border-orange-200 px-2 py-0.5 rounded-full whitespace-nowrap">
+              🔄 Repaso
+            </span>
+          )}
 
           <span className="ml-auto text-xs font-bold text-gray-400">
             {ejercicioIdx + 1}/{ejercicios.length}

@@ -47,7 +47,8 @@ export default function UnirColumnas({ ejercicio, intentos, fichaContenido, asig
     }
   }
 
-  const pista = intentos >= 2 ? 'Revisa las conexiones en la ficha.' : intentos === 1 ? 'Fíjate bien en el significado.' : null;
+  const pistaTexto = ejercicio.pista ?? 'Fíjate bien en el significado.';
+  const pista = intentos === 1 ? pistaTexto : intentos >= 2 ? 'Revisa las conexiones en la ficha.' : null;
   const todosConectados = parejas.every(p => conexiones[p.izquierda]);
 
   return (

@@ -16,7 +16,7 @@ const WAVE_X_PCT = [50, 38, 28, 38, 50, 62, 72, 62];
 // Altura por item (px)
 const NODE_H  = 160;
 const SEP_H   = 72;
-const PAD_TOP = 60;
+const PAD_TOP = 130;
 
 function hayRepasoHoy(fp) {
   if (!fp?.superada || !fp?.reviewDates?.length) return false;
@@ -34,7 +34,7 @@ function labelCorto(label) {
   return m ? m[0] : '·';
 }
 
-export default function CaminoFichas({ fichas, meta, onSelectFicha, profileId, modo }) {
+export default function CaminoFichas({ fichas, meta, onSelectFicha, profileId }) {
   const [progreso, setProgreso] = useState({});
 
   useEffect(() => {
@@ -157,7 +157,7 @@ export default function CaminoFichas({ fichas, meta, onSelectFicha, profileId, m
               meta={meta}
               repasoHoy={repaso}
               esProximo={esProximo}
-              onClick={() => onSelectFicha(ficha, repaso ? 'repaso' : modo)}
+              onClick={() => onSelectFicha(ficha, repaso ? 'repaso' : null)}
             />
           </div>
         );

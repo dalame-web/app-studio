@@ -26,11 +26,8 @@ export default function RellenarHueco({ ejercicio, intentos, fichaContenido, asi
     }
   }
 
-  const pista = intentos === 1
-    ? 'Pista: busca la respuesta en la ficha.'
-    : intentos >= 2
-    ? `Respuesta: ${ejercicio.respuestaCorrecta}`
-    : null;
+  const pistaTexto = ejercicio.pista ?? 'Pista: busca la respuesta en la ficha.';
+  const pista = intentos === 1 ? pistaTexto : intentos >= 2 ? `Respuesta: ${ejercicio.respuestaCorrecta}` : null;
 
   return (
     <div className="flex flex-col gap-4 py-4">

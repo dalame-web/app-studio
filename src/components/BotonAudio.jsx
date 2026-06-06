@@ -46,22 +46,25 @@ export default function BotonAudio({ texto, idioma = 'es-ES' }) {
 
   const hablar = useCallback(() => {
     if (!window.speechSynthesis) return;
-    window.speechSynthesis.cancel();
-
-    const u = new SpeechSynthesisUtterance(texto);
-    u.lang = idioma;
-    // G1: configuración más natural para niños
-    u.rate = 0.82;
-    u.pitch = idioma.startsWith('es') ? 1.1 : 1.0;
-
-    const vozSeleccionada = idioma.startsWith('es') ? mejorVozES : mejorVozEN;
-    if (vozSeleccionada) u.voice = vozSeleccionada;
-
-    u.onstart  = () => setHablando(true);
-    u.onend    = () => setHablando(false);
-    u.onerror  = () => setHablando(false);
-
-    window.speechSynthesis.speak(u);
+    try {
+      window.speechSynthesis.cancel();
+      const u = new SpeechSynthesisUtterance(texto ?? '');
+      u.lang  = idioma;
+      u.rate  = 0.82;
+      u.pitch = idioma.startsWith('es') ? 1.1 : 1.0;
+      const voz = idioma.startsWith('es') ? mejorVozES : mejorVozEN;
+      if (voz) u.voice = voz;
+      u.onstart = () => setHablando(true);
+      u.onend   = () => setHablando(false);
+      u.onerror = () => setHablando(false);
+      // Chrome Android: resume() antes de speak() para evitar estado paused
+      setTimeout(() => {
+        try {
+          window.speechSynthesis.resume();
+          window.speechSynthesis.speak(u);
+        } catch { setHablando(false); }
+      }, 50);
+    } catch { setHablando(false); }
   }, [texto, idioma]);
 
   return (

@@ -1,6 +1,6 @@
 // G6: instrucción + G7: elementos drag más pequeños
 import { useState } from 'react';
-import { DndContext, useDraggable, useDroppable, PointerSensor, useSensor, useSensors } from '@dnd-kit/core';
+import { DndContext, useDraggable, useDroppable, PointerSensor, TouchSensor, useSensor, useSensors } from '@dnd-kit/core';
 import BotonAudio from '../../components/BotonAudio';
 import ChipInstruccion from '../ChipInstruccion';
 import MediaRender from '../MediaRender';
@@ -15,7 +15,7 @@ function Draggable({ id, children, usado }) {
       style={style}
       {...listeners}
       {...attributes}
-      className={`px-3 py-1.5 rounded-lg border-2 text-sm font-semibold cursor-grab active:cursor-grabbing select-none transition-all ${
+      className={`px-2 py-1 rounded-lg border-2 text-xs font-semibold cursor-grab active:cursor-grabbing select-none transition-all ${
         usado ? 'border-gray-200 bg-gray-100 text-gray-400 cursor-not-allowed opacity-60' :
         isDragging ? 'border-blue-400 bg-blue-50 shadow-md z-10 scale-105' :
         'border-gray-300 bg-white hover:border-blue-300 shadow-sm'
@@ -48,7 +48,10 @@ export default function ArrastrarPalabras({ ejercicio, intentos, fichaContenido,
   const [ranuras, setRanuras] = useState(() => Array(numRanuras).fill(null));
   const idioma = asignatura === 'ingles' ? 'en-US' : 'es-ES';
 
-  const sensors = useSensors(useSensor(PointerSensor, { activationConstraint: { distance: 5 } }));
+  const sensors = useSensors(
+    useSensor(PointerSensor, { activationConstraint: { distance: 8 } }),
+    useSensor(TouchSensor,   { activationConstraint: { delay: 150, tolerance: 5 } }),
+  );
   const partes = ejercicio.fraseConHuecos?.split('[___]') ?? [''];
 
   function handleDragEnd({ active, over }) {
@@ -72,7 +75,8 @@ export default function ArrastrarPalabras({ ejercicio, intentos, fichaContenido,
 
   const usadas = new Set(ranuras.filter(Boolean));
   const todoLleno = ranuras.every(r => r !== null);
-  const pista = intentos >= 2 ? `Orden: ${respuestasCorrectas.join(', ')}` : intentos === 1 ? 'Fíjate en el orden de la frase.' : null;
+  const pistaTexto = ejercicio.pista ?? 'Fíjate en el orden de la frase.';
+  const pista = intentos === 1 ? pistaTexto : intentos >= 2 ? `Orden: ${respuestasCorrectas.join(', ')}` : null;
 
   return (
     <DndContext sensors={sensors} onDragEnd={handleDragEnd}>
@@ -99,7 +103,7 @@ export default function ArrastrarPalabras({ ejercicio, intentos, fichaContenido,
         </div>
 
         {/* G7: banco compacto */}
-        <div className="flex flex-wrap gap-2 justify-center">
+        <div className="flex flex-wrap gap-1.5 justify-center">
           {ejercicio.banco?.map(p => (
             <Draggable key={p} id={p} usado={usadas.has(p)}>{p}</Draggable>
           ))}

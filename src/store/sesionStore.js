@@ -5,11 +5,11 @@ const useSesionStore = create((set, get) => ({
   profileId: null,
   asignaturaActual: null,
   fichaActual: null,
-  modoSesion: 'corto',
 
   // Active session
   sesionId: null,
   ejercicios: [],
+  ejerciciosBaseLength: 0, // cuántos son "principales" (el resto son repaso rápido)
   ejercicioIdx: 0,
   correctas: 0,
   incorrectas: 0,
@@ -23,13 +23,14 @@ const useSesionStore = create((set, get) => ({
 
   seleccionarAsignatura: (subject) => set({ asignaturaActual: subject, pantallaActual: 'fichas' }),
 
-  seleccionarFicha: (ficha, modo = 'corto') =>
-    set({ fichaActual: ficha, modoSesion: modo, pantallaActual: 'visorFicha' }),
+  seleccionarFicha: (ficha, esRepaso = false) =>
+    set({ fichaActual: ficha, esRepaso: !!esRepaso, pantallaActual: 'visorFicha' }),
 
-  iniciarSesion: (sesionId, ejercicios) =>
+  iniciarSesion: (sesionId, ejercicios, baseLength) =>
     set({
       sesionId,
       ejercicios,
+      ejerciciosBaseLength: baseLength ?? ejercicios.length,
       ejercicioIdx: 0,
       correctas: 0,
       incorrectas: 0,
@@ -74,6 +75,7 @@ const useSesionStore = create((set, get) => ({
       fichaActual: null,
       sesionId: null,
       ejercicios: [],
+      ejerciciosBaseLength: 0,
       ejercicioIdx: 0,
       correctas: 0,
       incorrectas: 0,

@@ -1,8 +1,5 @@
 import { getEjerciciosByFicha, getExerciseLogForFicha, getSubjectStats } from './db';
 
-const TIEMPO_CORTO_MAX = 7 * 60; // 7 min en segundos
-const TIPOS_LARGOS = ['SopaLetras', 'MemoriaPareja', 'ComprensionLectora'];
-
 function calcRecencyScore(lastTimestamp) {
   if (!lastTimestamp) return 1;
   const daysSince = (Date.now() - lastTimestamp) / 86400000;
@@ -34,24 +31,24 @@ function weightedShuffle(items, weights) {
   return result;
 }
 
-export async function seleccionarEjercicios(profileId, fichaId, subject, modo = 'corto') {
+// Devuelve { ejercicios, baseLength }
+// baseLength = nº de ejercicios "principales"; los siguientes son el repaso rápido (3 preguntas extra)
+export async function seleccionarEjercicios(profileId, fichaId, subject) {
   const stats = await getSubjectStats(profileId, subject);
   const nivelActual = stats?.nivelActual ?? 1;
 
-  let todos = await getEjerciciosByFicha(fichaId);
-  if (todos.length === 0) return [];
+  const todos = await getEjerciciosByFicha(fichaId);
+  if (todos.length === 0) return { ejercicios: [], baseLength: 0 };
 
-  // Separate by level
+  // 80% nivel actual, 20% buffer de otros niveles
   const delNivel = todos.filter(e => e.nivel === nivelActual);
-  const buffer = todos.filter(e => e.nivel !== nivelActual);
-
-  // 80% current level, 20% buffer
+  const buffer   = todos.filter(e => e.nivel !== nivelActual);
   const pool = [
     ...delNivel,
     ...buffer.slice(0, Math.max(1, Math.floor(delNivel.length * 0.25))),
   ];
 
-  // Build log map for weighting
+  // Pesos por historial
   const logs = await getExerciseLogForFicha(profileId, fichaId);
   const logMap = {};
   for (const log of logs) {
@@ -59,38 +56,24 @@ export async function seleccionarEjercicios(profileId, fichaId, subject, modo = 
     logMap[log.exerciseId].push(log);
   }
 
-  const weights = pool.map(e => calcWeight(e, logMap));
+  const weights  = pool.map(e => calcWeight(e, logMap));
   let candidatos = weightedShuffle(pool, weights);
 
-  // Anti-repetition: no two same types consecutive
-  const sinRepeticion = [];
+  // Anti-repetición: no dos del mismo tipo consecutivos
+  const base = [];
   for (const e of candidatos) {
-    const ultimo = sinRepeticion[sinRepeticion.length - 1];
+    const ultimo = base[base.length - 1];
     if (ultimo?.tipo !== e.tipo) {
-      sinRepeticion.push(e);
+      base.push(e);
     } else {
-      sinRepeticion.splice(sinRepeticion.length - 1, 0, e);
+      base.splice(base.length - 1, 0, e);
     }
   }
 
-  if (modo === 'largo') return sinRepeticion;
+  // Repaso rápido: 3 preguntas extra elegidas al azar de las ya seleccionadas
+  const repaso = [...base].sort(() => Math.random() - 0.5).slice(0, Math.min(3, base.length));
 
-  // Modo corto: limit by time, max 1 long type
-  let tiempoAcumulado = 0;
-  let tiposLargosUsados = 0;
-  const seleccionados = [];
-
-  for (const e of sinRepeticion) {
-    const esLargo = TIPOS_LARGOS.includes(e.tipo);
-    if (esLargo && tiposLargosUsados >= 1) continue;
-    if (tiempoAcumulado + (e.tiempoEstimado ?? 30) > TIEMPO_CORTO_MAX && seleccionados.length >= 3) break;
-
-    seleccionados.push(e);
-    tiempoAcumulado += e.tiempoEstimado ?? 30;
-    if (esLargo) tiposLargosUsados++;
-  }
-
-  return seleccionados;
+  return { ejercicios: [...base, ...repaso], baseLength: base.length };
 }
 
 export async function actualizarNivel(profileId, subject, recentSessions) {

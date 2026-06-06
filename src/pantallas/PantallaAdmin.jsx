@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import useSesionStore from '../store/sesionStore';
 import useGamificacionStore from '../store/gamificacionStore';
-import { getAllSubjectStats, getRecentSessions, resetAllProgress } from '../datos/db';
+import { getAllSubjectStats, getRecentSessions, resetAllProgress, clearContent } from '../datos/db';
 import { checkAndSyncContent } from '../datos/contentSync';
 import { ASIGNATURAS } from './PantallaInicio';
 import { BtnVolver } from './PantallaFichas';
@@ -36,13 +36,14 @@ const INSIGNIAS_META = {
 export default function PantallaAdmin() {
   const profileId     = useSesionStore(s => s.profileId);
   const irA           = useSesionStore(s => s.irA);
-  const { xpTotal, rachaDias, rachaMaxima, insignias } = useGamificacionStore();
+  const { xpTotal, rachaDias, rachaMaxima, insignias, cargar: recargarGami } = useGamificacionStore();
 
   const [stats, setStats]               = useState([]);
   const [detalle, setDetalle]           = useState(null);
   const [detalleStats, setDetalleStats] = useState(null);
   const [updateEstado, setUpdateEstado] = useState(null);
   const [resetEstado, setResetEstado]   = useState(null); // null | 'confirm' | 'done'
+  const [borrarEstado, setBorrarEstado] = useState(null); // null | 'confirm' | 'cargando' | 'done' | 'error'
 
   useEffect(() => {
     if (!profileId) return;
@@ -79,8 +80,25 @@ export default function PantallaAdmin() {
   async function handleResetProgreso() {
     if (resetEstado !== 'confirm') { setResetEstado('confirm'); return; }
     await resetAllProgress(profileId);
+    await recargarGami(profileId);
+    recargarStats();
     setResetEstado('done');
     setTimeout(() => setResetEstado(null), 3000);
+  }
+
+  async function handleBorrarContenido() {
+    if (borrarEstado !== 'confirm') { setBorrarEstado('confirm'); return; }
+    setBorrarEstado('cargando');
+    try {
+      await clearContent();
+      // Sincronizar de inmediato si hay conexión (descarga el contenido nuevo de GitHub)
+      if (navigator.onLine) await checkAndSyncContent();
+      setBorrarEstado('done');
+      recargarStats();
+    } catch {
+      setBorrarEstado('error');
+    }
+    setTimeout(() => setBorrarEstado(null), 5000);
   }
 
   const meta = (id) => ASIGNATURAS.find(a => a.id === id);
@@ -155,9 +173,9 @@ export default function PantallaAdmin() {
         <button
           onClick={handleComprobarActualizacion}
           disabled={updateEstado === 'comprobando'}
-          className="w-full bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-600 hover:to-blue-700 disabled:from-gray-400 disabled:to-gray-500 text-white font-bold py-4 px-5 rounded-2xl shadow-md flex items-center justify-center gap-3 transition-all active:scale-95"
+          className="w-full bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-600 hover:to-blue-700 disabled:from-gray-400 disabled:to-gray-500 text-white font-bold py-3 px-4 rounded-2xl shadow-sm flex items-center justify-center gap-2 transition-all active:scale-95"
         >
-          <span className="text-2xl">{updateEstado === 'comprobando' ? '⏳' : '🔄'}</span>
+          <span className="text-xl">{updateEstado === 'comprobando' ? '⏳' : '🔄'}</span>
           <span>{updateEstado === 'comprobando' ? 'Buscando actualizaciones…' : 'Comprobar contenido nuevo'}</span>
         </button>
 
@@ -185,13 +203,13 @@ export default function PantallaAdmin() {
         {/* Reiniciar progreso */}
         <button
           onClick={handleResetProgreso}
-          className={`w-full font-bold py-4 px-5 rounded-2xl shadow-md flex items-center justify-center gap-3 transition-all active:scale-95 ${
+          className={`w-full font-bold py-3 px-4 rounded-2xl shadow-sm flex items-center justify-center gap-2 transition-all active:scale-95 ${
             resetEstado === 'confirm'
               ? 'bg-red-500 hover:bg-red-600 text-white'
               : 'bg-gray-100 hover:bg-gray-200 text-gray-600'
           }`}
         >
-          <span className="text-2xl">🗑️</span>
+          <span className="text-xl">🗑️</span>
           <span>
             {resetEstado === 'confirm'
               ? '¿Seguro? Toca de nuevo para confirmar'
@@ -201,6 +219,36 @@ export default function PantallaAdmin() {
         {resetEstado === 'done' && (
           <div className="bg-green-50 border border-green-300 rounded-2xl p-3 text-sm text-green-800 text-center animate-aparecer">
             ✅ Progreso reiniciado. Las fichas vuelven a gris.
+          </div>
+        )}
+
+        {/* Borrar contenido del dispositivo */}
+        <button
+          onClick={handleBorrarContenido}
+          disabled={borrarEstado === 'cargando'}
+          className={`w-full font-bold py-3 px-4 rounded-2xl shadow-sm flex items-center justify-center gap-2 transition-all active:scale-95 ${
+            borrarEstado === 'confirm'
+              ? 'bg-orange-500 hover:bg-orange-600 text-white'
+              : borrarEstado === 'cargando'
+              ? 'bg-gray-400 text-white cursor-not-allowed'
+              : 'bg-gray-100 hover:bg-gray-200 text-gray-600'
+          }`}
+        >
+          <span className="text-xl">{borrarEstado === 'cargando' ? '⏳' : '📥'}</span>
+          <span>
+            {borrarEstado === 'confirm'  ? '¿Seguro? Toca de nuevo para confirmar' :
+             borrarEstado === 'cargando' ? 'Borrando y descargando contenido…' :
+             'Borrar contenido y recargar desde cero'}
+          </span>
+        </button>
+        {borrarEstado === 'done' && (
+          <div className="bg-green-50 border border-green-300 rounded-2xl p-3 text-sm text-green-800 text-center animate-aparecer">
+            ✅ Contenido borrado y recargado desde GitHub.
+          </div>
+        )}
+        {borrarEstado === 'error' && (
+          <div className="bg-red-50 border border-red-300 rounded-2xl p-3 text-sm text-red-700 text-center animate-aparecer">
+            ❌ Error. Comprueba la conexión e inténtalo de nuevo.
           </div>
         )}
 

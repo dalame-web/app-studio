@@ -1,6 +1,6 @@
 {
-  "version": "2026-06-05-4",
-  "fecha": "2026-06-05",
+  "version": "2026-06-06-1",
+  "fecha": "2026-06-06",
   "fichas": [
     {
       "id": "len-001",
@@ -3363,8 +3363,16 @@
           "visual": {
             "tipo": "barras",
             "barras": [
-              { "label": "Rojo",  "valor": 6, "color": "#ef4444" },
-              { "label": "Verde", "valor": 2, "color": "#22c55e" }
+              {
+                "label": "Rojo",
+                "valor": 6,
+                "color": "#ef4444"
+              },
+              {
+                "label": "Verde",
+                "valor": 2,
+                "color": "#22c55e"
+              }
             ]
           },
           "respuestaCorrecta": "4",
@@ -3476,10 +3484,26 @@
           "visual": {
             "tipo": "barras",
             "barras": [
-              { "label": "Rojo",     "valor": 6, "color": "#ef4444" },
-              { "label": "Verde",    "valor": 2, "color": "#22c55e" },
-              { "label": "Azul",     "valor": 3, "color": "#3b82f6" },
-              { "label": "Amarillo", "valor": 4, "color": "#eab308" }
+              {
+                "label": "Rojo",
+                "valor": 6,
+                "color": "#ef4444"
+              },
+              {
+                "label": "Verde",
+                "valor": 2,
+                "color": "#22c55e"
+              },
+              {
+                "label": "Azul",
+                "valor": 3,
+                "color": "#3b82f6"
+              },
+              {
+                "label": "Amarillo",
+                "valor": 4,
+                "color": "#eab308"
+              }
             ]
           },
           "opciones": [
@@ -5509,6 +5533,1106 @@
           "tiempoEstimado": 30,
           "enunciado": "El centímetro es más [___] que el metro y se usa para medir cosas pequeñas.",
           "respuestaCorrecta": "pequeño"
+        }
+      ]
+    },
+    {
+      "id": "mat-008",
+      "subject": "matematicas",
+      "titulo": "Clasificación de cuadriláteros",
+      "nivel": 2,
+      "contenido": "Un cuadrilátero es una figura plana que tiene 4 lados, 4 vértices y 4 ángulos. Los lados son los segmentos que forman la figura. Los vértices son las esquinas donde se unen los lados. Los ángulos son las aberturas que se forman en cada vértice. Hay cinco tipos de cuadriláteros: cuadrado, rectángulo, romboide, rombo y trapecio. El cuadrado tiene 4 lados iguales y 4 ángulos rectos (90°). El rectángulo tiene los lados opuestos iguales y 4 ángulos rectos (90°). El romboide tiene los lados opuestos iguales y los ángulos opuestos iguales. El rombo tiene 4 lados iguales y los ángulos opuestos iguales. El trapecio tiene solo dos lados paralelos y los otros dos no son paralelos.",
+      "ejemplos": [
+        "El cuadrado tiene 4 lados iguales y 4 ángulos rectos.",
+        "El rectángulo tiene 2 pares de lados iguales y 4 ángulos rectos.",
+        "El rombo tiene 4 lados iguales pero sus ángulos no son rectos.",
+        "El trapecio tiene solo 1 par de lados paralelos."
+      ],
+      "palabrasClave": [
+        "cuadrilátero",
+        "cuadrado",
+        "rectángulo",
+        "romboide",
+        "rombo",
+        "trapecio",
+        "lados",
+        "ángulos",
+        "vértices",
+        "paralelos",
+        "ángulo recto"
+      ],
+      "tiposEjercicio": [
+        "EleccionMultiple",
+        "RellenarHueco",
+        "ClasificarGrupos",
+        "UnirColumnas",
+        "MemoriaPareja",
+        "SopaLetras"
+      ],
+      "ejerciciosDerivar": 18,
+      "ejercicios": [
+        {
+          "id": "mat-008-ex-001",
+          "fichaId": "mat-008",
+          "subject": "matematicas",
+          "tipo": "EleccionMultiple",
+          "nivel": 1,
+          "tiempoEstimado": 30,
+          "enunciado": "Un cuadrilátero es una figura plana con 4 lados, 4 vértices y 4 ángulos. ¿Cuántos lados tiene un cuadrilátero?",
+          "pista": "La palabra 'cuadri' significa cuatro.",
+          "opciones": [
+            {
+              "texto": "4",
+              "emoji": ""
+            },
+            {
+              "texto": "3",
+              "emoji": ""
+            },
+            {
+              "texto": "5",
+              "emoji": ""
+            },
+            {
+              "texto": "6",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "4"
+        },
+        {
+          "id": "mat-008-ex-002",
+          "fichaId": "mat-008",
+          "subject": "matematicas",
+          "tipo": "EleccionMultiple",
+          "nivel": 1,
+          "tiempoEstimado": 30,
+          "enunciado": "El cuadrado tiene 4 lados iguales y 4 ángulos rectos de 90°. ¿Cuántos ángulos rectos tiene un cuadrado?",
+          "pista": "Un ángulo recto mide exactamente 90°. El cuadrado los tiene todos iguales.",
+          "opciones": [
+            {
+              "texto": "2",
+              "emoji": ""
+            },
+            {
+              "texto": "3",
+              "emoji": ""
+            },
+            {
+              "texto": "1",
+              "emoji": ""
+            },
+            {
+              "texto": "4",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "4"
+        },
+        {
+          "id": "mat-008-ex-003",
+          "fichaId": "mat-008",
+          "subject": "matematicas",
+          "tipo": "EleccionMultiple",
+          "nivel": 1,
+          "tiempoEstimado": 30,
+          "enunciado": "Los vértices de una figura son las esquinas donde se unen los lados. ¿Qué son los vértices?",
+          "pista": "Piensa en las esquinas de una mesa.",
+          "opciones": [
+            {
+              "texto": "Las esquinas donde se unen los lados",
+              "emoji": ""
+            },
+            {
+              "texto": "Los segmentos que forman la figura",
+              "emoji": ""
+            },
+            {
+              "texto": "Las aberturas que se forman en cada esquina",
+              "emoji": ""
+            },
+            {
+              "texto": "La medida del contorno",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "Las esquinas donde se unen los lados"
+        },
+        {
+          "id": "mat-008-ex-004",
+          "fichaId": "mat-008",
+          "subject": "matematicas",
+          "tipo": "RellenarHueco",
+          "nivel": 1,
+          "tiempoEstimado": 30,
+          "enunciado": "El trapecio tiene solo dos lados [___] y los otros dos no lo son.",
+          "pista": "Dos lados del trapecio van en la misma dirección y no se cruzan nunca.",
+          "respuestaCorrecta": "paralelos"
+        },
+        {
+          "id": "mat-008-ex-005",
+          "fichaId": "mat-008",
+          "subject": "matematicas",
+          "tipo": "EleccionMultiple",
+          "nivel": 1,
+          "tiempoEstimado": 30,
+          "enunciado": "El rombo tiene 4 lados iguales y los ángulos opuestos son iguales. ¿Cuántos lados iguales tiene el rombo?",
+          "pista": "El rombo es como un cuadrado inclinado: todos sus lados miden lo mismo.",
+          "opciones": [
+            {
+              "texto": "2",
+              "emoji": ""
+            },
+            {
+              "texto": "4",
+              "emoji": ""
+            },
+            {
+              "texto": "3",
+              "emoji": ""
+            },
+            {
+              "texto": "0",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "4"
+        },
+        {
+          "id": "mat-008-ex-006",
+          "fichaId": "mat-008",
+          "subject": "matematicas",
+          "tipo": "ClasificarGrupos",
+          "nivel": 2,
+          "tiempoEstimado": 60,
+          "enunciado": "Clasifica cada cuadrilátero según si tiene 4 ángulos rectos (90°) o no los tiene:",
+          "pista": "Solo el cuadrado y el rectángulo tienen los 4 ángulos rectos.",
+          "grupos": [
+            {
+              "id": "con_rectos",
+              "nombre": "Con 4 ángulos rectos"
+            },
+            {
+              "id": "sin_rectos",
+              "nombre": "Sin 4 ángulos rectos"
+            }
+          ],
+          "items": [
+            {
+              "id": "1",
+              "texto": "Cuadrado",
+              "grupoId": "con_rectos"
+            },
+            {
+              "id": "2",
+              "texto": "Rectángulo",
+              "grupoId": "con_rectos"
+            },
+            {
+              "id": "3",
+              "texto": "Rombo",
+              "grupoId": "sin_rectos"
+            },
+            {
+              "id": "4",
+              "texto": "Romboide",
+              "grupoId": "sin_rectos"
+            },
+            {
+              "id": "5",
+              "texto": "Trapecio",
+              "grupoId": "sin_rectos"
+            },
+            {
+              "id": "6",
+              "texto": "Cuadrado (90°)",
+              "grupoId": "con_rectos"
+            }
+          ]
+        },
+        {
+          "id": "mat-008-ex-007",
+          "fichaId": "mat-008",
+          "subject": "matematicas",
+          "tipo": "UnirColumnas",
+          "nivel": 2,
+          "tiempoEstimado": 90,
+          "enunciado": "Une cada cuadrilátero con su característica principal:",
+          "pista": "Recuerda cuántos lados iguales tiene cada figura y si sus ángulos son rectos.",
+          "parejas": [
+            {
+              "izquierda": "Cuadrado",
+              "derecha": "4 lados iguales y 4 ángulos rectos"
+            },
+            {
+              "izquierda": "Rectángulo",
+              "derecha": "Lados opuestos iguales y 4 ángulos rectos"
+            },
+            {
+              "izquierda": "Rombo",
+              "derecha": "4 lados iguales, ángulos opuestos iguales"
+            },
+            {
+              "izquierda": "Trapecio",
+              "derecha": "Solo 2 lados paralelos"
+            }
+          ]
+        },
+        {
+          "id": "mat-008-ex-008",
+          "fichaId": "mat-008",
+          "subject": "matematicas",
+          "tipo": "EleccionMultiple",
+          "nivel": 2,
+          "tiempoEstimado": 30,
+          "enunciado": "El romboide tiene los lados opuestos iguales y los ángulos opuestos iguales. ¿En qué se diferencia el romboide del rectángulo?",
+          "pista": "Compara sus ángulos: ¿cuál de los dos tiene ángulos rectos de 90°?",
+          "opciones": [
+            {
+              "texto": "El romboide no tiene ángulos rectos",
+              "emoji": ""
+            },
+            {
+              "texto": "El romboide tiene más lados",
+              "emoji": ""
+            },
+            {
+              "texto": "El romboide tiene menos vértices",
+              "emoji": ""
+            },
+            {
+              "texto": "El romboide tiene lados desiguales",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "El romboide no tiene ángulos rectos"
+        },
+        {
+          "id": "mat-008-ex-009",
+          "fichaId": "mat-008",
+          "subject": "matematicas",
+          "tipo": "RellenarHueco",
+          "nivel": 2,
+          "tiempoEstimado": 30,
+          "enunciado": "Los ángulos son las aberturas que se forman en cada [___].",
+          "pista": "Los ángulos aparecen en las esquinas de la figura, donde se juntan los lados.",
+          "respuestaCorrecta": "vértice"
+        },
+        {
+          "id": "mat-008-ex-010",
+          "fichaId": "mat-008",
+          "subject": "matematicas",
+          "tipo": "ClasificarGrupos",
+          "nivel": 2,
+          "tiempoEstimado": 60,
+          "enunciado": "Clasifica según el número de lados iguales que tiene cada cuadrilátero:",
+          "pista": "El cuadrado y el rombo tienen los 4 lados iguales. El rectángulo y el romboide tienen 2 pares.",
+          "grupos": [
+            {
+              "id": "cuatro_iguales",
+              "nombre": "4 lados iguales"
+            },
+            {
+              "id": "dos_pares",
+              "nombre": "2 pares de lados iguales"
+            },
+            {
+              "id": "ninguno",
+              "nombre": "Ningún lado igual"
+            }
+          ],
+          "items": [
+            {
+              "id": "1",
+              "texto": "Cuadrado",
+              "grupoId": "cuatro_iguales"
+            },
+            {
+              "id": "2",
+              "texto": "Rombo",
+              "grupoId": "cuatro_iguales"
+            },
+            {
+              "id": "3",
+              "texto": "Rectángulo",
+              "grupoId": "dos_pares"
+            },
+            {
+              "id": "4",
+              "texto": "Romboide",
+              "grupoId": "dos_pares"
+            },
+            {
+              "id": "5",
+              "texto": "Trapecio",
+              "grupoId": "ninguno"
+            }
+          ]
+        },
+        {
+          "id": "mat-008-ex-011",
+          "fichaId": "mat-008",
+          "subject": "matematicas",
+          "tipo": "EleccionMultiple",
+          "nivel": 2,
+          "tiempoEstimado": 30,
+          "enunciado": "Los lados son los segmentos que forman la figura. ¿Cuál de estos cuadriláteros tiene los lados opuestos iguales pero NO tiene 4 ángulos rectos?",
+          "pista": "Busca la figura que tiene lados opuestos iguales pero sus ángulos no miden 90°.",
+          "opciones": [
+            {
+              "texto": "Cuadrado",
+              "emoji": ""
+            },
+            {
+              "texto": "Romboide",
+              "emoji": ""
+            },
+            {
+              "texto": "Rectángulo",
+              "emoji": ""
+            },
+            {
+              "texto": "Trapecio",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "Romboide"
+        },
+        {
+          "id": "mat-008-ex-012",
+          "fichaId": "mat-008",
+          "subject": "matematicas",
+          "tipo": "ArrastrarPalabras",
+          "nivel": 2,
+          "tiempoEstimado": 60,
+          "enunciado": "Completa las frases con el nombre correcto del cuadrilátero:",
+          "pista": "Piensa en cuántos lados iguales tiene cada figura y si sus ángulos son rectos.",
+          "fraseConHuecos": "El [___] tiene 4 lados iguales y 4 ángulos rectos. El [___] tiene solo 2 lados paralelos.",
+          "banco": [
+            "Cuadrado",
+            "Trapecio",
+            "Rombo",
+            "Rectángulo"
+          ],
+          "respuestasCorrectas": [
+            "Cuadrado",
+            "Trapecio"
+          ]
+        },
+        {
+          "id": "mat-008-ex-013",
+          "fichaId": "mat-008",
+          "subject": "matematicas",
+          "tipo": "SopaLetras",
+          "nivel": 3,
+          "tiempoEstimado": 180,
+          "enunciado": "Encuentra los cinco tipos de cuadriláteros:",
+          "pista": "Busca: ROMBO, ROMBOIDE, TRAPECIO, CUADRADO, RECTANGULO (sin tilde).",
+          "palabras": [
+            "ROMBO",
+            "TRAPECIO",
+            "CUADRADO",
+            "ROMBOIDE"
+          ],
+          "cuadricula": [
+            [
+              "R",
+              "O",
+              "M",
+              "B",
+              "O",
+              "I",
+              "D",
+              "E"
+            ],
+            [
+              "C",
+              "U",
+              "A",
+              "D",
+              "R",
+              "A",
+              "D",
+              "O"
+            ],
+            [
+              "T",
+              "R",
+              "A",
+              "P",
+              "E",
+              "C",
+              "I",
+              "O"
+            ],
+            [
+              "R",
+              "O",
+              "M",
+              "B",
+              "O",
+              "X",
+              "L",
+              "K"
+            ],
+            [
+              "A",
+              "B",
+              "C",
+              "D",
+              "E",
+              "F",
+              "G",
+              "H"
+            ],
+            [
+              "J",
+              "K",
+              "L",
+              "M",
+              "N",
+              "O",
+              "P",
+              "Q"
+            ],
+            [
+              "S",
+              "T",
+              "U",
+              "V",
+              "W",
+              "X",
+              "Y",
+              "Z"
+            ],
+            [
+              "A",
+              "E",
+              "I",
+              "O",
+              "U",
+              "B",
+              "C",
+              "D"
+            ]
+          ]
+        },
+        {
+          "id": "mat-008-ex-014",
+          "fichaId": "mat-008",
+          "subject": "matematicas",
+          "tipo": "MemoriaPareja",
+          "nivel": 3,
+          "tiempoEstimado": 180,
+          "enunciado": "Empareja cada cuadrilátero con su característica:",
+          "pista": "Piensa en los lados y ángulos de cada figura antes de voltear las tarjetas.",
+          "parejas": [
+            {
+              "a": "Cuadrado",
+              "b": "4 lados iguales, 4 rectos"
+            },
+            {
+              "a": "Rectángulo",
+              "b": "lados opuestos iguales, 4 rectos"
+            },
+            {
+              "a": "Romboide",
+              "b": "lados opuestos iguales, sin rectos"
+            },
+            {
+              "a": "Rombo",
+              "b": "4 lados iguales, sin rectos"
+            },
+            {
+              "a": "Trapecio",
+              "b": "solo 2 lados paralelos"
+            },
+            {
+              "a": "Vértice",
+              "b": "esquina donde se unen lados"
+            }
+          ]
+        },
+        {
+          "id": "mat-008-ex-015",
+          "fichaId": "mat-008",
+          "subject": "matematicas",
+          "tipo": "EleccionMultiple",
+          "nivel": 3,
+          "tiempoEstimado": 30,
+          "enunciado": "El cuadrado tiene 4 lados iguales y 4 ángulos rectos. El rombo tiene 4 lados iguales pero sus ángulos no son rectos. ¿Cuál es la diferencia entre un cuadrado y un rombo?",
+          "pista": "Ambas figuras tienen 4 lados iguales. Fíjate en sus ángulos.",
+          "opciones": [
+            {
+              "texto": "El cuadrado tiene ángulos rectos y el rombo no",
+              "emoji": ""
+            },
+            {
+              "texto": "El rombo tiene más lados que el cuadrado",
+              "emoji": ""
+            },
+            {
+              "texto": "El cuadrado tiene lados paralelos y el rombo no",
+              "emoji": ""
+            },
+            {
+              "texto": "El rombo tiene 4 ángulos rectos y el cuadrado no",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "El cuadrado tiene ángulos rectos y el rombo no"
+        },
+        {
+          "id": "mat-008-ex-016",
+          "fichaId": "mat-008",
+          "subject": "matematicas",
+          "tipo": "EleccionMultiple",
+          "nivel": 3,
+          "tiempoEstimado": 30,
+          "enunciado": "Un cuadrilátero tiene los lados opuestos iguales y los ángulos opuestos iguales, pero no tiene ángulos rectos. ¿Qué cuadrilátero es?",
+          "pista": "Descarta los que tienen ángulos rectos. Fíjate en si todos los lados son iguales o solo los opuestos.",
+          "opciones": [
+            {
+              "texto": "Romboide",
+              "emoji": ""
+            },
+            {
+              "texto": "Cuadrado",
+              "emoji": ""
+            },
+            {
+              "texto": "Rectángulo",
+              "emoji": ""
+            },
+            {
+              "texto": "Trapecio",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "Romboide"
+        },
+        {
+          "id": "mat-008-ex-017",
+          "fichaId": "mat-008",
+          "subject": "matematicas",
+          "tipo": "RellenarHueco",
+          "nivel": 3,
+          "tiempoEstimado": 30,
+          "enunciado": "El cuadrado tiene 4 lados iguales y 4 [___] rectos de 90°.",
+          "pista": "Son las aberturas que se forman en cada vértice de la figura.",
+          "respuestaCorrecta": "ángulos"
+        },
+        {
+          "id": "mat-008-ex-018",
+          "fichaId": "mat-008",
+          "subject": "matematicas",
+          "tipo": "EleccionMultiple",
+          "nivel": 3,
+          "tiempoEstimado": 30,
+          "enunciado": "De los cinco cuadriláteros estudiados, ¿cuál es el único que tiene exactamente un par de lados paralelos y ningún ángulo recto?",
+          "pista": "El trapecio tiene solo dos lados paralelos. Comprueba si tiene ángulos rectos.",
+          "opciones": [
+            {
+              "texto": "Trapecio",
+              "emoji": ""
+            },
+            {
+              "texto": "Rombo",
+              "emoji": ""
+            },
+            {
+              "texto": "Romboide",
+              "emoji": ""
+            },
+            {
+              "texto": "Rectángulo",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "Trapecio"
+        }
+      ]
+    },
+    {
+      "id": "mat-009",
+      "subject": "matematicas",
+      "titulo": "Calcular el perímetro",
+      "nivel": 2,
+      "contenido": "El perímetro es la medida del contorno de una figura. Se calcula sumando la longitud de todos sus lados. La fórmula general es: Perímetro = lado 1 + lado 2 + lado 3 + ... Para el cuadrado, como todos sus lados son iguales, el perímetro es 4 × l. Para el rectángulo, como los lados opuestos son iguales, el perímetro es 2 × (L + A). Para el triángulo, el perímetro es a + b + c. Para el polígono irregular, se suman todos sus lados.",
+      "ejemplos": [
+        "Cuadrado de 6 cm: Perímetro = 6 + 6 + 6 + 6 = 24 cm",
+        "Rectángulo de 8 cm y 5 cm: Perímetro = 8 + 5 + 8 + 5 = 26 cm",
+        "Triángulo de 7 cm, 6 cm y 9 cm: Perímetro = 7 + 6 + 9 = 22 cm",
+        "Polígono irregular de 1+2+3+4+2+3 = 17 cm (se suman todos sus lados)"
+      ],
+      "palabrasClave": [
+        "perímetro",
+        "contorno",
+        "lado",
+        "fórmula",
+        "cuadrado",
+        "rectángulo",
+        "triángulo",
+        "polígono irregular",
+        "suma",
+        "longitud"
+      ],
+      "tiposEjercicio": [
+        "EleccionMultiple",
+        "RellenarHueco",
+        "ProblemaVisual",
+        "UnirColumnas",
+        "CompletarSerie",
+        "OrdenarFrase"
+      ],
+      "ejerciciosDerivar": 18,
+      "ejercicios": [
+        {
+          "id": "mat-009-ex-001",
+          "fichaId": "mat-009",
+          "subject": "matematicas",
+          "tipo": "EleccionMultiple",
+          "nivel": 1,
+          "tiempoEstimado": 30,
+          "enunciado": "El perímetro es la medida del contorno de una figura. ¿Cómo se calcula el perímetro?",
+          "pista": "El perímetro rodea la figura por fuera: hay que sumar todos los bordes.",
+          "opciones": [
+            {
+              "texto": "Multiplicando el lado por sí mismo",
+              "emoji": ""
+            },
+            {
+              "texto": "Sumando la longitud de todos sus lados",
+              "emoji": ""
+            },
+            {
+              "texto": "Contando los vértices de la figura",
+              "emoji": ""
+            },
+            {
+              "texto": "Dividiendo el lado más largo entre 2",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "Sumando la longitud de todos sus lados"
+        },
+        {
+          "id": "mat-009-ex-002",
+          "fichaId": "mat-009",
+          "subject": "matematicas",
+          "tipo": "RellenarHueco",
+          "nivel": 1,
+          "tiempoEstimado": 30,
+          "enunciado": "El perímetro es la medida del [___] de una figura.",
+          "pista": "Es la línea que rodea la figura por fuera, como el borde de un campo de fútbol.",
+          "respuestaCorrecta": "contorno"
+        },
+        {
+          "id": "mat-009-ex-003",
+          "fichaId": "mat-009",
+          "subject": "matematicas",
+          "tipo": "EleccionMultiple",
+          "nivel": 1,
+          "tiempoEstimado": 30,
+          "enunciado": "Para calcular el perímetro de un cuadrado, como todos sus lados son iguales, se usa la fórmula 4 × l. ¿Cuánto mide el perímetro de un cuadrado con lados de 6 cm?",
+          "pista": "Multiplica 4 por el valor del lado: 4 × 6.",
+          "opciones": [
+            {
+              "texto": "18 cm",
+              "emoji": ""
+            },
+            {
+              "texto": "36 cm",
+              "emoji": ""
+            },
+            {
+              "texto": "24 cm",
+              "emoji": ""
+            },
+            {
+              "texto": "12 cm",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "24 cm"
+        },
+        {
+          "id": "mat-009-ex-004",
+          "fichaId": "mat-009",
+          "subject": "matematicas",
+          "tipo": "ProblemaVisual",
+          "nivel": 1,
+          "tiempoEstimado": 45,
+          "enunciado": "Un cuadrado tiene todos sus lados iguales a 7 cm. ¿Cuánto mide su perímetro?",
+          "pista": "Suma los 4 lados: 7 + 7 + 7 + 7.",
+          "visual": {
+            "tipo": "emojis",
+            "emoji": "📏",
+            "cantidad": 4,
+            "operacion": null,
+            "cantidadOperacion": 0
+          },
+          "opciones": [
+            "21 cm",
+            "28 cm",
+            "14 cm",
+            "49 cm"
+          ],
+          "respuestaCorrecta": "28 cm",
+          "esNumerico": false
+        },
+        {
+          "id": "mat-009-ex-005",
+          "fichaId": "mat-009",
+          "subject": "matematicas",
+          "tipo": "EleccionMultiple",
+          "nivel": 1,
+          "tiempoEstimado": 30,
+          "enunciado": "Para el triángulo, el perímetro se calcula sumando sus tres lados: a + b + c. ¿Cuánto mide el perímetro de un triángulo con lados de 7 cm, 6 cm y 9 cm?",
+          "pista": "Suma los tres lados: 7 + 6 + 9.",
+          "opciones": [
+            {
+              "texto": "22 cm",
+              "emoji": ""
+            },
+            {
+              "texto": "20 cm",
+              "emoji": ""
+            },
+            {
+              "texto": "24 cm",
+              "emoji": ""
+            },
+            {
+              "texto": "18 cm",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "22 cm"
+        },
+        {
+          "id": "mat-009-ex-006",
+          "fichaId": "mat-009",
+          "subject": "matematicas",
+          "tipo": "UnirColumnas",
+          "nivel": 2,
+          "tiempoEstimado": 90,
+          "enunciado": "Une cada figura con la fórmula correcta para calcular su perímetro:",
+          "pista": "Recuerda: el cuadrado tiene 4 lados iguales, el rectángulo tiene 2 pares y el triángulo tiene 3 lados.",
+          "parejas": [
+            {
+              "izquierda": "Cuadrado",
+              "derecha": "4 × l"
+            },
+            {
+              "izquierda": "Rectángulo",
+              "derecha": "2 × (L + A)"
+            },
+            {
+              "izquierda": "Triángulo",
+              "derecha": "a + b + c"
+            },
+            {
+              "izquierda": "Polígono irregular",
+              "derecha": "Suma todos los lados"
+            }
+          ]
+        },
+        {
+          "id": "mat-009-ex-007",
+          "fichaId": "mat-009",
+          "subject": "matematicas",
+          "tipo": "ProblemaVisual",
+          "nivel": 2,
+          "tiempoEstimado": 45,
+          "enunciado": "Un rectángulo tiene lados de 8 cm y 5 cm. Usando la fórmula Perímetro = 2 × (L + A), ¿cuánto mide su perímetro?",
+          "pista": "Primero suma L + A: 8 + 5 = 13. Luego multiplica por 2.",
+          "visual": {
+            "tipo": "emojis",
+            "emoji": "📐",
+            "cantidad": 2,
+            "operacion": null,
+            "cantidadOperacion": 0
+          },
+          "respuestaCorrecta": "26",
+          "esNumerico": true
+        },
+        {
+          "id": "mat-009-ex-008",
+          "fichaId": "mat-009",
+          "subject": "matematicas",
+          "tipo": "EleccionMultiple",
+          "nivel": 2,
+          "tiempoEstimado": 30,
+          "enunciado": "Para calcular el perímetro de un polígono irregular se suman todos sus lados. Un polígono tiene lados de 3 cm, 4 cm, 5 cm, 2 cm y 3 cm. ¿Cuánto mide su perímetro?",
+          "pista": "Suma todos los lados uno a uno: 3 + 4 + 5 + 2 + 3.",
+          "opciones": [
+            {
+              "texto": "15 cm",
+              "emoji": ""
+            },
+            {
+              "texto": "17 cm",
+              "emoji": ""
+            },
+            {
+              "texto": "14 cm",
+              "emoji": ""
+            },
+            {
+              "texto": "16 cm",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "17 cm"
+        },
+        {
+          "id": "mat-009-ex-009",
+          "fichaId": "mat-009",
+          "subject": "matematicas",
+          "tipo": "RellenarHueco",
+          "nivel": 2,
+          "tiempoEstimado": 30,
+          "enunciado": "La fórmula del perímetro del rectángulo es: Perímetro = 2 × ([___] + A).",
+          "pista": "Las letras L y A representan los dos lados diferentes del rectángulo: el largo y el ancho.",
+          "respuestaCorrecta": "L"
+        },
+        {
+          "id": "mat-009-ex-010",
+          "fichaId": "mat-009",
+          "subject": "matematicas",
+          "tipo": "OrdenarFrase",
+          "nivel": 2,
+          "tiempoEstimado": 60,
+          "enunciado": "Ordena las palabras para formar la definición correcta de perímetro:",
+          "pista": "El perímetro es algo que se mide del contorno de una figura.",
+          "palabrasDesordenadas": [
+            "del",
+            "es",
+            "El",
+            "contorno",
+            "perímetro",
+            "la",
+            "medida"
+          ],
+          "fraseCorrecta": "El perímetro es la medida del contorno"
+        },
+        {
+          "id": "mat-009-ex-011",
+          "fichaId": "mat-009",
+          "subject": "matematicas",
+          "tipo": "CompletarSerie",
+          "nivel": 2,
+          "tiempoEstimado": 35,
+          "enunciado": "Un cuadrado aumenta su lado de 1 en 1 cm. Completa el perímetro que le falta (Perímetro = 4 × lado):",
+          "pista": "El perímetro del cuadrado es siempre 4 veces el lado. Multiplica 4 × 4.",
+          "serie": [
+            "4",
+            "8",
+            "12",
+            null,
+            "20"
+          ],
+          "opciones": [
+            "14",
+            "16",
+            "18"
+          ],
+          "respuestaCorrecta": "16"
+        },
+        {
+          "id": "mat-009-ex-012",
+          "fichaId": "mat-009",
+          "subject": "matematicas",
+          "tipo": "EleccionMultiple",
+          "nivel": 2,
+          "tiempoEstimado": 30,
+          "enunciado": "Un cuadrado tiene un perímetro de 24 cm. Como el perímetro del cuadrado es 4 × l, ¿cuánto mide cada lado?",
+          "pista": "Si 4 × l = 24, divide 24 entre 4.",
+          "opciones": [
+            {
+              "texto": "8 cm",
+              "emoji": ""
+            },
+            {
+              "texto": "4 cm",
+              "emoji": ""
+            },
+            {
+              "texto": "6 cm",
+              "emoji": ""
+            },
+            {
+              "texto": "12 cm",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "6 cm"
+        },
+        {
+          "id": "mat-009-ex-013",
+          "fichaId": "mat-009",
+          "subject": "matematicas",
+          "tipo": "ProblemaVisual",
+          "nivel": 2,
+          "tiempoEstimado": 45,
+          "enunciado": "Calcula el perímetro de este polígono irregular sumando todos sus lados:",
+          "pista": "Suma todos los lados: 1 + 2 + 3 + 4 + 2.",
+          "visual": {
+            "tipo": "barras",
+            "barras": [
+              {
+                "label": "Lado 1",
+                "valor": 1,
+                "color": "#3b82f6"
+              },
+              {
+                "label": "Lado 2",
+                "valor": 2,
+                "color": "#22c55e"
+              },
+              {
+                "label": "Lado 3",
+                "valor": 3,
+                "color": "#ef4444"
+              },
+              {
+                "label": "Lado 4",
+                "valor": 4,
+                "color": "#eab308"
+              },
+              {
+                "label": "Lado 5",
+                "valor": 2,
+                "color": "#a855f7"
+              }
+            ]
+          },
+          "opciones": [
+            "10 cm",
+            "12 cm",
+            "14 cm",
+            "11 cm"
+          ],
+          "respuestaCorrecta": "12 cm",
+          "esNumerico": false
+        },
+        {
+          "id": "mat-009-ex-014",
+          "fichaId": "mat-009",
+          "subject": "matematicas",
+          "tipo": "EleccionMultiple",
+          "nivel": 3,
+          "tiempoEstimado": 30,
+          "enunciado": "Un rectángulo tiene un perímetro de 26 cm y su lado largo (L) mide 8 cm. Usando la fórmula Perímetro = 2 × (L + A), ¿cuánto mide el lado corto (A)?",
+          "pista": "Si 2 × (8 + A) = 26, primero divide 26 entre 2, luego resta 8.",
+          "opciones": [
+            {
+              "texto": "5 cm",
+              "emoji": ""
+            },
+            {
+              "texto": "4 cm",
+              "emoji": ""
+            },
+            {
+              "texto": "6 cm",
+              "emoji": ""
+            },
+            {
+              "texto": "7 cm",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "5 cm"
+        },
+        {
+          "id": "mat-009-ex-015",
+          "fichaId": "mat-009",
+          "subject": "matematicas",
+          "tipo": "EleccionMultiple",
+          "nivel": 3,
+          "tiempoEstimado": 30,
+          "enunciado": "El perímetro es la medida del contorno. ¿Cuál de estas afirmaciones sobre el perímetro es INCORRECTA?",
+          "pista": "Recuerda: para calcular el perímetro, el orden en que sumes los lados no importa.",
+          "opciones": [
+            {
+              "texto": "Se calcula sumando todos los lados",
+              "emoji": ""
+            },
+            {
+              "texto": "En el cuadrado se puede calcular con 4 × l",
+              "emoji": ""
+            },
+            {
+              "texto": "Para calcularlo hay que restar los lados",
+              "emoji": ""
+            },
+            {
+              "texto": "En el triángulo es a + b + c",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "Para calcularlo hay que restar los lados"
+        },
+        {
+          "id": "mat-009-ex-016",
+          "fichaId": "mat-009",
+          "subject": "matematicas",
+          "tipo": "RellenarHueco",
+          "nivel": 3,
+          "tiempoEstimado": 30,
+          "enunciado": "El perímetro del cuadrado se puede calcular también con la fórmula 4 × [___].",
+          "pista": "La letra representa la medida de uno de los lados del cuadrado. Todos son iguales.",
+          "respuestaCorrecta": "l"
+        },
+        {
+          "id": "mat-009-ex-017",
+          "fichaId": "mat-009",
+          "subject": "matematicas",
+          "tipo": "ProblemaVisual",
+          "nivel": 3,
+          "tiempoEstimado": 45,
+          "enunciado": "Un triángulo tiene un perímetro de 22 cm. Dos de sus lados miden 7 cm y 6 cm. ¿Cuánto mide el tercer lado?",
+          "pista": "Si a + b + c = 22 y a=7, b=6, resta: 22 - 7 - 6.",
+          "visual": {
+            "tipo": "emojis",
+            "emoji": "📐",
+            "cantidad": 3,
+            "operacion": null,
+            "cantidadOperacion": 0
+          },
+          "respuestaCorrecta": "9",
+          "esNumerico": true
+        },
+        {
+          "id": "mat-009-ex-018",
+          "fichaId": "mat-009",
+          "subject": "matematicas",
+          "tipo": "EleccionMultiple",
+          "nivel": 3,
+          "tiempoEstimado": 30,
+          "enunciado": "Dos figuras tienen el mismo perímetro de 20 cm. Una es un cuadrado (4 × l = 20). La otra es un rectángulo con lado largo de 7 cm (2 × (7 + A) = 20). ¿Cuánto mide el lado del cuadrado?",
+          "pista": "Para el cuadrado: divide 20 entre 4.",
+          "opciones": [
+            {
+              "texto": "4 cm",
+              "emoji": ""
+            },
+            {
+              "texto": "5 cm",
+              "emoji": ""
+            },
+            {
+              "texto": "6 cm",
+              "emoji": ""
+            },
+            {
+              "texto": "8 cm",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "5 cm"
         }
       ]
     }

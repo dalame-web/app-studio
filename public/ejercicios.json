@@ -1,5 +1,5 @@
 {
-  "version": "2026-06-06-2",
+  "version": "2026-06-06-3",
   "fecha": "2026-06-06",
   "fichas": [
     {
@@ -7712,6 +7712,558 @@
           "enunciado": "El Tipo 6 de desarrollo del cubo tiene forma de [___].",
           "pista": "Es una forma que sube y baja como una letra Z.",
           "respuestaCorrecta": "zig-zag"
+        }
+      ]
+    },
+    {
+      "id": "mat-012",
+      "subject": "matematicas",
+      "titulo": "Probabilidad",
+      "nivel": 2,
+      "contenido": "La probabilidad nos ayuda a saber qué tan posible es que ocurra un suceso. Un suceso es algo que puede suceder o no. Hay tres tipos de sucesos: el suceso posible es cuando puede ocurrir pero no es seguro que ocurra, hay más de una posibilidad; el suceso imposible es cuando NO puede ocurrir bajo ninguna circunstancia, no hay ninguna posibilidad; el suceso seguro es cuando SIEMPRE ocurrirá, hay 100% de posibilidades. Para saber qué tan probable es que ocurra algo, hay que pensar en todas las posibilidades.",
+      "ejemplos": [
+        "Suceso posible: sacar una bola roja de una bolsa con bolas de varios colores.",
+        "Suceso posible: obtener un número par al tirar un dado.",
+        "Suceso imposible: sacar una bola morada si no hay ninguna bola morada en la bolsa.",
+        "Suceso imposible: obtener el número 7 al tirar un dado (los dados tienen números del 1 al 6).",
+        "Suceso seguro: sacar una bola de la bolsa si todas las bolas son rojas.",
+        "Suceso seguro: obtener un número menor que 7 al tirar un dado (los dados tienen números del 1 al 6)."
+      ],
+      "palabrasClave": [
+        "probabilidad",
+        "suceso",
+        "posible",
+        "imposible",
+        "seguro",
+        "posibilidad",
+        "dado",
+        "bola"
+      ],
+      "tiposEjercicio": [
+        "EleccionMultiple",
+        "RellenarHueco",
+        "ClasificarGrupos",
+        "UnirColumnas",
+        "ArrastrarPalabras",
+        "MemoriaPareja"
+      ],
+      "ejerciciosDerivar": 18,
+      "ejercicios": [
+        {
+          "id": "mat-012-ex-001",
+          "fichaId": "mat-012",
+          "subject": "matematicas",
+          "tipo": "EleccionMultiple",
+          "nivel": 1,
+          "tiempoEstimado": 30,
+          "enunciado": "La probabilidad nos ayuda a saber qué tan posible es que ocurra un suceso. ¿Para qué sirve la probabilidad?",
+          "pista": "La probabilidad responde a la pregunta: ¿puede pasar esto o no?",
+          "opciones": [
+            {
+              "texto": "Para medir la longitud de las figuras",
+              "emoji": ""
+            },
+            {
+              "texto": "Para saber qué tan posible es que ocurra algo",
+              "emoji": ""
+            },
+            {
+              "texto": "Para contar los lados de un polígono",
+              "emoji": ""
+            },
+            {
+              "texto": "Para sumar números grandes",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "Para saber qué tan posible es que ocurra algo"
+        },
+        {
+          "id": "mat-012-ex-002",
+          "fichaId": "mat-012",
+          "subject": "matematicas",
+          "tipo": "EleccionMultiple",
+          "nivel": 1,
+          "tiempoEstimado": 30,
+          "enunciado": "Un suceso seguro es cuando SIEMPRE ocurrirá, con un 100% de posibilidades. En una bolsa donde todas las bolas son rojas, ¿qué tipo de suceso es sacar una bola roja?",
+          "pista": "Si todas las bolas son del mismo color, ¿puede salir otro color?",
+          "opciones": [
+            {
+              "texto": "Posible",
+              "emoji": ""
+            },
+            {
+              "texto": "Imposible",
+              "emoji": ""
+            },
+            {
+              "texto": "Seguro",
+              "emoji": ""
+            },
+            {
+              "texto": "Probable",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "Seguro"
+        },
+        {
+          "id": "mat-012-ex-003",
+          "fichaId": "mat-012",
+          "subject": "matematicas",
+          "tipo": "EleccionMultiple",
+          "nivel": 1,
+          "tiempoEstimado": 30,
+          "enunciado": "Un suceso imposible es cuando NO puede ocurrir bajo ninguna circunstancia. Los dados tienen números del 1 al 6. ¿Qué tipo de suceso es obtener el número 7 al tirar un dado?",
+          "pista": "Piensa: ¿tiene el dado un lado con el número 7?",
+          "opciones": [
+            {
+              "texto": "Seguro",
+              "emoji": ""
+            },
+            {
+              "texto": "Imposible",
+              "emoji": ""
+            },
+            {
+              "texto": "Posible",
+              "emoji": ""
+            },
+            {
+              "texto": "Probable",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "Imposible"
+        },
+        {
+          "id": "mat-012-ex-004",
+          "fichaId": "mat-012",
+          "subject": "matematicas",
+          "tipo": "RellenarHueco",
+          "nivel": 1,
+          "tiempoEstimado": 30,
+          "enunciado": "Un suceso [___] es cuando puede ocurrir pero no es seguro que ocurra.",
+          "pista": "Este tipo de suceso puede pasar, pero también puede que no pase.",
+          "respuestaCorrecta": "posible"
+        },
+        {
+          "id": "mat-012-ex-005",
+          "fichaId": "mat-012",
+          "subject": "matematicas",
+          "tipo": "EleccionMultiple",
+          "nivel": 1,
+          "tiempoEstimado": 30,
+          "enunciado": "Un suceso seguro tiene un 100% de posibilidades de ocurrir. Los dados tienen números del 1 al 6. ¿Qué tipo de suceso es obtener un número menor que 7 al tirar un dado?",
+          "pista": "Todos los números del dado (1, 2, 3, 4, 5 y 6) son menores que 7.",
+          "opciones": [
+            {
+              "texto": "Imposible",
+              "emoji": ""
+            },
+            {
+              "texto": "Posible",
+              "emoji": ""
+            },
+            {
+              "texto": "Seguro",
+              "emoji": ""
+            },
+            {
+              "texto": "Dudoso",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "Seguro"
+        },
+        {
+          "id": "mat-012-ex-006",
+          "fichaId": "mat-012",
+          "subject": "matematicas",
+          "tipo": "ClasificarGrupos",
+          "nivel": 2,
+          "tiempoEstimado": 60,
+          "enunciado": "Clasifica cada suceso como posible, imposible o seguro:",
+          "pista": "Posible: puede pasar o no. Imposible: nunca puede pasar. Seguro: siempre pasa.",
+          "grupos": [
+            {
+              "id": "posible",
+              "nombre": "Posible"
+            },
+            {
+              "id": "imposible",
+              "nombre": "Imposible"
+            },
+            {
+              "id": "seguro",
+              "nombre": "Seguro"
+            }
+          ],
+          "items": [
+            {
+              "id": "1",
+              "texto": "Sacar bola azul (hay bolas de varios colores)",
+              "grupoId": "posible"
+            },
+            {
+              "id": "2",
+              "texto": "Sacar bola amarilla (no hay bolas amarillas)",
+              "grupoId": "imposible"
+            },
+            {
+              "id": "3",
+              "texto": "Sacar una bola (todas son verdes)",
+              "grupoId": "seguro"
+            },
+            {
+              "id": "4",
+              "texto": "Obtener número par al tirar un dado",
+              "grupoId": "posible"
+            },
+            {
+              "id": "5",
+              "texto": "Obtener el número 8 al tirar un dado",
+              "grupoId": "imposible"
+            },
+            {
+              "id": "6",
+              "texto": "Obtener número menor que 10 al tirar un dado",
+              "grupoId": "seguro"
+            }
+          ]
+        },
+        {
+          "id": "mat-012-ex-007",
+          "fichaId": "mat-012",
+          "subject": "matematicas",
+          "tipo": "UnirColumnas",
+          "nivel": 2,
+          "tiempoEstimado": 90,
+          "enunciado": "Une cada tipo de suceso con su definición:",
+          "pista": "Piensa en cuántas posibilidades tiene cada tipo: ninguna, alguna o todas.",
+          "parejas": [
+            {
+              "izquierda": "Suceso posible",
+              "derecha": "Puede ocurrir, pero no es seguro"
+            },
+            {
+              "izquierda": "Suceso imposible",
+              "derecha": "No puede ocurrir bajo ninguna circunstancia"
+            },
+            {
+              "izquierda": "Suceso seguro",
+              "derecha": "Siempre ocurrirá, 100% de posibilidades"
+            },
+            {
+              "izquierda": "Suceso",
+              "derecha": "Algo que puede suceder o no"
+            }
+          ]
+        },
+        {
+          "id": "mat-012-ex-008",
+          "fichaId": "mat-012",
+          "subject": "matematicas",
+          "tipo": "ArrastrarPalabras",
+          "nivel": 2,
+          "tiempoEstimado": 60,
+          "enunciado": "Completa las frases con el tipo de suceso correcto:",
+          "pista": "Imposible: no puede pasar nunca. Seguro: siempre pasa sin excepción.",
+          "fraseConHuecos": "Obtener el número 7 con un dado es un suceso [___]. Obtener un número menor que 7 con un dado es un suceso [___].",
+          "banco": [
+            "imposible",
+            "seguro",
+            "posible",
+            "probable"
+          ],
+          "respuestasCorrectas": [
+            "imposible",
+            "seguro"
+          ]
+        },
+        {
+          "id": "mat-012-ex-009",
+          "fichaId": "mat-012",
+          "subject": "matematicas",
+          "tipo": "EleccionMultiple",
+          "nivel": 2,
+          "tiempoEstimado": 30,
+          "enunciado": "Un suceso imposible no tiene ninguna posibilidad de ocurrir. Una bolsa solo tiene bolas rojas y azules. ¿Cuál de estos sucesos es IMPOSIBLE?",
+          "pista": "Imposible significa que no hay ninguna bola de ese color en la bolsa.",
+          "opciones": [
+            {
+              "texto": "Sacar una bola roja",
+              "emoji": ""
+            },
+            {
+              "texto": "Sacar una bola azul",
+              "emoji": ""
+            },
+            {
+              "texto": "Sacar una bola verde",
+              "emoji": ""
+            },
+            {
+              "texto": "Sacar una bola de cualquier color",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "Sacar una bola verde"
+        },
+        {
+          "id": "mat-012-ex-010",
+          "fichaId": "mat-012",
+          "subject": "matematicas",
+          "tipo": "RellenarHueco",
+          "nivel": 2,
+          "tiempoEstimado": 30,
+          "enunciado": "El suceso imposible no puede ocurrir bajo ninguna [___].",
+          "pista": "Es una palabra que significa 'situación' o 'caso'. Empieza por 'c'.",
+          "respuestaCorrecta": "circunstancia"
+        },
+        {
+          "id": "mat-012-ex-011",
+          "fichaId": "mat-012",
+          "subject": "matematicas",
+          "tipo": "EleccionMultiple",
+          "nivel": 2,
+          "tiempoEstimado": 30,
+          "enunciado": "Para saber qué tipo de suceso es algo, hay que pensar en todas las posibilidades. En una bolsa con bolas rojas, azules y verdes, ¿qué tipo de suceso es sacar una bola roja?",
+          "pista": "¿Puede salir una bola roja? ¿Puede salir también otro color?",
+          "opciones": [
+            {
+              "texto": "Seguro",
+              "emoji": ""
+            },
+            {
+              "texto": "Imposible",
+              "emoji": ""
+            },
+            {
+              "texto": "Posible",
+              "emoji": ""
+            },
+            {
+              "texto": "Necesario",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "Posible"
+        },
+        {
+          "id": "mat-012-ex-012",
+          "fichaId": "mat-012",
+          "subject": "matematicas",
+          "tipo": "EleccionMultiple",
+          "nivel": 2,
+          "tiempoEstimado": 30,
+          "enunciado": "Un suceso posible tiene más de una posibilidad. Al tirar un dado (números del 1 al 6), ¿cuál de estos sucesos es POSIBLE pero no seguro?",
+          "pista": "Posible significa que puede pasar, pero también puede que no pase.",
+          "opciones": [
+            {
+              "texto": "Obtener un número menor que 7",
+              "emoji": ""
+            },
+            {
+              "texto": "Obtener el número 9",
+              "emoji": ""
+            },
+            {
+              "texto": "Obtener un número impar",
+              "emoji": ""
+            },
+            {
+              "texto": "Obtener un número mayor que 6",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "Obtener un número impar"
+        },
+        {
+          "id": "mat-012-ex-013",
+          "fichaId": "mat-012",
+          "subject": "matematicas",
+          "tipo": "ClasificarGrupos",
+          "nivel": 3,
+          "tiempoEstimado": 60,
+          "enunciado": "Una bolsa tiene solo bolas rojas. Clasifica estos sucesos:",
+          "pista": "Si todas las bolas son rojas: sacar roja es seguro, sacar otro color es imposible, sacar alguna bola es seguro.",
+          "grupos": [
+            {
+              "id": "seguro",
+              "nombre": "Seguro"
+            },
+            {
+              "id": "imposible",
+              "nombre": "Imposible"
+            }
+          ],
+          "items": [
+            {
+              "id": "1",
+              "texto": "Sacar una bola roja",
+              "grupoId": "seguro"
+            },
+            {
+              "id": "2",
+              "texto": "Sacar una bola azul",
+              "grupoId": "imposible"
+            },
+            {
+              "id": "3",
+              "texto": "Sacar una bola verde",
+              "grupoId": "imposible"
+            },
+            {
+              "id": "4",
+              "texto": "Sacar una bola de algún color",
+              "grupoId": "seguro"
+            },
+            {
+              "id": "5",
+              "texto": "Sacar una bola morada",
+              "grupoId": "imposible"
+            },
+            {
+              "id": "6",
+              "texto": "Sacar una bola (cualquiera)",
+              "grupoId": "seguro"
+            }
+          ]
+        },
+        {
+          "id": "mat-012-ex-014",
+          "fichaId": "mat-012",
+          "subject": "matematicas",
+          "tipo": "MemoriaPareja",
+          "nivel": 3,
+          "tiempoEstimado": 180,
+          "enunciado": "Empareja cada situación con el tipo de suceso que le corresponde:",
+          "pista": "Piensa si la situación puede pasar siempre, nunca, o solo a veces.",
+          "parejas": [
+            {
+              "a": "Sacar bola morada (no hay)",
+              "b": "nunca puede ocurrir"
+            },
+            {
+              "a": "Sacar bola roja (todas son rojas)",
+              "b": "ocurrirá siempre"
+            },
+            {
+              "a": "Sacar bola azul (hay varios colores)",
+              "b": "puede ocurrir o no"
+            },
+            {
+              "a": "Obtener 7 con un dado",
+              "b": "0% de posibilidades"
+            },
+            {
+              "a": "Obtener número menor que 7",
+              "b": "100% de posibilidades"
+            },
+            {
+              "a": "Obtener número par con un dado",
+              "b": "más de una posibilidad"
+            }
+          ]
+        },
+        {
+          "id": "mat-012-ex-015",
+          "fichaId": "mat-012",
+          "subject": "matematicas",
+          "tipo": "EleccionMultiple",
+          "nivel": 3,
+          "tiempoEstimado": 30,
+          "enunciado": "Un suceso seguro tiene 100% de posibilidades. Un suceso imposible tiene 0% de posibilidades. Un suceso posible está entre los dos. ¿Cuál de estas afirmaciones es CORRECTA?",
+          "pista": "Piensa en cuántas posibilidades tiene cada tipo de suceso.",
+          "opciones": [
+            {
+              "texto": "El suceso posible siempre ocurre",
+              "emoji": ""
+            },
+            {
+              "texto": "El suceso imposible a veces puede ocurrir",
+              "emoji": ""
+            },
+            {
+              "texto": "El suceso seguro siempre ocurrirá",
+              "emoji": ""
+            },
+            {
+              "texto": "El suceso posible nunca ocurre",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "El suceso seguro siempre ocurrirá"
+        },
+        {
+          "id": "mat-012-ex-016",
+          "fichaId": "mat-012",
+          "subject": "matematicas",
+          "tipo": "RellenarHueco",
+          "nivel": 3,
+          "tiempoEstimado": 30,
+          "enunciado": "El suceso seguro tiene un [___]% de posibilidades de ocurrir.",
+          "pista": "Es el porcentaje máximo posible: significa que pasará siempre, sin excepción.",
+          "respuestaCorrecta": "100"
+        },
+        {
+          "id": "mat-012-ex-017",
+          "fichaId": "mat-012",
+          "subject": "matematicas",
+          "tipo": "EleccionMultiple",
+          "nivel": 3,
+          "tiempoEstimado": 30,
+          "enunciado": "Los dados tienen números del 1 al 6. ¿Cuál de estos sucesos es SEGURO al tirar un dado?",
+          "pista": "Un suceso seguro ocurre siempre, pase lo que pase. Comprueba cuál se cumple con cualquier número del 1 al 6.",
+          "opciones": [
+            {
+              "texto": "Obtener el número 6",
+              "emoji": ""
+            },
+            {
+              "texto": "Obtener un número par",
+              "emoji": ""
+            },
+            {
+              "texto": "Obtener un número menor que 7",
+              "emoji": ""
+            },
+            {
+              "texto": "Obtener un número mayor que 3",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "Obtener un número menor que 7"
+        },
+        {
+          "id": "mat-012-ex-018",
+          "fichaId": "mat-012",
+          "subject": "matematicas",
+          "tipo": "EleccionMultiple",
+          "nivel": 3,
+          "tiempoEstimado": 30,
+          "enunciado": "La probabilidad ayuda a clasificar sucesos como posibles, imposibles o seguros. ¿Cuál de estos sucesos es IMPOSIBLE?",
+          "pista": "Imposible significa que no hay ninguna posibilidad de que ocurra, bajo ninguna circunstancia.",
+          "opciones": [
+            {
+              "texto": "Obtener número impar al tirar un dado",
+              "emoji": ""
+            },
+            {
+              "texto": "Sacar bola roja de bolsa con bolas rojas y azules",
+              "emoji": ""
+            },
+            {
+              "texto": "Obtener número menor que 7 al tirar un dado",
+              "emoji": ""
+            },
+            {
+              "texto": "Sacar bola amarilla de bolsa sin bolas amarillas",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "Sacar bola amarilla de bolsa sin bolas amarillas"
         }
       ]
     }

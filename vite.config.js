@@ -5,11 +5,12 @@ import { createRequire } from 'module'
 const require = createRequire(import.meta.url)
 const { version } = require('./package.json')
 
-// GitHub Pages sirve la app bajo /app-studio/
-// En dev (npm run dev) usamos '/' para que funcione localhost
-export default defineConfig(({ command }) => ({
+// Vercel sirve la app en la raíz del dominio → base '/'.
+// Capacitor necesita rutas relativas y su propia carpeta de salida: `npm run build:capacitor`.
+export default defineConfig(({ mode }) => ({
   plugins: [react()],
-  base: command === 'build' ? '/app-studio/' : '/',
+  base: mode === 'capacitor' ? './' : '/',
+  build: mode === 'capacitor' ? { outDir: 'dist-capacitor' } : undefined,
   define: {
     // Accesible en cualquier componente como: __APP_VERSION__
     __APP_VERSION__: JSON.stringify(version),

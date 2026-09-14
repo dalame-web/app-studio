@@ -1,6 +1,11 @@
-import { getContentVersion, setContentVersion, storeContent } from './db';
+import { getContentVersion, setContentVersion, storeContent, getSyncedSubjects, clearContentForSubject } from './db';
 
-const BASE = import.meta.env.BASE_URL;
+// Dentro de la APK (Capacitor) los assets van empaquetados y no hay "red" local
+// de la que descargar contenido nuevo — apuntamos siempre a la web publicada para
+// poder seguir actualizando fichas sin publicar una APK nueva cada vez.
+const REMOTE_BASE = 'https://app-studio-pri.vercel.app/';
+const esNativo = typeof window !== 'undefined' && window.Capacitor?.isNativePlatform?.();
+const BASE = esNativo ? REMOTE_BASE : import.meta.env.BASE_URL;
 const MANIFEST_URL  = `${BASE}manifest.json`;
 const LEGACY_URL    = `${BASE}ejercicios.json`; // fallback pre-split
 
@@ -16,15 +21,19 @@ async function fetchJSON(url, opts = {}) {
   return res.json();
 }
 
-// Devuelve true si descargó algo nuevo
+// Devuelve true si descargó algo nuevo.
+// public/content/{subject}/ es un directorio: index.json (lista ligera) + un
+// .json por ficha (antes era un único content/{subject}.json con todas dentro).
 async function syncSubject(subject, version) {
   const stored = await getContentVersion(`subject_${subject}`);
   if (stored?.version === version) return false;
 
-  const url = `${BASE}content/${subject}.json`;
-  const raw = await fetchJSON(url, { cache: 'no-cache' });
-  const { fichas, ejercicios } = splitContent(raw);
-  await storeContent(fichas, ejercicios);
+  const indice = await fetchJSON(`${BASE}content/${subject}/index.json`, { cache: 'no-cache' });
+  const fichas = await Promise.all(
+    (indice.fichas ?? []).map(f => fetchJSON(`${BASE}content/${subject}/${f.id}.json`, { cache: 'no-cache' }))
+  );
+  const { fichas: fichasSinEjercicios, ejercicios } = splitContent({ fichas });
+  await storeContent(fichasSinEjercicios, ejercicios);
   await setContentVersion(version, `subject_${subject}`);
   return true;
 }
@@ -37,10 +46,21 @@ export async function checkAndSyncContent() {
     // Arquitectura nueva: asignaturas separadas
     if (manifest.asignaturas) {
       let hayNuevo = false;
+      const subjectsManifest = new Set(Object.keys(manifest.asignaturas));
       for (const [subject, info] of Object.entries(manifest.asignaturas)) {
         const actualizado = await syncSubject(subject, info.version);
         if (actualizado) hayNuevo = true;
       }
+
+      // Asignaturas que ya estaban descargadas pero desaparecieron del manifest
+      // (p.ej. tras "vaciar contenido") se borran localmente también.
+      for (const subject of await getSyncedSubjects()) {
+        if (!subjectsManifest.has(subject)) {
+          await clearContentForSubject(subject);
+          hayNuevo = true;
+        }
+      }
+
       return hayNuevo;
     }
 

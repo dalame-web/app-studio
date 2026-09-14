@@ -1,7 +1,12 @@
 ext {
     minSdkVersion = 24
     compileSdkVersion = 36
-    targetSdkVersion = 36
+    // A propósito por debajo de compileSdkVersion: Android 16 (API 36) obliga a
+    // "edge-to-edge" con un bug abierto en Capacitor 8 (teclado empuja la pantalla,
+    // deslizar activa "atrás" sin querer — https://github.com/ionic-team/capacitor/issues/8432,
+    // sin arreglo confirmado). App de uso privado, sin Play Store, así que no hay
+    // presión por subir a 36 — cuando esté arreglado en Capacitor, se sube.
+    targetSdkVersion = 34
     androidxActivityVersion = '1.11.0'
     androidxAppCompatVersion = '1.7.1'
     androidxCoordinatorLayoutVersion = '1.3.0'

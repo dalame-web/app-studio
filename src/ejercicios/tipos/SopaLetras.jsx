@@ -4,7 +4,7 @@ import BotonAudio from '../../components/BotonAudio';
 import ChipInstruccion from '../ChipInstruccion';
 import MediaRender from '../MediaRender';
 
-export default function SopaLetras({ ejercicio, asignatura, onCorrecto }) {
+export default function SopaLetras({ ejercicio, asignatura, onCorrecto, onIncorrecto }) {
   const cuadricula = ejercicio.cuadricula ?? [];
   const palabras   = ejercicio.palabras ?? [];
   const [encontradas, setEncontradas] = useState(new Set());
@@ -119,7 +119,7 @@ export default function SopaLetras({ ejercicio, asignatura, onCorrecto }) {
 
       {palabras.length > 0 && encontradas.size < palabras.length && (
         <button
-          onClick={() => onCorrecto()}
+          onClick={() => onIncorrecto(3)}
           className="py-3 bg-gray-100 hover:bg-gray-200 text-gray-600 font-semibold rounded-2xl text-sm transition-colors"
         >
           Terminar sopa de letras →

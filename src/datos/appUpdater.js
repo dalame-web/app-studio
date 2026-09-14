@@ -12,23 +12,25 @@ const esNativo = typeof window !== 'undefined' && window.Capacitor?.isNativePlat
 const REMOTE_BASE = 'https://app-studio-pri.vercel.app/';
 const MANIFEST_URL = `${REMOTE_BASE}app-bundle.json`;
 
+// Devuelve un estado para que la UI (botón "Actualizar app") pueda informar:
+// 'web' (no aplica, es la PWA) | 'sin-conexion' | 'sin-cambios' | 'actualizando' | 'error'
 export async function checkAndApplyAppUpdate() {
-  if (!esNativo) return;
-
-  const { CapacitorUpdater } = await import('@capgo/capacitor-updater');
-
-  // Confirma que el bundle actual arrancó bien — si esto no se llama a tiempo,
-  // el plugin deshace la actualización anterior automáticamente.
-  await CapacitorUpdater.notifyAppReady();
-
-  if (!navigator.onLine) return;
+  if (!esNativo) return 'web';
 
   try {
+    const { CapacitorUpdater } = await import('@capgo/capacitor-updater');
+
+    // Confirma que el bundle actual arrancó bien — si esto no se llama a tiempo,
+    // el plugin deshace la actualización anterior automáticamente.
+    await CapacitorUpdater.notifyAppReady();
+
+    if (!navigator.onLine) return 'sin-conexion';
+
     const res = await fetch(MANIFEST_URL, { cache: 'no-cache' });
-    if (!res.ok) return;
+    if (!res.ok) return 'error';
     const manifest = await res.json();
 
-    if (!manifest?.version || manifest.version === __APP_VERSION__) return;
+    if (!manifest?.version || manifest.version === __APP_VERSION__) return 'sin-cambios';
 
     const bundle = await CapacitorUpdater.download({
       version: manifest.version,
@@ -36,8 +38,11 @@ export async function checkAndApplyAppUpdate() {
       checksum: manifest.checksum,
     });
     await CapacitorUpdater.set(bundle);
-    // A partir de aquí el bundle nuevo se activa en el siguiente arranque de la app.
+    // set() recarga la app de inmediato con el bundle nuevo — lo de después de
+    // esta línea normalmente no llega a ejecutarse.
+    return 'actualizando';
   } catch (e) {
     console.warn('[appUpdater] fallo comprobando actualización:', e.message);
+    return 'error';
   }
 }

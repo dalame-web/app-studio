@@ -60,8 +60,10 @@ export default function MotorEjercicio({ ejercicio, asignatura, fichaContenido, 
     }, 600);
   }, [ejercicio, intentos, profileId, sesionId, asignatura, registrarCorrecto, preview]);
 
+  // numIntentos > 1: fuerza el recuento a ese valor de golpe (p.ej. "rendirse" en
+  // SopaLetras debe contar como fallo inmediato, no como un reintento normal).
   const handleIncorrecto = useCallback(async (numIntentos = 1) => {
-    const nuevosIntentos = intentos + 1;
+    const nuevosIntentos = numIntentos > 1 ? numIntentos : intentos + 1;
     setIntentos(nuevosIntentos);
     setFeedback('incorrecto');
 

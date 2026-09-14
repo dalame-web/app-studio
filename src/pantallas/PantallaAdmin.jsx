@@ -3,6 +3,9 @@ import useSesionStore from '../store/sesionStore';
 import useGamificacionStore from '../store/gamificacionStore';
 import { getAllSubjectStats, getRecentSessions, resetAllProgress, clearContent, exportarProgreso, importarProgreso } from '../datos/db';
 import { checkAndSyncContent } from '../datos/contentSync';
+import { checkAndApplyAppUpdate } from '../datos/appUpdater';
+
+const esNativo = typeof window !== 'undefined' && window.Capacitor?.isNativePlatform?.();
 import { ASIGNATURAS } from './PantallaInicio';
 import { BtnVolver } from './PantallaFichas';
 import PantallaImportar from './PantallaImportar';
@@ -97,6 +100,26 @@ export default function PantallaAdmin() {
     if (appUpdEstado !== 'confirm') { setAppUpdEstado('confirm'); return; }
     if (!navigator.onLine) { setAppUpdEstado('error'); setTimeout(() => setAppUpdEstado(null), 4000); return; }
     setAppUpdEstado('cargando');
+
+    // Dentro de la app instalada, el mecanismo de actualización es el sistema
+    // OTA (appUpdater.js) — NO el de borrar cachés/Service Worker de más abajo,
+    // que es de la PWA en navegador y no tiene sentido aquí (y chocaba con el
+    // sistema OTA, causando el bucle de pantalla en blanco reportado).
+    if (esNativo) {
+      const resultado = await checkAndApplyAppUpdate();
+      // Si hubo actualización, CapacitorUpdater ya recargó la app — esto solo se
+      // ve si no había nada nuevo o algo falló.
+      if (resultado === 'sin-cambios') {
+        setAppUpdEstado(null);
+        setUpdateEstado('sinCambios');
+        setTimeout(() => setUpdateEstado(null), 4000);
+      } else if (resultado === 'error' || resultado === 'sin-conexion') {
+        setAppUpdEstado('error');
+        setTimeout(() => setAppUpdEstado(null), 4000);
+      }
+      return;
+    }
+
     try {
       // 1. Desregistrar todos los service workers
       if ('serviceWorker' in navigator) {

@@ -6,12 +6,14 @@ import {
   updateSession,
   upsertSubjectStats,
   getSubjectStats,
+  getAllSubjectStats,
   logExercise,
   countTotalExercises,
   getSessionsForSubjectCount,
   getRecentSessions,
   getFichaProgress,
   upsertFichaProgress,
+  respaldarProgresoNativo,
 } from '../datos/db';
 import { actualizarNivel } from '../datos/selector';
 
@@ -97,8 +99,9 @@ export default function PantallaResultado() {
     const totalEjercicios = await countTotalExercises(profileId);
     const totalSesiones   = await getSessionsForSubjectCount(profileId, asignaturaActual);
 
-    // Count distinct subjects with sessions (rough approximation)
-    const sesionesAsig = 1; // will be properly counted in Phase 4
+    // Asignaturas distintas en las que el niño ya ha practicado al menos una vez
+    const todasStats = await getAllSubjectStats(profileId);
+    const sesionesAsig = todasStats.filter(s => (s.totalAttempts ?? 0) > 0).length;
 
     const ctx = { racha, totalEjercicios, totalSesiones, sesionesAsig, nivelNuevo: nuevoNivel ?? prevNivel };
     const nuevas = [];
@@ -135,6 +138,8 @@ export default function PantallaResultado() {
       }
       await upsertFichaProgress(profileId, fichaActual.id, updates);
     }
+
+    respaldarProgresoNativo(profileId);
   }
 
   const mensajeNivel = nivelInfo

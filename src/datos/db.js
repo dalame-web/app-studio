@@ -297,6 +297,27 @@ export async function clearContent() {
   }
 }
 
+// Respaldo automático a almacenamiento nativo (Directory.Data) — más duradero
+// que IndexedDB, que en el WebView de Android puede vaciarse bajo presión de
+// espacio del sistema. Solo dentro de la app instalada; en la PWA no aplica
+// (no hay almacenamiento nativo, y el export manual sigue disponible ahí).
+// Falla en silencio: es una red de seguridad extra, nunca debe romper el guardado normal.
+export async function respaldarProgresoNativo(profileId) {
+  if (!window.Capacitor?.isNativePlatform?.()) return;
+  try {
+    const { Filesystem, Directory, Encoding } = await import('@capacitor/filesystem');
+    const backup = await exportarProgreso(profileId);
+    await Filesystem.writeFile({
+      path: 'backup-progreso-auto.json',
+      data: JSON.stringify(backup),
+      directory: Directory.Data,
+      encoding: Encoding.UTF8,
+    });
+  } catch (e) {
+    console.warn('[db] respaldo automático falló:', e.message);
+  }
+}
+
 // ── Backup de progreso (XP, racha, insignias, historial — NO contenido) ──────
 // El contenido (fichas/ejercicios) ya vive en GitHub y se puede volver a descargar.
 // Esto es solo lo que existe únicamente en este dispositivo.

@@ -2,8 +2,8 @@ name: Build APK
 
 # Solo se dispara con cambios de código de la app (no con fichas de contenido,
 # esas se sincronizan solas en tiempo de ejecución — ver src/datos/contentSync.js).
-# public/app.apk está excluido a propósito: si no, este mismo workflow se
-# dispararía a sí mismo en bucle al hacer el commit del paso final.
+# El commit final lleva [skip ci] a propósito: si no, este mismo workflow se
+# dispararía a sí mismo en bucle al subir su propio resultado (versión/APK/OTA).
 on:
   push:
     branches: [main]
@@ -43,6 +43,15 @@ jobs:
 
       - run: npm ci
 
+      # Versión nueva SIEMPRE en cada build — si no, la app nunca detectaría
+      # que hay una actualización OTA disponible (misma versión = no hace nada).
+      - name: Subir versión de la app
+        run: |
+          NEW_VERSION=$(node -e "const v=require('./package.json').version.split('.'); v[2]=+v[2]+1; console.log(v.join('.'))")
+          npm pkg set version="$NEW_VERSION"
+          npm install --package-lock-only
+          echo "APP_VERSION=$NEW_VERSION" >> "$GITHUB_ENV"
+
       - run: npm run cap:sync
 
       - name: Compilar APK debug
@@ -51,15 +60,25 @@ jobs:
           chmod +x ./gradlew
           ./gradlew assembleDebug
 
-      - name: Publicar APK en public/app.apk
+      - name: Empaquetar actualización OTA
+        run: |
+          cd dist-capacitor
+          zip -qr ../app-bundle.zip . -x 'content/*'
+          cd ..
+          CHECKSUM=$(sha256sum app-bundle.zip | cut -d' ' -f1)
+          cp app-bundle.zip public/app-bundle.zip
+          printf '{"version":"%s","url":"https://app-studio-pri.vercel.app/app-bundle.zip","checksum":"%s"}' \
+            "$APP_VERSION" "$CHECKSUM" > public/app-bundle.json
+
+      - name: Publicar cambios
         run: |
           cp android/app/build/outputs/apk/debug/app-debug.apk public/app.apk
-          if git diff --quiet public/app.apk; then
-            echo "APK sin cambios binarios, nada que subir."
-            exit 0
-          fi
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add public/app.apk
-          git commit -m "chore: APK actualizado automáticamente [skip ci]"
+          git add package.json package-lock.json public/app.apk public/app-bundle.zip public/app-bundle.json
+          if git diff --cached --quiet; then
+            echo "Sin cambios que publicar."
+            exit 0
+          fi
+          git commit -m "chore: versión $APP_VERSION — APK + actualización OTA [skip ci]"
           git push

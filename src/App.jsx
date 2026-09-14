@@ -9,6 +9,7 @@ import PantallaAdmin from './pantallas/PantallaAdmin';
 import VisorFicha from './components/VisorFicha';
 import { getOrCreateDefaultProfile } from './datos/db';
 import { initContent } from './datos/contentSync';
+import { checkAndApplyAppUpdate } from './datos/appUpdater';
 
 function Cargando() {
   return (
@@ -32,6 +33,11 @@ export default function App() {
   useEffect(() => {
     window.speechSynthesis?.cancel?.();
   }, [pantallaActual]);
+
+  // Actualización OTA del código de la app — en segundo plano, nunca bloquea el arranque.
+  useEffect(() => {
+    checkAndApplyAppUpdate().catch(() => {});
+  }, []);
 
   useEffect(() => {
     async function init() {

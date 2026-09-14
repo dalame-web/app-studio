@@ -9,7 +9,7 @@
     "lint": "eslint .",
     "test": "vitest run",
     "preview": "vite preview",
-    "build:capacitor": "vite build --mode capacitor",
+    "build:capacitor": "vite build --mode capacitor && node -e \"require('fs').rmSync('dist-capacitor/app.apk',{force:true})\"",
     "cap:sync": "npm run build:capacitor && npx cap sync",
     "publicar": "node scripts/publicar.js",
     "pdf": "python scripts/convertir-carpeta.py",

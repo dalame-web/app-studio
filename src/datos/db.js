@@ -180,6 +180,30 @@ export async function storeContent(fichas, ejercicios) {
   await tx.done;
 }
 
+export async function getSyncedSubjects() {
+  const all = await (await getDB()).getAll('content_version');
+  return all.filter(v => v.id.startsWith('subject_')).map(v => v.id.slice('subject_'.length));
+}
+
+// Borra fichas/ejercicios/versión SOLO de una asignatura (p.ej. si desaparece del manifest)
+export async function clearContentForSubject(subject) {
+  const db = await getDB();
+  const tx = db.transaction(['fichas', 'ejercicios', 'content_version'], 'readwrite');
+
+  const fichasStore = tx.objectStore('fichas');
+  for (const f of await fichasStore.getAll()) {
+    if (f.subject === subject) await fichasStore.delete(f.id);
+  }
+
+  const ejStore = tx.objectStore('ejercicios');
+  for (const e of await ejStore.getAll()) {
+    if (e.subject === subject) await ejStore.delete(e.id);
+  }
+
+  await tx.objectStore('content_version').delete(`subject_${subject}`);
+  await tx.done;
+}
+
 export async function getFichasBySubject(subject) {
   return (await getDB()).getAllFromIndex('fichas', 'subject', subject);
 }
@@ -271,6 +295,86 @@ export async function clearContent() {
     for (const v of allVersions) await tx2.store.delete(v.id);
     await tx2.done;
   }
+}
+
+// ── Backup de progreso (XP, racha, insignias, historial — NO contenido) ──────
+// El contenido (fichas/ejercicios) ya vive en GitHub y se puede volver a descargar.
+// Esto es solo lo que existe únicamente en este dispositivo.
+
+export async function exportarProgreso(profileId) {
+  const db = await getDB();
+  const profile        = await db.get('profiles', profileId);
+  const exerciseLog    = (await db.getAll('exercise_log')).filter(e => e.profileId === profileId);
+  const sessions       = (await db.getAll('sessions')).filter(s => s.profileId === profileId);
+  const subjectStats   = await getAllSubjectStats(profileId);
+  const gamificacion   = await getGamificacion(profileId);
+  const fichaProgress  = await getAllFichaProgress(profileId);
+
+  return {
+    tipo: 'backup-progreso-edu-app',
+    version: 1,
+    exportadoEn: new Date().toISOString(),
+    profile: { nombre: profile?.nombre, avatar: profile?.avatar },
+    exerciseLog,
+    sessions,
+    subjectStats,
+    gamificacion,
+    fichaProgress,
+  };
+}
+
+export async function importarProgreso(profileId, backup) {
+  if (backup?.tipo !== 'backup-progreso-edu-app') {
+    throw new Error('Archivo no reconocido como backup de progreso de esta app.');
+  }
+  const db = await getDB();
+
+  const tx1 = db.transaction('exercise_log', 'readwrite');
+  for (const e of backup.exerciseLog ?? []) {
+    const rest = { ...e, profileId };
+    delete rest.id;
+    await tx1.store.add(rest);
+  }
+  await tx1.done;
+
+  const tx2 = db.transaction('sessions', 'readwrite');
+  for (const s of backup.sessions ?? []) {
+    const rest = { ...s, profileId };
+    delete rest.id;
+    await tx2.store.add(rest);
+  }
+  await tx2.done;
+
+  for (const s of backup.subjectStats ?? []) {
+    const rest = { ...s };
+    delete rest.profileId_subject;
+    delete rest.profileId;
+    const { subject } = rest;
+    delete rest.subject;
+    await upsertSubjectStats(profileId, subject, rest);
+  }
+
+  if (backup.gamificacion) {
+    const rest = { ...backup.gamificacion };
+    delete rest.profileId;
+    await upsertGamificacion(profileId, rest);
+  }
+
+  for (const fp of backup.fichaProgress ?? []) {
+    const rest = { ...fp };
+    delete rest.id;
+    delete rest.profileId;
+    const { fichaId } = rest;
+    delete rest.fichaId;
+    await upsertFichaProgress(profileId, fichaId, rest);
+  }
+
+  return {
+    exerciseLog: backup.exerciseLog?.length ?? 0,
+    sessions: backup.sessions?.length ?? 0,
+    subjectStats: backup.subjectStats?.length ?? 0,
+    fichaProgress: backup.fichaProgress?.length ?? 0,
+  };
 }
 
 // ── Export (genera ejercicios.json completo desde IndexedDB) ─────────────────

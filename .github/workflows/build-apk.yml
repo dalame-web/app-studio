@@ -1,0 +1,59 @@
+name: Build APK
+
+# Solo se dispara con cambios de código de la app (no con fichas de contenido,
+# esas se sincronizan solas en tiempo de ejecución — ver src/datos/contentSync.js).
+# public/app.apk está excluido a propósito: si no, este mismo workflow se
+# dispararía a sí mismo en bucle al hacer el commit del paso final.
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'src/**'
+      - 'index.html'
+      - 'vite.config.js'
+      - 'package.json'
+      - 'package-lock.json'
+      - 'capacitor.config.json'
+      - 'android/**'
+      - '!android/app/build/**'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+
+      - run: npm ci
+
+      - run: npm run cap:sync
+
+      - name: Compilar APK debug
+        working-directory: android
+        run: ./gradlew assembleDebug
+
+      - name: Publicar APK en public/app.apk
+        run: |
+          cp android/app/build/outputs/apk/debug/app-debug.apk public/app.apk
+          if git diff --quiet public/app.apk; then
+            echo "APK sin cambios binarios, nada que subir."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add public/app.apk
+          git commit -m "chore: APK actualizado automáticamente [skip ci]"
+          git push

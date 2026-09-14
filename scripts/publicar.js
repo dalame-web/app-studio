@@ -181,6 +181,11 @@ async function main() {
 
   ok(`Validación OK — ${resultado.fichas.length} ficha${resultado.fichas.length > 1 ? 's' : ''}, ${resultado.stats?.numEjercicios ?? '?'} ejercicios`);
 
+  // 2b. Repartir de forma determinista la posición de la respuesta correcta en
+  // EleccionMultiple (0,1,2,3,0,1,2,3…) — no confiar en que Claude lo haya repartido bien.
+  const { rebalancearPosicionesEM } = await import('../src/datos/rebalanceo.js');
+  resultado.fichas = rebalancearPosicionesEM(resultado.fichas);
+
   // 3. Leer ejercicios.json existente
   let existente = { version: '1.0.0', fecha: new Date().toISOString().slice(0, 10), fichas: [] };
   if (existsSync(EJERCICIOS_PATH)) {
@@ -204,7 +209,9 @@ async function main() {
   // 6a. ejercicios.json (archivo unificado — retrocompatibilidad)
   writeFileSync(EJERCICIOS_PATH, JSON.stringify({ version, fecha, fichas: fichasOrdenadas }, null, 2), 'utf8');
 
-  // 6b. Archivos por asignatura en public/content/
+  // 6b. Un archivo por ficha en public/content/{subject}/ + un index.json ligero
+  // (antes era un único content/{subject}.json con todas las fichas mezcladas —
+  // cambiado a petición del usuario: cada ficha independiente, más fácil de editar).
   if (!existsSync(CONTENT_DIR)) mkdirSync(CONTENT_DIR, { recursive: true });
   const asignaturasObj = {};
   for (const subject of asignaturas) {
@@ -214,7 +221,18 @@ async function main() {
     const hayNuevosEnSubject = resultado.fichas.some(f => f.subject === subject);
     const versionSubject = hayNuevosEnSubject ? asigVersion : (manifest?.asignaturas?.[subject]?.version ?? asigVersion);
     asignaturasObj[subject] = { version: versionSubject };
-    writeFileSync(join(CONTENT_DIR, `${subject}.json`), JSON.stringify({ version: versionSubject, subject, fichas: fichasSubject }, null, 2), 'utf8');
+
+    const subjectDir = join(CONTENT_DIR, subject);
+    if (!existsSync(subjectDir)) mkdirSync(subjectDir, { recursive: true });
+    for (const ficha of fichasSubject) {
+      writeFileSync(join(subjectDir, `${ficha.id}.json`), JSON.stringify(ficha, null, 2), 'utf8');
+    }
+    const indice = {
+      version: versionSubject,
+      subject,
+      fichas: fichasSubject.map(f => ({ id: f.id, titulo: f.titulo, nivel: f.nivel, numEjercicios: f.ejercicios?.length ?? 0 })),
+    };
+    writeFileSync(join(subjectDir, 'index.json'), JSON.stringify(indice, null, 2), 'utf8');
   }
 
   const nuevoManifest = { ...manifest, version, fecha, asignaturas: asignaturasObj };

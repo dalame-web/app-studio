@@ -1,5 +1,8 @@
-// Validador estricto de fichas/ejercicios para importación (sin librerías externas)
-// Detecta tanto errores DURO (rompen la app) como WARNINGS (mala UX pero ejecutable)
+// Validador estricto de fichas/ejercicios para importación.
+// Detecta tanto errores DURO (rompen la app) como WARNINGS (mala UX pero ejecutable).
+// Capa estructural formal (JSON Schema vía ajv) en validacionSchema.js — se combina
+// con las reglas semánticas de aquí abajo (duplicados, coherencia con el contenido, etc.)
+import { validarConSchema } from './validacionSchema.js';
 
 const TIPOS_VALIDOS = [
   'EleccionMultiple', 'RellenarHueco', 'ArrastrarPalabras', 'OrdenarFrase',
@@ -28,12 +31,15 @@ const EMOJIS_SPOILER = ['✅', '❌', '✔', '✓', '✗', '⭕', '❎', '🟢',
 
 // ── Helpers ─────────────────────────────────────────────────────────────────
 
+// Quita acentos pero NO toca la "ñ" — es una letra distinta en español, no una "n" con tilde.
+// Debe coincidir con el normalizar() de RellenarHueco.jsx (misma regla, dos sitios).
 function normalizar(s) {
-  return String(s ?? '').trim().toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
-}
-
-function aplanarEnGrid(grid) {
-  return grid.flat().map(c => String(c ?? '').toUpperCase()).join('');
+  return String(s ?? '').trim().toLowerCase()
+    .replace(/[áàäâ]/g, 'a')
+    .replace(/[éèëê]/g, 'e')
+    .replace(/[íìïî]/g, 'i')
+    .replace(/[óòöô]/g, 'o')
+    .replace(/[úùüû]/g, 'u');
 }
 
 function palabraEnGrid(palabra, grid) {
@@ -221,6 +227,11 @@ function validarProblemaVisual(ej, ref, ficha, errores, warnings) {
       errores.push(`${ref}: ProblemaVisual sin esNumerico necesita al menos 2 opciones`);
     else if (!ej.opciones.includes(ej.respuestaCorrecta))
       errores.push(`${ref}: respuestaCorrecta "${ej.respuestaCorrecta}" no está en opciones`);
+  } else if (Array.isArray(ej.opciones)) {
+    // PROMPT-FICHAS.md: "Si esNumerico:true → NO pongas opciones". El niño escribe
+    // el número; unas opciones sobrantes aquí no rompen la app pero indican que el
+    // ejercicio se generó mal (¿debería ser esNumerico:false?).
+    warnings.push(`${ref}: ProblemaVisual tiene esNumerico:true pero incluye "opciones" (no se usan, el niño escribe el número). Revisa si esNumerico debería ser false.`);
   }
   if (ej.visual) {
     if (ej.visual.cantidad > 30) errores.push(`${ref}: visual.cantidad ${ej.visual.cantidad} es excesiva (no caben tantos emojis). Máximo 30.`);
@@ -230,10 +241,10 @@ function validarProblemaVisual(ej, ref, ficha, errores, warnings) {
 function validarComprensionLectora(ej, ref, ficha, errores, warnings) {
   const preguntas = Array.isArray(ej.preguntas) ? ej.preguntas : [];
   if (preguntas.length < 2) errores.push(`${ref}: ComprensionLectora necesita al menos 2 preguntas`);
-  if (preguntas.length > 5) warnings.push(`${ref}: ${preguntas.length} preguntas es mucho para 3º Primaria. Recomendado 3-4.`);
+  if (preguntas.length > 5) warnings.push(`${ref}: ${preguntas.length} preguntas es mucho para 4º Primaria. Recomendado 3-4.`);
 
   const numPalabras = String(ej.texto ?? '').trim().split(/\s+/).length;
-  if (numPalabras > 120) warnings.push(`${ref}: el texto tiene ${numPalabras} palabras. Para 3º Primaria, máximo recomendado 100.`);
+  if (numPalabras > 120) warnings.push(`${ref}: el texto tiene ${numPalabras} palabras. Para 4º Primaria, máximo recomendado 100.`);
 
   for (let i = 0; i < preguntas.length; i++) {
     const p = preguntas[i];
@@ -322,8 +333,18 @@ export function validarFicha(ficha, opciones = {}) {
 
   if (!ficha.titulo) errores.push(`Ficha "${ficha.id}": falta "titulo"`);
   if (!ficha.contenido) errores.push(`Ficha "${ficha.id}": falta "contenido"`);
+  if (ficha.videoExplicacion !== undefined) {
+    if (typeof ficha.videoExplicacion !== 'string' || !/^https?:\/\//.test(ficha.videoExplicacion)) {
+      errores.push(`Ficha "${ficha.id}": "videoExplicacion" debe ser una URL (http/https)`);
+    }
+  }
   if (!ficha.nivel || ![1, 2, 3].includes(ficha.nivel))
     errores.push(`Ficha "${ficha.id}": "nivel" debe ser 1, 2 o 3`);
+
+  // Capa estructural (JSON Schema): detecta lo que las reglas de abajo no cubren
+  // (p.ej. tipos de dato incorrectos, campos con nombre mal escrito).
+  const { errores: erroresSchema } = validarConSchema(ficha);
+  errores.push(...erroresSchema);
 
   if (!Array.isArray(ficha.ejercicios) || ficha.ejercicios.length === 0) {
     errores.push(`Ficha "${ficha.id}": debe tener un array "ejercicios" con al menos 1 ejercicio`);
@@ -341,13 +362,33 @@ export function validarFicha(ficha, opciones = {}) {
       validarEjercicio(ej, i, ficha, errores, warnings);
     }
 
-    // Warning de distribución (3+3+2)
-    if (ficha.ejercicios.length >= 8) {
-      const { 1: n1, 2: n2, 3: n3 } = distribucionNiveles;
-      if (n1 < 2 || n2 < 2 || n3 < 1)
-        warnings.push(`Ficha "${ficha.id}": distribución de niveles desequilibrada (nivel 1: ${n1}, nivel 2: ${n2}, nivel 3: ${n3}). Recomendado 3+3+2.`);
-    } else {
-      warnings.push(`Ficha "${ficha.id}": tiene ${ficha.ejercicios.length} ejercicios. Recomendado mínimo 8.`);
+    // Umbrales alineados con PROMPT-FICHAS.md (18-20 ejercicios, nunca menos de 15;
+    // distribución OBLIGATORIA 5 nivel 1 · 7 nivel 2 · 5 nivel 3). Antes este aviso
+    // usaba un umbral mucho más bajo (mínimo 8, "3+3+2") que no protegía el estándar real.
+    if (ficha.ejercicios.length < 15) {
+      warnings.push(`Ficha "${ficha.id}": tiene ${ficha.ejercicios.length} ejercicios. El prompt exige mínimo 15 (objetivo 18-20).`);
+    }
+    const { 1: n1, 2: n2, 3: n3 } = distribucionNiveles;
+    if (n1 < 4 || n2 < 5 || n3 < 4) {
+      warnings.push(`Ficha "${ficha.id}": distribución de niveles (nivel 1: ${n1}, nivel 2: ${n2}, nivel 3: ${n3}) se aleja del objetivo del prompt (5 · 7 · 5).`);
+    }
+
+    // Anti-sesgo de posición en EleccionMultiple — PROMPT-FICHAS.md lo marca como
+    // "⚠️ CRÍTICO" pero hasta ahora no había ninguna comprobación automática de esto.
+    const posicionesEM = [];
+    for (const ej of ficha.ejercicios) {
+      if (ej?.tipo === 'EleccionMultiple' && Array.isArray(ej.opciones)) {
+        const idx = ej.opciones.findIndex(o => (typeof o === 'string' ? o : o?.texto) === ej.respuestaCorrecta);
+        if (idx !== -1) posicionesEM.push(idx);
+      }
+    }
+    if (posicionesEM.length >= 4) {
+      const conteo = [0, 0, 0, 0];
+      posicionesEM.forEach(i => { if (conteo[i] !== undefined) conteo[i]++; });
+      const maxCuota = Math.max(...conteo) / posicionesEM.length;
+      if (maxCuota > 0.45) {
+        warnings.push(`Ficha "${ficha.id}": la respuesta correcta de EleccionMultiple se concentra demasiado en una posición (posiciones 0/1/2/3 = ${conteo.join('/')} de ${posicionesEM.length}). El prompt exige repartir ~25% en cada posición.`);
+      }
     }
   }
 

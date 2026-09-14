@@ -28,7 +28,9 @@ const COMPONENTES = {
   ComprensionLectora,
 };
 
-export default function MotorEjercicio({ ejercicio, asignatura, fichaContenido }) {
+// preview=true: usado por el editor de fichas para probar un ejercicio sin afectar
+// a ninguna sesión real ni guardar estadísticas (solo feedback visual local).
+export default function MotorEjercicio({ ejercicio, asignatura, fichaContenido, preview = false }) {
   const [intentos, setIntentos]  = useState(0);
   const [feedback, setFeedback]  = useState(null); // null | 'correcto' | 'incorrecto'
   const sesionId     = useSesionStore(s => s.sesionId);
@@ -38,23 +40,25 @@ export default function MotorEjercicio({ ejercicio, asignatura, fichaContenido }
 
   const handleCorrecto = useCallback(async () => {
     setFeedback('correcto');
-    await logExercise({
-      profileId,
-      subject: ejercicio.subject ?? asignatura,
-      exerciseId: ejercicio.id,
-      exerciseType: ejercicio.tipo,
-      fichaId: ejercicio.fichaId,
-      correct: true,
-      attemptsBeforeCorrect: intentos,
-      sessionId: sesionId,
-      nivel: ejercicio.nivel ?? 1,
-    });
+    if (!preview) {
+      await logExercise({
+        profileId,
+        subject: ejercicio.subject ?? asignatura,
+        exerciseId: ejercicio.id,
+        exerciseType: ejercicio.tipo,
+        fichaId: ejercicio.fichaId,
+        correct: true,
+        attemptsBeforeCorrect: intentos,
+        sessionId: sesionId,
+        nivel: ejercicio.nivel ?? 1,
+      });
+    }
     setTimeout(() => {
       setFeedback(null);
       setIntentos(0);
-      registrarCorrecto();
+      if (!preview) registrarCorrecto();
     }, 600);
-  }, [ejercicio, intentos, profileId, sesionId, asignatura, registrarCorrecto]);
+  }, [ejercicio, intentos, profileId, sesionId, asignatura, registrarCorrecto, preview]);
 
   const handleIncorrecto = useCallback(async (numIntentos = 1) => {
     const nuevosIntentos = intentos + 1;
@@ -62,26 +66,28 @@ export default function MotorEjercicio({ ejercicio, asignatura, fichaContenido }
     setFeedback('incorrecto');
 
     if (nuevosIntentos >= 3) {
-      await logExercise({
-        profileId,
-        subject: ejercicio.subject ?? asignatura,
-        exerciseId: ejercicio.id,
-        exerciseType: ejercicio.tipo,
-        fichaId: ejercicio.fichaId,
-        correct: false,
-        attemptsBeforeCorrect: nuevosIntentos,
-        sessionId: sesionId,
-        nivel: ejercicio.nivel ?? 1,
-      });
+      if (!preview) {
+        await logExercise({
+          profileId,
+          subject: ejercicio.subject ?? asignatura,
+          exerciseId: ejercicio.id,
+          exerciseType: ejercicio.tipo,
+          fichaId: ejercicio.fichaId,
+          correct: false,
+          attemptsBeforeCorrect: nuevosIntentos,
+          sessionId: sesionId,
+          nivel: ejercicio.nivel ?? 1,
+        });
+      }
       setTimeout(() => {
         setFeedback(null);
         setIntentos(0);
-        registrarIncorrecto();
+        if (!preview) registrarIncorrecto();
       }, 2500);
     } else {
       setTimeout(() => setFeedback(null), 600);
     }
-  }, [ejercicio, intentos, profileId, sesionId, asignatura, registrarIncorrecto]);
+  }, [ejercicio, intentos, profileId, sesionId, asignatura, registrarIncorrecto, preview]);
 
   const Componente = COMPONENTES[ejercicio.tipo];
 

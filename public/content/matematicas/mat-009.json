@@ -1,0 +1,483 @@
+{
+  "id": "mat-009",
+  "subject": "matematicas",
+  "titulo": "Calcular el perímetro",
+  "nivel": 2,
+  "contenido": "El perímetro es la medida del contorno de una figura. Se calcula sumando la longitud de todos sus lados. La fórmula general es: Perímetro = lado 1 + lado 2 + lado 3 + ... Para el cuadrado, como todos sus lados son iguales, el perímetro es 4 × l. Para el rectángulo, como los lados opuestos son iguales, el perímetro es 2 × (L + A). Para el triángulo, el perímetro es a + b + c. Para el polígono irregular, se suman todos sus lados.",
+  "ejemplos": [
+    "Cuadrado de 6 cm: Perímetro = 6 + 6 + 6 + 6 = 24 cm",
+    "Rectángulo de 8 cm y 5 cm: Perímetro = 8 + 5 + 8 + 5 = 26 cm",
+    "Triángulo de 7 cm, 6 cm y 9 cm: Perímetro = 7 + 6 + 9 = 22 cm",
+    "Polígono irregular de 1+2+3+4+2+3 = 17 cm (se suman todos sus lados)"
+  ],
+  "palabrasClave": [
+    "perímetro",
+    "contorno",
+    "lado",
+    "fórmula",
+    "cuadrado",
+    "rectángulo",
+    "triángulo",
+    "polígono irregular",
+    "suma",
+    "longitud"
+  ],
+  "tiposEjercicio": [
+    "EleccionMultiple",
+    "RellenarHueco",
+    "ProblemaVisual",
+    "UnirColumnas",
+    "CompletarSerie",
+    "OrdenarFrase"
+  ],
+  "ejerciciosDerivar": 18,
+  "ejercicios": [
+    {
+      "id": "mat-009-ex-001",
+      "fichaId": "mat-009",
+      "subject": "matematicas",
+      "tipo": "EleccionMultiple",
+      "nivel": 1,
+      "tiempoEstimado": 30,
+      "enunciado": "El perímetro es la medida del contorno de una figura. ¿Cómo se calcula el perímetro?",
+      "pista": "El perímetro rodea la figura por fuera: hay que sumar todos los bordes.",
+      "opciones": [
+        {
+          "texto": "Sumando la longitud de todos sus lados",
+          "emoji": ""
+        },
+        {
+          "texto": "Multiplicando el lado por sí mismo",
+          "emoji": ""
+        },
+        {
+          "texto": "Contando los vértices de la figura",
+          "emoji": ""
+        },
+        {
+          "texto": "Dividiendo el lado más largo entre 2",
+          "emoji": ""
+        }
+      ],
+      "respuestaCorrecta": "Sumando la longitud de todos sus lados"
+    },
+    {
+      "id": "mat-009-ex-002",
+      "fichaId": "mat-009",
+      "subject": "matematicas",
+      "tipo": "RellenarHueco",
+      "nivel": 1,
+      "tiempoEstimado": 30,
+      "enunciado": "El perímetro es la medida del [___] de una figura.",
+      "pista": "Es la línea que rodea la figura por fuera, como el borde de un campo de fútbol.",
+      "respuestaCorrecta": "contorno"
+    },
+    {
+      "id": "mat-009-ex-003",
+      "fichaId": "mat-009",
+      "subject": "matematicas",
+      "tipo": "EleccionMultiple",
+      "nivel": 1,
+      "tiempoEstimado": 30,
+      "enunciado": "Para calcular el perímetro de un cuadrado, como todos sus lados son iguales, se usa la fórmula 4 × l. ¿Cuánto mide el perímetro de un cuadrado con lados de 6 cm?",
+      "pista": "Multiplica 4 por el valor del lado: 4 × 6.",
+      "opciones": [
+        {
+          "texto": "18 cm",
+          "emoji": ""
+        },
+        {
+          "texto": "24 cm",
+          "emoji": ""
+        },
+        {
+          "texto": "36 cm",
+          "emoji": ""
+        },
+        {
+          "texto": "12 cm",
+          "emoji": ""
+        }
+      ],
+      "respuestaCorrecta": "24 cm"
+    },
+    {
+      "id": "mat-009-ex-004",
+      "fichaId": "mat-009",
+      "subject": "matematicas",
+      "tipo": "ProblemaVisual",
+      "nivel": 1,
+      "tiempoEstimado": 45,
+      "enunciado": "Un cuadrado tiene todos sus lados iguales a 7 cm. ¿Cuánto mide su perímetro?",
+      "pista": "Suma los 4 lados: 7 + 7 + 7 + 7.",
+      "visual": {
+        "tipo": "emojis",
+        "emoji": "📏",
+        "cantidad": 4,
+        "operacion": null,
+        "cantidadOperacion": 0
+      },
+      "opciones": [
+        "21 cm",
+        "28 cm",
+        "14 cm",
+        "49 cm"
+      ],
+      "respuestaCorrecta": "28 cm",
+      "esNumerico": false
+    },
+    {
+      "id": "mat-009-ex-005",
+      "fichaId": "mat-009",
+      "subject": "matematicas",
+      "tipo": "EleccionMultiple",
+      "nivel": 1,
+      "tiempoEstimado": 30,
+      "enunciado": "Para el triángulo, el perímetro se calcula sumando sus tres lados: a + b + c. ¿Cuánto mide el perímetro de un triángulo con lados de 7 cm, 6 cm y 9 cm?",
+      "pista": "Suma los tres lados: 7 + 6 + 9.",
+      "opciones": [
+        {
+          "texto": "20 cm",
+          "emoji": ""
+        },
+        {
+          "texto": "24 cm",
+          "emoji": ""
+        },
+        {
+          "texto": "22 cm",
+          "emoji": ""
+        },
+        {
+          "texto": "18 cm",
+          "emoji": ""
+        }
+      ],
+      "respuestaCorrecta": "22 cm"
+    },
+    {
+      "id": "mat-009-ex-006",
+      "fichaId": "mat-009",
+      "subject": "matematicas",
+      "tipo": "UnirColumnas",
+      "nivel": 2,
+      "tiempoEstimado": 90,
+      "enunciado": "Une cada figura con la fórmula correcta para calcular su perímetro:",
+      "pista": "Recuerda: el cuadrado tiene 4 lados iguales, el rectángulo tiene 2 pares y el triángulo tiene 3 lados.",
+      "parejas": [
+        {
+          "izquierda": "Cuadrado",
+          "derecha": "4 × l"
+        },
+        {
+          "izquierda": "Rectángulo",
+          "derecha": "2 × (L + A)"
+        },
+        {
+          "izquierda": "Triángulo",
+          "derecha": "a + b + c"
+        },
+        {
+          "izquierda": "Polígono irregular",
+          "derecha": "Suma todos los lados"
+        }
+      ]
+    },
+    {
+      "id": "mat-009-ex-007",
+      "fichaId": "mat-009",
+      "subject": "matematicas",
+      "tipo": "ProblemaVisual",
+      "nivel": 2,
+      "tiempoEstimado": 45,
+      "enunciado": "Un rectángulo tiene lados de 8 cm y 5 cm. Usando la fórmula Perímetro = 2 × (L + A), ¿cuánto mide su perímetro?",
+      "pista": "Primero suma L + A: 8 + 5 = 13. Luego multiplica por 2.",
+      "visual": {
+        "tipo": "emojis",
+        "emoji": "📐",
+        "cantidad": 2,
+        "operacion": null,
+        "cantidadOperacion": 0
+      },
+      "respuestaCorrecta": "26",
+      "esNumerico": true
+    },
+    {
+      "id": "mat-009-ex-008",
+      "fichaId": "mat-009",
+      "subject": "matematicas",
+      "tipo": "EleccionMultiple",
+      "nivel": 2,
+      "tiempoEstimado": 30,
+      "enunciado": "Para calcular el perímetro de un polígono irregular se suman todos sus lados. Un polígono tiene lados de 3 cm, 4 cm, 5 cm, 2 cm y 3 cm. ¿Cuánto mide su perímetro?",
+      "pista": "Suma todos los lados uno a uno: 3 + 4 + 5 + 2 + 3.",
+      "opciones": [
+        {
+          "texto": "15 cm",
+          "emoji": ""
+        },
+        {
+          "texto": "14 cm",
+          "emoji": ""
+        },
+        {
+          "texto": "16 cm",
+          "emoji": ""
+        },
+        {
+          "texto": "17 cm",
+          "emoji": ""
+        }
+      ],
+      "respuestaCorrecta": "17 cm"
+    },
+    {
+      "id": "mat-009-ex-009",
+      "fichaId": "mat-009",
+      "subject": "matematicas",
+      "tipo": "RellenarHueco",
+      "nivel": 2,
+      "tiempoEstimado": 30,
+      "enunciado": "La fórmula del perímetro del rectángulo es: Perímetro = 2 × ([___] + A).",
+      "pista": "Las letras L y A representan los dos lados diferentes del rectángulo: el largo y el ancho.",
+      "respuestaCorrecta": "L"
+    },
+    {
+      "id": "mat-009-ex-010",
+      "fichaId": "mat-009",
+      "subject": "matematicas",
+      "tipo": "OrdenarFrase",
+      "nivel": 2,
+      "tiempoEstimado": 60,
+      "enunciado": "Ordena las palabras para formar la definición correcta de perímetro:",
+      "pista": "El perímetro es algo que se mide del contorno de una figura.",
+      "palabrasDesordenadas": [
+        "del",
+        "es",
+        "El",
+        "contorno",
+        "perímetro",
+        "la",
+        "medida"
+      ],
+      "fraseCorrecta": "El perímetro es la medida del contorno"
+    },
+    {
+      "id": "mat-009-ex-011",
+      "fichaId": "mat-009",
+      "subject": "matematicas",
+      "tipo": "CompletarSerie",
+      "nivel": 2,
+      "tiempoEstimado": 35,
+      "enunciado": "Un cuadrado aumenta su lado de 1 en 1 cm. Completa el perímetro que le falta (Perímetro = 4 × lado):",
+      "pista": "El perímetro del cuadrado es siempre 4 veces el lado. Multiplica 4 × 4.",
+      "serie": [
+        "4",
+        "8",
+        "12",
+        null,
+        "20"
+      ],
+      "opciones": [
+        "14",
+        "16",
+        "18"
+      ],
+      "respuestaCorrecta": "16"
+    },
+    {
+      "id": "mat-009-ex-012",
+      "fichaId": "mat-009",
+      "subject": "matematicas",
+      "tipo": "EleccionMultiple",
+      "nivel": 2,
+      "tiempoEstimado": 30,
+      "enunciado": "Un cuadrado tiene un perímetro de 24 cm. Como el perímetro del cuadrado es 4 × l, ¿cuánto mide cada lado?",
+      "pista": "Si 4 × l = 24, divide 24 entre 4.",
+      "opciones": [
+        {
+          "texto": "6 cm",
+          "emoji": ""
+        },
+        {
+          "texto": "8 cm",
+          "emoji": ""
+        },
+        {
+          "texto": "4 cm",
+          "emoji": ""
+        },
+        {
+          "texto": "12 cm",
+          "emoji": ""
+        }
+      ],
+      "respuestaCorrecta": "6 cm"
+    },
+    {
+      "id": "mat-009-ex-013",
+      "fichaId": "mat-009",
+      "subject": "matematicas",
+      "tipo": "ProblemaVisual",
+      "nivel": 2,
+      "tiempoEstimado": 45,
+      "enunciado": "Calcula el perímetro de este polígono irregular sumando todos sus lados:",
+      "pista": "Suma todos los lados: 1 + 2 + 3 + 4 + 2.",
+      "visual": {
+        "tipo": "barras",
+        "barras": [
+          {
+            "label": "Lado 1",
+            "valor": 1,
+            "color": "#3b82f6"
+          },
+          {
+            "label": "Lado 2",
+            "valor": 2,
+            "color": "#22c55e"
+          },
+          {
+            "label": "Lado 3",
+            "valor": 3,
+            "color": "#ef4444"
+          },
+          {
+            "label": "Lado 4",
+            "valor": 4,
+            "color": "#eab308"
+          },
+          {
+            "label": "Lado 5",
+            "valor": 2,
+            "color": "#a855f7"
+          }
+        ]
+      },
+      "opciones": [
+        "10 cm",
+        "12 cm",
+        "14 cm",
+        "11 cm"
+      ],
+      "respuestaCorrecta": "12 cm",
+      "esNumerico": false
+    },
+    {
+      "id": "mat-009-ex-014",
+      "fichaId": "mat-009",
+      "subject": "matematicas",
+      "tipo": "EleccionMultiple",
+      "nivel": 3,
+      "tiempoEstimado": 30,
+      "enunciado": "Un rectángulo tiene un perímetro de 26 cm y su lado largo (L) mide 8 cm. Usando la fórmula Perímetro = 2 × (L + A), ¿cuánto mide el lado corto (A)?",
+      "pista": "Si 2 × (8 + A) = 26, primero divide 26 entre 2, luego resta 8.",
+      "opciones": [
+        {
+          "texto": "4 cm",
+          "emoji": ""
+        },
+        {
+          "texto": "5 cm",
+          "emoji": ""
+        },
+        {
+          "texto": "6 cm",
+          "emoji": ""
+        },
+        {
+          "texto": "7 cm",
+          "emoji": ""
+        }
+      ],
+      "respuestaCorrecta": "5 cm"
+    },
+    {
+      "id": "mat-009-ex-015",
+      "fichaId": "mat-009",
+      "subject": "matematicas",
+      "tipo": "EleccionMultiple",
+      "nivel": 3,
+      "tiempoEstimado": 30,
+      "enunciado": "El perímetro es la medida del contorno. ¿Cuál de estas afirmaciones sobre el perímetro es INCORRECTA?",
+      "pista": "Recuerda: para calcular el perímetro, el orden en que sumes los lados no importa.",
+      "opciones": [
+        {
+          "texto": "Se calcula sumando todos los lados",
+          "emoji": ""
+        },
+        {
+          "texto": "En el cuadrado se puede calcular con 4 × l",
+          "emoji": ""
+        },
+        {
+          "texto": "Para calcularlo hay que restar los lados",
+          "emoji": ""
+        },
+        {
+          "texto": "En el triángulo es a + b + c",
+          "emoji": ""
+        }
+      ],
+      "respuestaCorrecta": "Para calcularlo hay que restar los lados"
+    },
+    {
+      "id": "mat-009-ex-016",
+      "fichaId": "mat-009",
+      "subject": "matematicas",
+      "tipo": "RellenarHueco",
+      "nivel": 3,
+      "tiempoEstimado": 30,
+      "enunciado": "El perímetro del cuadrado se puede calcular también con la fórmula 4 × [___].",
+      "pista": "La letra representa la medida de uno de los lados del cuadrado. Todos son iguales.",
+      "respuestaCorrecta": "l"
+    },
+    {
+      "id": "mat-009-ex-017",
+      "fichaId": "mat-009",
+      "subject": "matematicas",
+      "tipo": "ProblemaVisual",
+      "nivel": 3,
+      "tiempoEstimado": 45,
+      "enunciado": "Un triángulo tiene un perímetro de 22 cm. Dos de sus lados miden 7 cm y 6 cm. ¿Cuánto mide el tercer lado?",
+      "pista": "Si a + b + c = 22 y a=7, b=6, resta: 22 - 7 - 6.",
+      "visual": {
+        "tipo": "emojis",
+        "emoji": "📐",
+        "cantidad": 3,
+        "operacion": null,
+        "cantidadOperacion": 0
+      },
+      "respuestaCorrecta": "9",
+      "esNumerico": true
+    },
+    {
+      "id": "mat-009-ex-018",
+      "fichaId": "mat-009",
+      "subject": "matematicas",
+      "tipo": "EleccionMultiple",
+      "nivel": 3,
+      "tiempoEstimado": 30,
+      "enunciado": "Dos figuras tienen el mismo perímetro de 20 cm. Una es un cuadrado (4 × l = 20). La otra es un rectángulo con lado largo de 7 cm (2 × (7 + A) = 20). ¿Cuánto mide el lado del cuadrado?",
+      "pista": "Para el cuadrado: divide 20 entre 4.",
+      "opciones": [
+        {
+          "texto": "4 cm",
+          "emoji": ""
+        },
+        {
+          "texto": "6 cm",
+          "emoji": ""
+        },
+        {
+          "texto": "8 cm",
+          "emoji": ""
+        },
+        {
+          "texto": "5 cm",
+          "emoji": ""
+        }
+      ],
+      "respuestaCorrecta": "5 cm"
+    }
+  ]
+}

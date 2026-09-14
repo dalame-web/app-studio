@@ -1,0 +1,310 @@
+{
+  "id": "cie-001",
+  "subject": "ciencias",
+  "titulo": "Main Parts and Types of Plants",
+  "nivel": 1,
+  "contenido": "Plants are living things that need sunlight, water, air, and soil to live. A plant consists of four main parts: roots, stem, leaf, and flower. According to their stems, plants are classified into trees, bushes, and grasses. Plants can also be divided into flowering plants, which make seeds, and non-flowering plants, which reproduce with spores or cones.",
+  "ejemplos": [
+    "Deciduous trees lose their leaves in autumn and usually have broad leaves.",
+    "Evergreen trees keep their leaves all year round and make food with photosynthesis.",
+    "The mixture of water and mineral salts absorbed by roots is called raw sap."
+  ],
+  "palabrasClave": [
+    "root",
+    "stem",
+    "leaf",
+    "flower",
+    "raw sap",
+    "photosynthesis",
+    "tree",
+    "bush",
+    "grass",
+    "petal",
+    "spore",
+    "trunk"
+  ],
+  "tiposEjercicio": [
+    "EleccionMultiple",
+    "ArrastrarPalabras",
+    "OrdenarFrase",
+    "RellenarHueco",
+    "ClasificarGrupos",
+    "ComprensionLectora",
+    "SopaLetras",
+    "MemoriaPareja",
+    "UnirColumnas"
+  ],
+  "ejerciciosDerivar": 18,
+  "ejercicios": [
+    {
+      "id": "cie-001-ex-001",
+      "fichaId": "cie-001",
+      "subject": "ciencias",
+      "tipo": "EleccionMultiple",
+      "nivel": 3,
+      "tiempoEstimado": 30,
+      "enunciado": "Which plant part is defined as the hard and thick stem of a tree?",
+      "opciones": [
+        { "texto": "trunk", "emoji": "" },
+        { "texto": "stem", "emoji": "" },
+        { "texto": "root", "emoji": "" },
+        { "texto": "petal", "emoji": "" }
+      ],
+      "respuestaCorrecta": "trunk"
+    },
+    {
+      "id": "cie-001-ex-002",
+      "fichaId": "cie-001",
+      "subject": "ciencias",
+      "tipo": "EleccionMultiple",
+      "nivel": 1,
+      "tiempoEstimado": 30,
+      "enunciado": "What liquid mixture of water and mineral salts is absorbed by roots from the soil to nourish a plant?",
+      "opciones": [
+        { "texto": "petal", "emoji": "" },
+        { "texto": "raw sap", "emoji": "" },
+        { "texto": "leaf", "emoji": "" },
+        { "texto": "root", "emoji": "" }
+      ],
+      "respuestaCorrecta": "raw sap"
+    },
+    {
+      "id": "cie-001-ex-003",
+      "fichaId": "cie-001",
+      "subject": "ciencias",
+      "tipo": "EleccionMultiple",
+      "nivel": 3,
+      "tiempoEstimado": 30,
+      "enunciado": "What is the colored part of a flower that helps attract insects for pollination?",
+      "opciones": [
+        { "texto": "root", "emoji": "" },
+        { "texto": "stem", "emoji": "" },
+        { "texto": "petal", "emoji": "" },
+        { "texto": "trunk", "emoji": "" }
+      ],
+      "respuestaCorrecta": "petal"
+    },
+    {
+      "id": "cie-001-ex-004",
+      "fichaId": "cie-001",
+      "subject": "ciencias",
+      "tipo": "EleccionMultiple",
+      "nivel": 2,
+      "tiempoEstimado": 30,
+      "enunciado": "Which reproductive structure do non-flowering plants produce to reproduce instead of making seeds?",
+      "opciones": [
+        { "texto": "spore", "emoji": "" },
+        { "texto": "trunk", "emoji": "" },
+        { "texto": "raw sap", "emoji": "" },
+        { "texto": "stem", "emoji": "" }
+      ],
+      "respuestaCorrecta": "spore"
+    },
+    {
+      "id": "cie-001-ex-005",
+      "fichaId": "cie-001",
+      "subject": "ciencias",
+      "tipo": "EleccionMultiple",
+      "nivel": 2,
+      "tiempoEstimado": 30,
+      "enunciado": "Which structure do flowering plants produce after reproduction to grow new plants?",
+      "opciones": [
+        { "texto": "trunk", "emoji": "" },
+        { "texto": "raw sap", "emoji": "" },
+        { "texto": "seed", "emoji": "" },
+        { "texto": "spore", "emoji": "" }
+      ],
+      "respuestaCorrecta": "seed"
+    },
+    {
+      "id": "cie-001-ex-006",
+      "fichaId": "cie-001",
+      "subject": "ciencias",
+      "tipo": "EleccionMultiple",
+      "nivel": 2,
+      "tiempoEstimado": 30,
+      "enunciado": "What structure do some non-flowering plants like conifers use to reproduce in addition to spores?",
+      "opciones": [
+        { "texto": "petal", "emoji": "" },
+        { "texto": "root", "emoji": "" },
+        { "texto": "leaf", "emoji": "" },
+        { "texto": "cone", "emoji": "" }
+      ],
+      "respuestaCorrecta": "cone"
+    },
+    {
+      "id": "cie-001-ex-007",
+      "fichaId": "cie-001",
+      "subject": "ciencias",
+      "tipo": "ArrastrarPalabras",
+      "nivel": 2,
+      "tiempoEstimado": 60,
+      "fraseConHuecos": "The [___] holds the plant in the ground and takes up water and minerals. The [___] holds up the leaves and flowers and carries water to all parts of the plant.",
+      "banco": ["root", "stem", "leaf", "flower"],
+      "respuestasCorrectas": ["root", "stem"]
+    },
+    {
+      "id": "cie-001-ex-008",
+      "fichaId": "cie-001",
+      "subject": "ciencias",
+      "tipo": "OrdenarFrase",
+      "nivel": 3,
+      "tiempoEstimado": 60,
+      "enunciado": "Ordena las palabras:",
+      "palabrasDesordenadas": ["from", "food", "makes", "air", "from", "and", "water", "leaf", "minerals", "the", "The", "from", "it", "stem", "and", "sunlight", "receives", "from", "the", "the"],
+      "fraseCorrecta": "The leaf makes food from the water and minerals it receives from the stem from the air and from sunlight"
+    },
+    {
+      "id": "cie-001-ex-009",
+      "fichaId": "cie-001",
+      "subject": "ciencias",
+      "tipo": "RellenarHueco",
+      "nivel": 1,
+      "tiempoEstimado": 30,
+      "enunciado": "The [___] makes pollen which is carried away by insects or the wind.",
+      "respuestaCorrecta": "flower"
+    },
+    {
+      "id": "cie-001-ex-010",
+      "fichaId": "cie-001",
+      "subject": "ciencias",
+      "tipo": "RellenarHueco",
+      "nivel": 1,
+      "tiempoEstimado": 30,
+      "enunciado": "Evergreen trees are always green so they make food all year with [___].",
+      "respuestaCorrecta": "photosynthesis"
+    },
+    {
+      "id": "cie-001-ex-011",
+      "fichaId": "cie-001",
+      "subject": "ciencias",
+      "tipo": "RellenarHueco",
+      "nivel": 1,
+      "tiempoEstimado": 30,
+      "enunciado": "A deciduous [___] loses its leaves in autumn.",
+      "respuestaCorrecta": "tree"
+    },
+    {
+      "id": "cie-001-ex-012",
+      "fichaId": "cie-001",
+      "subject": "ciencias",
+      "tipo": "RellenarHueco",
+      "nivel": 1,
+      "tiempoEstimado": 30,
+      "enunciado": "A [___] has low branches and usually more than one stem.",
+      "respuestaCorrecta": "bush"
+    },
+    {
+      "id": "cie-001-ex-013",
+      "fichaId": "cie-001",
+      "subject": "ciencias",
+      "tipo": "RellenarHueco",
+      "nivel": 1,
+      "tiempoEstimado": 30,
+      "enunciado": "A plant classified as [___] has a short, thin, and flexible stem.",
+      "respuestaCorrecta": "grass"
+    },
+    {
+      "id": "cie-001-ex-014",
+      "fichaId": "cie-001",
+      "subject": "ciencias",
+      "tipo": "ClasificarGrupos",
+      "nivel": 2,
+      "tiempoEstimado": 60,
+      "enunciado": "Clasifica cada palabra en su categoría:",
+      "grupos": [
+        { "id": "g1", "nombre": "Plant Parts" },
+        { "id": "g2", "nombre": "Types of Plants" }
+      ],
+      "items": [
+        { "id": "1", "texto": "root", "grupoId": "g1" },
+        { "id": "2", "texto": "stem", "grupoId": "g1" },
+        { "id": "3", "texto": "leaf", "grupoId": "g1" },
+        { "id": "4", "texto": "tree", "grupoId": "g2" },
+        { "id": "5", "texto": "bush", "grupoId": "g2" },
+        { "id": "6", "texto": "grass", "grupoId": "g2" }
+      ]
+    },
+    {
+      "id": "cie-001-ex-015",
+      "fichaId": "cie-001",
+      "subject": "ciencias",
+      "tipo": "ComprensionLectora",
+      "nivel": 2,
+      "tiempoEstimado": 240,
+      "enunciado": "Read and answer:",
+      "texto": "Plants are living things that make their own food through photosynthesis in their leaves. To carry out this process, roots take up water and mineral salts from the soil, forming raw sap. The stem carries raw sap up to the leaves, where sunlight and carbon dioxide are used to produce food. Trees can be classified by their leaves into deciduous trees, which lose leaves in autumn, and evergreen trees, which stay green all year. Flowering plants make seeds, while non-flowering plants reproduce with spores or cones.",
+      "preguntas": [
+        {
+          "tipo": "EleccionMultiple",
+          "enunciado": "Where do plants make their own food through photosynthesis?",
+          "opciones": ["leaf", "trunk", "root", "petal"],
+          "respuestaCorrecta": "leaf"
+        },
+        {
+          "tipo": "RellenarHueco",
+          "enunciado": "The mixture of water and mineral salts absorbed from the soil is called raw [___].",
+          "respuestaCorrecta": "sap"
+        },
+        {
+          "tipo": "EleccionMultiple",
+          "enunciado": "What do non-flowering plants use to reproduce instead of seeds?",
+          "opciones": ["spores", "trunks", "petals", "raw sap"],
+          "respuestaCorrecta": "spores"
+        }
+      ]
+    },
+    {
+      "id": "cie-001-ex-016",
+      "fichaId": "cie-001",
+      "subject": "ciencias",
+      "tipo": "SopaLetras",
+      "nivel": 3,
+      "tiempoEstimado": 180,
+      "enunciado": "Encuentra las palabras:",
+      "palabras": ["RAWSAP", "PETAL", "SPORE", "TRUNK", "ROOT", "STEM"],
+      "cuadricula": [
+        ["P","L","A","T","E","P","K","R"],
+        ["G","H","P","Z","P","D","K","O"],
+        ["S","W","P","Z","F","M","N","O"],
+        ["T","C","P","I","L","S","U","T"],
+        ["E","E","R","O","P","S","R","Z"],
+        ["M","Z","M","J","S","J","T","U"],
+        ["P","A","S","W","A","R","T","V"],
+        ["U","L","V","F","Q","E","G","Y"]
+      ]
+    },
+    {
+      "id": "cie-001-ex-017",
+      "fichaId": "cie-001",
+      "subject": "ciencias",
+      "tipo": "MemoriaPareja",
+      "nivel": 3,
+      "tiempoEstimado": 180,
+      "enunciado": "Empareja cada término con su definición:",
+      "parejas": [
+        { "a": "raw sap", "b": "A mixture of water and mineral…" },
+        { "a": "petal", "b": "The colored part of a plant…" },
+        { "a": "spore", "b": "A reproductive structure that non-flowering plants…" },
+        { "a": "trunk", "b": "The hard and thick stem of…" },
+        { "a": "root", "b": "Holds the plant in the ground…" },
+        { "a": "stem", "b": "Holds up leaves and flowers and…" }
+      ]
+    },
+    {
+      "id": "cie-001-ex-018",
+      "fichaId": "cie-001",
+      "subject": "ciencias",
+      "tipo": "UnirColumnas",
+      "nivel": 2,
+      "tiempoEstimado": 90,
+      "enunciado": "Une cada definición con su término:",
+      "parejas": [
+        { "izquierda": "A mixture of water and mineral salts from the soil", "derecha": "raw sap" },
+        { "izquierda": "The colored part of a plant flower", "derecha": "petal" },
+        { "izquierda": "A reproductive structure that non-flowering plants use to reproduce", "derecha": "spore" },
+        { "izquierda": "The hard and thick stem of a tree", "derecha": "trunk" }
+      ]
+    }
+  ]
+}

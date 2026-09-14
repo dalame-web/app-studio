@@ -1,10 +1,11 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import useSesionStore from '../store/sesionStore';
 import useGamificacionStore from '../store/gamificacionStore';
-import { getAllSubjectStats, getRecentSessions, resetAllProgress, clearContent } from '../datos/db';
+import { getAllSubjectStats, getRecentSessions, resetAllProgress, clearContent, exportarProgreso, importarProgreso } from '../datos/db';
 import { checkAndSyncContent } from '../datos/contentSync';
 import { ASIGNATURAS } from './PantallaInicio';
 import { BtnVolver } from './PantallaFichas';
+import PantallaImportar from './PantallaImportar';
 
 function Semaforo({ accuracy }) {
   if (accuracy === null || accuracy === undefined) return <span className="text-gray-300 text-2xl">⚪</span>;
@@ -45,6 +46,11 @@ export default function PantallaAdmin() {
   const [resetEstado, setResetEstado]   = useState(null); // null | 'confirm' | 'done'
   const [borrarEstado, setBorrarEstado] = useState(null); // null | 'confirm' | 'cargando' | 'done' | 'error'
   const [appUpdEstado, setAppUpdEstado] = useState(null); // null | 'confirm' | 'cargando' | 'error'
+  const [exportEstado, setExportEstado] = useState(null); // null | 'error'
+  const [importEstado, setImportEstado] = useState(null); // null | 'cargando' | 'done' | 'error'
+  const [importResumen, setImportResumen] = useState(null);
+  const fileInputRef = useRef(null);
+  const [mostrarImportar, setMostrarImportar] = useState(false);
 
   useEffect(() => {
     if (!profileId) return;
@@ -114,6 +120,47 @@ export default function PantallaAdmin() {
     }
   }
 
+  async function handleExportarProgreso() {
+    setExportEstado(null);
+    try {
+      const backup = await exportarProgreso(profileId);
+      const blob = new Blob([JSON.stringify(backup, null, 2)], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `progreso-${new Date().toISOString().slice(0, 10)}.json`;
+      a.click();
+      URL.revokeObjectURL(url);
+    } catch {
+      setExportEstado('error');
+      setTimeout(() => setExportEstado(null), 4000);
+    }
+  }
+
+  function handleImportarClick() {
+    fileInputRef.current?.click();
+  }
+
+  async function handleImportarArchivo(e) {
+    const file = e.target.files?.[0];
+    e.target.value = ''; // permite volver a elegir el mismo archivo
+    if (!file) return;
+    setImportEstado('cargando');
+    setImportResumen(null);
+    try {
+      const texto = await file.text();
+      const backup = JSON.parse(texto);
+      const resumen = await importarProgreso(profileId, backup);
+      setImportResumen(resumen);
+      setImportEstado('done');
+      await recargarGami(profileId);
+      recargarStats();
+    } catch {
+      setImportEstado('error');
+    }
+    setTimeout(() => { setImportEstado(null); setImportResumen(null); }, 6000);
+  }
+
   async function handleBorrarContenido() {
     if (borrarEstado !== 'confirm') { setBorrarEstado('confirm'); return; }
     setBorrarEstado('cargando');
@@ -130,6 +177,10 @@ export default function PantallaAdmin() {
   }
 
   const meta = (id) => ASIGNATURAS.find(a => a.id === id);
+
+  if (mostrarImportar) {
+    return <PantallaImportar onClose={() => setMostrarImportar(false)} />;
+  }
 
   if (detalle && detalleStats) {
     const { stats: s, sessions } = detalleStats;
@@ -202,6 +253,15 @@ export default function PantallaAdmin() {
       </header>
 
       <main className="flex-1 overflow-y-auto p-4 max-w-2xl mx-auto w-full space-y-4">
+        {/* Importar contenido nuevo (JSON generado con Claude) */}
+        <button
+          onClick={() => setMostrarImportar(true)}
+          className="w-full bg-white border-2 border-indigo-200 hover:bg-indigo-50 text-indigo-700 font-bold py-3 px-4 rounded-2xl shadow-sm flex items-center justify-center gap-2 transition-all active:scale-95"
+        >
+          <span className="text-xl">📥</span>
+          <span>Importar fichas nuevas</span>
+        </button>
+
         {/* Actualización de contenido */}
         <button
           onClick={handleComprobarActualizacion}
@@ -255,6 +315,45 @@ export default function PantallaAdmin() {
         {appUpdEstado === 'error' && (
           <div className="bg-red-50 border-2 border-red-300 rounded-2xl p-3 text-sm text-red-700 text-center animate-aparecer">
             ❌ No se pudo actualizar. Comprueba la conexión.
+          </div>
+        )}
+
+        {/* Backup de progreso del niño */}
+        <div className="grid grid-cols-2 gap-3">
+          <button
+            onClick={handleExportarProgreso}
+            className="py-3 px-3 bg-gray-100 hover:bg-gray-200 text-gray-600 font-bold rounded-2xl shadow-sm flex items-center justify-center gap-2 transition-all active:scale-95 text-sm"
+          >
+            💾 Exportar progreso
+          </button>
+          <button
+            onClick={handleImportarClick}
+            disabled={importEstado === 'cargando'}
+            className="py-3 px-3 bg-gray-100 hover:bg-gray-200 disabled:bg-gray-200 text-gray-600 font-bold rounded-2xl shadow-sm flex items-center justify-center gap-2 transition-all active:scale-95 text-sm"
+          >
+            {importEstado === 'cargando' ? '⏳' : '📂'} Importar progreso
+          </button>
+          <input
+            ref={fileInputRef}
+            type="file"
+            accept="application/json"
+            onChange={handleImportarArchivo}
+            className="hidden"
+          />
+        </div>
+        {exportEstado === 'error' && (
+          <div className="bg-red-50 border border-red-200 rounded-2xl p-3 text-sm text-red-700 text-center animate-aparecer">
+            ❌ No se pudo exportar el progreso.
+          </div>
+        )}
+        {importEstado === 'done' && importResumen && (
+          <div className="bg-green-50 border border-green-300 rounded-2xl p-3 text-sm text-green-800 text-center animate-aparecer">
+            ✅ Progreso importado: {importResumen.exerciseLog} ejercicios · {importResumen.sessions} sesiones · {importResumen.fichaProgress} fichas.
+          </div>
+        )}
+        {importEstado === 'error' && (
+          <div className="bg-red-50 border border-red-200 rounded-2xl p-3 text-sm text-red-700 text-center animate-aparecer">
+            ❌ Ese archivo no es un backup de progreso válido.
           </div>
         )}
 

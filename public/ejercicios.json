@@ -1,6 +1,6 @@
 {
-  "version": "2026-06-06-3",
-  "fecha": "2026-06-06",
+  "version": "2026-09-11-1",
+  "fecha": "2026-09-11",
   "fichas": [
     {
       "id": "len-001",
@@ -293,13 +293,13 @@
               "texto": "Usa palabras escritas"
             },
             {
-              "texto": "Usa un gesto en lugar de palabras"
-            },
-            {
               "texto": "Usa sonidos para comunicar"
             },
             {
               "texto": "Usa imágenes para comunicar"
+            },
+            {
+              "texto": "Usa un gesto en lugar de palabras"
             }
           ],
           "respuestaCorrecta": "Usa un gesto en lugar de palabras"
@@ -314,13 +314,13 @@
           "enunciado": "¿Cuál de estos ejemplos NO es comunicación verbal?",
           "opciones": [
             {
+              "texto": "La sirena de un coche de bomberos"
+            },
+            {
               "texto": "Un mensaje de texto"
             },
             {
               "texto": "Una noticia en el periódico"
-            },
-            {
-              "texto": "La sirena de un coche de bomberos"
             },
             {
               "texto": "Leer una revista"
@@ -597,13 +597,13 @@
               "texto": "La comunicación oral es un tipo de comunicación no verbal"
             },
             {
-              "texto": "La comunicación escrita y la oral son dos tipos de comunicación verbal"
-            },
-            {
               "texto": "Los gestos son un tipo de comunicación verbal"
             },
             {
               "texto": "La comunicación no verbal solo usa imágenes"
+            },
+            {
+              "texto": "La comunicación escrita y la oral son dos tipos de comunicación verbal"
             }
           ],
           "respuestaCorrecta": "La comunicación escrita y la oral son dos tipos de comunicación verbal"
@@ -698,10 +698,10 @@
               "texto": "China"
             },
             {
-              "texto": "México"
+              "texto": "La India"
             },
             {
-              "texto": "La India"
+              "texto": "México"
             },
             {
               "texto": "Australia"
@@ -719,13 +719,13 @@
           "enunciado": "El español se habla en España, México y...",
           "opciones": [
             {
-              "texto": "muchos países de América Latina"
-            },
-            {
               "texto": "muchos países del Medio Oriente"
             },
             {
               "texto": "Francia, Bélgica y Suiza"
+            },
+            {
+              "texto": "muchos países de América Latina"
             },
             {
               "texto": "Estados Unidos y Australia"
@@ -813,10 +813,10 @@
               "texto": "En 4 países"
             },
             {
-              "texto": "En 5 países"
+              "texto": "En 2 países"
             },
             {
-              "texto": "En 2 países"
+              "texto": "En 5 países"
             }
           ],
           "respuestaCorrecta": "En 5 países"
@@ -1082,13 +1082,13 @@
           "enunciado": "¿Cuál de estas afirmaciones sobre las lenguas es CORRECTA según lo que has estudiado?",
           "opciones": [
             {
+              "texto": "Cada país o región tiene su propia lengua"
+            },
+            {
               "texto": "El español es la lengua más hablada del mundo"
             },
             {
               "texto": "Las lenguas no cambian con el tiempo"
-            },
-            {
-              "texto": "Cada país o región tiene su propia lengua"
             },
             {
               "texto": "El francés solo se habla en Francia"
@@ -1109,10 +1109,10 @@
               "texto": "Bélgica"
             },
             {
-              "texto": "Luxemburgo"
+              "texto": "Portugal"
             },
             {
-              "texto": "Portugal"
+              "texto": "Luxemburgo"
             },
             {
               "texto": "Mónaco"
@@ -1133,10 +1133,10 @@
               "texto": "Solo para escribir textos largos"
             },
             {
-              "texto": "Para hablar, escribir y entendernos entre nosotros"
+              "texto": "Solo para comunicarnos con gestos"
             },
             {
-              "texto": "Solo para comunicarnos con gestos"
+              "texto": "Para hablar, escribir y entendernos entre nosotros"
             },
             {
               "texto": "Para aprender matemáticas"
@@ -1187,13 +1187,13 @@
           "enunciado": "¿Cuántas letras tiene el abecedario?",
           "opciones": [
             {
+              "texto": "27 letras"
+            },
+            {
               "texto": "25 letras"
             },
             {
               "texto": "26 letras"
-            },
-            {
-              "texto": "27 letras"
             },
             {
               "texto": "28 letras"
@@ -1391,9 +1391,6 @@
           "enunciado": "¿En qué orden alfabético correcto van estas palabras: policía, futbolista, explorador, astronauta?",
           "opciones": [
             {
-              "texto": "astronauta, explorador, futbolista, policía"
-            },
-            {
               "texto": "explorador, astronauta, policía, futbolista"
             },
             {
@@ -1401,6 +1398,9 @@
             },
             {
               "texto": "astronauta, futbolista, explorador, policía"
+            },
+            {
+              "texto": "astronauta, explorador, futbolista, policía"
             }
           ],
           "respuestaCorrecta": "astronauta, explorador, futbolista, policía"
@@ -1415,13 +1415,13 @@
           "enunciado": "Dos palabras empiezan por la misma letra. ¿Qué debes comparar para ordenarlas? Recuerda los pasos del orden alfabético.",
           "opciones": [
             {
+              "texto": "La segunda letra de cada palabra"
+            },
+            {
               "texto": "La última letra de cada palabra"
             },
             {
               "texto": "El número de letras que tiene cada palabra"
-            },
-            {
-              "texto": "La segunda letra de cada palabra"
             },
             {
               "texto": "Si la palabra es larga o corta"
@@ -1442,10 +1442,10 @@
               "texto": "montaña"
             },
             {
-              "texto": "materia"
+              "texto": "mariposa"
             },
             {
-              "texto": "mariposa"
+              "texto": "materia"
             },
             {
               "texto": "Las tres van igual"
@@ -1635,9 +1635,6 @@
           "enunciado": "¿En qué orden alfabético correcto van estos nombres: Rafa, Ariadna, Javi, Kora?",
           "opciones": [
             {
-              "texto": "Ariadna, Javi, Kora, Rafa"
-            },
-            {
               "texto": "Javi, Ariadna, Rafa, Kora"
             },
             {
@@ -1645,6 +1642,9 @@
             },
             {
               "texto": "Kora, Ariadna, Javi, Rafa"
+            },
+            {
+              "texto": "Ariadna, Javi, Kora, Rafa"
             }
           ],
           "respuestaCorrecta": "Ariadna, Javi, Kora, Rafa"
@@ -1693,10 +1693,10 @@
           "enunciado": "¿Qué es un párrafo?",
           "opciones": [
             {
-              "texto": "Una sola oración muy larga"
+              "texto": "Un conjunto de oraciones escritas que comparten un tema"
             },
             {
-              "texto": "Un conjunto de oraciones escritas que comparten un tema"
+              "texto": "Una sola oración muy larga"
             },
             {
               "texto": "El título de un texto"
@@ -1893,10 +1893,10 @@
               "texto": "Punto final"
             },
             {
-              "texto": "Punto seguido"
+              "texto": "No se usa ningún punto"
             },
             {
-              "texto": "No se usa ningún punto"
+              "texto": "Punto seguido"
             }
           ],
           "respuestaCorrecta": "Punto seguido"
@@ -1911,13 +1911,13 @@
           "enunciado": "Has terminado de escribir tu redacción entera. ¿Qué punto pones al final? Recuerda los tres tipos de punto y cuándo se usa cada uno.",
           "opciones": [
             {
+              "texto": "Punto final"
+            },
+            {
               "texto": "Punto seguido"
             },
             {
               "texto": "Punto y aparte"
-            },
-            {
-              "texto": "Punto final"
             },
             {
               "texto": "No se pone ningún punto"
@@ -2017,10 +2017,10 @@
               "texto": "Un párrafo puede empezar con letra minúscula"
             },
             {
-              "texto": "Un párrafo finaliza con un punto y aparte"
+              "texto": "Un párrafo solo puede tener una oración"
             },
             {
-              "texto": "Un párrafo solo puede tener una oración"
+              "texto": "Un párrafo finaliza con un punto y aparte"
             },
             {
               "texto": "Un párrafo siempre termina con punto final"
@@ -2044,10 +2044,10 @@
               "texto": "Se escribe en la línea siguiente"
             },
             {
-              "texto": "Separa oraciones que pertenecen al mismo párrafo"
+              "texto": "Solo aparece una vez en todo el texto"
             },
             {
-              "texto": "Solo aparece una vez en todo el texto"
+              "texto": "Separa oraciones que pertenecen al mismo párrafo"
             }
           ],
           "respuestaCorrecta": "Separa oraciones que pertenecen al mismo párrafo"
@@ -2062,10 +2062,10 @@
           "enunciado": "Un texto tiene tres párrafos. ¿Cuántos puntos y aparte hay como mínimo? Recuerda que cada párrafo termina con punto y aparte, excepto el último que lleva punto final.",
           "opciones": [
             {
-              "texto": "Uno"
+              "texto": "Dos"
             },
             {
-              "texto": "Dos"
+              "texto": "Uno"
             },
             {
               "texto": "Tres"
@@ -2106,10 +2106,10 @@
           "enunciado": "¿Cuál de estas opciones describe correctamente los tres tipos de punto en orden?",
           "opciones": [
             {
-              "texto": "Seguido: mismo párrafo · Aparte: línea siguiente · Final: fin del texto"
+              "texto": "Seguido: fin del texto · Aparte: mismo párrafo · Final: línea siguiente"
             },
             {
-              "texto": "Seguido: fin del texto · Aparte: mismo párrafo · Final: línea siguiente"
+              "texto": "Seguido: mismo párrafo · Aparte: línea siguiente · Final: fin del texto"
             },
             {
               "texto": "Seguido: línea siguiente · Aparte: fin del texto · Final: mismo párrafo"
@@ -2196,10 +2196,10 @@
               "texto": "Tres partes"
             },
             {
-              "texto": "Cuatro partes"
+              "texto": "Cinco partes"
             },
             {
-              "texto": "Cinco partes"
+              "texto": "Cuatro partes"
             },
             {
               "texto": "Seis partes"
@@ -2392,10 +2392,10 @@
               "texto": "En la despedida"
             },
             {
-              "texto": "En el cuerpo"
+              "texto": "En la fecha"
             },
             {
-              "texto": "En la fecha"
+              "texto": "En el cuerpo"
             }
           ],
           "respuestaCorrecta": "En el cuerpo"
@@ -2410,13 +2410,13 @@
           "enunciado": "¿Cuál de estas opciones es una despedida correcta para una carta?",
           "opciones": [
             {
+              "texto": "Espero tus noticias"
+            },
+            {
               "texto": "Querida tía Marta:"
             },
             {
               "texto": "Madrid, 4 de abril de 2018"
-            },
-            {
-              "texto": "Espero tus noticias"
             },
             {
               "texto": "Juan"
@@ -2459,10 +2459,10 @@
               "texto": "Al saludo"
             },
             {
-              "texto": "Al cuerpo"
+              "texto": "A la fecha y lugar"
             },
             {
-              "texto": "A la fecha y lugar"
+              "texto": "Al cuerpo"
             },
             {
               "texto": "A la despedida"
@@ -2545,10 +2545,10 @@
               "texto": "El saludo va después del cuerpo"
             },
             {
-              "texto": "La fecha y el lugar van al principio de la carta"
+              "texto": "El cuerpo es la primera parte de la carta"
             },
             {
-              "texto": "El cuerpo es la primera parte de la carta"
+              "texto": "La fecha y el lugar van al principio de la carta"
             }
           ],
           "respuestaCorrecta": "La fecha y el lugar van al principio de la carta"
@@ -2563,13 +2563,13 @@
           "enunciado": "¿Cuál de estas despedidas NO aparece en el vocabulario estudiado?",
           "opciones": [
             {
+              "texto": "Con todo mi cariño"
+            },
+            {
               "texto": "Te echo de menos"
             },
             {
               "texto": "Escribe pronto"
-            },
-            {
-              "texto": "Con todo mi cariño"
             },
             {
               "texto": "Un abrazo"
@@ -2615,11 +2615,11 @@
           "enunciado": "¿Qué es la moda?",
           "opciones": [
             {
-              "texto": "El número más grande del grupo",
+              "texto": "El número que más se repite",
               "emoji": ""
             },
             {
-              "texto": "El número que más se repite",
+              "texto": "El número más grande del grupo",
               "emoji": ""
             },
             {
@@ -2657,15 +2657,15 @@
               "emoji": ""
             },
             {
+              "texto": "Rojo",
+              "emoji": ""
+            },
+            {
               "texto": "Azul",
               "emoji": ""
             },
             {
               "texto": "Amarillo",
-              "emoji": ""
-            },
-            {
-              "texto": "Rojo",
               "emoji": ""
             }
           ],
@@ -2784,10 +2784,6 @@
           "enunciado": "Números: 8, 3, 5, 3, 9, 3. Recuerda que la moda es el que más se repite. ¿Cuál es la moda?",
           "opciones": [
             {
-              "texto": "3",
-              "emoji": ""
-            },
-            {
               "texto": "5",
               "emoji": ""
             },
@@ -2797,6 +2793,10 @@
             },
             {
               "texto": "9",
+              "emoji": ""
+            },
+            {
+              "texto": "3",
               "emoji": ""
             }
           ],
@@ -2843,15 +2843,15 @@
           "enunciado": "Pedro anota las notas de sus exámenes: 7, 8, 7, 10, 7. ¿Cuál es la moda?",
           "opciones": [
             {
+              "texto": "7",
+              "emoji": ""
+            },
+            {
               "texto": "10",
               "emoji": ""
             },
             {
               "texto": "8",
-              "emoji": ""
-            },
-            {
-              "texto": "7",
               "emoji": ""
             },
             {
@@ -3010,15 +3010,15 @@
               "emoji": ""
             },
             {
-              "texto": "Porque el 7 aparece solo 2 veces y el 12 aparece 3 veces",
-              "emoji": ""
-            },
-            {
               "texto": "Porque el 7 no está en el centro del grupo",
               "emoji": ""
             },
             {
               "texto": "Porque el 12 es el último número del grupo",
+              "emoji": ""
+            },
+            {
+              "texto": "Porque el 7 aparece solo 2 veces y el 12 aparece 3 veces",
               "emoji": ""
             }
           ],
@@ -3055,11 +3055,11 @@
           "enunciado": "Grupo: 4, 4, 7, 7, 9. Tanto el 4 como el 7 aparecen 2 veces. ¿Qué ocurre con la moda?",
           "opciones": [
             {
-              "texto": "La moda es 9 porque es el mayor",
+              "texto": "No hay moda porque ninguno se repite más que los otros dos",
               "emoji": ""
             },
             {
-              "texto": "No hay moda porque ninguno se repite más que los otros dos",
+              "texto": "La moda es 9 porque es el mayor",
               "emoji": ""
             },
             {
@@ -3112,11 +3112,11 @@
           "enunciado": "¿Para qué sirve un gráfico de barras?",
           "opciones": [
             {
-              "texto": "Para sumar todos los números",
+              "texto": "Para ver fácilmente cuántos hay de cada cosa",
               "emoji": ""
             },
             {
-              "texto": "Para ver fácilmente cuántos hay de cada cosa",
+              "texto": "Para sumar todos los números",
               "emoji": ""
             },
             {
@@ -3154,11 +3154,11 @@
               "emoji": ""
             },
             {
-              "texto": "Azul",
+              "texto": "Rojo",
               "emoji": ""
             },
             {
-              "texto": "Rojo",
+              "texto": "Azul",
               "emoji": ""
             },
             {
@@ -3192,11 +3192,11 @@
               "emoji": ""
             },
             {
-              "texto": "Verde",
+              "texto": "Amarillo",
               "emoji": ""
             },
             {
-              "texto": "Amarillo",
+              "texto": "Verde",
               "emoji": ""
             },
             {
@@ -3252,11 +3252,11 @@
               "emoji": ""
             },
             {
-              "texto": "4",
+              "texto": "3",
               "emoji": ""
             },
             {
-              "texto": "3",
+              "texto": "4",
               "emoji": ""
             }
           ],
@@ -3313,11 +3313,11 @@
           "enunciado": "¿Qué diferencia hay entre el gráfico de barras y simplemente escribir los números?",
           "opciones": [
             {
-              "texto": "El gráfico solo sirve para colores",
+              "texto": "El gráfico ayuda a ver la información más fácilmente con un dibujo",
               "emoji": ""
             },
             {
-              "texto": "El gráfico ayuda a ver la información más fácilmente con un dibujo",
+              "texto": "El gráfico solo sirve para colores",
               "emoji": ""
             },
             {
@@ -3533,11 +3533,11 @@
               "emoji": ""
             },
             {
-              "texto": "Azul",
+              "texto": "Ninguno",
               "emoji": ""
             },
             {
-              "texto": "Ninguno",
+              "texto": "Azul",
               "emoji": ""
             }
           ],
@@ -3590,15 +3590,15 @@
           "enunciado": "¿Cuántas letras usaban los romanos para representar todos los números?",
           "opciones": [
             {
+              "texto": "7",
+              "emoji": ""
+            },
+            {
               "texto": "5",
               "emoji": ""
             },
             {
               "texto": "10",
-              "emoji": ""
-            },
-            {
-              "texto": "7",
               "emoji": ""
             },
             {
@@ -3649,15 +3649,15 @@
               "emoji": ""
             },
             {
+              "texto": "100",
+              "emoji": ""
+            },
+            {
               "texto": "500",
               "emoji": ""
             },
             {
               "texto": "50",
-              "emoji": ""
-            },
-            {
-              "texto": "100",
               "emoji": ""
             }
           ],
@@ -3739,11 +3739,11 @@
               "emoji": ""
             },
             {
-              "texto": "15",
+              "texto": "14",
               "emoji": ""
             },
             {
-              "texto": "14",
+              "texto": "15",
               "emoji": ""
             }
           ],
@@ -3837,15 +3837,15 @@
           "enunciado": "LX = 50 + 10. ¿Cuánto es LX?",
           "opciones": [
             {
+              "texto": "60",
+              "emoji": ""
+            },
+            {
               "texto": "40",
               "emoji": ""
             },
             {
               "texto": "510",
-              "emoji": ""
-            },
-            {
-              "texto": "60",
               "emoji": ""
             },
             {
@@ -3901,11 +3901,11 @@
               "emoji": ""
             },
             {
-              "texto": "XXX",
+              "texto": "VV",
               "emoji": ""
             },
             {
-              "texto": "VV",
+              "texto": "XXX",
               "emoji": ""
             },
             {
@@ -4065,15 +4065,15 @@
               "emoji": ""
             },
             {
-              "texto": "65",
-              "emoji": ""
-            },
-            {
               "texto": "75",
               "emoji": ""
             },
             {
               "texto": "45",
+              "emoji": ""
+            },
+            {
+              "texto": "65",
               "emoji": ""
             }
           ],
@@ -4148,11 +4148,11 @@
           "enunciado": "¿Cuándo se resta en los números romanos?",
           "opciones": [
             {
-              "texto": "Cuando un símbolo grande va antes de uno pequeño",
+              "texto": "Cuando un símbolo pequeño va antes de uno mayor",
               "emoji": ""
             },
             {
-              "texto": "Cuando un símbolo pequeño va antes de uno mayor",
+              "texto": "Cuando un símbolo grande va antes de uno pequeño",
               "emoji": ""
             },
             {
@@ -4228,11 +4228,11 @@
               "emoji": ""
             },
             {
-              "texto": "V, L, D",
+              "texto": "I, V, X",
               "emoji": ""
             },
             {
-              "texto": "I, V, X",
+              "texto": "V, L, D",
               "emoji": ""
             },
             {
@@ -4338,11 +4338,11 @@
               "emoji": ""
             },
             {
-              "texto": "90",
+              "texto": "100",
               "emoji": ""
             },
             {
-              "texto": "100",
+              "texto": "90",
               "emoji": ""
             }
           ],
@@ -4411,15 +4411,15 @@
           "enunciado": "¿Cuál de estas combinaciones de resta NO está permitida?",
           "opciones": [
             {
+              "texto": "VX",
+              "emoji": ""
+            },
+            {
               "texto": "IV",
               "emoji": ""
             },
             {
               "texto": "XL",
-              "emoji": ""
-            },
-            {
-              "texto": "VX",
               "emoji": ""
             },
             {
@@ -4478,11 +4478,11 @@
               "emoji": ""
             },
             {
-              "texto": "IX",
+              "texto": "IC",
               "emoji": ""
             },
             {
-              "texto": "IC",
+              "texto": "IX",
               "emoji": ""
             },
             {
@@ -4516,11 +4516,11 @@
               "emoji": ""
             },
             {
-              "texto": "IV = 4 (resta) y VI = 6 (suma)",
+              "texto": "IV = 6 (suma) y VI = 4 (resta)",
               "emoji": ""
             },
             {
-              "texto": "IV = 6 (suma) y VI = 4 (resta)",
+              "texto": "IV = 4 (resta) y VI = 6 (suma)",
               "emoji": ""
             },
             {
@@ -4599,11 +4599,11 @@
               "emoji": ""
             },
             {
-              "texto": "400",
+              "texto": "300",
               "emoji": ""
             },
             {
-              "texto": "300",
+              "texto": "400",
               "emoji": ""
             }
           ],
@@ -4654,11 +4654,11 @@
           "enunciado": "¿En qué dirección se construyen los números romanos combinados?",
           "opciones": [
             {
-              "texto": "De derecha a izquierda",
+              "texto": "De izquierda a derecha",
               "emoji": ""
             },
             {
-              "texto": "De izquierda a derecha",
+              "texto": "De derecha a izquierda",
               "emoji": ""
             },
             {
@@ -4696,11 +4696,11 @@
               "emoji": ""
             },
             {
-              "texto": "14",
+              "texto": "24",
               "emoji": ""
             },
             {
-              "texto": "24",
+              "texto": "14",
               "emoji": ""
             },
             {
@@ -4778,10 +4778,6 @@
           "enunciado": "93 = XC + III. ¿Cuál es el número romano correcto para 93?",
           "opciones": [
             {
-              "texto": "XCIII",
-              "emoji": ""
-            },
-            {
               "texto": "CXIII",
               "emoji": ""
             },
@@ -4791,6 +4787,10 @@
             },
             {
               "texto": "LXIII",
+              "emoji": ""
+            },
+            {
+              "texto": "XCIII",
               "emoji": ""
             }
           ],
@@ -4833,15 +4833,15 @@
           "enunciado": "El truco 2 dice: pequeño antes resta, después suma. ¿Cuánto es XI?",
           "opciones": [
             {
+              "texto": "11",
+              "emoji": ""
+            },
+            {
               "texto": "9",
               "emoji": ""
             },
             {
               "texto": "10",
-              "emoji": ""
-            },
-            {
-              "texto": "11",
               "emoji": ""
             },
             {
@@ -4906,11 +4906,11 @@
               "emoji": ""
             },
             {
-              "texto": "VIII",
+              "texto": "XC",
               "emoji": ""
             },
             {
-              "texto": "XC",
+              "texto": "VIII",
               "emoji": ""
             },
             {
@@ -5007,15 +5007,15 @@
               "emoji": ""
             },
             {
-              "texto": "LX",
-              "emoji": ""
-            },
-            {
               "texto": "VX",
               "emoji": ""
             },
             {
               "texto": "LC",
+              "emoji": ""
+            },
+            {
+              "texto": "LX",
               "emoji": ""
             }
           ],
@@ -5095,11 +5095,11 @@
           "enunciado": "¿Para qué usamos la longitud?",
           "opciones": [
             {
-              "texto": "Para saber cuánto pesa algo",
+              "texto": "Para saber cuánto mide algo",
               "emoji": ""
             },
             {
-              "texto": "Para saber cuánto mide algo",
+              "texto": "Para saber cuánto pesa algo",
               "emoji": ""
             },
             {
@@ -5137,11 +5137,11 @@
               "emoji": ""
             },
             {
-              "texto": "km",
+              "texto": "cm",
               "emoji": ""
             },
             {
-              "texto": "cm",
+              "texto": "km",
               "emoji": ""
             },
             {
@@ -5179,11 +5179,11 @@
               "emoji": ""
             },
             {
-              "texto": "10",
+              "texto": "1000",
               "emoji": ""
             },
             {
-              "texto": "1000",
+              "texto": "10",
               "emoji": ""
             }
           ],
@@ -5289,11 +5289,11 @@
               "emoji": ""
             },
             {
-              "texto": "Kilómetros",
+              "texto": "Milímetros",
               "emoji": ""
             },
             {
-              "texto": "Milímetros",
+              "texto": "Kilómetros",
               "emoji": ""
             }
           ],
@@ -5329,15 +5329,15 @@
           "enunciado": "La mesa de clase mide 1 metro de alto. ¿Cuántos centímetros son?",
           "opciones": [
             {
+              "texto": "100",
+              "emoji": ""
+            },
+            {
               "texto": "10",
               "emoji": ""
             },
             {
               "texto": "1000",
-              "emoji": ""
-            },
-            {
-              "texto": "100",
               "emoji": ""
             },
             {
@@ -5486,11 +5486,11 @@
               "emoji": ""
             },
             {
-              "texto": "Un lápiz mide 15 centímetros",
+              "texto": "Una ciudad está a 3 centímetros",
               "emoji": ""
             },
             {
-              "texto": "Una ciudad está a 3 centímetros",
+              "texto": "Un lápiz mide 15 centímetros",
               "emoji": ""
             }
           ],
@@ -5506,11 +5506,11 @@
           "enunciado": "Si cada persona midiera con su propio pie, ¿qué pasaría?",
           "opciones": [
             {
-              "texto": "Todos obtendrían el mismo resultado",
+              "texto": "Sería un lío porque cada pie tiene un tamaño diferente",
               "emoji": ""
             },
             {
-              "texto": "Sería un lío porque cada pie tiene un tamaño diferente",
+              "texto": "Todos obtendrían el mismo resultado",
               "emoji": ""
             },
             {
@@ -5615,15 +5615,15 @@
               "emoji": ""
             },
             {
+              "texto": "4",
+              "emoji": ""
+            },
+            {
               "texto": "3",
               "emoji": ""
             },
             {
               "texto": "1",
-              "emoji": ""
-            },
-            {
-              "texto": "4",
               "emoji": ""
             }
           ],
@@ -5640,15 +5640,15 @@
           "pista": "Piensa en las esquinas de una mesa.",
           "opciones": [
             {
-              "texto": "Las esquinas donde se unen los lados",
-              "emoji": ""
-            },
-            {
               "texto": "Los segmentos que forman la figura",
               "emoji": ""
             },
             {
               "texto": "Las aberturas que se forman en cada esquina",
+              "emoji": ""
+            },
+            {
+              "texto": "Las esquinas donde se unen los lados",
               "emoji": ""
             },
             {
@@ -5684,15 +5684,15 @@
               "emoji": ""
             },
             {
-              "texto": "4",
-              "emoji": ""
-            },
-            {
               "texto": "3",
               "emoji": ""
             },
             {
               "texto": "0",
+              "emoji": ""
+            },
+            {
+              "texto": "4",
               "emoji": ""
             }
           ],
@@ -6064,15 +6064,15 @@
           "pista": "Ambas figuras tienen 4 lados iguales. Fíjate en sus ángulos.",
           "opciones": [
             {
-              "texto": "El cuadrado tiene ángulos rectos y el rombo no",
-              "emoji": ""
-            },
-            {
               "texto": "El rombo tiene más lados que el cuadrado",
               "emoji": ""
             },
             {
               "texto": "El cuadrado tiene lados paralelos y el rombo no",
+              "emoji": ""
+            },
+            {
+              "texto": "El cuadrado tiene ángulos rectos y el rombo no",
               "emoji": ""
             },
             {
@@ -6093,10 +6093,6 @@
           "pista": "Descarta los que tienen ángulos rectos. Fíjate en si todos los lados son iguales o solo los opuestos.",
           "opciones": [
             {
-              "texto": "Romboide",
-              "emoji": ""
-            },
-            {
               "texto": "Cuadrado",
               "emoji": ""
             },
@@ -6106,6 +6102,10 @@
             },
             {
               "texto": "Trapecio",
+              "emoji": ""
+            },
+            {
+              "texto": "Romboide",
               "emoji": ""
             }
           ],
@@ -6198,11 +6198,11 @@
           "pista": "El perímetro rodea la figura por fuera: hay que sumar todos los bordes.",
           "opciones": [
             {
-              "texto": "Multiplicando el lado por sí mismo",
+              "texto": "Sumando la longitud de todos sus lados",
               "emoji": ""
             },
             {
-              "texto": "Sumando la longitud de todos sus lados",
+              "texto": "Multiplicando el lado por sí mismo",
               "emoji": ""
             },
             {
@@ -6242,11 +6242,11 @@
               "emoji": ""
             },
             {
-              "texto": "36 cm",
+              "texto": "24 cm",
               "emoji": ""
             },
             {
-              "texto": "24 cm",
+              "texto": "36 cm",
               "emoji": ""
             },
             {
@@ -6292,15 +6292,15 @@
           "pista": "Suma los tres lados: 7 + 6 + 9.",
           "opciones": [
             {
-              "texto": "22 cm",
-              "emoji": ""
-            },
-            {
               "texto": "20 cm",
               "emoji": ""
             },
             {
               "texto": "24 cm",
+              "emoji": ""
+            },
+            {
+              "texto": "22 cm",
               "emoji": ""
             },
             {
@@ -6372,15 +6372,15 @@
               "emoji": ""
             },
             {
-              "texto": "17 cm",
-              "emoji": ""
-            },
-            {
               "texto": "14 cm",
               "emoji": ""
             },
             {
               "texto": "16 cm",
+              "emoji": ""
+            },
+            {
+              "texto": "17 cm",
               "emoji": ""
             }
           ],
@@ -6451,15 +6451,15 @@
           "pista": "Si 4 × l = 24, divide 24 entre 4.",
           "opciones": [
             {
+              "texto": "6 cm",
+              "emoji": ""
+            },
+            {
               "texto": "8 cm",
               "emoji": ""
             },
             {
               "texto": "4 cm",
-              "emoji": ""
-            },
-            {
-              "texto": "6 cm",
               "emoji": ""
             },
             {
@@ -6528,11 +6528,11 @@
           "pista": "Si 2 × (8 + A) = 26, primero divide 26 entre 2, luego resta 8.",
           "opciones": [
             {
-              "texto": "5 cm",
+              "texto": "4 cm",
               "emoji": ""
             },
             {
-              "texto": "4 cm",
+              "texto": "5 cm",
               "emoji": ""
             },
             {
@@ -6620,15 +6620,15 @@
               "emoji": ""
             },
             {
-              "texto": "5 cm",
-              "emoji": ""
-            },
-            {
               "texto": "6 cm",
               "emoji": ""
             },
             {
               "texto": "8 cm",
+              "emoji": ""
+            },
+            {
+              "texto": "5 cm",
               "emoji": ""
             }
           ],
@@ -6686,11 +6686,11 @@
           "pista": "La palabra 'tri' significa tres.",
           "opciones": [
             {
-              "texto": "4",
+              "texto": "3",
               "emoji": ""
             },
             {
-              "texto": "3",
+              "texto": "4",
               "emoji": ""
             },
             {
@@ -6719,11 +6719,11 @@
               "emoji": ""
             },
             {
-              "texto": "45°",
+              "texto": "60°",
               "emoji": ""
             },
             {
-              "texto": "60°",
+              "texto": "45°",
               "emoji": ""
             },
             {
@@ -6918,15 +6918,15 @@
           "pista": "Un ángulo obtuso es más abierto que un ángulo recto. Mide más de 90°.",
           "opciones": [
             {
+              "texto": "1 ángulo obtuso",
+              "emoji": ""
+            },
+            {
               "texto": "1 ángulo recto",
               "emoji": ""
             },
             {
               "texto": "3 ángulos agudos",
-              "emoji": ""
-            },
-            {
-              "texto": "1 ángulo obtuso",
               "emoji": ""
             },
             {
@@ -7214,11 +7214,11 @@
               "emoji": ""
             },
             {
-              "texto": "45°",
+              "texto": "50°",
               "emoji": ""
             },
             {
-              "texto": "50°",
+              "texto": "45°",
               "emoji": ""
             }
           ],
@@ -7310,15 +7310,15 @@
           "pista": "Piensa en una caja: tiene una cara arriba, una abajo y cuatro a los lados.",
           "opciones": [
             {
+              "texto": "6",
+              "emoji": ""
+            },
+            {
               "texto": "4",
               "emoji": ""
             },
             {
               "texto": "8",
-              "emoji": ""
-            },
-            {
-              "texto": "6",
               "emoji": ""
             },
             {
@@ -7383,11 +7383,11 @@
               "emoji": ""
             },
             {
-              "texto": "Por las aristas",
+              "texto": "Por las caras",
               "emoji": ""
             },
             {
-              "texto": "Por las caras",
+              "texto": "Por las aristas",
               "emoji": ""
             },
             {
@@ -7465,11 +7465,11 @@
           "pista": "No basta con tener 6 cuadrados: también importa dónde está cada uno.",
           "opciones": [
             {
-              "texto": "Deben ser de colores diferentes",
+              "texto": "Deben estar en la posición correcta",
               "emoji": ""
             },
             {
-              "texto": "Deben estar en la posición correcta",
+              "texto": "Deben ser de colores diferentes",
               "emoji": ""
             },
             {
@@ -7565,11 +7565,11 @@
               "emoji": ""
             },
             {
-              "texto": "4",
+              "texto": "3",
               "emoji": ""
             },
             {
-              "texto": "3",
+              "texto": "4",
               "emoji": ""
             },
             {
@@ -7594,11 +7594,11 @@
               "emoji": ""
             },
             {
-              "texto": "6",
+              "texto": "8",
               "emoji": ""
             },
             {
-              "texto": "8",
+              "texto": "6",
               "emoji": ""
             },
             {
@@ -7659,15 +7659,15 @@
               "emoji": ""
             },
             {
-              "texto": "No formará un cubo",
-              "emoji": ""
-            },
-            {
               "texto": "Formará un rectángulo",
               "emoji": ""
             },
             {
               "texto": "Formará una pirámide",
+              "emoji": ""
+            },
+            {
+              "texto": "No formará un cubo",
               "emoji": ""
             }
           ],
@@ -7684,15 +7684,15 @@
           "pista": "Primero cuenta los que sí tienen forma de cruz (Tipos 1, 2 y 3). Luego resta al total.",
           "opciones": [
             {
+              "texto": "3",
+              "emoji": ""
+            },
+            {
               "texto": "2",
               "emoji": ""
             },
             {
               "texto": "4",
-              "emoji": ""
-            },
-            {
-              "texto": "3",
               "emoji": ""
             },
             {
@@ -7760,11 +7760,11 @@
           "pista": "La probabilidad responde a la pregunta: ¿puede pasar esto o no?",
           "opciones": [
             {
-              "texto": "Para medir la longitud de las figuras",
+              "texto": "Para saber qué tan posible es que ocurra algo",
               "emoji": ""
             },
             {
-              "texto": "Para saber qué tan posible es que ocurra algo",
+              "texto": "Para medir la longitud de las figuras",
               "emoji": ""
             },
             {
@@ -7793,11 +7793,11 @@
               "emoji": ""
             },
             {
-              "texto": "Imposible",
+              "texto": "Seguro",
               "emoji": ""
             },
             {
-              "texto": "Seguro",
+              "texto": "Imposible",
               "emoji": ""
             },
             {
@@ -7822,11 +7822,11 @@
               "emoji": ""
             },
             {
-              "texto": "Imposible",
+              "texto": "Posible",
               "emoji": ""
             },
             {
-              "texto": "Posible",
+              "texto": "Imposible",
               "emoji": ""
             },
             {
@@ -7866,11 +7866,11 @@
               "emoji": ""
             },
             {
-              "texto": "Seguro",
+              "texto": "Dudoso",
               "emoji": ""
             },
             {
-              "texto": "Dudoso",
+              "texto": "Seguro",
               "emoji": ""
             }
           ],
@@ -7992,15 +7992,15 @@
           "pista": "Imposible significa que no hay ninguna bola de ese color en la bolsa.",
           "opciones": [
             {
+              "texto": "Sacar una bola verde",
+              "emoji": ""
+            },
+            {
               "texto": "Sacar una bola roja",
               "emoji": ""
             },
             {
               "texto": "Sacar una bola azul",
-              "emoji": ""
-            },
-            {
-              "texto": "Sacar una bola verde",
               "emoji": ""
             },
             {
@@ -8036,11 +8036,11 @@
               "emoji": ""
             },
             {
-              "texto": "Imposible",
+              "texto": "Posible",
               "emoji": ""
             },
             {
-              "texto": "Posible",
+              "texto": "Imposible",
               "emoji": ""
             },
             {
@@ -8186,11 +8186,11 @@
               "emoji": ""
             },
             {
-              "texto": "El suceso seguro siempre ocurrirá",
+              "texto": "El suceso posible nunca ocurre",
               "emoji": ""
             },
             {
-              "texto": "El suceso posible nunca ocurre",
+              "texto": "El suceso seguro siempre ocurrirá",
               "emoji": ""
             }
           ],
@@ -8218,15 +8218,15 @@
           "pista": "Un suceso seguro ocurre siempre, pase lo que pase. Comprueba cuál se cumple con cualquier número del 1 al 6.",
           "opciones": [
             {
+              "texto": "Obtener un número menor que 7",
+              "emoji": ""
+            },
+            {
               "texto": "Obtener el número 6",
               "emoji": ""
             },
             {
               "texto": "Obtener un número par",
-              "emoji": ""
-            },
-            {
-              "texto": "Obtener un número menor que 7",
               "emoji": ""
             },
             {
@@ -8251,15 +8251,15 @@
               "emoji": ""
             },
             {
+              "texto": "Sacar bola amarilla de bolsa sin bolas amarillas",
+              "emoji": ""
+            },
+            {
               "texto": "Sacar bola roja de bolsa con bolas rojas y azules",
               "emoji": ""
             },
             {
               "texto": "Obtener número menor que 7 al tirar un dado",
-              "emoji": ""
-            },
-            {
-              "texto": "Sacar bola amarilla de bolsa sin bolas amarillas",
               "emoji": ""
             }
           ],

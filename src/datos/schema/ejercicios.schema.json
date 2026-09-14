@@ -1,0 +1,207 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://dalame-web.github.io/app-studio/schema/ejercicios.schema.json",
+  "title": "Ficha de ejercicios — app educativa",
+  "description": "Schema estructural (tipos, campos obligatorios, longitudes fijas). Las reglas semánticas (p.ej. que una palabra exista realmente en la sopa de letras, o que no haya opciones duplicadas) siguen viviendo en validacion.js — este schema es la primera capa, no la única.",
+  "$defs": {
+    "opcionTexto": {
+      "type": "object",
+      "required": ["texto"],
+      "properties": {
+        "texto": { "type": "string" },
+        "emoji": { "type": "string" },
+        "svg": { "type": "string" },
+        "imagen": { "type": "string" }
+      }
+    },
+    "camposComunes": {
+      "type": "object",
+      "required": ["id", "fichaId", "subject", "tipo"],
+      "properties": {
+        "id": { "type": "string" },
+        "fichaId": { "type": "string" },
+        "subject": { "enum": ["matematicas", "lengua", "ciencias", "social", "ingles", "valores"] },
+        "nivel": { "enum": [1, 2, 3] },
+        "tiempoEstimado": { "type": "number" },
+        "pista": { "type": "string" },
+        "imagenEnunciado": { "type": "string" },
+        "svgEnunciado": { "type": "string" }
+      }
+    },
+    "eleccionMultiple": {
+      "allOf": [{ "$ref": "#/$defs/camposComunes" }, {
+        "type": "object",
+        "required": ["enunciado", "opciones", "respuestaCorrecta"],
+        "properties": {
+          "tipo": { "const": "EleccionMultiple" },
+          "enunciado": { "type": "string" },
+          "opciones": { "type": "array", "minItems": 2, "items": { "$ref": "#/$defs/opcionTexto" } },
+          "respuestaCorrecta": { "type": "string" }
+        }
+      }]
+    },
+    "rellenarHueco": {
+      "allOf": [{ "$ref": "#/$defs/camposComunes" }, {
+        "type": "object",
+        "required": ["enunciado", "respuestaCorrecta"],
+        "properties": {
+          "tipo": { "const": "RellenarHueco" },
+          "enunciado": { "type": "string", "pattern": "\\[___\\]" },
+          "respuestaCorrecta": { "type": "string", "minLength": 1 }
+        }
+      }]
+    },
+    "arrastrarPalabras": {
+      "allOf": [{ "$ref": "#/$defs/camposComunes" }, {
+        "type": "object",
+        "required": ["fraseConHuecos", "banco", "respuestasCorrectas"],
+        "properties": {
+          "tipo": { "const": "ArrastrarPalabras" },
+          "fraseConHuecos": { "type": "string" },
+          "banco": { "type": "array", "items": { "type": "string" } },
+          "respuestasCorrectas": { "type": "array", "items": { "type": "string" } }
+        }
+      }]
+    },
+    "ordenarFrase": {
+      "allOf": [{ "$ref": "#/$defs/camposComunes" }, {
+        "type": "object",
+        "required": ["palabrasDesordenadas", "fraseCorrecta"],
+        "properties": {
+          "tipo": { "const": "OrdenarFrase" },
+          "palabrasDesordenadas": { "type": "array", "minItems": 3, "items": { "type": "string" } },
+          "fraseCorrecta": { "type": "string" }
+        }
+      }]
+    },
+    "unirColumnas": {
+      "allOf": [{ "$ref": "#/$defs/camposComunes" }, {
+        "type": "object",
+        "required": ["parejas"],
+        "properties": {
+          "tipo": { "const": "UnirColumnas" },
+          "parejas": {
+            "type": "array", "minItems": 4, "maxItems": 4,
+            "items": {
+              "type": "object",
+              "required": ["izquierda", "derecha"],
+              "properties": { "izquierda": { "type": "string" }, "derecha": { "type": "string" } }
+            }
+          }
+        }
+      }]
+    },
+    "clasificarGrupos": {
+      "allOf": [{ "$ref": "#/$defs/camposComunes" }, {
+        "type": "object",
+        "required": ["grupos", "items"],
+        "properties": {
+          "tipo": { "const": "ClasificarGrupos" },
+          "grupos": {
+            "type": "array", "minItems": 2, "maxItems": 3,
+            "items": {
+              "type": "object",
+              "required": ["id", "nombre"],
+              "properties": { "id": { "type": "string" }, "nombre": { "type": "string" } }
+            }
+          },
+          "items": {
+            "type": "array", "minItems": 4,
+            "items": {
+              "type": "object",
+              "required": ["id", "texto", "grupoId"],
+              "properties": {
+                "id": { "type": "string" },
+                "texto": { "type": "string" },
+                "grupoId": { "type": "string" }
+              }
+            }
+          }
+        }
+      }]
+    },
+    "completarSerie": {
+      "allOf": [{ "$ref": "#/$defs/camposComunes" }, {
+        "type": "object",
+        "required": ["serie", "opciones", "respuestaCorrecta"],
+        "properties": {
+          "tipo": { "const": "CompletarSerie" },
+          "serie": { "type": "array" },
+          "opciones": { "type": "array", "minItems": 2, "items": { "type": "string" } },
+          "respuestaCorrecta": { "type": "string" }
+        }
+      }]
+    },
+    "sopaLetras": {
+      "allOf": [{ "$ref": "#/$defs/camposComunes" }, {
+        "type": "object",
+        "required": ["palabras", "cuadricula"],
+        "properties": {
+          "tipo": { "const": "SopaLetras" },
+          "palabras": { "type": "array", "minItems": 1, "items": { "type": "string" } },
+          "cuadricula": {
+            "type": "array", "minItems": 8, "maxItems": 8,
+            "items": { "type": "array", "minItems": 8, "maxItems": 8, "items": { "type": "string" } }
+          }
+        }
+      }]
+    },
+    "memoriaPareja": {
+      "allOf": [{ "$ref": "#/$defs/camposComunes" }, {
+        "type": "object",
+        "required": ["parejas"],
+        "properties": {
+          "tipo": { "const": "MemoriaPareja" },
+          "parejas": {
+            "type": "array", "minItems": 6, "maxItems": 6,
+            "items": {
+              "type": "object",
+              "required": ["a", "b"],
+              "properties": { "a": { "type": "string" }, "b": { "type": "string" } }
+            }
+          }
+        }
+      }]
+    },
+    "problemaVisual": {
+      "allOf": [{ "$ref": "#/$defs/camposComunes" }, {
+        "type": "object",
+        "required": ["enunciado", "respuestaCorrecta"],
+        "properties": {
+          "tipo": { "const": "ProblemaVisual" },
+          "enunciado": { "type": "string" },
+          "esNumerico": { "type": "boolean" },
+          "opciones": { "type": "array", "items": { "type": "string" } },
+          "respuestaCorrecta": { "type": "string" },
+          "visual": { "type": "object" }
+        }
+      }]
+    },
+    "comprensionLectora": {
+      "allOf": [{ "$ref": "#/$defs/camposComunes" }, {
+        "type": "object",
+        "required": ["texto", "preguntas"],
+        "properties": {
+          "tipo": { "const": "ComprensionLectora" },
+          "texto": { "type": "string" },
+          "preguntas": {
+            "type": "array", "minItems": 2,
+            "items": {
+              "type": "object",
+              "required": ["tipo", "enunciado", "respuestaCorrecta"],
+              "properties": {
+                "tipo": { "enum": ["EleccionMultiple", "RellenarHueco"] },
+                "enunciado": { "type": "string" },
+                "opciones": { "type": "array", "items": { "type": "string" } },
+                "respuestaCorrecta": { "type": "string" }
+              }
+            }
+          }
+        }
+      }]
+    }
+  },
+
+  "description": "Sin schema raíz para 'ficha' a propósito: cada ejercicio se valida contra el $def de SU tipo (no contra una unión de los 11), para no generar ruido de errores de los otros 10 tipos que no aplican. Ver validacionSchema.js.",
+  "type": "object"
+}

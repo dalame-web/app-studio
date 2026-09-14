@@ -1,0 +1,42 @@
+{
+  "version": "2026-09-11-1",
+  "subject": "lengua",
+  "fichas": [
+    {
+      "id": "len-001",
+      "titulo": "La comunicación: verbal y no verbal",
+      "nivel": 1,
+      "numEjercicios": 18
+    },
+    {
+      "id": "len-002",
+      "titulo": "Las lenguas y sus hablantes",
+      "nivel": 1,
+      "numEjercicios": 17
+    },
+    {
+      "id": "len-003",
+      "titulo": "El abecedario y el orden alfabético",
+      "nivel": 1,
+      "numEjercicios": 17
+    },
+    {
+      "id": "len-004",
+      "titulo": "El punto y el párrafo",
+      "nivel": 2,
+      "numEjercicios": 18
+    },
+    {
+      "id": "len-005",
+      "titulo": "La carta",
+      "nivel": 2,
+      "numEjercicios": 17
+    },
+    {
+      "id": "len-006",
+      "titulo": "La comunicación verbal y no verbal",
+      "nivel": 1,
+      "numEjercicios": 18
+    }
+  ]
+}

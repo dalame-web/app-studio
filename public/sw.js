@@ -1,6 +1,6 @@
-// Service Worker — App Educativa 2º Primaria
+// Service Worker — App Educativa
 // IMPORTANTE: cambiar el número de versión fuerza recarga en todos los dispositivos
-const CACHE = 'edu-app-v4';
+const CACHE = 'edu-app-v6';
 
 // Al instalar: cachea el shell básico
 self.addEventListener('install', event => {
@@ -33,11 +33,19 @@ self.addEventListener('fetch', event => {
 
   const url = new URL(event.request.url);
 
-  // index.html, raíz y datos JSON → network-first
+  // El editor de fichas (editor.html, herramienta local de desarrollo) NO forma
+  // parte de la PWA y no debe pasar por este Service Worker en absoluto. Sin este
+  // bypass, un fallo de red pasajero al navegar a /editor.html activaba el
+  // "si es navegación y no hay red, sirve index.html" de más abajo — sirviendo
+  // por error la app real en su lugar, sin aviso ninguno.
+  if (url.pathname === '/editor.html' || url.pathname.startsWith('/src/editor')) return;
+
+  // index.html, raíz y datos JSON (incl. content/*.json por asignatura) → network-first
   // index.html NUNCA debe servirse desde caché: referencia hashes de JS/CSS que cambian en cada build
   if (
     url.pathname.endsWith('manifest.json') ||
     url.pathname.endsWith('ejercicios.json') ||
+    url.pathname.includes('/content/') ||
     url.pathname.endsWith('index.html') ||
     url.pathname.endsWith('/app-studio/') ||
     url.pathname === '/app-studio'

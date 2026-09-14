@@ -1,6 +1,6 @@
-# 📚 App Educativa — 3º Primaria
+# 📚 App Educativa — 4º Primaria
 
-App web educativa offline-first para niños de 7-8 años. Currículo de 2º Primaria (España): Matemáticas, Lengua, Ciencias Naturales, Ciencias Sociales, Inglés y Valores Cívicos.
+App web educativa offline-first para niños de 9-10 años. Currículo de 4º Primaria (España): Matemáticas, Lengua, Ciencias Naturales, Ciencias Sociales, Inglés y Valores Cívicos.
 
 ## 🎮 Funcionalidades
 

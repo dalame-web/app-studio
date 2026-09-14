@@ -43,7 +43,9 @@ jobs:
 
       - name: Compilar APK debug
         working-directory: android
-        run: ./gradlew assembleDebug
+        run: |
+          chmod +x ./gradlew
+          ./gradlew assembleDebug
 
       - name: Publicar APK en public/app.apk
         run: |

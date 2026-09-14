@@ -1,0 +1,12 @@
+{
+  "version": "2026-09-15-test",
+  "subject": "ciencias",
+  "fichas": [
+    {
+      "id": "cie-001",
+      "titulo": "Main Parts and Types of Plants",
+      "nivel": 1,
+      "numEjercicios": 18
+    }
+  ]
+}

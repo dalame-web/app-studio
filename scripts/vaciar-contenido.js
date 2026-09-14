@@ -55,7 +55,7 @@ writeFileSync(EJERCICIOS_PATH, JSON.stringify(nuevoEjercicios, null, 2), 'utf8')
 ok(`ejercicios.json vaciado (fichas: []) — versión ${version}`);
 
 // Actualizar manifest
-const nuevoManifest = { ...manifest, version, fecha, asignaturas: [] };
+const nuevoManifest = { ...manifest, version, fecha, asignaturas: {} };
 writeFileSync(MANIFEST_PATH, JSON.stringify(nuevoManifest, null, 2), 'utf8');
 ok(`manifest.json actualizado — versión ${version}`);
 
@@ -86,11 +86,8 @@ try {
 console.log(`
 ${C.green}${C.bold}🎉 Listo.${C.reset}
 
-Próximos pasos en cada dispositivo (tablet, móvil, etc.):
-  1. Abre la app
-  2. Entra al admin (PIN 1234)
-  3. Toca "${C.bold}Borrar contenido y recargar desde cero${C.reset}"
-  4. La app borra el contenido local y queda lista para el nuevo contenido
+Cada dispositivo borrará el contenido local solo, la próxima vez que sincronice
+(al abrir la app, o al pulsar "Comprobar contenido nuevo" en el admin).
 
 Cuando tengas las fichas nuevas generadas:
   → npm run publicar   (pega el JSON de Claude)

@@ -4,8 +4,14 @@ import BotonAudio from '../../components/BotonAudio';
 import ChipInstruccion from '../ChipInstruccion';
 import MediaRender from '../MediaRender';
 
+// Quita acentos pero NO toca la "ñ" — es una letra distinta en español, no una "n" con tilde.
 function normalizar(s) {
-  return s.trim().toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+  return s.trim().toLowerCase()
+    .replace(/[áàäâ]/g, 'a')
+    .replace(/[éèëê]/g, 'e')
+    .replace(/[íìïî]/g, 'i')
+    .replace(/[óòöô]/g, 'o')
+    .replace(/[úùüû]/g, 'u');
 }
 
 export default function RellenarHueco({ ejercicio, intentos, fichaContenido, asignatura, onCorrecto, onIncorrecto }) {

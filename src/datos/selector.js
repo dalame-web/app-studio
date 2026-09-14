@@ -1,12 +1,12 @@
 import { getEjerciciosByFicha, getExerciseLogForFicha, getSubjectStats } from './db';
 
-function calcRecencyScore(lastTimestamp) {
+export function calcRecencyScore(lastTimestamp) {
   if (!lastTimestamp) return 1;
   const daysSince = (Date.now() - lastTimestamp) / 86400000;
   return 1 / (daysSince + 1);
 }
 
-function calcWeight(ejercicio, logMap) {
+export function calcWeight(ejercicio, logMap) {
   const logs = logMap[ejercicio.id] ?? [];
   const accuracy = logs.length === 0 ? 0.5 : logs.filter(l => l.correct).length / logs.length;
   const lastLog = logs.sort((a, b) => b.timestamp - a.timestamp)[0];
@@ -14,7 +14,7 @@ function calcWeight(ejercicio, logMap) {
   return (1 - accuracy) * 0.7 + recency * 0.3;
 }
 
-function weightedShuffle(items, weights) {
+export function weightedShuffle(items, weights) {
   const indexed = items.map((item, i) => ({ item, weight: weights[i] }));
   const result = [];
   while (indexed.length > 0) {
@@ -81,7 +81,7 @@ export async function actualizarNivel(profileId, subject, recentSessions) {
   const accuracies = recentSessions.map(s => (s.correctCount ?? 0) / Math.max(s.totalExercises ?? 1, 1));
   const media = accuracies.reduce((a, b) => a + b, 0) / accuracies.length;
 
-  const stats = await import('./db').then(m => m.getSubjectStats(profileId, subject));
+  const stats = await getSubjectStats(profileId, subject);
   const nivelActual = stats?.nivelActual ?? 1;
 
   if (media > 0.80) return Math.min(nivelActual + 1, 3);

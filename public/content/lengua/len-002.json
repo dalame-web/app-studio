@@ -1,0 +1,536 @@
+{
+  "id": "len-002",
+  "subject": "lengua",
+  "titulo": "Las lenguas y sus hablantes",
+  "nivel": 1,
+  "contenido": "Una lengua es una manera que tenemos las personas para comunicarnos. Es un conjunto de palabras y reglas que usamos para hablar, escribir y entendernos entre nosotros. Cada país o región tiene su propia lengua. Hay muchas lenguas en el mundo que cambian y evolucionan. Algunas de las lenguas más habladas son el inglés, el español, el francés, el chino, el hindi y el árabe.",
+  "ejemplos": [
+    "Inglés: hablado en Estados Unidos, Reino Unido y Australia.",
+    "Español: hablado en España, México y muchos países de América Latina.",
+    "Francés: hablado en Francia, Bélgica, Suiza, Luxemburgo y Mónaco.",
+    "Chino: la lengua más hablada en el mundo, principalmente en China.",
+    "Hindi: hablado en la India.",
+    "Árabe: hablado en muchos países del Medio Oriente."
+  ],
+  "palabrasClave": [
+    "lengua",
+    "hablantes",
+    "inglés",
+    "español",
+    "francés",
+    "chino",
+    "hindi",
+    "árabe",
+    "países",
+    "comunicarnos",
+    "palabras",
+    "reglas"
+  ],
+  "tiposEjercicio": [
+    "EleccionMultiple",
+    "UnirColumnas",
+    "RellenarHueco",
+    "ClasificarGrupos",
+    "SopaLetras",
+    "MemoriaPareja",
+    "CompletarSerie",
+    "ArrastrarPalabras",
+    "OrdenarFrase"
+  ],
+  "ejerciciosDerivar": 17,
+  "ejercicios": [
+    {
+      "id": "len-002-ex-001",
+      "fichaId": "len-002",
+      "subject": "lengua",
+      "tipo": "EleccionMultiple",
+      "nivel": 1,
+      "tiempoEstimado": 30,
+      "enunciado": "¿Qué es una lengua?",
+      "opciones": [
+        {
+          "texto": "Un conjunto de palabras y reglas para comunicarnos"
+        },
+        {
+          "texto": "Un tipo de escritura con dibujos"
+        },
+        {
+          "texto": "Una señal de tráfico internacional"
+        },
+        {
+          "texto": "Un instrumento musical"
+        }
+      ],
+      "respuestaCorrecta": "Un conjunto de palabras y reglas para comunicarnos"
+    },
+    {
+      "id": "len-002-ex-002",
+      "fichaId": "len-002",
+      "subject": "lengua",
+      "tipo": "RellenarHueco",
+      "nivel": 1,
+      "tiempoEstimado": 30,
+      "enunciado": "El [___] es la lengua más hablada en el mundo.",
+      "respuestaCorrecta": "chino"
+    },
+    {
+      "id": "len-002-ex-003",
+      "fichaId": "len-002",
+      "subject": "lengua",
+      "tipo": "EleccionMultiple",
+      "nivel": 1,
+      "tiempoEstimado": 30,
+      "enunciado": "¿En qué país se habla principalmente el hindi?",
+      "opciones": [
+        {
+          "texto": "China"
+        },
+        {
+          "texto": "La India"
+        },
+        {
+          "texto": "México"
+        },
+        {
+          "texto": "Australia"
+        }
+      ],
+      "respuestaCorrecta": "La India"
+    },
+    {
+      "id": "len-002-ex-004",
+      "fichaId": "len-002",
+      "subject": "lengua",
+      "tipo": "EleccionMultiple",
+      "nivel": 1,
+      "tiempoEstimado": 30,
+      "enunciado": "El español se habla en España, México y...",
+      "opciones": [
+        {
+          "texto": "muchos países del Medio Oriente"
+        },
+        {
+          "texto": "Francia, Bélgica y Suiza"
+        },
+        {
+          "texto": "muchos países de América Latina"
+        },
+        {
+          "texto": "Estados Unidos y Australia"
+        }
+      ],
+      "respuestaCorrecta": "muchos países de América Latina"
+    },
+    {
+      "id": "len-002-ex-005",
+      "fichaId": "len-002",
+      "subject": "lengua",
+      "tipo": "RellenarHueco",
+      "nivel": 1,
+      "tiempoEstimado": 30,
+      "enunciado": "El árabe se habla en muchos países del Medio [___].",
+      "respuestaCorrecta": "Oriente"
+    },
+    {
+      "id": "len-002-ex-006",
+      "fichaId": "len-002",
+      "subject": "lengua",
+      "tipo": "UnirColumnas",
+      "nivel": 2,
+      "tiempoEstimado": 90,
+      "enunciado": "Une cada saludo con su lengua.",
+      "parejas": [
+        {
+          "izquierda": "Bonjour",
+          "derecha": "Francés"
+        },
+        {
+          "izquierda": "Ciao",
+          "derecha": "Italiano"
+        },
+        {
+          "izquierda": "Hola",
+          "derecha": "Español"
+        },
+        {
+          "izquierda": "Salam",
+          "derecha": "Árabe"
+        }
+      ]
+    },
+    {
+      "id": "len-002-ex-007",
+      "fichaId": "len-002",
+      "subject": "lengua",
+      "tipo": "UnirColumnas",
+      "nivel": 2,
+      "tiempoEstimado": 90,
+      "enunciado": "Une cada lengua con los países donde se habla.",
+      "parejas": [
+        {
+          "izquierda": "Inglés",
+          "derecha": "Reino Unido y Australia"
+        },
+        {
+          "izquierda": "Francés",
+          "derecha": "Francia y Bélgica"
+        },
+        {
+          "izquierda": "Chino",
+          "derecha": "China"
+        },
+        {
+          "izquierda": "Hindi",
+          "derecha": "La India"
+        }
+      ]
+    },
+    {
+      "id": "len-002-ex-008",
+      "fichaId": "len-002",
+      "subject": "lengua",
+      "tipo": "EleccionMultiple",
+      "nivel": 2,
+      "tiempoEstimado": 30,
+      "enunciado": "¿En cuántos países del siguiente grupo se habla francés? Recuerda los países que aparecen en el material: Francia, Bélgica, Suiza, Luxemburgo y Mónaco.",
+      "opciones": [
+        {
+          "texto": "En 3 países"
+        },
+        {
+          "texto": "En 4 países"
+        },
+        {
+          "texto": "En 2 países"
+        },
+        {
+          "texto": "En 5 países"
+        }
+      ],
+      "respuestaCorrecta": "En 5 países"
+    },
+    {
+      "id": "len-002-ex-009",
+      "fichaId": "len-002",
+      "subject": "lengua",
+      "tipo": "ArrastrarPalabras",
+      "nivel": 2,
+      "tiempoEstimado": 60,
+      "enunciado": "Completa la definición arrastrando las palabras.",
+      "fraseConHuecos": "Una lengua es un conjunto de [___] y [___] que usamos para comunicarnos.",
+      "banco": [
+        "palabras",
+        "reglas",
+        "gestos",
+        "colores"
+      ],
+      "respuestasCorrectas": [
+        "palabras",
+        "reglas"
+      ]
+    },
+    {
+      "id": "len-002-ex-010",
+      "fichaId": "len-002",
+      "subject": "lengua",
+      "tipo": "ClasificarGrupos",
+      "nivel": 2,
+      "tiempoEstimado": 60,
+      "enunciado": "Clasifica estos países según la lengua que se habla principalmente en ellos.",
+      "grupos": [
+        {
+          "id": "espanol",
+          "nombre": "Español"
+        },
+        {
+          "id": "ingles",
+          "nombre": "Inglés"
+        },
+        {
+          "id": "frances",
+          "nombre": "Francés"
+        }
+      ],
+      "items": [
+        {
+          "id": "p1",
+          "texto": "México",
+          "grupoId": "espanol"
+        },
+        {
+          "id": "p2",
+          "texto": "Australia",
+          "grupoId": "ingles"
+        },
+        {
+          "id": "p3",
+          "texto": "Bélgica",
+          "grupoId": "frances"
+        },
+        {
+          "id": "p4",
+          "texto": "España",
+          "grupoId": "espanol"
+        },
+        {
+          "id": "p5",
+          "texto": "Reino Unido",
+          "grupoId": "ingles"
+        },
+        {
+          "id": "p6",
+          "texto": "Suiza",
+          "grupoId": "frances"
+        }
+      ]
+    },
+    {
+      "id": "len-002-ex-011",
+      "fichaId": "len-002",
+      "subject": "lengua",
+      "tipo": "OrdenarFrase",
+      "nivel": 2,
+      "tiempoEstimado": 60,
+      "enunciado": "Ordena las palabras para formar una oración correcta sobre las lenguas.",
+      "palabrasDesordenadas": [
+        "país",
+        "Cada",
+        "su",
+        "tiene",
+        "o",
+        "propia",
+        "región",
+        "lengua"
+      ],
+      "fraseCorrecta": "Cada país o región tiene su propia lengua"
+    },
+    {
+      "id": "len-002-ex-012",
+      "fichaId": "len-002",
+      "subject": "lengua",
+      "tipo": "CompletarSerie",
+      "nivel": 2,
+      "tiempoEstimado": 35,
+      "enunciado": "¿Qué lengua falta en esta serie de lenguas más habladas del mundo?",
+      "serie": [
+        "Inglés",
+        "Español",
+        null,
+        "Chino",
+        "Hindi"
+      ],
+      "opciones": [
+        "Francés",
+        "Italiano",
+        "Ruso",
+        "Alemán"
+      ],
+      "respuestaCorrecta": "Francés"
+    },
+    {
+      "id": "len-002-ex-013",
+      "fichaId": "len-002",
+      "subject": "lengua",
+      "tipo": "SopaLetras",
+      "nivel": 3,
+      "tiempoEstimado": 180,
+      "enunciado": "Encuentra estas lenguas en la sopa de letras.",
+      "palabras": [
+        "CHINO",
+        "HINDI",
+        "ARABE",
+        "INGLES",
+        "FRANCES"
+      ],
+      "cuadricula": [
+        [
+          "F",
+          "R",
+          "A",
+          "N",
+          "C",
+          "E",
+          "S",
+          "P"
+        ],
+        [
+          "I",
+          "N",
+          "G",
+          "L",
+          "E",
+          "S",
+          "A",
+          "O"
+        ],
+        [
+          "H",
+          "I",
+          "N",
+          "D",
+          "I",
+          "R",
+          "B",
+          "M"
+        ],
+        [
+          "C",
+          "H",
+          "I",
+          "N",
+          "O",
+          "T",
+          "E",
+          "U"
+        ],
+        [
+          "A",
+          "R",
+          "A",
+          "B",
+          "E",
+          "K",
+          "L",
+          "N"
+        ],
+        [
+          "E",
+          "S",
+          "P",
+          "A",
+          "N",
+          "O",
+          "L",
+          "D"
+        ],
+        [
+          "P",
+          "A",
+          "L",
+          "A",
+          "B",
+          "R",
+          "A",
+          "O"
+        ],
+        [
+          "R",
+          "E",
+          "G",
+          "L",
+          "A",
+          "S",
+          "V",
+          "W"
+        ]
+      ]
+    },
+    {
+      "id": "len-002-ex-014",
+      "fichaId": "len-002",
+      "subject": "lengua",
+      "tipo": "MemoriaPareja",
+      "nivel": 3,
+      "tiempoEstimado": 180,
+      "enunciado": "Encuentra cada lengua con un país donde se habla.",
+      "parejas": [
+        {
+          "a": "Inglés",
+          "b": "Australia"
+        },
+        {
+          "a": "Español",
+          "b": "México"
+        },
+        {
+          "a": "Francés",
+          "b": "Mónaco"
+        },
+        {
+          "a": "Chino",
+          "b": "China"
+        },
+        {
+          "a": "Hindi",
+          "b": "La India"
+        },
+        {
+          "a": "Árabe",
+          "b": "Medio Oriente"
+        }
+      ]
+    },
+    {
+      "id": "len-002-ex-015",
+      "fichaId": "len-002",
+      "subject": "lengua",
+      "tipo": "EleccionMultiple",
+      "nivel": 3,
+      "tiempoEstimado": 30,
+      "enunciado": "¿Cuál de estas afirmaciones sobre las lenguas es CORRECTA según lo que has estudiado?",
+      "opciones": [
+        {
+          "texto": "Cada país o región tiene su propia lengua"
+        },
+        {
+          "texto": "El español es la lengua más hablada del mundo"
+        },
+        {
+          "texto": "Las lenguas no cambian con el tiempo"
+        },
+        {
+          "texto": "El francés solo se habla en Francia"
+        }
+      ],
+      "respuestaCorrecta": "Cada país o región tiene su propia lengua"
+    },
+    {
+      "id": "len-002-ex-016",
+      "fichaId": "len-002",
+      "subject": "lengua",
+      "tipo": "EleccionMultiple",
+      "nivel": 3,
+      "tiempoEstimado": 30,
+      "enunciado": "¿Cuál de estos países NO aparece en el material como lugar donde se habla francés?",
+      "opciones": [
+        {
+          "texto": "Bélgica"
+        },
+        {
+          "texto": "Portugal"
+        },
+        {
+          "texto": "Luxemburgo"
+        },
+        {
+          "texto": "Mónaco"
+        }
+      ],
+      "respuestaCorrecta": "Portugal"
+    },
+    {
+      "id": "len-002-ex-017",
+      "fichaId": "len-002",
+      "subject": "lengua",
+      "tipo": "EleccionMultiple",
+      "nivel": 3,
+      "tiempoEstimado": 30,
+      "enunciado": "¿Para qué usamos una lengua? Recuerda la definición completa.",
+      "opciones": [
+        {
+          "texto": "Solo para escribir textos largos"
+        },
+        {
+          "texto": "Solo para comunicarnos con gestos"
+        },
+        {
+          "texto": "Para hablar, escribir y entendernos entre nosotros"
+        },
+        {
+          "texto": "Para aprender matemáticas"
+        }
+      ],
+      "respuestaCorrecta": "Para hablar, escribir y entendernos entre nosotros"
+    }
+  ]
+}

@@ -1,6 +1,7 @@
 // Importación manual de fichas generadas en Claude Project
 import { useState } from 'react';
 import { validarImportacion } from '../datos/validacion';
+import { rebalancearPosicionesEM } from '../datos/rebalanceo';
 import { importarFichas } from '../datos/db';
 import { ASIGNATURAS } from './PantallaInicio';
 import { BtnVolver } from './PantallaFichas';
@@ -58,7 +59,8 @@ export default function PantallaImportar({ onClose }) {
     if (!validacion?.valida) return;
     setImportando(true);
     try {
-      const res = await importarFichas(asignatura, validacion.fichas, modo);
+      const fichasRebalanceadas = rebalancearPosicionesEM(validacion.fichas);
+      const res = await importarFichas(asignatura, fichasRebalanceadas, modo);
       setResultado(res);
       setTexto('');
       setValidacion(null);

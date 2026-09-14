@@ -1,5 +1,6 @@
 import useSesionStore from '../store/sesionStore';
 import BotonAudio from './BotonAudio';
+import VideoExplicacion from './VideoExplicacion';
 import { seleccionarEjercicios } from '../datos/selector';
 import { createSession } from '../datos/db';
 import { BtnVolver } from '../pantallas/PantallaFichas';
@@ -45,6 +46,8 @@ export default function VisorFicha() {
           <BotonAudio texto={textoFicha} />
           <h1 className="text-2xl font-bold text-indigo-800 mb-3 pr-10">{ficha.titulo}</h1>
           <p className="text-gray-700 text-base leading-relaxed mb-4">{ficha.contenido}</p>
+
+          <VideoExplicacion url={ficha.videoExplicacion} />
 
           {ficha.ejemplos?.length > 0 && (
             <div className="bg-indigo-50 rounded-xl p-4">

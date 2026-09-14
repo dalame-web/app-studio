@@ -1,7 +1,7 @@
 {
-  "name": "¡A Aprender! — 2º Primaria",
+  "name": "¡A Aprender! — 4º Primaria",
   "short_name": "A Aprender",
-  "description": "App educativa offline para niños de 2º Primaria: Matemáticas, Lengua, Ciencias, Inglés y más.",
+  "description": "App educativa offline para niños de 4º Primaria: Matemáticas, Lengua, Ciencias, Inglés y más.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",

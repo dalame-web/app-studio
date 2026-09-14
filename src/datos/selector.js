@@ -14,6 +14,14 @@ export function calcWeight(ejercicio, logMap) {
   return (1 - accuracy) * 0.7 + recency * 0.3;
 }
 
+// Muestra aleatoria de n elementos de "items" (sin repetir), no solo los primeros
+// en su orden original — si no, cualquier elemento que quede al final de la lista
+// (p.ej. un tipo de ejercicio guardado más tarde) casi nunca se llegaría a elegir.
+export function muestraAleatoria(items, n) {
+  const mezclados = [...items].sort(() => Math.random() - 0.5);
+  return mezclados.slice(0, n);
+}
+
 export function weightedShuffle(items, weights) {
   const indexed = items.map((item, i) => ({ item, weight: weights[i] }));
   const result = [];
@@ -45,7 +53,7 @@ export async function seleccionarEjercicios(profileId, fichaId, subject) {
   const buffer   = todos.filter(e => e.nivel !== nivelActual);
   const pool = [
     ...delNivel,
-    ...buffer.slice(0, Math.max(1, Math.floor(delNivel.length * 0.25))),
+    ...muestraAleatoria(buffer, Math.max(1, Math.floor(delNivel.length * 0.25))),
   ];
 
   // Pesos por historial

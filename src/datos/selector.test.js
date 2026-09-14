@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { calcRecencyScore, calcWeight, weightedShuffle } from './selector';
+import { calcRecencyScore, calcWeight, weightedShuffle, muestraAleatoria } from './selector';
 
 describe('calcRecencyScore', () => {
   it('devuelve 1 si nunca se ha intentado (sin timestamp)', () => {
@@ -31,6 +31,30 @@ describe('calcWeight', () => {
     const pesoAcertado = calcWeight({ id: 'ex-acertado' }, logMap);
     const pesoFallado  = calcWeight({ id: 'ex-fallado' }, logMap);
     expect(pesoFallado).toBeGreaterThan(pesoAcertado);
+  });
+});
+
+describe('muestraAleatoria', () => {
+  it('devuelve exactamente n elementos, sin duplicar', () => {
+    const items = ['a', 'b', 'c', 'd', 'e'];
+    const resultado = muestraAleatoria(items, 2);
+    expect(resultado).toHaveLength(2);
+    expect(new Set(resultado).size).toBe(2);
+    resultado.forEach(x => expect(items).toContain(x));
+  });
+
+  it('con muchas repeticiones, todos los elementos tienen alguna posibilidad de salir (no solo los primeros)', () => {
+    // Antes del arreglo, un slice(0, n) sin mezclar habría dado SIEMPRE ['a','b'] aquí.
+    const items = ['a', 'b', 'c', 'd', 'e'];
+    const vistos = new Set();
+    for (let i = 0; i < 200; i++) {
+      muestraAleatoria(items, 2).forEach(x => vistos.add(x));
+    }
+    expect(vistos.size).toBe(items.length);
+  });
+
+  it('si n es mayor que la lista, devuelve todos los elementos', () => {
+    expect(muestraAleatoria(['a', 'b'], 5)).toHaveLength(2);
   });
 });
 

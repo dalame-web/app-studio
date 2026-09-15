@@ -1,14 +1,14 @@
 import { openDB } from 'idb';
 
 const DB_NAME = 'edu-app';
-const DB_VERSION = 2;
+const DB_VERSION = 3;
 
 let _db = null;
 
 export async function getDB() {
   if (_db) return _db;
   _db = await openDB(DB_NAME, DB_VERSION, {
-    upgrade(db, oldVersion) {
+    async upgrade(db, oldVersion, newVersion, transaction) {
       if (oldVersion < 1) {
         db.createObjectStore('profiles', { keyPath: 'id', autoIncrement: true });
 
@@ -36,6 +36,18 @@ export async function getDB() {
         const fpStore = db.createObjectStore('ficha_progress', { keyPath: 'id' });
         fpStore.createIndex('profileId', 'profileId');
         fpStore.createIndex('fichaId', 'fichaId');
+      }
+      if (oldVersion < 3) {
+        // v3: el camino ahora tiene un nodo por nivel de ejercicio (1/2/3) en
+        // vez de un único nodo por ficha — migra el progreso existente
+        // (id "profileId_fichaId") al nodo de nivel 1, para no perderlo.
+        const store = transaction.objectStore('ficha_progress');
+        const all = await store.getAll();
+        for (const fp of all) {
+          if (fp.nivel) continue;
+          await store.delete(fp.id);
+          await store.put({ ...fp, id: `${fp.profileId}_${fp.fichaId}_1`, nivel: 1 });
+        }
       }
     },
   });
@@ -224,10 +236,11 @@ export async function getAllEjerciciosBySubject(subject) {
 
 // ── Ficha progress ────────────────────────────────────────────────────────────
 
-const defaultFichaProgress = (profileId, fichaId) => ({
-  id: `${profileId}_${fichaId}`,
+const defaultFichaProgress = (profileId, fichaId, nivel) => ({
+  id: `${profileId}_${fichaId}_${nivel}`,
   profileId,
   fichaId,
+  nivel,
   firstCompletedDate: null,
   bestAccuracy: 0,
   totalSessions: 0,
@@ -236,14 +249,14 @@ const defaultFichaProgress = (profileId, fichaId) => ({
   reviewsDone: 0,
 });
 
-export async function getFichaProgress(profileId, fichaId) {
-  return (await getDB()).get('ficha_progress', `${profileId}_${fichaId}`);
+export async function getFichaProgress(profileId, fichaId, nivel) {
+  return (await getDB()).get('ficha_progress', `${profileId}_${fichaId}_${nivel}`);
 }
 
-export async function upsertFichaProgress(profileId, fichaId, updates) {
+export async function upsertFichaProgress(profileId, fichaId, nivel, updates) {
   const db = await getDB();
-  const existing = (await db.get('ficha_progress', `${profileId}_${fichaId}`))
-    ?? defaultFichaProgress(profileId, fichaId);
+  const existing = (await db.get('ficha_progress', `${profileId}_${fichaId}_${nivel}`))
+    ?? defaultFichaProgress(profileId, fichaId, nivel);
   await db.put('ficha_progress', { ...existing, ...updates });
 }
 
@@ -385,9 +398,9 @@ export async function importarProgreso(profileId, backup) {
     const rest = { ...fp };
     delete rest.id;
     delete rest.profileId;
-    const { fichaId } = rest;
+    const { fichaId, nivel } = rest;
     delete rest.fichaId;
-    await upsertFichaProgress(profileId, fichaId, rest);
+    await upsertFichaProgress(profileId, fichaId, nivel ?? 1, rest);
   }
 
   return {

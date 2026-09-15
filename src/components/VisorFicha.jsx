@@ -7,6 +7,7 @@ import { BtnVolver } from '../pantallas/PantallaFichas';
 
 export default function VisorFicha() {
   const ficha      = useSesionStore(s => s.fichaActual);
+  const nivel      = useSesionStore(s => s.nivelFicha);
   const profileId  = useSesionStore(s => s.profileId);
   const asignatura = useSesionStore(s => s.asignaturaActual);
   const iniciarSesion = useSesionStore(s => s.iniciarSesion);
@@ -15,7 +16,7 @@ export default function VisorFicha() {
   if (!ficha) return null;
 
   async function handleEmpezar() {
-    const { ejercicios, baseLength } = await seleccionarEjercicios(profileId, ficha.id, asignatura);
+    const { ejercicios, baseLength } = await seleccionarEjercicios(profileId, ficha.id, nivel);
     if (ejercicios.length === 0) {
       alert('No hay ejercicios disponibles para esta ficha todavía.');
       return;
@@ -24,6 +25,7 @@ export default function VisorFicha() {
       profileId,
       subject: asignatura,
       fichaId: ficha.id,
+      nivel,
       startTime: Date.now(),
       totalExercises: ejercicios.length,
       correctCount: 0,

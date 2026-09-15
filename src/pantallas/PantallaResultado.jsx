@@ -34,7 +34,7 @@ function estrellas(accuracy) {
 }
 
 export default function PantallaResultado() {
-  const { sesionId, ejercicios, correctas, incorrectas, profileId, asignaturaActual, fichaActual, nivelAnterior, nivelNuevo: nivelNuevoStore } = useSesionStore();
+  const { sesionId, ejercicios, correctas, incorrectas, profileId, asignaturaActual, fichaActual, nivelFicha, nivelAnterior, nivelNuevo: nivelNuevoStore } = useSesionStore();
   const setNivelResultado = useSesionStore(s => s.setNivelResultado);
   const volverAInicio     = useSesionStore(s => s.volverAInicio);
   const irA               = useSesionStore(s => s.irA);
@@ -115,9 +115,9 @@ export default function PantallaResultado() {
 
     if (stars === 3) setConfeti(true);
 
-    // I2: guardar progreso de la ficha individual
-    if (fichaActual?.id) {
-      const prevFP   = await getFichaProgress(profileId, fichaActual.id);
+    // I2: guardar progreso del nodo (ficha, nivel) individual
+    if (fichaActual?.id && nivelFicha) {
+      const prevFP   = await getFichaProgress(profileId, fichaActual.id, nivelFicha);
       const nuevaAcc = Math.max(prevFP?.bestAccuracy ?? 0, accuracy);
       const esSuperada = nuevaAcc >= 0.7;
       const updates = {
@@ -136,7 +136,7 @@ export default function PantallaResultado() {
         ];
         updates.reviewsDone = 0;
       }
-      await upsertFichaProgress(profileId, fichaActual.id, updates);
+      await upsertFichaProgress(profileId, fichaActual.id, nivelFicha, updates);
     }
 
     respaldarProgresoNativo(profileId);

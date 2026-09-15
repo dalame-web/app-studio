@@ -4,11 +4,20 @@
  * - Sin carretera, los nodos marcan el camino visualmente
  * - Banners de unidad a ancho completo
  * - Nodo "EMPEZAR" en el primer pendiente
+ * - Cada ficha ocupa 3 nodos consecutivos, uno por nivel de ejercicio (1/2/3):
+ *   así el niño pasa por los 3 niveles generados en vez de que el selector
+ *   descarte para siempre la mayoría del contenido de los otros niveles.
  */
 
 import { useEffect, useState } from 'react';
 import { getAllFichaProgress } from '../datos/db';
+import { NIVELES_CAMINO } from '../datos/selector';
 import NodoFicha from './NodoFicha';
+
+// Clave del progreso de un nodo (ficha, nivel) en el mapa local
+function claveNodo(fichaId, nivel) {
+  return `${fichaId}_${nivel}`;
+}
 
 // Ola suave: máximo ±22% desde el centro (como Duolingo)
 const WAVE_X_PCT = [50, 38, 28, 38, 50, 62, 72, 62];
@@ -41,7 +50,7 @@ export default function CaminoFichas({ fichas, meta, onSelectFicha, profileId })
     if (!profileId) return;
     getAllFichaProgress(profileId).then(all => {
       const map = {};
-      all.forEach(fp => { map[fp.fichaId] = fp; });
+      all.forEach(fp => { map[claveNodo(fp.fichaId, fp.nivel)] = fp; });
       setProgreso(map);
     });
   }, [profileId]);
@@ -56,6 +65,7 @@ export default function CaminoFichas({ fichas, meta, onSelectFicha, profileId })
   }
 
   // ── Construir lista de items con separadores ──────────────────────────────
+  // Cada ficha aparece 3 veces seguidas (una por nivel de ejercicio).
   const items = [];
   let prevUnit = undefined;
   fichas.forEach(ficha => {
@@ -64,7 +74,9 @@ export default function CaminoFichas({ fichas, meta, onSelectFicha, profileId })
       items.push({ type: 'sep', label: u });
       prevUnit = u;
     }
-    items.push({ type: 'ficha', ficha });
+    NIVELES_CAMINO.forEach(nivel => {
+      items.push({ type: 'ficha', ficha, nivel });
+    });
   });
 
   // ── Calcular posiciones ───────────────────────────────────────────────────
@@ -83,12 +95,14 @@ export default function CaminoFichas({ fichas, meta, onSelectFicha, profileId })
     return pos;
   });
 
-  const todasSuperadas = fichas.every(f => progreso[f.id]?.superada);
+  const nodosFicha = items.filter(i => i.type === 'ficha');
+  const todasSuperadas = nodosFicha.every(({ ficha, nivel }) => progreso[claveNodo(ficha.id, nivel)]?.superada);
   const finalY  = y + 20;
   const totalH  = finalY + (todasSuperadas ? NODE_H : 30);
 
   // Primer nodo no superado (para "EMPEZAR")
-  const proxFichaId = fichas.find(f => !progreso[f.id]?.superada)?.id ?? null;
+  const proximo = nodosFicha.find(({ ficha, nivel }) => !progreso[claveNodo(ficha.id, nivel)]?.superada);
+  const proxKey = proximo ? claveNodo(proximo.ficha.id, proximo.nivel) : null;
 
   // Contador de fichas para pasar índice a NodoFicha
   let fichaCounter = 0;
@@ -130,17 +144,18 @@ export default function CaminoFichas({ fichas, meta, onSelectFicha, profileId })
         }
 
         const ficha     = pos.ficha;
-        const fp        = progreso[ficha.id];
+        const nivel     = pos.nivel;
+        const fp        = progreso[claveNodo(ficha.id, nivel)];
         const estado    = !fp || fp.totalSessions === 0
           ? 'sin_empezar'
           : fp.superada ? 'superada' : 'en_progreso';
         const repaso    = hayRepasoHoy(fp);
-        const esProximo = ficha.id === proxFichaId;
+        const esProximo = claveNodo(ficha.id, nivel) === proxKey;
         const fichaIdx  = fichaCounter++;
 
         return (
           <div
-            key={ficha.id}
+            key={claveNodo(ficha.id, nivel)}
             className="absolute"
             style={{
               left: `${pos.xPct}%`,
@@ -151,13 +166,14 @@ export default function CaminoFichas({ fichas, meta, onSelectFicha, profileId })
           >
             <NodoFicha
               ficha={ficha}
+              nivel={nivel}
               fichaIdx={fichaIdx}
               estado={estado}
               fichaProgress={fp}
               meta={meta}
               repasoHoy={repaso}
               esProximo={esProximo}
-              onClick={() => onSelectFicha(ficha, repaso ? 'repaso' : null)}
+              onClick={() => onSelectFicha(ficha, nivel, repaso ? 'repaso' : null)}
             />
           </div>
         );

@@ -9,6 +9,7 @@
  */
 import { useEffect, useState } from 'react';
 import { getAllFichaProgress } from '../datos/db';
+import { NIVELES_CAMINO } from '../datos/selector';
 import NodoFicha from './NodoFicha';
 
 export default function RepasoSeccion({ fichas, curso, meta, profileId, onSelectFicha }) {
@@ -18,13 +19,25 @@ export default function RepasoSeccion({ fichas, curso, meta, profileId, onSelect
   useEffect(() => {
     if (!profileId || !abierto) return;
     getAllFichaProgress(profileId).then(all => {
+      // Agrupa por ficha: { fichaId: { 1: fp, 2: fp, 3: fp } }
       const map = {};
-      all.forEach(fp => { map[fp.fichaId] = fp; });
+      all.forEach(fp => {
+        if (!map[fp.fichaId]) map[fp.fichaId] = {};
+        map[fp.fichaId][fp.nivel] = fp;
+      });
       setProgreso(map);
     });
   }, [profileId, abierto]);
 
   if (fichas.length === 0) return null;
+
+  // El repaso de cursos anteriores no expone los 3 niveles como nodos
+  // separados (es un bloque secundario y colapsado) — al tocar la ficha se
+  // empieza por el primer nivel que aún no esté superado.
+  function primerNivelPendiente(fichaId) {
+    const porNivel = progreso[fichaId] ?? {};
+    return NIVELES_CAMINO.find(n => !porNivel[n]?.superada) ?? NIVELES_CAMINO[0];
+  }
 
   return (
     <div className="max-w-md mx-auto px-4 mt-4 mb-8">
@@ -41,18 +54,23 @@ export default function RepasoSeccion({ fichas, curso, meta, profileId, onSelect
       {abierto && (
         <div className="grid grid-cols-3 gap-x-2 gap-y-4 justify-items-center mt-4">
           {fichas.map(ficha => {
-            const fp     = progreso[ficha.id];
-            const estado = !fp || fp.totalSessions === 0
-              ? 'sin_empezar'
-              : fp.superada ? 'superada' : 'en_progreso';
+            const porNivel = progreso[ficha.id] ?? {};
+            const fps      = NIVELES_CAMINO.map(n => porNivel[n]);
+            const estado   = fps.every(fp => fp?.superada)
+              ? 'superada'
+              : fps.some(fp => (fp?.totalSessions ?? 0) > 0)
+                ? 'en_progreso'
+                : 'sin_empezar';
+            const nivel = primerNivelPendiente(ficha.id);
             return (
               <NodoFicha
                 key={ficha.id}
                 ficha={ficha}
+                nivel={nivel}
                 estado={estado}
-                fichaProgress={fp}
+                fichaProgress={porNivel[nivel]}
                 meta={meta}
-                onClick={() => onSelectFicha(ficha, 'repaso')}
+                onClick={() => onSelectFicha(ficha, nivel, 'repaso')}
               />
             );
           })}

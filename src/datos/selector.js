@@ -1,5 +1,7 @@
 import { getEjerciciosByFicha, getExerciseLogForFicha, getSubjectStats } from './db';
 
+export const NIVELES_CAMINO = [1, 2, 3];
+
 export function calcRecencyScore(lastTimestamp) {
   if (!lastTimestamp) return 1;
   const daysSince = (Date.now() - lastTimestamp) / 86400000;
@@ -41,20 +43,12 @@ export function weightedShuffle(items, weights) {
 
 // Devuelve { ejercicios, baseLength }
 // baseLength = nº de ejercicios "principales"; los siguientes son el repaso rápido (3 preguntas extra)
-export async function seleccionarEjercicios(profileId, fichaId, subject) {
-  const stats = await getSubjectStats(profileId, subject);
-  const nivelActual = stats?.nivelActual ?? 1;
-
+// El camino tiene un nodo por ficha y nivel (1/2/3): cada visita practica SOLO
+// los ejercicios de ese nivel, para que los 3 niveles generados se lleguen a ver.
+export async function seleccionarEjercicios(profileId, fichaId, nivel) {
   const todos = await getEjerciciosByFicha(fichaId);
-  if (todos.length === 0) return { ejercicios: [], baseLength: 0 };
-
-  // 80% nivel actual, 20% buffer de otros niveles
-  const delNivel = todos.filter(e => e.nivel === nivelActual);
-  const buffer   = todos.filter(e => e.nivel !== nivelActual);
-  const pool = [
-    ...delNivel,
-    ...muestraAleatoria(buffer, Math.max(1, Math.floor(delNivel.length * 0.25))),
-  ];
+  const pool = todos.filter(e => e.nivel === nivel);
+  if (pool.length === 0) return { ejercicios: [], baseLength: 0 };
 
   // Pesos por historial
   const logs = await getExerciseLogForFicha(profileId, fichaId);

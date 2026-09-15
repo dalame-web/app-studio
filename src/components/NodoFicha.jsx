@@ -57,7 +57,7 @@ function getEstrellas(accuracy, completada) {
   return [true, false, false];
 }
 
-export default function NodoFicha({ ficha, fichaIdx = 0, estado, fichaProgress, meta, onClick, repasoHoy, esProximo }) {
+export default function NodoFicha({ ficha, nivel, fichaIdx = 0, estado, fichaProgress, meta, onClick, repasoHoy, esProximo }) {
   const accuracy = fichaProgress?.bestAccuracy ?? 0;
   const stars    = getEstrellas(accuracy, estado !== 'sin_empezar');
   const icono    = getIcono(ficha) ?? meta?.emoji ?? '📝';
@@ -103,14 +103,14 @@ export default function NodoFicha({ ficha, fichaIdx = 0, estado, fichaProgress, 
           <span className="text-4xl leading-none select-none drop-shadow-sm">{icono}</span>
         )}
 
-        {/* Nivel badge N2/N3 */}
-        {ficha.nivel && ficha.nivel > 1 && (
+        {/* Badge del nivel de ejercicio de este nodo (1/2/3) */}
+        {nivel > 1 && (
           <span className={`absolute -bottom-2 -right-2 text-xs font-extrabold px-1.5 py-0.5 rounded-full border-2 ${
-            ficha.nivel === 2
+            nivel === 2
               ? 'bg-amber-100 border-amber-400 text-amber-700'
               : 'bg-red-100 border-red-400 text-red-700'
           }`}>
-            N{ficha.nivel}
+            N{nivel}
           </span>
         )}
       </div>
@@ -122,9 +122,10 @@ export default function NodoFicha({ ficha, fichaIdx = 0, estado, fichaProgress, 
         ))}
       </div>
 
-      {/* Título */}
+      {/* Título + nivel (los 3 nodos de una ficha comparten título) */}
       <span className="text-xs font-bold text-gray-600 text-center max-w-[92px] leading-tight">
         {ficha.titulo}
+        {nivel && <><br /><span className="font-semibold text-gray-400">Nivel {nivel}</span></>}
       </span>
     </button>
   );

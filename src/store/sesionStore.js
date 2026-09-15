@@ -5,6 +5,7 @@ const useSesionStore = create((set, get) => ({
   profileId: null,
   asignaturaActual: null,
   fichaActual: null,
+  nivelFicha: null, // nivel del nodo del camino elegido (1/2/3)
 
   // Active session
   sesionId: null,
@@ -23,8 +24,8 @@ const useSesionStore = create((set, get) => ({
 
   seleccionarAsignatura: (subject) => set({ asignaturaActual: subject, pantallaActual: 'fichas' }),
 
-  seleccionarFicha: (ficha, esRepaso = false) =>
-    set({ fichaActual: ficha, esRepaso: !!esRepaso, pantallaActual: 'visorFicha' }),
+  seleccionarFicha: (ficha, nivel, esRepaso = false) =>
+    set({ fichaActual: ficha, nivelFicha: nivel, esRepaso: !!esRepaso, pantallaActual: 'visorFicha' }),
 
   iniciarSesion: (sesionId, ejercicios, baseLength) =>
     set({
@@ -73,6 +74,7 @@ const useSesionStore = create((set, get) => ({
       pantallaActual: 'inicio',
       asignaturaActual: null,
       fichaActual: null,
+      nivelFicha: null,
       sesionId: null,
       ejercicios: [],
       ejerciciosBaseLength: 0,

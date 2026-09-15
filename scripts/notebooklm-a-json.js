@@ -54,9 +54,10 @@
  * Si se cambia aquí, cambiar también allí (y viceversa).
  */
 
-import { readFileSync, writeFileSync, appendFileSync, existsSync, mkdirSync } from 'fs';
+import { readFileSync, writeFileSync, appendFileSync, existsSync, mkdirSync, unlinkSync } from 'fs';
 import { createInterface } from 'readline';
 import { execSync } from 'child_process';
+import { tmpdir } from 'os';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { CURSO_ACTUAL } from '../src/config.js';
@@ -104,10 +105,22 @@ Cuando te pida en el chat "${MENSAJE_CHAT}", sigue EXACTAMENTE estas reglas:
 
 Basándote ÚNICAMENTE en las demás fuentes de este cuaderno, sin añadir
 información que no esté en ellas, genera el siguiente material EN ${asignatura.idioma}.
-Mantén los títulos de cada sección EXACTAMENTE como aparecen abajo (## FICHA,
-## PALABRAS CLAVE...), sin traducirlos ni cambiarlos — son solo etiquetas de
-formato, no forman parte del contenido. No incluyas marcas de cita como [1]
-o [2] en ninguna parte del resultado.
+
+FORMATO DE SALIDA — sigue esto literalmente, sin excepciones ni variaciones
+de una ficha a otra:
+- Cabeceras de sección EXACTAMENTE como aparecen abajo, con DOS almohadillas
+  y nada más: "## FICHA", "## PALABRAS CLAVE", etc. Nunca "###", "####" ni
+  ninguna otra cantidad. Son solo etiquetas de formato, no forman parte del
+  contenido — no las traduzcas ni las cambies.
+- Texto plano, sin NINGÚN formato markdown de énfasis: nada de "**negrita**"
+  ni "*cursiva*", ni siquiera en las etiquetas TITULO/CONTENIDO/EJEMPLOS o en
+  los términos de PALABRAS CLAVE.
+- El marcador de hueco es EXACTAMENTE "[___]" (corchete, tres guiones bajos,
+  corchete) — nunca "[***]", nunca con espacios o barras invertidas dentro.
+- No incluyas marcas de cita de ningún tipo ("[1]", "[2]", notas al pie...)
+  en ninguna parte del resultado.
+- Genera el material completo en una sola respuesta, sin dividirlo en
+  varios mensajes ni pedir confirmación a mitad de camino.
 
 ## FICHA
 TITULO: título corto del tema (máximo 6 palabras)
@@ -187,15 +200,22 @@ No inventes nada que no esté en las fuentes. Si no hay material suficiente
 para alguna sección, indícalo y omite esa sección.`;
 }
 
-// Copia al portapapeles en Windows (comando nativo `clip`, sin dependencias
-// nuevas). Si falla (no es Windows, o clip no disponible) no rompe nada —
-// simplemente el usuario copia el texto impreso a mano.
+// Copia al portapapeles en Windows. NO usa `clip` directamente: `clip` lee su
+// entrada con la code page del terminal (850/1252), no UTF-8, y corrompe
+// cualquier acento/eñe ("Basándote" → "Bas├índote") — confirmado con datos
+// reales (el propio texto del prompt pegado en NotebookLM salía así). En vez
+// de eso: escribe el texto en un fichero UTF-8 y usa `Set-Clipboard` de
+// PowerShell con -Encoding UTF8 explícito, que sí lo respeta.
 function copiarPortapapeles(texto) {
+  const tmp = join(tmpdir(), `notebooklm-a-json-clip-${Date.now()}.txt`);
   try {
-    execSync('clip', { input: texto });
+    writeFileSync(tmp, texto, 'utf8');
+    execSync(`powershell -NoProfile -Command "Get-Content -Raw -Encoding UTF8 -LiteralPath '${tmp}' | Set-Clipboard"`);
     return true;
   } catch {
     return false;
+  } finally {
+    try { unlinkSync(tmp); } catch {}
   }
 }
 
@@ -309,8 +329,10 @@ function volcarLog(cabecera) {
 const stripCitas = (s) => s.replace(/\[\d+\]/g, '').trim();
 
 // NotebookLM a veces usa [***] en vez de [___] como marcador de hueco (visto en
-// ComprensionLectora) — el motor de ejercicios solo reconoce [___] literal.
-const normalizarHueco = (s) => s.replace(/\[\*+\]/g, '[___]');
+// ComprensionLectora), y a veces además escapa los asteriscos en markdown con
+// espacios sueltos — "[ \*\*\*]" (visto con datos reales) — el motor de
+// ejercicios solo reconoce [___] literal.
+const normalizarHueco = (s) => s.replace(/\[\s*(?:\\?[*_]\s*){2,}\]/g, '[___]');
 
 // Librería de SVG para figuras geométricas — mismo estilo que PROMPT-FICHAS.md.
 // Triángulo/Cuadrado/Rectángulo/Círculo/Pentágono/Hexágono ya estaban en el
@@ -360,7 +382,10 @@ const SECCIONES = [
 
 function encontrarInicio(texto, aliases) {
   for (const a of aliases) {
-    const re = new RegExp(`^#{0,3}\\s*${a}\\s*$`, 'im');
+    // #{0,6}: markdown admite hasta 6 "#" de profundidad (visto "####" real,
+    // no solo "##" del prompt) — \**...\**: NotebookLM a veces envuelve la
+    // cabecera en negrita en vez de (o además de) usar "#".
+    const re = new RegExp(`^#{0,6}\\s*\\*{0,2}\\s*${a}\\s*\\*{0,2}\\s*$`, 'im');
     const m = re.exec(texto);
     if (m) return { index: m.index, fin: m.index + m[0].length };
   }
@@ -1046,6 +1071,17 @@ async function main() {
   }
 
   log(`fichaId: ${fichaId}  |  subject: ${subject}${rutaEntrada ? `  |  fichero: ${rutaEntrada}` : '  |  texto pegado en terminal'}`);
+
+  // Guarda siempre el texto tal cual se pegó, ANTES de parsear — si algo
+  // falla luego, se puede diagnosticar sin tener que pedir que se pegue otra vez.
+  const RAW_PATH = join(__dirname, '..', 'material-temp', `${fichaId}-crudo.txt`);
+  writeFileSync(RAW_PATH, texto, 'utf8');
+
+  // Quita negrita markdown ("**TITULO:**" → "TITULO:") ANTES de cualquier
+  // parseo — NotebookLM envuelve etiquetas y términos en "**" con frecuencia
+  // (visto con datos reales), y si no se quita aquí se cuela en el título,
+  // en las palabras clave, en todo lo que capturan los parsers de abajo.
+  texto = texto.replace(/\*\*/g, '');
 
   const bloques = partirSecciones(texto);
 

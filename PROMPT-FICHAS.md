@@ -65,11 +65,23 @@ Pégalo completo como **fuente** (no como mensaje de chat, ver PASO 2). Para Mat
 ```
 Basándote ÚNICAMENTE en las fuentes de este cuaderno, sin añadir información
 que no esté en ellas, genera el siguiente material EN [INGLÉS/ESPAÑOL — ver
-tabla de idiomas por asignatura más abajo]. Mantén los títulos de cada
-sección EXACTAMENTE como aparecen abajo (## FICHA, ## PALABRAS CLAVE...),
-sin traducirlos ni cambiarlos — son solo etiquetas de formato, no forman
-parte del contenido. No incluyas marcas de cita como [1] o [2] en ninguna
-parte del resultado.
+tabla de idiomas por asignatura más abajo].
+
+FORMATO DE SALIDA — sigue esto literalmente, sin excepciones ni variaciones
+de una ficha a otra:
+- Cabeceras de sección EXACTAMENTE como aparecen abajo, con DOS almohadillas
+  y nada más: "## FICHA", "## PALABRAS CLAVE", etc. Nunca "###", "####" ni
+  ninguna otra cantidad. Son solo etiquetas de formato, no forman parte del
+  contenido — no las traduzcas ni las cambies.
+- Texto plano, sin NINGÚN formato markdown de énfasis: nada de "**negrita**"
+  ni "*cursiva*", ni siquiera en las etiquetas TITULO/CONTENIDO/EJEMPLOS o en
+  los términos de PALABRAS CLAVE.
+- El marcador de hueco es EXACTAMENTE "[___]" (corchete, tres guiones bajos,
+  corchete) — nunca "[***]", nunca con espacios o barras invertidas dentro.
+- No incluyas marcas de cita de ningún tipo ("[1]", "[2]", notas al pie...)
+  en ninguna parte del resultado.
+- Genera el material completo en una sola respuesta, sin dividirlo en
+  varios mensajes ni pedir confirmación a mitad de camino.
 
 ## FICHA
 TITULO: título corto del tema (máximo 6 palabras)
@@ -219,6 +231,10 @@ Para `RellenarHueco`/`ArrastrarPalabras`/`OrdenarFrase`/`ClasificarGrupos`/`Comp
 | Distractores inventados fuera del material (ej. "Pistil", "Chlorophyll") | El LLM tira de conocimiento general, no solo de la fuente | Regla explícita en el prompt (arriba) + aviso automático del script si una opción no aparece en ningún otro sitio del material |
 | Ejercicios casi duplicados entre secciones | MCQ y FRASES/COMPRENSION se generaban sin comprobar solapamiento | Regla de comprobación cruzada en el prompt + aviso automático del script |
 | Coma pegada a una palabra en OrdenarFrase | Puntuación no limpiada al trocear la frase | Limpieza de puntuación en el script |
+| Acentos corruptos en el prompt copiado ("Bas├índote") | `clip` de Windows usa la code page del terminal, no UTF-8 | `copiarPortapapeles()` usa `Set-Clipboard` de PowerShell con `-Encoding UTF8` |
+| Cabeceras "#### FICHA" (4 almohadillas) no detectadas | El chat no siempre respeta "##" exacto pese a pedirlo | Regex tolerante a `#{0,6}` + regla explícita "DOS almohadillas y nada más" en el prompt |
+| Etiquetas y términos en negrita ("**TITULO:**", "**término:**") colándose en el contenido | Markdown de énfasis del chat | Se quita todo "**" del texto entero antes de parsear, nada más leerlo |
+| `[ \*\*\*]` (con espacio y barras invertidas) no reconocido como hueco | Variación de escape markdown de `[***]` | `normalizarHueco()` generalizado a cualquier combinación de `*`/`_`/espacios/barras invertidas dentro de los corchetes |
 
 ---
 

@@ -130,6 +130,16 @@ de una ficha a otra:
   corchete) — nunca "[***]", nunca con espacios o barras invertidas dentro.
 - No incluyas marcas de cita de ningún tipo ("[1]", "[2]", notas al pie...)
   en ninguna parte del resultado.
+- Cada pregunta con opciones (PREGUNTAS OPCION MULTIPLE, TEXTO CORTO PARA
+  COMPRENSION LECTORA) va en 3 líneas exactas, ni una más: la pregunta, la
+  línea "Options: A) ... B) ... C) ... D) ..." con las 4 opciones SEGUIDAS
+  en esa MISMA línea (nunca cada opción en su propia línea), y la línea
+  "Correct answer: X) ...". No añadas líneas en blanco entre preguntas.
+- Palabras de formato como "Options", "Correct answer" y "Correct word"
+  van SIEMPRE en inglés y EXACTAMENTE así, aunque el resto de la ficha esté
+  en español — no las traduzcas a "Opciones"/"Respuesta correcta".
+- En PALABRAS CLAVE, CATEGORIAS y FRASES usa siempre "-" como viñeta —
+  nunca números ("1.", "2."...) ni "•".
 - Genera el material completo en una sola respuesta, sin dividirlo en
   varios mensajes ni pedir confirmación a mitad de camino.
 
@@ -184,7 +194,18 @@ REGLA CRÍTICA PARA LAS 3 OPCIONES INCORRECTAS: deben ser términos que TÚ
 MISMO hayas definido o mencionado en alguna otra sección de esta misma
 respuesta. Nunca introduzcas un término nuevo que no hayas explicado en
 ningún otro sitio de tu propia respuesta, aunque sea real y correcto dentro
-del tema.${asignatura.incluirMate ? seccionesMate : ''}
+del tema. Las 4 opciones de una misma pregunta deben poder confundirse entre
+sí porque tratan del MISMO tema concreto (ej. 4 nombres de figuras, o 4
+tipos de comunicación) — MAL: mezclar en la misma pregunta un tipo de
+ángulo, un concepto de perímetro, un cuerpo geométrico y un término de
+probabilidad solo porque los cuatro salen en la ficha.${asignatura.id === 'matematicas' ? `
+
+Si una pregunta trata sobre identificar una figura o cuerpo geométrico, usa
+SIEMPRE uno de estos nombres estándar (no inventes variantes ni sinónimos):
+triángulo, triángulo equilátero, triángulo isósceles, triángulo escaleno,
+triángulo rectángulo, cuadrado, rectángulo, rombo, romboide, trapecio,
+círculo, óvalo, pentágono, hexágono, heptágono, octágono, cubo, prisma,
+pirámide, esfera, cilindro, cono.` : ''}${asignatura.incluirMate ? seccionesMate : ''}
 
 ## TEXTO CORTO PARA COMPRENSION LECTORA
 Un párrafo autocontenido de máximo 90 palabras. Después, 3 preguntas sobre
@@ -548,8 +569,12 @@ function parsearMCQ(bloque) {
     .filter((t) => /^Q\d+\s*:/.test(t));
 
   return trozos.map((t) => {
-    const enunciado = stripCitas(new RegExp(`Q\\d+\\s*:\\s*(.+?)\\s*${RE_OPTIONS}:`, 'i').exec(t)?.[1] ?? '');
-    const opcionesTxt = new RegExp(`${RE_OPTIONS}:\\s*(.+?)\\s*${RE_CORRECT_ANSWER}:`, 'i').exec(t)?.[1] ?? '';
+    // Flag "s" (dotAll): NotebookLM a veces pone cada opción A)/B)/C)/D) en su
+    // propia línea en vez de todas seguidas — sin "s", "." no cruza saltos de
+    // línea y opcionesTxt salía vacío (0 opciones, la pregunta se descartaba
+    // entera). Encontrado con datos reales.
+    const enunciado = stripCitas(new RegExp(`Q\\d+\\s*:\\s*(.+?)\\s*${RE_OPTIONS}:`, 'is').exec(t)?.[1] ?? '');
+    const opcionesTxt = new RegExp(`${RE_OPTIONS}:\\s*(.+?)\\s*${RE_CORRECT_ANSWER}:`, 'is').exec(t)?.[1] ?? '';
     const opciones = extraerOpciones(opcionesTxt);
     const letra = new RegExp(`${RE_CORRECT_ANSWER}:\\s*([A-D])\\)`, 'i').exec(t)?.[1];
     const idx = letra ? letra.charCodeAt(0) - 65 : -1;
@@ -595,15 +620,17 @@ function parsearComprension(bloque) {
 
   const preguntas = trozos.map((t) => {
     if (/FORMATO?\s*A\b/i.test(t)) {
-      const enunciado = new RegExp(`\\)\\s*(.+?)\\s*${RE_OPTIONS}:`, 'i').exec(t)?.[1]?.trim() ?? '';
-      const opcionesTxt = new RegExp(`${RE_OPTIONS}:\\s*(.+?)\\s*${RE_CORRECT_ANSWER}:`, 'i').exec(t)?.[1] ?? '';
+      // "s" (dotAll): mismo motivo que en parsearMCQ — opciones cada una en su
+      // propia línea, sin esto opcionesTxt salía vacío.
+      const enunciado = new RegExp(`\\)\\s*(.+?)\\s*${RE_OPTIONS}:`, 'is').exec(t)?.[1]?.trim() ?? '';
+      const opcionesTxt = new RegExp(`${RE_OPTIONS}:\\s*(.+?)\\s*${RE_CORRECT_ANSWER}:`, 'is').exec(t)?.[1] ?? '';
       const opciones = extraerOpciones(opcionesTxt);
       const letraCorrecta = new RegExp(`${RE_CORRECT_ANSWER}:\\s*([A-D])\\)`, 'i').exec(t)?.[1];
       const idx = letraCorrecta ? letraCorrecta.charCodeAt(0) - 65 : -1;
       return { tipo: 'EleccionMultiple', enunciado, opciones, respuestaCorrecta: opciones[idx] };
     }
     if (/FORMATO?\s*B\b/i.test(t)) {
-      const enunciado = normalizarHueco(new RegExp(`\\)\\s*(.+?)\\s*${RE_CORRECT_WORD}:`, 'i').exec(t)?.[1]?.trim() ?? '');
+      const enunciado = normalizarHueco(new RegExp(`\\)\\s*(.+?)\\s*${RE_CORRECT_WORD}:`, 'is').exec(t)?.[1]?.trim() ?? '');
       const respuestaCorrecta = new RegExp(`${RE_CORRECT_WORD}:\\s*([^\\s.][^.]*)`, 'i').exec(t)?.[1]?.trim() ?? '';
       return { tipo: 'RellenarHueco', enunciado, respuestaCorrecta };
     }
@@ -1016,7 +1043,15 @@ function avisosGrounding(textoOriginal, ejercicios) {
   const revisar = (opciones, ref) => {
     for (const raw of opciones ?? []) {
       const texto = typeof raw === 'string' ? raw : raw?.texto;
-      if (texto && contarOcurrencias(corpus, texto) <= 1) {
+      if (!texto) continue;
+      // Opciones "combina dos conceptos" (pedidas en el prompt) son frases
+      // nuevas tipo "comunicación no verbal y señal visual" — nunca van a
+      // aparecer literalmente aunque sus dos mitades sí. Comprobar cada
+      // mitad por separado en vez de la frase entera, para no avisar en
+      // falso de algo que el propio prompt pide generar.
+      const partes = / y | and /i.test(texto) ? texto.split(/ y | and /i) : [texto];
+      const sinFundamento = partes.filter((p) => contarOcurrencias(corpus, p.trim()) <= 1);
+      if (sinFundamento.length) {
         avisos.push(`${ref}: la opción "${texto}" no aparece en ningún otro sitio del material — puede ser un término que NotebookLM inventó de su conocimiento general. Revísalo antes de publicar.`);
       }
     }

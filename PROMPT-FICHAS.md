@@ -83,6 +83,16 @@ de una ficha a otra:
   corchete) — nunca "[***]", nunca con espacios o barras invertidas dentro.
 - No incluyas marcas de cita de ningún tipo ("[1]", "[2]", notas al pie...)
   en ninguna parte del resultado.
+- Cada pregunta con opciones (PREGUNTAS OPCION MULTIPLE, TEXTO CORTO PARA
+  COMPRENSION LECTORA) va en 3 líneas exactas, ni una más: la pregunta, la
+  línea "Options: A) ... B) ... C) ... D) ..." con las 4 opciones SEGUIDAS
+  en esa MISMA línea (nunca cada opción en su propia línea), y la línea
+  "Correct answer: X) ...". No añadas líneas en blanco entre preguntas.
+- Palabras de formato como "Options", "Correct answer" y "Correct word"
+  van SIEMPRE en inglés y EXACTAMENTE así, aunque el resto de la ficha esté
+  en español — no las traduzcas a "Opciones"/"Respuesta correcta".
+- En PALABRAS CLAVE, CATEGORIAS y FRASES usa siempre "-" como viñeta —
+  nunca números ("1.", "2."...) ni "•".
 - Genera el material completo en una sola respuesta, sin dividirlo en
   varios mensajes ni pedir confirmación a mitad de camino.
 
@@ -142,6 +152,18 @@ introduzcas un término nuevo que no hayas explicado en ningún otro sitio de
 tu propia respuesta, aunque sea real y correcto dentro del tema.
 MAL: pregunta sobre "stamen" con la opción "pistil" si "pistil" no aparece
 en PALABRAS CLAVE ni en ningún otro sitio de tu respuesta.
+Las 4 opciones de una misma pregunta deben poder confundirse entre sí porque
+tratan del MISMO tema concreto (ej. 4 nombres de figuras, o 4 tipos de
+comunicación) — MAL: mezclar en la misma pregunta un tipo de ángulo, un
+concepto de perímetro, un cuerpo geométrico y un término de probabilidad
+solo porque los cuatro salen en la ficha.
+
+[Solo Matemáticas — si una pregunta trata sobre identificar una figura o
+cuerpo geométrico, usa SIEMPRE uno de estos nombres estándar (no inventes
+variantes ni sinónimos): triángulo, triángulo equilátero, triángulo
+isósceles, triángulo escaleno, triángulo rectángulo, cuadrado, rectángulo,
+rombo, romboide, trapecio, círculo, óvalo, pentágono, hexágono, heptágono,
+octágono, cubo, prisma, pirámide, esfera, cilindro, cono.]
 
 ## PROBLEMAS NUMERICOS (solo Matemáticas)
 Basándote en el tipo de operación o cálculo que enseña el material (suma,

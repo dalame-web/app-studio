@@ -65,7 +65,10 @@ Pégalo completo como **fuente** (no como mensaje de chat, ver PASO 2). Para Mat
 ```
 Basándote ÚNICAMENTE en las fuentes de este cuaderno, sin añadir información
 que no esté en ellas, genera el siguiente material EN [INGLÉS/ESPAÑOL — ver
-tabla de idiomas por asignatura más abajo].
+tabla de idiomas por asignatura más abajo] para un alumno de [CURSO]º de
+Educación Primaria en España ([EDAD] años — ver tabla EDAD_POR_CURSO en el
+script). Adapta el vocabulario, la longitud de las frases y la complejidad
+de las preguntas a esa edad — ni más simple ni más avanzado.
 
 FORMATO DE SALIDA — sigue esto literalmente, sin excepciones ni variaciones
 de una ficha a otra:
@@ -235,6 +238,15 @@ Para `RellenarHueco`/`ArrastrarPalabras`/`OrdenarFrase`/`ClasificarGrupos`/`Comp
 | Cabeceras "#### FICHA" (4 almohadillas) no detectadas | El chat no siempre respeta "##" exacto pese a pedirlo | Regex tolerante a `#{0,6}` + regla explícita "DOS almohadillas y nada más" en el prompt |
 | Etiquetas y términos en negrita ("**TITULO:**", "**término:**") colándose en el contenido | Markdown de énfasis del chat | Se quita todo "**" del texto entero antes de parsear, nada más leerlo |
 | `[ \*\*\*]` (con espacio y barras invertidas) no reconocido como hueco | Variación de escape markdown de `[***]` | `normalizarHueco()` generalizado a cualquier combinación de `*`/`_`/espacios/barras invertidas dentro de los corchetes |
+| "FORMAT A/B" traducido a "FORMATO A/B" en fichas en español, rompiendo el parseo de comprensión lectora | La plantilla del prompt pedía "FORMATO" en las instrucciones pero ponía "FORMAT" en el ejemplo — inconsistencia nuestra, no del chat | Plantilla corregida a "FORMATO" + parser tolerante a ambas variantes |
+| "Options:"/"Correct answer:"/"Correct word:" con riesgo de traducirse igual que "FORMAT" | Mismo patrón que el fallo anterior | Parser tolerante a "Opciones:"/"Respuesta correcta:"/"Palabra correcta:" además del inglés |
+| `[***]` se convertía en `[*]` y rompía la validación | El propio script quitaba "**" (negrita) ANTES de normalizar el hueco — los 2 primeros asteriscos de "[***]" se interpretaban como negrita | Orden corregido: `normalizarHueco()` corre ANTES de quitar negrita |
+| PALABRAS CLAVE/CATEGORIAS con lista numerada o "•" no se reconocían | Solo se aceptaban viñetas `-`/`*` | Detección de viñeta unificada (`esViñeta()`) que acepta `-`, `*`, `•` y listas numeradas en los tres sitios que lo necesitan |
+| Enunciado de ComprensionLectora fijo en inglés ("Read and answer:") en fichas en español | Se copió de un tipo a otro sin adaptar el idioma | Los 6 enunciados fijos de tipos algorítmicos eligen español/inglés según la asignatura (`textoIdioma()`) |
+| Opciones de ComprensionLectora (subpregunta EleccionMultiple) salían en blanco en la app real | El schema las guarda como strings, pero `EleccionMultiple.jsx` espera objetos `{texto, emoji, svg}` — bug preexistente, no de este pipeline, confirmado también en fichas antiguas (mat-003) | `ComprensionLectora.jsx` convierte string→objeto al adaptar la subpregunta |
+| El curso (3º-6º) nunca llegaba al prompt — toda ficha pedía la misma complejidad sin importar el curso | `CURSO_ACTUAL` solo etiquetaba la ficha después de generarla, nunca se incluía en las instrucciones a NotebookLM | El prompt ahora incluye el curso y la edad aproximada, pidiendo adaptar vocabulario/complejidad |
+| Figuras geométricas sin dibujo (solo texto) en preguntas de Matemáticas | `SVG_FORMAS` solo cubría 10 figuras 2D básicas — cuerpos 3D (cubo, esfera, cilindro...) y algunas 2D (óvalo, romboide, octágono...) no tenían SVG | Librería ampliada + aviso automático si una pregunta mezcla figuras conocidas y desconocidas (`avisosFormas`) |
+| NotebookLM no puede generar imágenes reales (diagramas de partes de una planta, cuerpo humano...) | Es un chat de texto, sin capacidad de generar imágenes | Campo genérico "Imagen del enunciado" en el editor (`public/img/`) para añadir a mano las que aportéis vosotros — el resto de temas de vocabulario ya se cubren sin imagen (MemoriaPareja/UnirColumnas/ClasificarGrupos) |
 
 ---
 

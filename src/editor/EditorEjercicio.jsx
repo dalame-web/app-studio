@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import MotorEjercicio from '../ejercicios/MotorEjercicio';
-import { Campo, NumberInput, Select } from './campos';
+import { Campo, NumberInput, Select, TextInput } from './campos';
 import EditorEleccionMultiple from './tipos/EditorEleccionMultiple';
 import EditorRellenarHueco from './tipos/EditorRellenarHueco';
 import EditorArrastrarPalabras from './tipos/EditorArrastrarPalabras';
@@ -82,6 +82,16 @@ export default function EditorEjercicio({ ejercicio, ficha, onChange, onEliminar
               <NumberInput value={ejercicio.tiempoEstimado} onChange={v => set('tiempoEstimado', v)} />
             </Campo>
           </div>
+
+          {/* Genérico para los 11 tipos — MediaRender.jsx ya lo pinta en el
+              enunciado de todos ellos. NotebookLM no genera imágenes (es un
+              chat de texto); esta es la vía para las que aportes tú a mano,
+              guardadas en public/img/ (ej. diagramas de partes de una planta,
+              del cuerpo humano...). Déjalo vacío si el ejercicio no necesita
+              imagen — la mayoría no la necesitan. */}
+          <Campo label="Imagen del enunciado (opcional — ruta en public/img/, ej. img/planta.png)">
+            <TextInput value={ejercicio.imagenEnunciado ?? ''} onChange={v => set('imagenEnunciado', v || undefined)} placeholder="img/nombre-archivo.png" />
+          </Campo>
 
           {EditorTipo ? (
             <EditorTipo ejercicio={ejercicio} onChange={onChange} />

@@ -50,7 +50,13 @@ export default function ComprensionLectora({ ejercicio, intentos, fichaContenido
       tipo: pregunta.tipo,
       nivel: ejercicio.nivel,
       enunciado: pregunta.enunciado,
-      opciones: pregunta.opciones,
+      // El schema de ComprensionLectora guarda "opciones" como strings (ver
+      // ejercicios.schema.json), pero EleccionMultiple.jsx espera objetos
+      // {texto, emoji, svg} — sin este mapeo los botones salían en blanco y
+      // el ejercicio era imposible de acertar (op.texto === undefined).
+      // Bug real, preexistente, confirmado en fichas ya publicadas antes de
+      // esta sesión (no introducido por notebooklm-a-json.js).
+      opciones: pregunta.opciones?.map((o) => (typeof o === 'string' ? { texto: o, emoji: '' } : o)),
       respuestaCorrecta: pregunta.respuestaCorrecta,
       tiempoEstimado: 30,
     };

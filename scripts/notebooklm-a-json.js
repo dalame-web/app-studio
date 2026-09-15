@@ -77,10 +77,18 @@ const NOMBRE_FUENTE = 'INSTRUCCIONES PARA GENERAR MATERIAL DE LA FICHA';
 const MENSAJE_CHAT = `Genera el material de la ficha siguiendo las instrucciones de la fuente "${NOMBRE_FUENTE}".`;
 
 // El mismo prompt de PROMPT-FICHAS.md ("EL PROMPT DE NOTEBOOKLM"), con el
-// idioma resuelto y las 2 secciones numéricas incluidas solo si la
-// asignatura es Matemáticas. Fuente única de verdad: si se cambia el prompt,
-// cambiar aquí Y en PROMPT-FICHAS.md.
-function construirPrompt(asignatura) {
+// Edad aproximada por curso de Primaria en España (empieza a los 6 años) —
+// solo para que NotebookLM calibre vocabulario/complejidad, no se usa para
+// nada más.
+const EDAD_POR_CURSO = { 1: '6-7', 2: '7-8', 3: '8-9', 4: '9-10', 5: '10-11', 6: '11-12' };
+
+// idioma resuelto, curso/edad real (antes el prompt era idéntico para
+// cualquier curso — CURSO_ACTUAL solo etiquetaba la ficha después, nunca
+// llegaba a NotebookLM, así que una ficha de 6º pedía la misma complejidad
+// que una de 3º) y las 2 secciones numéricas incluidas solo si la asignatura
+// es Matemáticas. Fuente única de verdad: si se cambia el prompt, cambiar
+// aquí Y en PROMPT-FICHAS.md.
+function construirPrompt(asignatura, curso) {
   const seccionesMate = `
 
 ## PROBLEMAS NUMERICOS (solo Matemáticas)
@@ -104,7 +112,10 @@ S1: 5, 10, HUECO, 20, 25 | Respuesta: 15`;
 Cuando te pida en el chat "${MENSAJE_CHAT}", sigue EXACTAMENTE estas reglas:
 
 Basándote ÚNICAMENTE en las demás fuentes de este cuaderno, sin añadir
-información que no esté en ellas, genera el siguiente material EN ${asignatura.idioma}.
+información que no esté en ellas, genera el siguiente material EN ${asignatura.idioma}
+para un alumno de ${curso}º de Educación Primaria en España (${EDAD_POR_CURSO[curso] ?? '8-10'}
+años). Adapta el vocabulario, la longitud de las frases y la complejidad de
+las preguntas a esa edad — ni más simple ni más avanzado.
 
 FORMATO DE SALIDA — sigue esto literalmente, sin excepciones ni variaciones
 de una ficha a otra:
@@ -186,8 +197,8 @@ sustituido por [___] (tres guiones bajos, EXACTAMENTE así — no uses [***]
 ni ningún otro símbolo) + la respuesta correcta.
 Indica qué formato usas en cada pregunta. Formato:
 PARRAFO: ...
-P1: (FORMAT A - Multiple choice) pregunta Options: A) ... B) ... C) ... D) ... Correct answer: X) ...
-P2: (FORMAT B - Fill-in-the-blank) frase con [___] Correct word: palabra
+P1: (FORMATO A - opción múltiple) pregunta Options: A) ... B) ... C) ... D) ... Correct answer: X) ...
+P2: (FORMATO B - hueco) frase con [___] Correct word: palabra
 
 ANTES DE ESCRIBIR "PREGUNTAS OPCION MULTIPLE" Y "TEXTO CORTO PARA
 COMPRENSION LECTORA": revisa qué términos vas a usar como respuesta correcta
@@ -342,30 +353,58 @@ const quitarAcentos = (s) => s.toLowerCase()
   .replace(/[áàäâ]/g, 'a').replace(/[éèëê]/g, 'e').replace(/[íìïî]/g, 'i')
   .replace(/[óòöô]/g, 'o').replace(/[úùüû]/g, 'u');
 
-const SVG_FORMAS = {
+// Figuras planas (2D) — temario real de 3º-6º de Primaria.
+const SVG_FORMAS_2D = {
   'triangulo': "<svg width='60' height='54'><polygon points='30,2 2,52 58,52' fill='#dbeafe' stroke='#1d4ed8' stroke-width='2'/></svg>",
   'triangulo equilatero': "<svg width='60' height='54'><polygon points='30,2 2,52 58,52' fill='#dbeafe' stroke='#1d4ed8' stroke-width='2'/></svg>",
+  'triangulo isosceles': "<svg width='60' height='54'><polygon points='30,2 10,52 50,52' fill='#dbeafe' stroke='#1d4ed8' stroke-width='2'/></svg>",
+  'triangulo escaleno': "<svg width='60' height='54'><polygon points='38,2 4,52 58,44' fill='#dbeafe' stroke='#1d4ed8' stroke-width='2'/></svg>",
   'triangulo rectangulo': "<svg width='60' height='54'><polygon points='2,52 2,2 58,52' fill='#dbeafe' stroke='#1d4ed8' stroke-width='2'/></svg>",
   'cuadrado': "<svg width='54' height='54'><rect x='2' y='2' width='50' height='50' fill='#dcfce7' stroke='#15803d' stroke-width='2'/></svg>",
   'rectangulo': "<svg width='60' height='42'><rect x='2' y='2' width='56' height='38' fill='#dcfce7' stroke='#15803d' stroke-width='2'/></svg>",
   'rombo': "<svg width='54' height='54'><polygon points='27,2 52,27 27,52 2,27' fill='#dcfce7' stroke='#15803d' stroke-width='2'/></svg>",
+  'romboide': "<svg width='60' height='44'><polygon points='16,2 58,2 44,42 2,42' fill='#dcfce7' stroke='#15803d' stroke-width='2'/></svg>",
+  'paralelogramo': "<svg width='60' height='44'><polygon points='16,2 58,2 44,42 2,42' fill='#dcfce7' stroke='#15803d' stroke-width='2'/></svg>",
   'trapecio': "<svg width='60' height='48'><polygon points='18,2 42,2 58,46 2,46' fill='#dcfce7' stroke='#15803d' stroke-width='2'/></svg>",
   'circulo': "<svg width='54' height='54'><circle cx='27' cy='27' r='25' fill='#fef9c3' stroke='#a16207' stroke-width='2'/></svg>",
+  'ovalo': "<svg width='60' height='44'><ellipse cx='30' cy='22' rx='28' ry='20' fill='#fef9c3' stroke='#a16207' stroke-width='2'/></svg>",
   'pentagono': "<svg width='54' height='54'><polygon points='27,2 51,20 42,50 12,50 3,20' fill='#fce7f3' stroke='#9d174d' stroke-width='2'/></svg>",
   'hexagono': "<svg width='54' height='54'><polygon points='27,2 49,15 49,39 27,52 5,39 5,15' fill='#fce7f3' stroke='#9d174d' stroke-width='2'/></svg>",
+  'heptagono': "<svg width='54' height='54'><polygon points='27,2 46,10 52,30 40,48 14,48 2,30 8,10' fill='#fce7f3' stroke='#9d174d' stroke-width='2'/></svg>",
+  'octagono': "<svg width='54' height='54'><polygon points='18,2 36,2 52,18 52,36 36,52 18,52 2,36 2,18' fill='#fce7f3' stroke='#9d174d' stroke-width='2'/></svg>",
 };
 
-// Si TODAS las opciones de un EleccionMultiple son nombres de figuras conocidas,
-// añade el SVG a cada opción — refuerzo visual, no hace falta pedírselo a
-// NotebookLM (texto plano no puede generar dibujos).
+// Cuerpos geométricos (3D) — vista simple tipo "pseudo-isométrica", mismo
+// estilo visual que las figuras planas (relleno + contorno de color).
+const SVG_FORMAS_3D = {
+  'cubo': "<svg width='60' height='56'><polygon points='14,10 44,10 54,20 54,50 24,50 14,40' fill='#e0e7ff' stroke='#4338ca' stroke-width='2'/><polygon points='14,10 44,10 34,20 4,20' fill='#c7d2fe' stroke='#4338ca' stroke-width='2'/><polygon points='14,10 4,20 4,50 14,40' fill='#a5b4fc' stroke='#4338ca' stroke-width='2'/></svg>",
+  'prisma': "<svg width='60' height='50'><polygon points='10,46 10,16 30,4 30,34' fill='#c7d2fe' stroke='#4338ca' stroke-width='2'/><polygon points='30,4 50,16 50,46 30,34' fill='#e0e7ff' stroke='#4338ca' stroke-width='2'/><polygon points='10,46 30,34 50,46 30,58' fill='#a5b4fc' stroke='#4338ca' stroke-width='2'/></svg>",
+  'piramide': "<svg width='60' height='54'><polygon points='30,2 4,46 56,46' fill='#e0e7ff' stroke='#4338ca' stroke-width='2'/><line x1='30' y1='2' x2='30' y2='46' stroke='#4338ca' stroke-width='1.5'/></svg>",
+  'esfera': "<svg width='54' height='54'><circle cx='27' cy='27' r='25' fill='#fee2e2' stroke='#b91c1c' stroke-width='2'/><ellipse cx='27' cy='27' rx='25' ry='9' fill='none' stroke='#b91c1c' stroke-width='1' opacity='0.5'/></svg>",
+  'cilindro': "<svg width='50' height='58'><ellipse cx='25' cy='10' rx='22' ry='8' fill='#fee2e2' stroke='#b91c1c' stroke-width='2'/><rect x='3' y='10' width='44' height='38' fill='#fecaca' stroke='#b91c1c' stroke-width='2'/><ellipse cx='25' cy='48' rx='22' ry='8' fill='#fee2e2' stroke='#b91c1c' stroke-width='2'/></svg>",
+  'cono': "<svg width='54' height='58'><ellipse cx='27' cy='50' rx='24' ry='8' fill='#fee2e2' stroke='#b91c1c' stroke-width='2'/><polygon points='27,2 5,50 49,50' fill='#fecaca' stroke='#b91c1c' stroke-width='2'/></svg>",
+};
+
+const SVG_FORMAS = { ...SVG_FORMAS_2D, ...SVG_FORMAS_3D };
+
+// Si TODAS las opciones de un EleccionMultiple son nombres de figuras
+// conocidas, añade el SVG a cada opción — refuerzo visual, no hace falta
+// pedírselo a NotebookLM (texto plano no puede generar dibujos). Si solo
+// ALGUNAS coinciden (ni 0 ni todas), es señal de que puede tratarse de una
+// figura del temario que aún no está en SVG_FORMAS — se avisa en vez de
+// dejarlo pasar en silencio con la mitad de las opciones sin dibujo.
 function anadirSvgFormas(opciones) {
   const svgs = opciones.map((o) => SVG_FORMAS[quitarAcentos(o.texto ?? o)]);
   if (svgs.every(Boolean)) {
-    return opciones.map((o, i) => ({ ...(typeof o === 'string' ? { texto: o, emoji: '' } : o), svg: svgs[i] }));
+    return { opciones: opciones.map((o, i) => ({ ...(typeof o === 'string' ? { texto: o, emoji: '' } : o), svg: svgs[i] })), avisoParcial: false };
   }
-  return opciones;
+  const cuantos = svgs.filter(Boolean).length;
+  return { opciones, avisoParcial: cuantos > 0 && cuantos < svgs.length };
 }
-const quitarViñeta = (s) => s.replace(/^\s*(?:[-*]|\d+\.)\s*/, '').trim();
+// "•" incluido además de "-"/"*"/"1." — visto al pegar listas ya renderizadas.
+const RE_VIÑETA = /^\s*(?:[-*•]|\d+\.)\s*/;
+const esViñeta = (s) => RE_VIÑETA.test(s);
+const quitarViñeta = (s) => s.replace(RE_VIÑETA, '').trim();
 
 // ── Localizar secciones, aceptando cabecera en español o en inglés ──────────
 
@@ -430,7 +469,7 @@ function parsearPalabrasClave(bloque) {
   return bloque
     .split('\n')
     .map((l) => l.trim())
-    .filter((l) => /^[-*]/.test(l))
+    .filter(esViñeta)
     .map((l) => {
       const linea = stripCitas(quitarViñeta(l));
       const idx = linea.indexOf(':');
@@ -446,7 +485,7 @@ function parsearCategorias(bloque) {
   for (const linea of bloque.split('\n')) {
     const l = linea.trim();
     if (!l) continue;
-    if (/^[-*]/.test(l)) {
+    if (esViñeta(l)) {
       if (!actual) continue;
       actual.items.push(stripCitas(quitarViñeta(l)));
     } else {
@@ -460,7 +499,7 @@ function parsearCategorias(bloque) {
 // Corta por frase (termina en . ! ?) en vez de por línea — funciona tanto si
 // NotebookLM separa con viñetas/saltos de línea como si lo junta en un párrafo.
 function parsearFrases(bloque) {
-  const limpio = stripCitas(bloque.replace(/^\s*[-*]\s*/gm, ' '));
+  const limpio = stripCitas(bloque.replace(new RegExp(RE_VIÑETA, 'gm'), ' '));
   const frases = limpio
     .split(/(?<=[.!?])\s+/)
     .map((s) => s.trim())
@@ -479,6 +518,15 @@ function parsearFrases(bloque) {
     })
     .filter(Boolean);
 }
+
+// Etiquetas de la plantilla en inglés ("Options:", "Correct answer:",
+// "Correct word:") — mismo riesgo que "FORMAT"/"FORMATO": en fichas cuyo
+// contenido se pide EN ESPAÑOL, NotebookLM puede traducir también estas
+// etiquetas estructurales aunque se le pida mantenerlas. Tolerantes a ambos
+// idiomas en vez de asumir que nunca las traduce.
+const RE_OPTIONS = '(?:Options|Opciones)';
+const RE_CORRECT_ANSWER = '(?:Correct answer|Respuesta correcta)';
+const RE_CORRECT_WORD = '(?:Correct word|Palabra correcta)';
 
 // Divide "A) foo B) bar C) baz" en opciones. Las letras solo cuentan como
 // marcador si van pegadas a ")" y precedidas de inicio o espacio — así una
@@ -500,10 +548,10 @@ function parsearMCQ(bloque) {
     .filter((t) => /^Q\d+\s*:/.test(t));
 
   return trozos.map((t) => {
-    const enunciado = stripCitas(/Q\d+\s*:\s*(.+?)\s*Options:/i.exec(t)?.[1] ?? '');
-    const opcionesTxt = /Options:\s*(.+?)\s*Correct answer:/i.exec(t)?.[1] ?? '';
+    const enunciado = stripCitas(new RegExp(`Q\\d+\\s*:\\s*(.+?)\\s*${RE_OPTIONS}:`, 'i').exec(t)?.[1] ?? '');
+    const opcionesTxt = new RegExp(`${RE_OPTIONS}:\\s*(.+?)\\s*${RE_CORRECT_ANSWER}:`, 'i').exec(t)?.[1] ?? '';
     const opciones = extraerOpciones(opcionesTxt);
-    const letra = /Correct answer:\s*([A-D])\)/i.exec(t)?.[1];
+    const letra = new RegExp(`${RE_CORRECT_ANSWER}:\\s*([A-D])\\)`, 'i').exec(t)?.[1];
     const idx = letra ? letra.charCodeAt(0) - 65 : -1;
     return { enunciado, opciones, respuestaCorrecta: opciones[idx] };
   });
@@ -537,23 +585,26 @@ function parsearComprension(bloque) {
   const limpio = stripCitas(bloque);
   const texto = (/PARRAFO:\s*([\s\S]*?)(?=P\d+\s*:)/i.exec(limpio) ?? /PARAGRAPH:\s*([\s\S]*?)(?=P\d+\s*:)/i.exec(limpio))?.[1]?.trim() ?? '';
 
+  // FORMATO?: NotebookLM a veces traduce "FORMAT" a "FORMATO" (se le pide en
+  // español) pese a que la plantilla del prompt usa el término en inglés —
+  // aceptar las dos variantes en vez de depender de que no lo traduzca.
   const trozos = limpio
-    .split(/(?=P\d+\s*:\s*\(FORMAT)/i)
+    .split(/(?=P\d+\s*:\s*\(FORMATO?)/i)
     .map((t) => t.trim())
     .filter((t) => /^P\d+\s*:/.test(t));
 
   const preguntas = trozos.map((t) => {
-    if (/FORMAT A/i.test(t)) {
-      const enunciado = /\)\s*(.+?)\s*Options:/i.exec(t)?.[1]?.trim() ?? '';
-      const opcionesTxt = /Options:\s*(.+?)\s*Correct answer:/i.exec(t)?.[1] ?? '';
+    if (/FORMATO?\s*A\b/i.test(t)) {
+      const enunciado = new RegExp(`\\)\\s*(.+?)\\s*${RE_OPTIONS}:`, 'i').exec(t)?.[1]?.trim() ?? '';
+      const opcionesTxt = new RegExp(`${RE_OPTIONS}:\\s*(.+?)\\s*${RE_CORRECT_ANSWER}:`, 'i').exec(t)?.[1] ?? '';
       const opciones = extraerOpciones(opcionesTxt);
-      const letraCorrecta = /Correct answer:\s*([A-D])\)/i.exec(t)?.[1];
+      const letraCorrecta = new RegExp(`${RE_CORRECT_ANSWER}:\\s*([A-D])\\)`, 'i').exec(t)?.[1];
       const idx = letraCorrecta ? letraCorrecta.charCodeAt(0) - 65 : -1;
       return { tipo: 'EleccionMultiple', enunciado, opciones, respuestaCorrecta: opciones[idx] };
     }
-    if (/FORMAT B/i.test(t)) {
-      const enunciado = normalizarHueco(/\)\s*(.+?)\s*Correct word:/i.exec(t)?.[1]?.trim() ?? '');
-      const respuestaCorrecta = /Correct word:\s*([^\s.][^.]*)/i.exec(t)?.[1]?.trim() ?? '';
+    if (/FORMATO?\s*B\b/i.test(t)) {
+      const enunciado = normalizarHueco(new RegExp(`\\)\\s*(.+?)\\s*${RE_CORRECT_WORD}:`, 'i').exec(t)?.[1]?.trim() ?? '');
+      const respuestaCorrecta = new RegExp(`${RE_CORRECT_WORD}:\\s*([^\\s.][^.]*)`, 'i').exec(t)?.[1]?.trim() ?? '';
       return { tipo: 'RellenarHueco', enunciado, respuestaCorrecta };
     }
     return null;
@@ -753,12 +804,30 @@ function estimarNivelProblema(operacion, resultado) {
   return 1;
 }
 
+// Asignaturas en inglés (colegio bilingüe) — mismo criterio que ASIGNATURAS
+// arriba. Los enunciados fijos de los ejercicios 100% algorítmicos (no vienen
+// de NotebookLM, los pone el script) tienen que ir en el idioma de la ficha:
+// si no, una ficha de Ciencias/Sociales/Inglés en inglés acaba mostrando una
+// instrucción en español (o al revés) — bug real, encontrado en una ficha
+// real de Lengua con "Read and answer:" en vez de "Lee y responde:".
+const SUBJECTS_INGLES = new Set(['ciencias', 'social', 'ingles']);
+const textoIdioma = (subject, es, en) => (SUBJECTS_INGLES.has(subject) ? en : es);
+
 function construirEjercicios(fichaId, subject, datos) {
   const { frases, categorias, comprension, mcq, problemas, series } = datos;
   const ejercicios = [];
+  const avisosFormas = [];
   let n = 1;
   const nextId = () => `${fichaId}-ex-${String(n++).padStart(3, '0')}`;
   const categoriaDe = construirMapaCategorias(categorias);
+  // Aplica el refuerzo visual de figuras geométricas a las opciones de un
+  // EleccionMultiple, y registra un aviso si la cobertura fue solo parcial
+  // (posible figura del temario que aún no está en SVG_FORMAS).
+  const conFormas = (opciones, ref) => {
+    const { opciones: conSvg, avisoParcial } = anadirSvgFormas(opciones);
+    if (avisoParcial) avisosFormas.push(`${ref}: algunas opciones son figuras geométricas conocidas y otras no — revisa si falta añadir alguna a SVG_FORMAS en el script.`);
+    return conSvg;
+  };
 
   // ProblemaVisual numérico — solo Matemáticas. Sin "visual" (opcional en el
   // schema): son problemas de aplicación de fórmula, no de contar emojis.
@@ -786,10 +855,11 @@ function construirEjercicios(fichaId, subject, datos) {
   // EleccionMultiple desde las preguntas de opción múltiple
   mcq.forEach((q) => {
     if (!q.respuestaCorrecta || q.opciones.length < 2) return;
+    const id = nextId();
     ejercicios.push({
-      id: nextId(), fichaId, subject, tipo: 'EleccionMultiple', nivel: estimarNivelMCQ(q.respuestaCorrecta, q.opciones, categoriaDe), tiempoEstimado: 30,
+      id, fichaId, subject, tipo: 'EleccionMultiple', nivel: estimarNivelMCQ(q.respuestaCorrecta, q.opciones, categoriaDe), tiempoEstimado: 30,
       enunciado: q.enunciado,
-      opciones: anadirSvgFormas(q.opciones.map((texto) => ({ texto, emoji: '' }))),
+      opciones: conFormas(q.opciones.map((texto) => ({ texto, emoji: '' })), id),
       respuestaCorrecta: q.respuestaCorrecta,
     });
   });
@@ -821,7 +891,7 @@ function construirEjercicios(fichaId, subject, datos) {
     const nivel = palabras.length >= 7 ? 3 : 2;
     ejercicios.push({
       id: nextId(), fichaId, subject, tipo: 'OrdenarFrase', nivel, tiempoEstimado: 60,
-      enunciado: 'Ordena las palabras:',
+      enunciado: textoIdioma(subject, 'Ordena las palabras:', 'Put the words in order:'),
       palabrasDesordenadas: desordenadas,
       fraseCorrecta: frase,
     });
@@ -860,7 +930,7 @@ function construirEjercicios(fichaId, subject, datos) {
     });
     ejercicios.push({
       id: nextId(), fichaId, subject, tipo: 'ClasificarGrupos', nivel: 2, tiempoEstimado: 60,
-      enunciado: 'Clasifica cada palabra en su categoría:',
+      enunciado: textoIdioma(subject, 'Clasifica cada palabra en su categoría:', 'Sort each word into its category:'),
       grupos,
       // Barajado: el componente ClasificarGrupos.jsx de la app muestra el
       // banco en el mismo orden que trae "items" sin barajarlo — si se
@@ -875,7 +945,7 @@ function construirEjercicios(fichaId, subject, datos) {
   if (comprension.texto && comprension.preguntas.length) {
     ejercicios.push({
       id: nextId(), fichaId, subject, tipo: 'ComprensionLectora', nivel: 2, tiempoEstimado: 240,
-      enunciado: 'Read and answer:',
+      enunciado: textoIdioma(subject, 'Lee y responde:', 'Read and answer:'),
       texto: comprension.texto,
       preguntas: comprension.preguntas,
     });
@@ -892,7 +962,7 @@ function construirEjercicios(fichaId, subject, datos) {
   if (sopa) {
     ejercicios.push({
       id: nextId(), fichaId, subject, tipo: 'SopaLetras', nivel: 3, tiempoEstimado: 180,
-      enunciado: 'Encuentra las palabras:',
+      enunciado: textoIdioma(subject, 'Encuentra las palabras:', 'Find the words:'),
       palabras: sopa.palabras,
       cuadricula: sopa.cuadricula,
     });
@@ -902,7 +972,7 @@ function construirEjercicios(fichaId, subject, datos) {
   if (parejas) {
     ejercicios.push({
       id: nextId(), fichaId, subject, tipo: 'MemoriaPareja', nivel: 3, tiempoEstimado: 180,
-      enunciado: 'Empareja cada término con su definición:',
+      enunciado: textoIdioma(subject, 'Empareja cada término con su definición:', 'Match each term with its definition:'),
       parejas,
     });
   }
@@ -917,12 +987,12 @@ function construirEjercicios(fichaId, subject, datos) {
   if (columnas) {
     ejercicios.push({
       id: nextId(), fichaId, subject, tipo: 'UnirColumnas', nivel: 2, tiempoEstimado: 90,
-      enunciado: 'Une cada definición con su término:',
+      enunciado: textoIdioma(subject, 'Une cada definición con su término:', 'Match each definition to its term:'),
       parejas: columnas,
     });
   }
 
-  return ejercicios;
+  return { ejercicios, avisosFormas };
 }
 
 // ── Avisos de calidad (heurísticos, no bloqueantes) ─────────────────────────
@@ -1039,8 +1109,8 @@ async function main() {
     console.log(`→ ${asignatura.nombre} — nueva ficha: ${fichaId}\n`);
 
     // Paso 1: el prompt completo, ya resuelto para esta asignatura (idioma +
-    // módulo numérico solo si es Matemáticas), copiado al portapapeles.
-    const prompt = construirPrompt(asignatura);
+    // curso/edad + módulo numérico solo si es Matemáticas), copiado al portapapeles.
+    const prompt = construirPrompt(asignatura, CURSO_ACTUAL);
     const copiado1 = copiarPortapapeles(prompt);
     console.log('═'.repeat(70));
     console.log('PASO 1 — Pégalo como FUENTE en tu notebook de NotebookLM:');
@@ -1077,7 +1147,13 @@ async function main() {
   const RAW_PATH = join(__dirname, '..', 'material-temp', `${fichaId}-crudo.txt`);
   writeFileSync(RAW_PATH, texto, 'utf8');
 
-  // Quita negrita markdown ("**TITULO:**" → "TITULO:") ANTES de cualquier
+  // Orden importa: primero normaliza los huecos, LUEGO quita la negrita.
+  // Al revés, "[***]" (3 asteriscos) pierde los 2 primeros al quitar "**" y
+  // queda "[*]", que ya no coincide con ningún patrón de hueco — bug real,
+  // encontrado regenerando una ficha de Matemáticas de prueba tras añadir
+  // ambos arreglos por separado (cada uno funcionaba solo, chocaban juntos).
+  texto = normalizarHueco(texto);
+  // Quita negrita markdown ("**TITULO:**" → "TITULO:") ANTES del resto del
   // parseo — NotebookLM envuelve etiquetas y términos en "**" con frecuencia
   // (visto con datos reales), y si no se quita aquí se cuela en el título,
   // en las palabras clave, en todo lo que capturan los parsers de abajo.
@@ -1102,7 +1178,7 @@ async function main() {
   if (bloques.mcq && mcq.length === 0) log('⚠ Sección de preguntas de opción múltiple encontrada pero no se extrajo ninguna — revisa el formato.');
   if (bloques.comprension && comprension.preguntas.length === 0) log('⚠ Sección de comprensión lectora encontrada pero no se extrajo ninguna pregunta — revisa el formato.');
 
-  const ejercicios = construirEjercicios(fichaId, subject, { palabrasClave, categorias, frases, comprension, mcq, problemas, series });
+  const { ejercicios, avisosFormas } = construirEjercicios(fichaId, subject, { palabrasClave, categorias, frases, comprension, mcq, problemas, series });
 
   let resultado = {
     id: fichaId,
@@ -1122,7 +1198,7 @@ async function main() {
   log(`  Tipos: ${resultado.tiposEjercicio.join(', ')}`);
   log(`  palabrasClave: ${palabrasClave.length}  ·  MCQ: ${mcq.length}  ·  problemas: ${problemas.length}  ·  series: ${series.length}  ·  preguntas comprensión: ${comprension.preguntas.length}`);
 
-  const avisos = [...avisosGrounding(texto, ejercicios), ...avisosDuplicados(ejercicios)];
+  const avisos = [...avisosGrounding(texto, ejercicios), ...avisosDuplicados(ejercicios), ...avisosFormas];
   if (avisos.length) {
     log(`\n⚠ ${avisos.length} aviso(s) de calidad (no bloquean, pero revísalos antes de publicar):`);
     avisos.forEach((a) => log(`  - ${a}`));

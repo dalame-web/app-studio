@@ -8,7 +8,6 @@ import { checkAndApplyAppUpdate } from '../datos/appUpdater';
 const esNativo = typeof window !== 'undefined' && window.Capacitor?.isNativePlatform?.();
 import { ASIGNATURAS } from './PantallaInicio';
 import { BtnVolver } from './PantallaFichas';
-import PantallaImportar from './PantallaImportar';
 
 function Semaforo({ accuracy }) {
   if (accuracy === null || accuracy === undefined) return <span className="text-gray-300 text-2xl">⚪</span>;
@@ -40,7 +39,7 @@ const INSIGNIAS_META = {
 export default function PantallaAdmin() {
   const profileId     = useSesionStore(s => s.profileId);
   const irA           = useSesionStore(s => s.irA);
-  const { xpTotal, rachaDias, rachaMaxima, insignias, cargar: recargarGami } = useGamificacionStore();
+  const { insignias, cargar: recargarGami } = useGamificacionStore();
 
   const [stats, setStats]               = useState([]);
   const [detalle, setDetalle]           = useState(null);
@@ -53,7 +52,6 @@ export default function PantallaAdmin() {
   const [importEstado, setImportEstado] = useState(null); // null | 'cargando' | 'done' | 'error'
   const [importResumen, setImportResumen] = useState(null);
   const fileInputRef = useRef(null);
-  const [mostrarImportar, setMostrarImportar] = useState(false);
 
   useEffect(() => {
     if (!profileId) return;
@@ -201,10 +199,6 @@ export default function PantallaAdmin() {
 
   const meta = (id) => ASIGNATURAS.find(a => a.id === id);
 
-  if (mostrarImportar) {
-    return <PantallaImportar onClose={() => setMostrarImportar(false)} />;
-  }
-
   if (detalle && detalleStats) {
     const { stats: s, sessions } = detalleStats;
     const m = meta(detalle);
@@ -276,15 +270,6 @@ export default function PantallaAdmin() {
       </header>
 
       <main className="flex-1 overflow-y-auto p-4 max-w-2xl mx-auto w-full space-y-4">
-        {/* Importar contenido nuevo (JSON generado con Claude) */}
-        <button
-          onClick={() => setMostrarImportar(true)}
-          className="w-full bg-white border-2 border-indigo-200 hover:bg-indigo-50 text-indigo-700 font-bold py-3 px-4 rounded-2xl shadow-sm flex items-center justify-center gap-2 transition-all active:scale-95"
-        >
-          <span className="text-xl">📥</span>
-          <span>Importar fichas nuevas</span>
-        </button>
-
         {/* Actualización de contenido */}
         <button
           onClick={handleComprobarActualizacion}
@@ -431,22 +416,6 @@ export default function PantallaAdmin() {
             ❌ Error. Comprueba la conexión e inténtalo de nuevo.
           </div>
         )}
-
-        {/* Global summary */}
-        <div className="bg-white rounded-2xl shadow-sm p-4 flex flex-wrap gap-4 justify-around">
-          <div className="text-center">
-            <p className="text-3xl font-extrabold text-orange-500">🔥 {rachaDias}</p>
-            <p className="text-xs text-gray-400">Racha actual</p>
-          </div>
-          <div className="text-center">
-            <p className="text-3xl font-extrabold text-yellow-600">⭐ {xpTotal}</p>
-            <p className="text-xs text-gray-400">XP total</p>
-          </div>
-          <div className="text-center">
-            <p className="text-3xl font-extrabold text-purple-600">{rachaMaxima}</p>
-            <p className="text-xs text-gray-400">Racha máxima</p>
-          </div>
-        </div>
 
         {/* Insignias */}
         {insignias.length > 0 && (

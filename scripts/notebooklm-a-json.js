@@ -822,6 +822,20 @@ function estimarNivelMCQ(respuestaCorrecta, opciones, categoriaDe) {
   return 1; // distractores claramente de otro ámbito — fácil de descartar
 }
 
+// Misma señal que estimarNivelMCQ (sin el caso contraejemplo, que no aplica
+// a un banco de palabras) para ArrastrarPalabras — evita repetir el mismo
+// error que con la longitud de frase: casi todas las frases pedidas al
+// prompt son "autocontenidas" y por tanto largas, así que un umbral de
+// palabras dejaba prácticamente todo en el mismo nivel de todos modos.
+function estimarNivelBanco(correctos, distractores, categoriaDe) {
+  const categoriasCorrectas = new Set(correctos.map((c) => categoriaDe.get(c.toLowerCase())).filter(Boolean));
+  if (categoriasCorrectas.size === 0) return 1;
+  const confusables = distractores.filter((d) => categoriasCorrectas.has(categoriaDe.get(d.toLowerCase()))).length;
+  if (confusables >= 2) return 3;
+  if (confusables === 1) return 2;
+  return 1;
+}
+
 // Para problemas numéricos no hay "categoría" que comparar — la dificultad
 // depende de la operación y la magnitud de los números, ambas medibles.
 function estimarNivelProblema(operacion, resultado) {
@@ -898,9 +912,9 @@ function construirEjercicios(fichaId, subject, datos) {
     const distractores = datos.palabrasClave
       .map((p) => p.termino)
       .filter((t) => !usados.has(t.toLowerCase()))
-      .slice(0, 2);
+      .slice(0, 3); // antes 2 — banco de 4 se quedaba corto para 2 huecos (pedido real)
     ejercicios.push({
-      id: nextId(), fichaId, subject, tipo: 'ArrastrarPalabras', nivel: 2, tiempoEstimado: 60,
+      id: nextId(), fichaId, subject, tipo: 'ArrastrarPalabras', nivel: estimarNivelBanco([f0.termino, f1.termino], distractores, categoriaDe), tiempoEstimado: 60,
       fraseConHuecos: `${f0.conHueco} ${f1.conHueco}`,
       // Barajado: ArrastrarPalabras.jsx muestra el banco tal cual, sin
       // mezclarlo — si la correcta va siempre primera (como al construir el
@@ -924,21 +938,29 @@ function construirEjercicios(fichaId, subject, datos) {
     });
   }
 
-  // El resto de frases: ArrastrarPalabras de 1 hueco con banco de 2-3
-  // distractores, en vez de RellenarHueco (escritura libre). Investigado:
-  // para 3º-4º de Primaria, reconocer la palabra correcta entre unas pocas
-  // opciones es el andamiaje estándar en apps de aprendizaje infantil —
-  // pedir que el niño la recuerde y la escriba de memoria, sin ayuda, es
-  // el nivel de un lector ya avanzado, no el de esta edad.
-  for (const f of frases.slice(3)) {
+  // El resto de frases: ArrastrarPalabras de 1 hueco, en vez de RellenarHueco
+  // (escritura libre). Investigado: para 3º-4º de Primaria, reconocer la
+  // palabra correcta entre unas pocas opciones es el andamiaje estándar en
+  // apps de aprendizaje infantil — pedir que la recuerde y la escriba de
+  // memoria, sin ayuda, es el nivel de un lector ya avanzado, no esta edad.
+  //
+  // Tope de 4 (no todas las frases sobrantes): con 8 frases típicas, "todas
+  // menos las 3 primeras" son 5 ejercicios del MISMO tipo y del MISMO nivel
+  // — encontrado con datos reales: dominaban la ficha (6 de 17) y, como el
+  // selector de la app coge el 100% del nivel actual del niño, dominaban
+  // también casi cualquier sesión real. Las frases que se quedan fuera del
+  // tope siguen presentes en la ficha (contenido/ejemplos), solo no se
+  // convierten en un ejercicio de arrastrar aparte.
+  for (const f of frases.slice(3, 7)) {
     const usado = new Set([f.termino.toLowerCase()]);
     const distractores = datos.palabrasClave
       .map((p) => p.termino)
       .filter((t) => !usado.has(t.toLowerCase()))
       .sort(() => Math.random() - 0.5)
-      .slice(0, 2);
+      .slice(0, 3); // antes 2 — banco de 3 opciones se quedaba corto (pedido real)
+    const nivel = estimarNivelBanco([f.termino], distractores, categoriaDe);
     ejercicios.push({
-      id: nextId(), fichaId, subject, tipo: 'ArrastrarPalabras', nivel: 1, tiempoEstimado: 45,
+      id: nextId(), fichaId, subject, tipo: 'ArrastrarPalabras', nivel, tiempoEstimado: 45,
       fraseConHuecos: f.conHueco,
       banco: barajar([f.termino, ...distractores]),
       respuestasCorrectas: [f.termino],

@@ -7,6 +7,7 @@ function fichaBase(overrides = {}) {
     subject: 'matematicas',
     titulo: 'Ficha de prueba',
     nivel: 1,
+    curso: 4,
     contenido: 'Contenido de prueba con al menos algo de texto.',
     ejercicios: [
       {

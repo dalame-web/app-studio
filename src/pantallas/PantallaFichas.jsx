@@ -6,6 +6,18 @@ import useSesionStore from '../store/sesionStore';
 import { getFichasBySubject } from '../datos/db';
 import { ASIGNATURAS } from './PantallaInicio';
 import CaminoFichas from '../components/CaminoFichas';
+import { CURSO_ACTUAL } from '../config';
+import RepasoSeccion from '../components/RepasoSeccion';
+
+// Separa las fichas del curso actual (CURSO_ACTUAL, en src/config.js) de las
+// de cursos anteriores (repaso). Fichas sin `curso` todavía (contenido sin
+// migrar) van al camino normal, igual que antes de que existiera este campo.
+function separarPorCurso(fichas) {
+  const actual = fichas.filter(f => (f.curso ?? CURSO_ACTUAL) === CURSO_ACTUAL);
+  const repaso = fichas.filter(f => f.curso != null && f.curso < CURSO_ACTUAL);
+  const cursoRepaso = repaso.length > 0 ? Math.min(...repaso.map(f => f.curso)) : null;
+  return { actual, repaso, cursoRepaso };
+}
 
 // G4: componente botón volver mejorado
 function BtnVolver({ onClick, colorClass = 'text-gray-600 hover:bg-gray-100' }) {
@@ -44,6 +56,8 @@ export default function PantallaFichas() {
     });
   }, [asignatura]);
 
+  const { actual: fichasActual, repaso: fichasRepaso, cursoRepaso } = separarPorCurso(fichas);
+
   return (
     <div className={`min-h-screen flex flex-col ${meta?.bg ?? 'bg-gray-50'}`}>
       {/* Header */}
@@ -61,12 +75,23 @@ export default function PantallaFichas() {
         {cargando ? (
           <div className="flex items-center justify-center py-20 text-gray-400">Cargando fichas…</div>
         ) : (
-          <CaminoFichas
-            fichas={fichas}
-            meta={meta}
-            profileId={profileId}
-            onSelectFicha={seleccionarFicha}
-          />
+          <>
+            <CaminoFichas
+              fichas={fichasActual}
+              meta={meta}
+              profileId={profileId}
+              onSelectFicha={seleccionarFicha}
+            />
+            {cursoRepaso && (
+              <RepasoSeccion
+                fichas={fichasRepaso}
+                curso={cursoRepaso}
+                meta={meta}
+                profileId={profileId}
+                onSelectFicha={seleccionarFicha}
+              />
+            )}
+          </>
         )}
       </main>
     </div>

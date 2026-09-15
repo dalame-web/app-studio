@@ -105,6 +105,21 @@ Q1: enunciado completo de la pregunta
 Options: A) ... B) ... C) ... D) ...
 Correct answer: X) ...
 
+VARÍA EL ÁNGULO entre las 6 preguntas — no repitas el mismo patrón "¿Qué es
+X?" en todas. Combina:
+- Definición: dada una definición, identificar el término.
+- Reconocimiento en contexto: dado un ejemplo o situación, identificar a
+  qué término corresponde.
+- Contraejemplo ("cuál no pertenece"): 3 opciones de la misma categoría
+  (usa las categorías de la sección CATEGORIAS) y 1 que no pertenece —
+  identificar cuál sobra.
+Al menos 1 de las 6 preguntas debe ser de tipo contraejemplo.
+
+Además, al menos 2 de las 6 preguntas deben exigir combinar información de
+DOS conceptos distintos de la ficha (no solo repetir una definición aislada)
+— por ejemplo, relacionar un término con una consecuencia, una causa, o un
+ejemplo que combine dos palabras clave a la vez.
+
 REGLA CRÍTICA PARA LAS 3 OPCIONES INCORRECTAS: deben ser términos o
 conceptos que TÚ MISMO hayas definido o mencionado en alguna otra sección de
 esta misma respuesta (PALABRAS CLAVE, CONTENIDO, CATEGORIAS...). Nunca
@@ -314,6 +329,16 @@ Si el usuario indica que ya existen fichas (ej: len-001 a len-003), empieza desd
 
 ⚠️ **Antes de generar/publicar, comprueba `public/content/{asignatura}/index.json`** para no duplicar temario que ya existe — comprobado con datos reales que Matemáticas ya cubre moda, números romanos, longitud, cuadriláteros, perímetro, triángulos, cubo y probabilidad. El hueco real está en Ciencias Naturales, Ciencias Sociales, Inglés y Valores Cívicos.
 
+## CURSO
+
+Cada ficha lleva `"curso"` (3, 4, 5 o 6 — curso de Primaria). La app solo
+enseña las fichas del curso activo, definido en un único sitio:
+`src/config.js` → `CURSO_ACTUAL`. El script (`notebooklm-a-json.js`) etiqueta
+automáticamente cada ficha nueva con ese valor — no hay que tocar nada más
+al generar contenido del mismo curso. Al pasar de curso (p.ej. de 4º a 5º),
+cambia solo `CURSO_ACTUAL` y las fichas del curso anterior dejan de
+mostrarse en la app sin necesidad de borrarlas.
+
 ## SCHEMA FICHA
 
 ```json
@@ -322,6 +347,7 @@ Si el usuario indica que ya existen fichas (ej: len-001 a len-003), empieza desd
   "subject": "lengua",
   "titulo": "Determinantes demostrativos",
   "nivel": 1,
+  "curso": 4,
   "contenido": "Mínimo 4 frases completas. Solo lo que está en el material.",
   "ejemplos": ["Este libro está aquí.", "Aquel árbol está muy lejos."],
   "palabrasClave": ["demostrativo", "este", "ese", "aquel", "cerca", "lejos"],

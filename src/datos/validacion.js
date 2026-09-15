@@ -11,6 +11,7 @@ const TIPOS_VALIDOS = [
 ];
 
 const ASIGNATURAS_VALIDAS = ['matematicas', 'lengua', 'ciencias', 'social', 'ingles', 'valores'];
+const CURSOS_VALIDOS = [3, 4, 5, 6]; // curso de Primaria al que pertenece la ficha
 
 const CAMPOS_POR_TIPO = {
   EleccionMultiple:   ['enunciado', 'opciones', 'respuestaCorrecta'],
@@ -341,6 +342,9 @@ export function validarFicha(ficha, opciones = {}) {
   if (!ficha.nivel || ![1, 2, 3].includes(ficha.nivel))
     errores.push(`Ficha "${ficha.id}": "nivel" debe ser 1, 2 o 3`);
 
+  if (!ficha.curso || !CURSOS_VALIDOS.includes(ficha.curso))
+    errores.push(`Ficha "${ficha.id}": "curso" debe ser uno de ${CURSOS_VALIDOS.join(', ')} (curso de Primaria)`);
+
   // Capa estructural (JSON Schema): detecta lo que las reglas de abajo no cubren
   // (p.ej. tipos de dato incorrectos, campos con nombre mal escrito).
   const { errores: erroresSchema } = validarConSchema(ficha);
@@ -445,4 +449,4 @@ export function validarImportacion(input, asignaturaEsperada) {
   };
 }
 
-export { TIPOS_VALIDOS, ASIGNATURAS_VALIDAS };
+export { TIPOS_VALIDOS, ASIGNATURAS_VALIDAS, CURSOS_VALIDOS };

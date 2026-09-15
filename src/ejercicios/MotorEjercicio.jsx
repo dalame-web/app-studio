@@ -120,6 +120,7 @@ export default function MotorEjercicio({ ejercicio, asignatura, fichaContenido, 
         </div>
       )}
       <Componente
+        key={ejercicio.id}
         ejercicio={ejercicio}
         intentos={intentos}
         fichaContenido={fichaContenido}

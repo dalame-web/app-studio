@@ -68,16 +68,19 @@ export default function PantallaInicio() {
         <p className="text-blue-700 mt-1 text-lg">¿Qué asignatura practicamos hoy?</p>
 
         {/* Racha, XP y racha máxima */}
-        <div className="mt-4 flex items-center justify-center gap-3">
-          <span className="flex items-center gap-1 bg-orange-100 border border-orange-300 rounded-full px-3 py-1.5 text-sm font-bold text-orange-700">
-            🔥 {rachaDias} {rachaDias === 1 ? 'día' : 'días'}
-          </span>
-          <span className="flex items-center gap-1 bg-yellow-100 border border-yellow-300 rounded-full px-3 py-1.5 text-sm font-bold text-yellow-700">
-            ⭐ {xpTotal} XP
-          </span>
-          <span className="flex items-center gap-1 bg-purple-100 border border-purple-300 rounded-full px-3 py-1.5 text-sm font-bold text-purple-700">
-            🏆 {rachaMaxima}
-          </span>
+        <div className="mt-4 bg-white rounded-2xl shadow-sm p-4 flex flex-wrap gap-4 justify-around max-w-md mx-auto">
+          <div className="text-center">
+            <p className="text-3xl font-extrabold text-orange-500">🔥 {rachaDias}</p>
+            <p className="text-xs text-gray-400">Racha actual</p>
+          </div>
+          <div className="text-center">
+            <p className="text-3xl font-extrabold text-yellow-600">⭐ {xpTotal}</p>
+            <p className="text-xs text-gray-400">XP total</p>
+          </div>
+          <div className="text-center">
+            <p className="text-3xl font-extrabold text-purple-600">{rachaMaxima}</p>
+            <p className="text-xs text-gray-400">Racha máxima</p>
+          </div>
         </div>
       </div>
 

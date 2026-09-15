@@ -113,7 +113,7 @@ export default function PantallaInicio() {
 
       {/* Title */}
       <div className="text-center px-4 py-6">
-        <h1 className="text-4xl font-extrabold text-blue-900 drop-shadow-sm">¡A aprender!</h1>
+        <h1 className="text-4xl font-extrabold text-blue-900 drop-shadow-sm">Orbia</h1>
         <p className="text-blue-700 mt-1 text-lg">¿Qué asignatura practicamos hoy?</p>
 
         {/* Botón instalar PWA — visible siempre que no esté instalada */}

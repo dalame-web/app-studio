@@ -1,7 +1,7 @@
 {
-  "name": "¡A Aprender! — 4º Primaria",
-  "short_name": "A Aprender",
-  "description": "App educativa offline para niños de 4º Primaria: Matemáticas, Lengua, Ciencias, Inglés y más.",
+  "name": "Orbia",
+  "short_name": "Orbia",
+  "description": "App educativa offline para niños de Primaria: Matemáticas, Lengua, Ciencias, Inglés y más.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
@@ -28,12 +28,6 @@
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"
-    },
-    {
-      "src": "icon.svg",
-      "sizes": "any",
-      "type": "image/svg+xml",
-      "purpose": "any"
     }
   ],
   "screenshots": [],

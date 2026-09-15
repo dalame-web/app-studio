@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
-    <string name="app_name">A Aprender</string>
-    <string name="title_activity_main">A Aprender</string>
+    <string name="app_name">Orbia</string>
+    <string name="title_activity_main">Orbia</string>
     <string name="package_name">com.appstudio.aaprender</string>
     <string name="custom_url_scheme">com.appstudio.aaprender</string>
 </resources>

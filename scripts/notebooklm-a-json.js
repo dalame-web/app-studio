@@ -799,7 +799,12 @@ function construirMapaCategorias(categorias) {
   return mapa;
 }
 
-function estimarNivelMCQ(respuestaCorrecta, opciones, categoriaDe) {
+// Frases que el prompt le pide a NotebookLM usar exactamente para preguntas
+// contraejemplo ("cuál no pertenece") — ver sección PREGUNTAS OPCION
+// MULTIPLE del prompt.
+const RE_CONTRAEJEMPLO = /no pertenece|not belong|does not belong|cuál no|which.*not/i;
+
+function estimarNivelMCQ(enunciado, respuestaCorrecta, opciones, categoriaDe) {
   const catCorrecta = categoriaDe.get(respuestaCorrecta.toLowerCase());
   const distractores = opciones.filter((o) => o.toLowerCase() !== respuestaCorrecta.toLowerCase());
   const catsDistractores = distractores.map((d) => categoriaDe.get(d.toLowerCase()));
@@ -811,8 +816,17 @@ function estimarNivelMCQ(respuestaCorrecta, opciones, categoriaDe) {
   // respuesta correcta), así que necesita su propio caso: si no se detecta
   // aparte, una pregunta de contraejemplo sale marcada nivel 1 (fácil) por
   // error, justo la más difícil de las que pide el prompt.
+  //
+  // PERO: con solo 2-3 categorías por ficha, es fácil que un trío de
+  // distractores de una pregunta de definición NORMAL caiga por azar en la
+  // misma categoría (sin ser una pregunta contraejemplo de verdad) — bug
+  // real encontrado con datos reales: 5 de 6 MCQ salían nivel 3 solo por
+  // esta coincidencia. Se exige ADEMÁS que el propio enunciado tenga el
+  // fraseo de contraejemplo ("cuál no pertenece"/"NOT belong"), que el
+  // prompt le pide usar exactamente para este tipo de pregunta.
   const catComun = catsDistractores[0];
-  const esContraejemplo = catComun && catsDistractores.every((c) => c === catComun) && catComun !== catCorrecta;
+  const patronCategorias = catComun && catsDistractores.every((c) => c === catComun) && catComun !== catCorrecta;
+  const esContraejemplo = patronCategorias && RE_CONTRAEJEMPLO.test(enunciado);
   if (esContraejemplo) return 3;
 
   if (!catCorrecta) return 2; // sin categoría conocida: nivel medio por defecto
@@ -898,7 +912,7 @@ function construirEjercicios(fichaId, subject, datos) {
     if (!q.respuestaCorrecta || q.opciones.length < 2) return;
     const id = nextId();
     ejercicios.push({
-      id, fichaId, subject, tipo: 'EleccionMultiple', nivel: estimarNivelMCQ(q.respuestaCorrecta, q.opciones, categoriaDe), tiempoEstimado: 30,
+      id, fichaId, subject, tipo: 'EleccionMultiple', nivel: estimarNivelMCQ(q.enunciado, q.respuestaCorrecta, q.opciones, categoriaDe), tiempoEstimado: 30,
       enunciado: q.enunciado,
       opciones: conFormas(q.opciones.map((texto) => ({ texto, emoji: '' })), id),
       respuestaCorrecta: q.respuestaCorrecta,

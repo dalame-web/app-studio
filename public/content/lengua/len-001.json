@@ -1,0 +1,640 @@
+{
+  "id": "len-001",
+  "subject": "lengua",
+  "titulo": "Comunicación verbal y no verbal",
+  "nivel": 1,
+  "curso": 4,
+  "contenido": "La ficha de actividad aborda la diferenciación entre comunicación verbal y comunicación no verbal a través de diversas situaciones de la vida cotidiana. La comunicación verbal incluye aquellos mensajes transmitidos mediante la palabra hablada o el texto escrito como un correo electrónico o una crónica periodística. La comunicación no verbal engloba aquellos mensajes transmitidos a través de gestos, expresiones faciales, sonidos de sirenas, imágenes o señales de tráfico. El propósito del ejercicio consiste en analizar cada situación planteada en una lista y determinar a qué tipo de comunicación corresponde.",
+  "ejemplos": [
+    "Leer el prospecto de un medicamento y enviar un mensaje de texto son ejemplos de comunicación verbal escrita. Escuchar la sirena de un coche de bomberos o ver la luz verde de un semáforo representan ejemplos de comunicación no verbal. Saludar con la mano o poner cara de tristeza constituyen formas de comunicación no verbal basadas en gestos y expresiones."
+  ],
+  "palabrasClave": [
+    "Comunicación verbal",
+    "Comunicación no verbal",
+    "Email",
+    "Prospecto",
+    "Crónica",
+    "Mensaje de texto",
+    "Sirena",
+    "Semáforo",
+    "Gesto",
+    "Tarjeta amarilla",
+    "Señal de prohibido fumar",
+    "Canción"
+  ],
+  "tiposEjercicio": [
+    "EleccionMultiple",
+    "ArrastrarPalabras",
+    "OrdenarFrase",
+    "ClasificarGrupos",
+    "ComprensionLectora",
+    "SopaLetras",
+    "MemoriaPareja",
+    "UnirColumnas"
+  ],
+  "ejerciciosDerivar": 18,
+  "ejercicios": [
+    {
+      "id": "len-001-ex-001",
+      "fichaId": "len-001",
+      "subject": "lengua",
+      "tipo": "EleccionMultiple",
+      "nivel": 2,
+      "tiempoEstimado": 30,
+      "enunciado": "La palabra Stop escrita en el suelo para que los coches paren se clasifica como:",
+      "pista": "Transmite un mensaje directo utilizando la palabra escrita en la calzada",
+      "opciones": [
+        {
+          "texto": "Comunicación verbal escrita",
+          "emoji": ""
+        },
+        {
+          "texto": "Comunicación verbal oral",
+          "emoji": ""
+        },
+        {
+          "texto": "Comunicación no verbal visual",
+          "emoji": ""
+        },
+        {
+          "texto": "Comunicación no verbal sonora",
+          "emoji": ""
+        }
+      ],
+      "respuestaCorrecta": "Comunicación verbal escrita"
+    },
+    {
+      "id": "len-001-ex-002",
+      "fichaId": "len-001",
+      "subject": "lengua",
+      "tipo": "EleccionMultiple",
+      "nivel": 2,
+      "tiempoEstimado": 30,
+      "enunciado": "El sonido producido por la sirena de un coche de bomberos en una emergencia se clasifica como:",
+      "pista": "Transmite una alerta acústica de emergencia sin utilizar palabras",
+      "opciones": [
+        {
+          "texto": "Comunicación no verbal visual",
+          "emoji": ""
+        },
+        {
+          "texto": "Comunicación no verbal sonora",
+          "emoji": ""
+        },
+        {
+          "texto": "Comunicación verbal oral",
+          "emoji": ""
+        },
+        {
+          "texto": "Comunicación verbal escrita",
+          "emoji": ""
+        }
+      ],
+      "respuestaCorrecta": "Comunicación no verbal sonora"
+    },
+    {
+      "id": "len-001-ex-003",
+      "fichaId": "len-001",
+      "subject": "lengua",
+      "tipo": "EleccionMultiple",
+      "nivel": 2,
+      "tiempoEstimado": 30,
+      "enunciado": "El envío de un mensaje de texto en un teléfono móvil se clasifica como:",
+      "pista": "Utiliza caracteres y palabras escritas de forma digital para comunicarse",
+      "opciones": [
+        {
+          "texto": "Comunicación verbal oral",
+          "emoji": ""
+        },
+        {
+          "texto": "Comunicación no verbal gestual",
+          "emoji": ""
+        },
+        {
+          "texto": "Comunicación verbal escrita",
+          "emoji": ""
+        },
+        {
+          "texto": "Comunicación no verbal visual",
+          "emoji": ""
+        }
+      ],
+      "respuestaCorrecta": "Comunicación verbal escrita"
+    },
+    {
+      "id": "len-001-ex-004",
+      "fichaId": "len-001",
+      "subject": "lengua",
+      "tipo": "EleccionMultiple",
+      "nivel": 2,
+      "tiempoEstimado": 30,
+      "enunciado": "El gesto de realizar aspavientos con las manos para mostrar desacuerdo se clasifica como:",
+      "pista": "Expresa una postura mediante movimientos corporales de las manos sin usar palabras",
+      "opciones": [
+        {
+          "texto": "Comunicación no verbal sonora",
+          "emoji": ""
+        },
+        {
+          "texto": "Comunicación verbal escrita",
+          "emoji": ""
+        },
+        {
+          "texto": "Comunicación verbal oral",
+          "emoji": ""
+        },
+        {
+          "texto": "Comunicación no verbal gestual",
+          "emoji": ""
+        }
+      ],
+      "respuestaCorrecta": "Comunicación no verbal gestual"
+    },
+    {
+      "id": "len-001-ex-005",
+      "fichaId": "len-001",
+      "subject": "lengua",
+      "tipo": "EleccionMultiple",
+      "nivel": 2,
+      "tiempoEstimado": 30,
+      "enunciado": "Una señal de prohibido fumar en la que aparece un cigarrillo tachado se clasifica como:",
+      "pista": "Informa de una prohibición mediante una imagen ilustrada sin emplear palabras",
+      "opciones": [
+        {
+          "texto": "Comunicación no verbal visual",
+          "emoji": ""
+        },
+        {
+          "texto": "Comunicación verbal escrita",
+          "emoji": ""
+        },
+        {
+          "texto": "Comunicación verbal oral",
+          "emoji": ""
+        },
+        {
+          "texto": "Comunicación no verbal sonora",
+          "emoji": ""
+        }
+      ],
+      "respuestaCorrecta": "Comunicación no verbal visual"
+    },
+    {
+      "id": "len-001-ex-006",
+      "fichaId": "len-001",
+      "subject": "lengua",
+      "tipo": "ArrastrarPalabras",
+      "nivel": 2,
+      "tiempoEstimado": 60,
+      "fraseConHuecos": "Un [___] es un ejemplo de comunicación verbal escrita transmitida de forma digital. El [___] de los medicamentos utiliza el texto escrito para transmitir información verbal.",
+      "banco": [
+        "email",
+        "Mensaje de texto",
+        "Comunicación no verbal",
+        "Comunicación verbal",
+        "prospecto"
+      ],
+      "respuestasCorrectas": [
+        "email",
+        "prospecto"
+      ]
+    },
+    {
+      "id": "len-001-ex-007",
+      "fichaId": "len-001",
+      "subject": "lengua",
+      "tipo": "OrdenarFrase",
+      "nivel": 3,
+      "tiempoEstimado": 60,
+      "enunciado": "Ordena las palabras:",
+      "palabrasDesordenadas": [
+        "un",
+        "de",
+        "de",
+        "comunicación",
+        "tipo",
+        "en",
+        "constituye",
+        "periódico",
+        "crónica",
+        "un",
+        "La",
+        "verbal",
+        "suceso",
+        "un"
+      ],
+      "fraseCorrecta": "La crónica de un suceso en un periódico constituye un tipo de comunicación verbal"
+    },
+    {
+      "id": "len-001-ex-008",
+      "fichaId": "len-001",
+      "subject": "lengua",
+      "tipo": "ArrastrarPalabras",
+      "nivel": 1,
+      "tiempoEstimado": 45,
+      "fraseConHuecos": "La [___] de un coche de bomberos transmite una alerta mediante comunicación no verbal.",
+      "banco": [
+        "Tarjeta amarilla",
+        "sirena",
+        "Gesto",
+        "Mensaje de texto"
+      ],
+      "respuestasCorrectas": [
+        "sirena"
+      ]
+    },
+    {
+      "id": "len-001-ex-009",
+      "fichaId": "len-001",
+      "subject": "lengua",
+      "tipo": "ArrastrarPalabras",
+      "nivel": 1,
+      "tiempoEstimado": 45,
+      "fraseConHuecos": "La luz verde de un [___] sirve como señal visual de comunicación no verbal.",
+      "banco": [
+        "semáforo",
+        "Prospecto",
+        "Sirena",
+        "Crónica"
+      ],
+      "respuestasCorrectas": [
+        "semáforo"
+      ]
+    },
+    {
+      "id": "len-001-ex-010",
+      "fichaId": "len-001",
+      "subject": "lengua",
+      "tipo": "ArrastrarPalabras",
+      "nivel": 1,
+      "tiempoEstimado": 45,
+      "fraseConHuecos": "Una [___] combina música y lenguaje para transmitir un mensaje verbal.",
+      "banco": [
+        "Tarjeta amarilla",
+        "Semáforo",
+        "canción",
+        "Email"
+      ],
+      "respuestasCorrectas": [
+        "canción"
+      ]
+    },
+    {
+      "id": "len-001-ex-011",
+      "fichaId": "len-001",
+      "subject": "lengua",
+      "tipo": "ArrastrarPalabras",
+      "nivel": 1,
+      "tiempoEstimado": 45,
+      "fraseConHuecos": "Un [___] enseñando una tarjeta amarilla a un futbolista utiliza la comunicación no verbal.",
+      "banco": [
+        "Gesto",
+        "Prospecto",
+        "Mensaje de texto",
+        "árbitro"
+      ],
+      "respuestasCorrectas": [
+        "árbitro"
+      ]
+    },
+    {
+      "id": "len-001-ex-012",
+      "fichaId": "len-001",
+      "subject": "lengua",
+      "tipo": "ClasificarGrupos",
+      "nivel": 2,
+      "tiempoEstimado": 60,
+      "enunciado": "Clasifica cada palabra en su categoría:",
+      "grupos": [
+        {
+          "id": "g1",
+          "nombre": "Textos y mensajes escritos"
+        },
+        {
+          "id": "g2",
+          "nombre": "Señales visuales e imágenes"
+        }
+      ],
+      "items": [
+        {
+          "id": "1",
+          "texto": "Email",
+          "grupoId": "g1"
+        },
+        {
+          "id": "6",
+          "texto": "Señal de prohibido fumar",
+          "grupoId": "g2"
+        },
+        {
+          "id": "5",
+          "texto": "Tarjeta amarilla",
+          "grupoId": "g2"
+        },
+        {
+          "id": "3",
+          "texto": "Crónica",
+          "grupoId": "g1"
+        },
+        {
+          "id": "4",
+          "texto": "Semáforo",
+          "grupoId": "g2"
+        },
+        {
+          "id": "2",
+          "texto": "Prospecto",
+          "grupoId": "g1"
+        }
+      ]
+    },
+    {
+      "id": "len-001-ex-013",
+      "fichaId": "len-001",
+      "subject": "lengua",
+      "tipo": "ComprensionLectora",
+      "nivel": 2,
+      "tiempoEstimado": 240,
+      "enunciado": "Lee y responde:",
+      "texto": "El prospecto de los medicamentos es un documento escrito que acompaña a los fármacos para informar al usuario sobre su uso correcto y sus indicaciones. Al estar compuesto por palabras y texto redactado, la lectura de este documento constituye un caso claro de comunicación verbal. A través de las instrucciones escritas, el paciente recibe información comprensible para garantizar una administración segura de la medicina.",
+      "preguntas": [
+        {
+          "tipo": "EleccionMultiple",
+          "enunciado": "¿A qué tipo de comunicación corresponde la lectura de un prospecto de medicamentos según la ficha?",
+          "opciones": [
+            "Comunicación verbal oral",
+            "Comunicación verbal escrita",
+            "Comunicación no verbal visual",
+            "Comunicación no verbal sonora"
+          ],
+          "respuestaCorrecta": "Comunicación verbal escrita",
+          "pista": "Utiliza lenguaje alfabético y texto escrito para transmitir información"
+        },
+        {
+          "tipo": "RellenarHueco",
+          "enunciado": "Al estar compuesto por palabras y texto redactado, la lectura del prospecto constituye un caso claro de comunicación [___].",
+          "respuestaCorrecta": "verbal",
+          "pista": "El texto escrito de un prospecto transmite información mediante palabras y lenguaje escrito."
+        },
+        {
+          "tipo": "EleccionMultiple",
+          "enunciado": "¿En qué formato se presenta la información en el prospecto de los medicamentos?",
+          "opciones": [
+            "Señal luminosa",
+            "Expresión facial",
+            "Texto escrito",
+            "Sonido de alerta"
+          ],
+          "respuestaCorrecta": "Texto escrito",
+          "pista": "El documento utiliza palabras escritas para transmitir las instrucciones"
+        }
+      ]
+    },
+    {
+      "id": "len-001-ex-014",
+      "fichaId": "len-001",
+      "subject": "lengua",
+      "tipo": "ComprensionLectora",
+      "nivel": 2,
+      "tiempoEstimado": 240,
+      "enunciado": "Lee y responde:",
+      "texto": "La sirena de un coche de bomberos emite un sonido potente para avisar a los conductores y peatones sobre el paso de un vehículo de emergencia. Este tipo de señal acústica permite transmitir un mensaje inmediato de alerta sin necesidad de emplear palabras habladas o escritas. Por esa razón, la sirena se clasifica como un ejemplo de comunicación no verbal.",
+      "preguntas": [
+        {
+          "tipo": "EleccionMultiple",
+          "enunciado": "¿Cómo se clasifica la sirena de un coche de bomberos según la ficha?",
+          "opciones": [
+            "Comunicación verbal",
+            "Comunicación escrita",
+            "Comunicación oral",
+            "Comunicación no verbal"
+          ],
+          "respuestaCorrecta": "Comunicación no verbal",
+          "pista": "Transmite un mensaje de alerta mediante sonido sin utilizar palabras"
+        },
+        {
+          "tipo": "RellenarHueco",
+          "enunciado": "La sirena de un coche de bomberos transmite un mensaje inmediato de alerta sin necesidad de emplear [___].",
+          "respuestaCorrecta": "palabras",
+          "pista": "La señal auditiva comunica la emergencia sin usar lenguaje ni términos verbales."
+        },
+        {
+          "tipo": "EleccionMultiple",
+          "enunciado": "¿Qué canal utiliza la sirena del coche de bomberos para transmitir la alerta?",
+          "opciones": [
+            "Señal acústica",
+            "Texto impreso",
+            "Gesto facial",
+            "Imagen fija"
+          ],
+          "respuestaCorrecta": "Señal acústica",
+          "pista": "Emite un sonido potente percibido por el oído para advertir del peligro"
+        }
+      ]
+    },
+    {
+      "id": "len-001-ex-015",
+      "fichaId": "len-001",
+      "subject": "lengua",
+      "tipo": "ComprensionLectora",
+      "nivel": 2,
+      "tiempoEstimado": 240,
+      "enunciado": "Lee y responde:",
+      "texto": "Durante un partido de fútbol, un árbitro enseña una tarjeta amarilla a un jugador para sancionar una infracción. Mostrar este objeto de color funciona como una señal visual directa para amonestar al deportista sin pronunciar ninguna palabra. Debido a que la información se transmite mediante una imagen y un código de color, este acto es un ejemplo de comunicación no verbal.",
+      "preguntas": [
+        {
+          "tipo": "EleccionMultiple",
+          "enunciado": "¿Qué tipo de comunicación realiza un árbitro al enseñar una tarjeta amarilla?",
+          "opciones": [
+            "Comunicación verbal",
+            "Comunicación no verbal",
+            "Comunicación oral",
+            "Comunicación escrita"
+          ],
+          "respuestaCorrecta": "Comunicación no verbal",
+          "pista": "Emite un aviso mediante un objeto visual y color sin usar palabras"
+        },
+        {
+          "tipo": "RellenarHueco",
+          "enunciado": "Mostrar una tarjeta amarilla funciona como una señal [___] directa para amonestar al deportista sin pronunciar palabra.",
+          "respuestaCorrecta": "visual",
+          "pista": "La tarjeta se percibe a través de la vista mediante su forma y color."
+        },
+        {
+          "tipo": "EleccionMultiple",
+          "enunciado": "¿Cuál es el recurso principal que utiliza el árbitro para comunicar la sanción en este ejemplo?",
+          "opciones": [
+            "Mensaje de texto",
+            "Lectura de prospecto",
+            "Código de color",
+            "Sonido de sirena"
+          ],
+          "respuestaCorrecta": "Código de color",
+          "pista": "Utiliza el color amarillo de la tarjeta para transmitir la amonestación"
+        }
+      ]
+    },
+    {
+      "id": "len-001-ex-016",
+      "fichaId": "len-001",
+      "subject": "lengua",
+      "tipo": "SopaLetras",
+      "nivel": 3,
+      "tiempoEstimado": 180,
+      "enunciado": "Encuentra las palabras:",
+      "palabras": [
+        "GESTO",
+        "EMAIL",
+        "CRONICA",
+        "SIRENA",
+        "SEMAFORO",
+        "CANCION"
+      ],
+      "cuadricula": [
+        [
+          "A",
+          "C",
+          "I",
+          "N",
+          "O",
+          "R",
+          "C",
+          "U"
+        ],
+        [
+          "M",
+          "K",
+          "Z",
+          "W",
+          "W",
+          "K",
+          "I",
+          "Q"
+        ],
+        [
+          "S",
+          "E",
+          "M",
+          "A",
+          "F",
+          "O",
+          "R",
+          "O"
+        ],
+        [
+          "W",
+          "C",
+          "A",
+          "N",
+          "C",
+          "I",
+          "O",
+          "N"
+        ],
+        [
+          "A",
+          "N",
+          "E",
+          "R",
+          "I",
+          "S",
+          "X",
+          "I"
+        ],
+        [
+          "M",
+          "G",
+          "E",
+          "S",
+          "T",
+          "O",
+          "O",
+          "G"
+        ],
+        [
+          "G",
+          "I",
+          "W",
+          "Z",
+          "E",
+          "D",
+          "D",
+          "J"
+        ],
+        [
+          "L",
+          "L",
+          "I",
+          "A",
+          "M",
+          "E",
+          "D",
+          "D"
+        ]
+      ]
+    },
+    {
+      "id": "len-001-ex-017",
+      "fichaId": "len-001",
+      "subject": "lengua",
+      "tipo": "MemoriaPareja",
+      "nivel": 3,
+      "tiempoEstimado": 180,
+      "enunciado": "Empareja cada término con su definición:",
+      "parejas": [
+        {
+          "a": "Comunicación verbal",
+          "b": "Transmisión de mensajes expresados mediante la…"
+        },
+        {
+          "a": "Comunicación no verbal",
+          "b": "Transmisión de información mediante gestos, señales,…"
+        },
+        {
+          "a": "Gesto",
+          "b": "Expresión facial o corporal utilizada para…"
+        },
+        {
+          "a": "Tarjeta amarilla",
+          "b": "Señal visual mostrada por un árbitro…"
+        },
+        {
+          "a": "Señal de prohibido fumar",
+          "b": "Imagen visual con un cigarrillo tachado…"
+        },
+        {
+          "a": "Email",
+          "b": "Mensaje de texto escrito enviado digitalmente…"
+        }
+      ]
+    },
+    {
+      "id": "len-001-ex-018",
+      "fichaId": "len-001",
+      "subject": "lengua",
+      "tipo": "UnirColumnas",
+      "nivel": 2,
+      "tiempoEstimado": 90,
+      "enunciado": "Une cada definición con su término:",
+      "parejas": [
+        {
+          "izquierda": "Documento con texto escrito que explica la información de un…",
+          "derecha": "Prospecto"
+        },
+        {
+          "izquierda": "Texto escrito periodístico que relata detalladamente un suceso en un…",
+          "derecha": "Crónica"
+        },
+        {
+          "izquierda": "Texto escrito transmitido a un teléfono móvil para comunicarse con…",
+          "derecha": "Mensaje de texto"
+        },
+        {
+          "izquierda": "Señal sonora emitida por vehículos de emergencia para alertar sobre…",
+          "derecha": "Sirena"
+        }
+      ]
+    }
+  ],
+  "videoExplicacion": "https://youtube.com/shorts/BPvKDfaSZSw"
+}

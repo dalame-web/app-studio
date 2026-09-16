@@ -1,0 +1,605 @@
+{
+  "id": "len-002",
+  "subject": "lengua",
+  "titulo": "La comunicación verbal y no verbal",
+  "nivel": 1,
+  "curso": 4,
+  "contenido": "La comunicación es la acción de intercambiar información entre las personas. Cuando se utilizan palabras o signos hablados y escritos, se trata de comunicación verbal. Por otra parte, la comunicación no verbal ocurre cuando se emplean imágenes, sonidos o gestos. Asimismo, una lengua es el conjunto de palabras y reglas que usan los hablantes de una región para comunicarse.",
+  "ejemplos": [
+    "Saludar a alguien diciendo ¡Hola! o escribir un mensaje de texto son formas de comunicación verbal. Escuchar la música a las once y cuarto de la mañana para indicar el inicio del recreo es un ejemplo de comunicación no verbal con sonidos. Un policía que levanta la mano para indicar que hay que parar constituye una comunicación no verbal con gestos."
+  ],
+  "palabrasClave": [
+    "comunicación",
+    "comunicación verbal",
+    "comunicación no verbal",
+    "comunicación oral",
+    "comunicación escrita",
+    "lengua",
+    "abecedario",
+    "párrafo",
+    "punto",
+    "punto seguido",
+    "carta"
+  ],
+  "tiposEjercicio": [
+    "EleccionMultiple",
+    "ArrastrarPalabras",
+    "OrdenarFrase",
+    "ClasificarGrupos",
+    "ComprensionLectora",
+    "SopaLetras",
+    "MemoriaPareja",
+    "UnirColumnas"
+  ],
+  "ejerciciosDerivar": 17,
+  "ejercicios": [
+    {
+      "id": "len-002-ex-001",
+      "fichaId": "len-002",
+      "subject": "lengua",
+      "tipo": "EleccionMultiple",
+      "nivel": 2,
+      "tiempoEstimado": 30,
+      "enunciado": "Un policía dirigiendo el tráfico levanta la mano con la palma hacia los vehículos para indicar que hay que parar, ¿qué tipo de comunicación está utilizando?",
+      "pista": "Es correcta porque el policía utiliza un movimiento de la mano sin usar palabras para transmitir la orden",
+      "opciones": [
+        {
+          "texto": "Comunicación no verbal con gestos",
+          "emoji": ""
+        },
+        {
+          "texto": "Comunicación verbal oral",
+          "emoji": ""
+        },
+        {
+          "texto": "Comunicación verbal escrita",
+          "emoji": ""
+        },
+        {
+          "texto": "Comunicación no verbal con sonidos",
+          "emoji": ""
+        }
+      ],
+      "respuestaCorrecta": "Comunicación no verbal con gestos"
+    },
+    {
+      "id": "len-002-ex-002",
+      "fichaId": "len-002",
+      "subject": "lengua",
+      "tipo": "EleccionMultiple",
+      "nivel": 2,
+      "tiempoEstimado": 30,
+      "enunciado": "En la carta que envía el padre de D'Artagnan, el texto \"Gasconia, a 3 de marzo del año de Nuestro Señor 1625\" se clasifica como:",
+      "pista": "Es correcta porque indica el momento y la localidad desde donde se escribe la carta",
+      "opciones": [
+        {
+          "texto": "Saludo",
+          "emoji": ""
+        },
+        {
+          "texto": "Fecha y lugar",
+          "emoji": ""
+        },
+        {
+          "texto": "Cuerpo de la carta",
+          "emoji": ""
+        },
+        {
+          "texto": "Despedida",
+          "emoji": ""
+        }
+      ],
+      "respuestaCorrecta": "Fecha y lugar"
+    },
+    {
+      "id": "len-002-ex-003",
+      "fichaId": "len-002",
+      "subject": "lengua",
+      "tipo": "EleccionMultiple",
+      "nivel": 2,
+      "tiempoEstimado": 30,
+      "enunciado": "En un colegio, el sonido de la música a las once y cuarto de la mañana para señalar que el recreo va a comenzar se clasifica como:",
+      "pista": "Es correcta porque se utiliza un sonido y no palabras para transmitir una información",
+      "opciones": [
+        {
+          "texto": "Comunicación no verbal con imágenes",
+          "emoji": ""
+        },
+        {
+          "texto": "Comunicación verbal oral",
+          "emoji": ""
+        },
+        {
+          "texto": "Comunicación no verbal con sonidos",
+          "emoji": ""
+        },
+        {
+          "texto": "Comunicación verbal escrita",
+          "emoji": ""
+        }
+      ],
+      "respuestaCorrecta": "Comunicación no verbal con sonidos"
+    },
+    {
+      "id": "len-002-ex-004",
+      "fichaId": "len-002",
+      "subject": "lengua",
+      "tipo": "EleccionMultiple",
+      "nivel": 2,
+      "tiempoEstimado": 30,
+      "enunciado": "Al terminar de escribir un texto completo sobre las aventuras de los personajes, se coloca un signo que indica que la redacción se ha terminado. Este signo corresponde a:",
+      "pista": "Es correcta porque este signo se escribe al concluir la totalidad de un texto",
+      "opciones": [
+        {
+          "texto": "Punto seguido",
+          "emoji": ""
+        },
+        {
+          "texto": "Punto y aparte",
+          "emoji": ""
+        },
+        {
+          "texto": "Párrafo",
+          "emoji": ""
+        },
+        {
+          "texto": "Punto final",
+          "emoji": ""
+        }
+      ],
+      "respuestaCorrecta": "Punto final"
+    },
+    {
+      "id": "len-002-ex-005",
+      "fichaId": "len-002",
+      "subject": "lengua",
+      "tipo": "ArrastrarPalabras",
+      "nivel": 1,
+      "tiempoEstimado": 60,
+      "fraseConHuecos": "La [___] es la acción de intercambiar información entre personas. En la [___] se utilizan palabras o signos para transmitir un mensaje.",
+      "banco": [
+        "comunicación verbal",
+        "punto",
+        "comunicación",
+        "lengua",
+        "párrafo"
+      ],
+      "respuestasCorrectas": [
+        "comunicación",
+        "comunicación verbal"
+      ]
+    },
+    {
+      "id": "len-002-ex-006",
+      "fichaId": "len-002",
+      "subject": "lengua",
+      "tipo": "OrdenarFrase",
+      "nivel": 3,
+      "tiempoEstimado": 60,
+      "enunciado": "Ordena las palabras:",
+      "palabrasDesordenadas": [
+        "imágenes",
+        "sonidos",
+        "En",
+        "gestos",
+        "la",
+        "se",
+        "comunicación",
+        "o",
+        "no",
+        "verbal",
+        "utilizan"
+      ],
+      "fraseCorrecta": "En la comunicación no verbal se utilizan imágenes sonidos o gestos"
+    },
+    {
+      "id": "len-002-ex-007",
+      "fichaId": "len-002",
+      "subject": "lengua",
+      "tipo": "ArrastrarPalabras",
+      "nivel": 2,
+      "tiempoEstimado": 45,
+      "fraseConHuecos": "La [___] es la forma de comunicación verbal que se realiza al escribir.",
+      "banco": [
+        "comunicación oral",
+        "comunicación escrita",
+        "punto seguido",
+        "abecedario"
+      ],
+      "respuestasCorrectas": [
+        "comunicación escrita"
+      ]
+    },
+    {
+      "id": "len-002-ex-008",
+      "fichaId": "len-002",
+      "subject": "lengua",
+      "tipo": "ArrastrarPalabras",
+      "nivel": 2,
+      "tiempoEstimado": 45,
+      "fraseConHuecos": "Una [___] es un conjunto de palabras y reglas que se usan para hablar, escribir y entenderse.",
+      "banco": [
+        "punto seguido",
+        "comunicación verbal",
+        "lengua",
+        "carta"
+      ],
+      "respuestasCorrectas": [
+        "lengua"
+      ]
+    },
+    {
+      "id": "len-002-ex-009",
+      "fichaId": "len-002",
+      "subject": "lengua",
+      "tipo": "ArrastrarPalabras",
+      "nivel": 1,
+      "tiempoEstimado": 45,
+      "fraseConHuecos": "El [___] está formado por 27 letras con 5 vocales y 22 consonantes.",
+      "banco": [
+        "abecedario",
+        "comunicación no verbal",
+        "punto seguido",
+        "comunicación"
+      ],
+      "respuestasCorrectas": [
+        "abecedario"
+      ]
+    },
+    {
+      "id": "len-002-ex-010",
+      "fichaId": "len-002",
+      "subject": "lengua",
+      "tipo": "ArrastrarPalabras",
+      "nivel": 1,
+      "tiempoEstimado": 45,
+      "fraseConHuecos": "Un [___] es un conjunto de oraciones escritas que comparten un mismo tema.",
+      "banco": [
+        "lengua",
+        "comunicación escrita",
+        "párrafo",
+        "comunicación no verbal"
+      ],
+      "respuestasCorrectas": [
+        "párrafo"
+      ]
+    },
+    {
+      "id": "len-002-ex-011",
+      "fichaId": "len-002",
+      "subject": "lengua",
+      "tipo": "ClasificarGrupos",
+      "nivel": 2,
+      "tiempoEstimado": 60,
+      "enunciado": "Clasifica cada palabra en su categoría:",
+      "grupos": [
+        {
+          "id": "g1",
+          "nombre": "Tipos de comunicación"
+        },
+        {
+          "id": "g2",
+          "nombre": "Lengua y vocabulario"
+        }
+      ],
+      "items": [
+        {
+          "id": "2",
+          "texto": "comunicación verbal",
+          "grupoId": "g1"
+        },
+        {
+          "id": "5",
+          "texto": "abecedario",
+          "grupoId": "g2"
+        },
+        {
+          "id": "4",
+          "texto": "lengua",
+          "grupoId": "g2"
+        },
+        {
+          "id": "1",
+          "texto": "comunicación",
+          "grupoId": "g1"
+        },
+        {
+          "id": "6",
+          "texto": "carta",
+          "grupoId": "g2"
+        },
+        {
+          "id": "3",
+          "texto": "comunicación no verbal",
+          "grupoId": "g1"
+        }
+      ]
+    },
+    {
+      "id": "len-002-ex-012",
+      "fichaId": "len-002",
+      "subject": "lengua",
+      "tipo": "ComprensionLectora",
+      "nivel": 2,
+      "tiempoEstimado": 240,
+      "enunciado": "Lee y responde:",
+      "texto": "En la comunicación no verbal las personas intercambian información sin utilizar palabras habladas ni escritas. Para transmitir un mensaje se pueden emplear imágenes, sonidos o gestos. Por ejemplo, en un centro comercial se utiliza un cartel con la figura de un hombre y una mujer junto a una flecha para indicar dónde se encuentran los servicios. Asimismo, el sonido de la música a las once y cuarto de la mañana avisa a los alumnos de que va a comenzar el recreo.",
+      "preguntas": [
+        {
+          "tipo": "EleccionMultiple",
+          "enunciado": "La señal con la figura de un hombre, una mujer y una flecha en un centro comercial se clasifica como comunicación no verbal mediante:",
+          "opciones": [
+            "Imágenes",
+            "Sonidos",
+            "Gestos",
+            "Palabras habladas"
+          ],
+          "respuestaCorrecta": "Imágenes",
+          "pista": "Es correcta porque el cartel muestra una ilustración visual para indicar la ubicación del servicio"
+        },
+        {
+          "tipo": "RellenarHueco",
+          "enunciado": "En la comunicación no verbal las personas intercambian información sin utilizar [___] habladas ni escritas.",
+          "respuestaCorrecta": "palabras",
+          "pista": "Es correcta porque en la comunicación no verbal se emplean imágenes, sonidos o gestos en lugar de palabras."
+        },
+        {
+          "tipo": "EleccionMultiple",
+          "enunciado": "El aviso del comienzo del recreo a las once y cuarto de la mañana se transmite mediante:",
+          "opciones": [
+            "Una carta escrita",
+            "Una melodía de música",
+            "Un gesto de la mano",
+            "Un mensaje de texto"
+          ],
+          "respuestaCorrecta": "Una melodía de música",
+          "pista": "Es correcta porque el párrafo menciona que el sonido de la música avisa el inicio del recreo"
+        }
+      ]
+    },
+    {
+      "id": "len-002-ex-013",
+      "fichaId": "len-002",
+      "subject": "lengua",
+      "tipo": "ComprensionLectora",
+      "nivel": 2,
+      "tiempoEstimado": 240,
+      "enunciado": "Lee y responde:",
+      "texto": "El abecedario de nuestra lengua está formado por un total de veintisiete letras, entre las que se encuentran cinco vocales y veintidós consonantes. Para ordenar alfabéticamente un grupo de palabras, el primer paso consiste en comparar la primera letra de cada una de ellas. Si dos palabras comienzan por la misma letra, se debe comparar la segunda letra, y así sucesivamente.",
+      "preguntas": [
+        {
+          "tipo": "EleccionMultiple",
+          "enunciado": "Si dos palabras empiezan por la misma primera letra y se quieren ordenar alfabéticamente, el procedimiento correcto es comparar:",
+          "opciones": [
+            "El número de vocales",
+            "La última consonante",
+            "La segunda letra",
+            "El tamaño de la palabra"
+          ],
+          "respuestaCorrecta": "La segunda letra",
+          "pista": "Es correcta porque la regla indica que si la primera letra coincide se debe comparar la segunda"
+        },
+        {
+          "tipo": "RellenarHueco",
+          "enunciado": "El abecedario está formado por un conjunto de [___] letras.",
+          "respuestaCorrecta": "27",
+          "pista": "Es correcta porque las fuentes indican que el abecedario contiene exactamente veintisiete letras."
+        },
+        {
+          "tipo": "EleccionMultiple",
+          "enunciado": "Dentro del abecedario, las cinco letras como la A, la E o la I se clasifican como:",
+          "opciones": [
+            "Consonantes",
+            "Párrafos",
+            "Puntos",
+            "Vocales"
+          ],
+          "respuestaCorrecta": "Vocales",
+          "pista": "Es correcta porque las fuentes indican que de las veintisiete letras cinco son vocales"
+        }
+      ]
+    },
+    {
+      "id": "len-002-ex-014",
+      "fichaId": "len-002",
+      "subject": "lengua",
+      "tipo": "ComprensionLectora",
+      "nivel": 2,
+      "tiempoEstimado": 240,
+      "enunciado": "Lee y responde:",
+      "texto": "La carta es un medio de comunicación escrita que consta de cinco partes fundamentales para estar bien redactada. En primer lugar se indica la fecha y el lugar desde donde se escribe, como por ejemplo Gasconia a 3 de marzo de 1625. A continuación se añade el saludo a la persona receptora, seguido del cuerpo de la carta donde se narra lo que se quiere contar. Finalmente se incluye la despedida y la firma con el nombre del remitente.",
+      "preguntas": [
+        {
+          "tipo": "EleccionMultiple",
+          "enunciado": "La parte de la carta en la que se cuenta o redacta el mensaje principal que se quiere transmitir se denomina:",
+          "opciones": [
+            "Cuerpo de la carta",
+            "Fecha y lugar",
+            "Saludo inicial",
+            "Despedida final"
+          ],
+          "respuestaCorrecta": "Cuerpo de la carta",
+          "pista": "Es correcta porque en esta sección se narra el contenido o asunto principal del escrito"
+        },
+        {
+          "tipo": "RellenarHueco",
+          "enunciado": "La carta es un medio de comunicación escrita que consta de [___] partes.",
+          "respuestaCorrecta": "cinco",
+          "pista": "Es correcta porque la estructura explicada en la unidad se divide en exactamente cinco secciones."
+        },
+        {
+          "tipo": "EleccionMultiple",
+          "enunciado": "El texto 'Gasconia, a 3 de marzo del año de Nuestro Señor 1625' situado al inicio de una carta corresponde a:",
+          "opciones": [
+            "Cuerpo de la carta",
+            "Fecha y lugar",
+            "Despedida",
+            "Firma"
+          ],
+          "respuestaCorrecta": "Fecha y lugar",
+          "pista": "Es correcta porque señala la localidad y el día concreto en que se redactó el documento"
+        }
+      ]
+    },
+    {
+      "id": "len-002-ex-015",
+      "fichaId": "len-002",
+      "subject": "lengua",
+      "tipo": "SopaLetras",
+      "nivel": 3,
+      "tiempoEstimado": 180,
+      "enunciado": "Encuentra las palabras:",
+      "palabras": [
+        "PUNTO",
+        "LENGUA",
+        "PARRAFO",
+        "CARTA"
+      ],
+      "cuadricula": [
+        [
+          "E",
+          "E",
+          "X",
+          "E",
+          "B",
+          "H",
+          "T",
+          "S"
+        ],
+        [
+          "Y",
+          "V",
+          "Y",
+          "D",
+          "M",
+          "I",
+          "D",
+          "N"
+        ],
+        [
+          "P",
+          "A",
+          "R",
+          "R",
+          "A",
+          "F",
+          "O",
+          "G"
+        ],
+        [
+          "C",
+          "A",
+          "R",
+          "T",
+          "A",
+          "Z",
+          "T",
+          "U"
+        ],
+        [
+          "Y",
+          "I",
+          "A",
+          "U",
+          "G",
+          "N",
+          "E",
+          "L"
+        ],
+        [
+          "D",
+          "G",
+          "I",
+          "A",
+          "H",
+          "G",
+          "K",
+          "Y"
+        ],
+        [
+          "X",
+          "P",
+          "B",
+          "P",
+          "W",
+          "M",
+          "V",
+          "T"
+        ],
+        [
+          "I",
+          "B",
+          "O",
+          "T",
+          "N",
+          "U",
+          "P",
+          "J"
+        ]
+      ]
+    },
+    {
+      "id": "len-002-ex-016",
+      "fichaId": "len-002",
+      "subject": "lengua",
+      "tipo": "MemoriaPareja",
+      "nivel": 3,
+      "tiempoEstimado": 180,
+      "enunciado": "Empareja cada término con su definición:",
+      "parejas": [
+        {
+          "a": "comunicación oral",
+          "b": "Forma de comunicación verbal que se…"
+        },
+        {
+          "a": "punto",
+          "b": "Signo que indica el final de…"
+        },
+        {
+          "a": "punto seguido",
+          "b": "Tipo de punto que separa oraciones…"
+        },
+        {
+          "a": "comunicación",
+          "b": "Acción de intercambiar información entre personas"
+        },
+        {
+          "a": "comunicación verbal",
+          "b": "Tipo de comunicación en la que…"
+        },
+        {
+          "a": "lengua",
+          "b": "Conjunto de palabras y reglas usadas…"
+        }
+      ]
+    },
+    {
+      "id": "len-002-ex-017",
+      "fichaId": "len-002",
+      "subject": "lengua",
+      "tipo": "UnirColumnas",
+      "nivel": 2,
+      "tiempoEstimado": 90,
+      "enunciado": "Une cada definición con su término:",
+      "parejas": [
+        {
+          "izquierda": "Tipo de comunicación en la que utilizamos imágenes, sonidos o…",
+          "derecha": "comunicación no verbal"
+        },
+        {
+          "izquierda": "Forma de comunicación verbal que se realiza al escribir",
+          "derecha": "comunicación escrita"
+        },
+        {
+          "izquierda": "Conjunto formado por veintisiete letras con cinco vocales y veintidós…",
+          "derecha": "abecedario"
+        },
+        {
+          "izquierda": "Conjunto de oraciones escritas que comparten un mismo tema",
+          "derecha": "párrafo"
+        }
+      ]
+    }
+  ],
+  "videoExplicacion": "https://youtu.be/lsWLh60jLdM"
+}

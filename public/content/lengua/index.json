@@ -1,5 +1,18 @@
 {
-  "version": "local-1789556474616",
+  "version": "local-1789580509046",
   "subject": "lengua",
-  "fichas": []
+  "fichas": [
+    {
+      "id": "len-001",
+      "titulo": "Comunicación verbal y no verbal",
+      "nivel": 1,
+      "numEjercicios": 18
+    },
+    {
+      "id": "len-002",
+      "titulo": "La comunicación verbal y no verbal",
+      "nivel": 1,
+      "numEjercicios": 17
+    }
+  ]
 }

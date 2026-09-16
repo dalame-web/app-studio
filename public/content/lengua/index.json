@@ -1,12 +1,5 @@
 {
   "version": "local-1789556474616",
   "subject": "lengua",
-  "fichas": [
-    {
-      "id": "len-001",
-      "titulo": "Comunicación verbal y no verbal",
-      "nivel": 1,
-      "numEjercicios": 16
-    }
-  ]
+  "fichas": []
 }

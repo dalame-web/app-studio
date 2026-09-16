@@ -1,5 +1,484 @@
 {
-  "version": "2026-09-15-mu2sdvh4",
-  "fecha": "2026-09-15",
-  "fichas": []
+  "version": "2026-09-16-mu3zd0vc",
+  "fecha": "2026-09-16",
+  "fichas": [
+    {
+      "id": "len-001",
+      "subject": "lengua",
+      "titulo": "Comunicación verbal y no verbal",
+      "nivel": 1,
+      "curso": 4,
+      "contenido": "Las personas nos comunicamos para transmitir ideas, emociones e información a los demás. La comunicación verbal utiliza palabras habladas o escritas, como ocurre en una conversación, un correo electrónico o un mensaje de texto. La comunicación no verbal transmite mensajes sin usar palabras, mediante gestos, miradas, una señal visual o una señal sonora. Ambos tipos de comunicación son fundamentales en nuestra vida diaria para entendernos mejor con quienes nos rodean.",
+      "ejemplos": [
+        "Leer el prospecto de los medicamentos o la crónica de un periódico es comunicación verbal escrita.",
+        "Escuchar la sirena de una ambulancia o la sirena de un coche de bomberos es comunicación no verbal sonora.",
+        "Ver la luz verde de un semáforo o la tarjeta amarilla de un árbitro es comunicación no verbal visual."
+      ],
+      "palabrasClave": [
+        "comunicación verbal",
+        "comunicación no verbal",
+        "correo electrónico",
+        "conversación",
+        "gesto",
+        "señal visual",
+        "señal sonora",
+        "exclamación",
+        "tarjeta amarilla",
+        "mirada",
+        "mensaje de texto",
+        "crónica periodística"
+      ],
+      "tiposEjercicio": [
+        "EleccionMultiple",
+        "ArrastrarPalabras",
+        "OrdenarFrase",
+        "ClasificarGrupos",
+        "ComprensionLectora",
+        "MemoriaPareja",
+        "UnirColumnas"
+      ],
+      "ejerciciosDerivar": 16,
+      "ejercicios": [
+        {
+          "id": "len-001-ex-001",
+          "fichaId": "len-001",
+          "subject": "lengua",
+          "tipo": "EleccionMultiple",
+          "nivel": 1,
+          "tiempoEstimado": 30,
+          "enunciado": "¿Cómo se denomina a la forma de transmitir información utilizando palabras habladas o escritas?",
+          "opciones": [
+            {
+              "texto": "comunicación verbal",
+              "emoji": ""
+            },
+            {
+              "texto": "comunicación no verbal",
+              "emoji": ""
+            },
+            {
+              "texto": "señal visual",
+              "emoji": ""
+            },
+            {
+              "texto": "señal sonora",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "comunicación verbal"
+        },
+        {
+          "id": "len-001-ex-002",
+          "fichaId": "len-001",
+          "subject": "lengua",
+          "tipo": "EleccionMultiple",
+          "nivel": 3,
+          "tiempoEstimado": 30,
+          "enunciado": "Si enviamos unas líneas escritas a través de la pantalla de un teléfono móvil para dar un aviso rápido, ¿qué elemento específico estamos utilizando?",
+          "opciones": [
+            {
+              "texto": "correo electrónico",
+              "emoji": ""
+            },
+            {
+              "texto": "mensaje de texto",
+              "emoji": ""
+            },
+            {
+              "texto": "crónica periodística",
+              "emoji": ""
+            },
+            {
+              "texto": "conversación",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "mensaje de texto"
+        },
+        {
+          "id": "len-001-ex-003",
+          "fichaId": "len-001",
+          "subject": "lengua",
+          "tipo": "EleccionMultiple",
+          "nivel": 3,
+          "tiempoEstimado": 30,
+          "enunciado": "¿Cuál de los siguientes términos no pertenece a la categoría de elementos de comunicación no verbal porque utiliza palabras escritas?",
+          "opciones": [
+            {
+              "texto": "gesto",
+              "emoji": ""
+            },
+            {
+              "texto": "señal visual",
+              "emoji": ""
+            },
+            {
+              "texto": "crónica periodística",
+              "emoji": ""
+            },
+            {
+              "texto": "mirada",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "crónica periodística"
+        },
+        {
+          "id": "len-001-ex-004",
+          "fichaId": "len-001",
+          "subject": "lengua",
+          "tipo": "EleccionMultiple",
+          "nivel": 2,
+          "tiempoEstimado": 30,
+          "enunciado": "Cuando leemos el papel con las instrucciones impresas dentro de una caja de medicinas para conocer la dosis adecuada, ¿qué medio escrito estamos consultando?",
+          "opciones": [
+            {
+              "texto": "correo electrónico",
+              "emoji": ""
+            },
+            {
+              "texto": "mensaje de texto",
+              "emoji": ""
+            },
+            {
+              "texto": "crónica periodística",
+              "emoji": ""
+            },
+            {
+              "texto": "prospecto",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "prospecto"
+        },
+        {
+          "id": "len-001-ex-005",
+          "fichaId": "len-001",
+          "subject": "lengua",
+          "tipo": "EleccionMultiple",
+          "nivel": 2,
+          "tiempoEstimado": 30,
+          "enunciado": "En una calle, el elemento con luces de colores que indica de forma visual cuándo deben parar los coches es un ejemplo de:",
+          "opciones": [
+            {
+              "texto": "semáforo",
+              "emoji": ""
+            },
+            {
+              "texto": "ambulancia",
+              "emoji": ""
+            },
+            {
+              "texto": "tarjeta amarilla",
+              "emoji": ""
+            },
+            {
+              "texto": "gesto",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "semáforo"
+        },
+        {
+          "id": "len-001-ex-006",
+          "fichaId": "len-001",
+          "subject": "lengua",
+          "tipo": "EleccionMultiple",
+          "nivel": 1,
+          "tiempoEstimado": 30,
+          "enunciado": "La forma de transmitir mensajes que se apoya únicamente en imágenes, gestos o sonidos sin utilizar palabras se denomina:",
+          "opciones": [
+            {
+              "texto": "comunicación verbal",
+              "emoji": ""
+            },
+            {
+              "texto": "comunicación no verbal",
+              "emoji": ""
+            },
+            {
+              "texto": "correo electrónico",
+              "emoji": ""
+            },
+            {
+              "texto": "conversación",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "comunicación no verbal"
+        },
+        {
+          "id": "len-001-ex-007",
+          "fichaId": "len-001",
+          "subject": "lengua",
+          "tipo": "ArrastrarPalabras",
+          "nivel": 2,
+          "tiempoEstimado": 60,
+          "fraseConHuecos": "Redactar un [___] para enviar un trabajo al colegio es un ejemplo de mensaje escrito. Tener una [___] hablada entre un padre y su hijo permite intercambiar opiniones de viva voz.",
+          "banco": [
+            "correo electrónico",
+            "conversación",
+            "comunicación no verbal",
+            "mensaje de texto",
+            "tarjeta amarilla"
+          ],
+          "respuestasCorrectas": [
+            "correo electrónico",
+            "conversación"
+          ]
+        },
+        {
+          "id": "len-001-ex-008",
+          "fichaId": "len-001",
+          "subject": "lengua",
+          "tipo": "OrdenarFrase",
+          "nivel": 3,
+          "tiempoEstimado": 60,
+          "enunciado": "Ordena las palabras:",
+          "palabrasDesordenadas": [
+            "del",
+            "Poner",
+            "rostro",
+            "asombro",
+            "sorpresa",
+            "cara",
+            "demás",
+            "gesto",
+            "muestra",
+            "los",
+            "es",
+            "de",
+            "que",
+            "un",
+            "a"
+          ],
+          "fraseCorrecta": "Poner cara de asombro es un gesto del rostro que muestra sorpresa a los demás"
+        },
+        {
+          "id": "len-001-ex-009",
+          "fichaId": "len-001",
+          "subject": "lengua",
+          "tipo": "ArrastrarPalabras",
+          "nivel": 2,
+          "tiempoEstimado": 45,
+          "fraseConHuecos": "La luz verde del semáforo funciona como una [___] que indica que se puede cruzar.",
+          "banco": [
+            "mensaje de texto",
+            "conversación",
+            "señal visual",
+            "tarjeta amarilla"
+          ],
+          "respuestasCorrectas": [
+            "señal visual"
+          ]
+        },
+        {
+          "id": "len-001-ex-010",
+          "fichaId": "len-001",
+          "subject": "lengua",
+          "tipo": "ArrastrarPalabras",
+          "nivel": 3,
+          "tiempoEstimado": 45,
+          "fraseConHuecos": "La sirena de un coche de bomberos emite una [___] para avisar de una emergencia.",
+          "banco": [
+            "señal sonora",
+            "exclamación",
+            "mirada",
+            "tarjeta amarilla"
+          ],
+          "respuestasCorrectas": [
+            "señal sonora"
+          ]
+        },
+        {
+          "id": "len-001-ex-011",
+          "fichaId": "len-001",
+          "subject": "lengua",
+          "tipo": "ArrastrarPalabras",
+          "nivel": 2,
+          "tiempoEstimado": 45,
+          "fraseConHuecos": "al recibir un golpe es una [___] hablada que expresa dolor.",
+          "banco": [
+            "conversación",
+            "señal sonora",
+            "exclamación",
+            "tarjeta amarilla"
+          ],
+          "respuestasCorrectas": [
+            "exclamación"
+          ]
+        },
+        {
+          "id": "len-001-ex-012",
+          "fichaId": "len-001",
+          "subject": "lengua",
+          "tipo": "ArrastrarPalabras",
+          "nivel": 2,
+          "tiempoEstimado": 45,
+          "fraseConHuecos": "El árbitro enseña una [___] a un futbolista para mostrar una amonestación sin hablar.",
+          "banco": [
+            "señal visual",
+            "crónica periodística",
+            "tarjeta amarilla",
+            "comunicación verbal"
+          ],
+          "respuestasCorrectas": [
+            "tarjeta amarilla"
+          ]
+        },
+        {
+          "id": "len-001-ex-013",
+          "fichaId": "len-001",
+          "subject": "lengua",
+          "tipo": "ClasificarGrupos",
+          "nivel": 2,
+          "tiempoEstimado": 60,
+          "enunciado": "Clasifica cada palabra en su categoría:",
+          "grupos": [
+            {
+              "id": "g1",
+              "nombre": "Elementos de comunicación verbal"
+            },
+            {
+              "id": "g2",
+              "nombre": "Elementos de comunicación no verbal"
+            }
+          ],
+          "items": [
+            {
+              "id": "3",
+              "texto": "conversación",
+              "grupoId": "g1"
+            },
+            {
+              "id": "4",
+              "texto": "comunicación no verbal",
+              "grupoId": "g2"
+            },
+            {
+              "id": "5",
+              "texto": "gesto",
+              "grupoId": "g2"
+            },
+            {
+              "id": "6",
+              "texto": "señal visual",
+              "grupoId": "g2"
+            },
+            {
+              "id": "2",
+              "texto": "correo electrónico",
+              "grupoId": "g1"
+            },
+            {
+              "id": "1",
+              "texto": "comunicación verbal",
+              "grupoId": "g1"
+            }
+          ]
+        },
+        {
+          "id": "len-001-ex-014",
+          "fichaId": "len-001",
+          "subject": "lengua",
+          "tipo": "ComprensionLectora",
+          "nivel": 2,
+          "tiempoEstimado": 240,
+          "enunciado": "Lee y responde:",
+          "texto": "En la ciudad ocurren muchas situaciones de comunicación. Cuando un vehículo de emergencia como una ambulancia hace sonar su sirena, los conductores se apartan. Por otro lado, un lector revisa las noticias en un periódico para mantenerse informado. Finalmente, en el deporte, un árbitro sanciona una acción de forma visual. Todos estos ejemplos demuestran cómo nos comunicamos.",
+          "preguntas": [
+            {
+              "tipo": "EleccionMultiple",
+              "enunciado": "¿Qué vehículo de emergencia se menciona en el texto que hace sonar su sirena para avisar a los conductores?",
+              "opciones": [
+                "semáforo",
+                "correo electrónico",
+                "ambulancia",
+                "mensaje de texto"
+              ],
+              "respuestaCorrecta": "ambulancia"
+            },
+            {
+              "tipo": "RellenarHueco",
+              "enunciado": "El lector revisa las noticias impresas en un [___] para mantenerse informado.",
+              "respuestaCorrecta": "periódico"
+            },
+            {
+              "tipo": "EleccionMultiple",
+              "enunciado": "¿Qué persona del ámbito deportivo se encarga de sancionar una falta usando indicaciones visuales?",
+              "opciones": [
+                "prospecto",
+                "mensaje de texto",
+                "crónica periodística",
+                "árbitro"
+              ],
+              "respuestaCorrecta": "árbitro"
+            }
+          ]
+        },
+        {
+          "id": "len-001-ex-015",
+          "fichaId": "len-001",
+          "subject": "lengua",
+          "tipo": "MemoriaPareja",
+          "nivel": 3,
+          "tiempoEstimado": 180,
+          "enunciado": "Empareja cada término con su definición:",
+          "parejas": [
+            {
+              "a": "comunicación verbal",
+              "b": "Transmisión de mensajes mediante palabras habladas…"
+            },
+            {
+              "a": "comunicación no verbal",
+              "b": "Envío de información utilizando gestos, imágenes,…"
+            },
+            {
+              "a": "mensaje de texto",
+              "b": "Escrito breve enviado mediante la pantalla…"
+            },
+            {
+              "a": "crónica periodística",
+              "b": "Texto escrito de noticias publicado en…"
+            },
+            {
+              "a": "correo electrónico",
+              "b": "Carta escrita digital que se envía…"
+            },
+            {
+              "a": "conversación",
+              "b": "Diálogo hablado en el que dos…"
+            }
+          ]
+        },
+        {
+          "id": "len-001-ex-016",
+          "fichaId": "len-001",
+          "subject": "lengua",
+          "tipo": "UnirColumnas",
+          "nivel": 2,
+          "tiempoEstimado": 90,
+          "enunciado": "Une cada definición con su término:",
+          "parejas": [
+            {
+              "izquierda": "Movimiento del rostro o las manos que expresa un estado…",
+              "derecha": "gesto"
+            },
+            {
+              "izquierda": "Imagen o símbolo de color que transmite una indicación sin…",
+              "derecha": "señal visual"
+            },
+            {
+              "izquierda": "Sonido fuerte emitido por un aviso para alertar de una…",
+              "derecha": "señal sonora"
+            },
+            {
+              "izquierda": "Palabra o sonido hablado que se emite para expresar dolor…",
+              "derecha": "exclamación"
+            }
+          ]
+        }
+      ]
+    }
+  ]
 }

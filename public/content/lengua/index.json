@@ -1,0 +1,18 @@
+{
+  "version": "local-1789555872927",
+  "subject": "lengua",
+  "fichas": [
+    {
+      "id": "len-001",
+      "titulo": "Comunicación verbal y no verbal",
+      "nivel": 1,
+      "numEjercicios": 16
+    },
+    {
+      "id": "len-002",
+      "titulo": "Orden alfabético de palabras",
+      "nivel": 1,
+      "numEjercicios": 17
+    }
+  ]
+}

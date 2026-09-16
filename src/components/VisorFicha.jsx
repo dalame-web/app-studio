@@ -34,7 +34,12 @@ export default function VisorFicha() {
     iniciarSesion(sesionId, ejercicios, baseLength);
   }
 
-  const textoFicha = [ficha.titulo, ficha.contenido, ...(ficha.ejemplos ?? [])].join('. ');
+  // La explicación (texto, ejemplos, palabras clave y vídeo) es la misma para
+  // los 3 niveles de una ficha — se muestra solo en el nivel 1 para no repetirla.
+  const esPrimerNivel = nivel === 1;
+  const textoFicha = esPrimerNivel
+    ? [ficha.titulo, ficha.contenido, ...(ficha.ejemplos ?? [])].join('. ')
+    : ficha.titulo;
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-indigo-50 to-white flex flex-col">
@@ -47,29 +52,34 @@ export default function VisorFicha() {
         <div className="relative bg-white rounded-2xl shadow-md p-6 mb-4">
           <BotonAudio texto={textoFicha} />
           <h1 className="text-2xl font-bold text-indigo-800 mb-3 pr-10">{ficha.titulo}</h1>
-          <p className="text-gray-700 text-base leading-relaxed mb-4">{ficha.contenido}</p>
 
-          <VideoExplicacion url={ficha.videoExplicacion} />
+          {esPrimerNivel && (
+            <>
+              <p className="text-gray-700 text-base leading-relaxed mb-4">{ficha.contenido}</p>
 
-          {ficha.ejemplos?.length > 0 && (
-            <div className="bg-indigo-50 rounded-xl p-4">
-              <p className="text-sm font-semibold text-indigo-700 mb-2">Ejemplos:</p>
-              <ul className="space-y-1">
-                {ficha.ejemplos.map((ej, i) => (
-                  <li key={i} className="text-indigo-900 text-sm">• {ej}</li>
-                ))}
-              </ul>
-            </div>
-          )}
+              <VideoExplicacion url={ficha.videoExplicacion} />
 
-          {ficha.palabrasClave?.length > 0 && (
-            <div className="mt-4 flex flex-wrap gap-2">
-              {ficha.palabrasClave.map(p => (
-                <span key={p} className="bg-indigo-100 text-indigo-700 text-xs font-medium px-3 py-1 rounded-full">
-                  {p}
-                </span>
-              ))}
-            </div>
+              {ficha.ejemplos?.length > 0 && (
+                <div className="bg-indigo-50 rounded-xl p-4">
+                  <p className="text-sm font-semibold text-indigo-700 mb-2">Ejemplos:</p>
+                  <ul className="space-y-1">
+                    {ficha.ejemplos.map((ej, i) => (
+                      <li key={i} className="text-indigo-900 text-sm">• {ej}</li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+              {ficha.palabrasClave?.length > 0 && (
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {ficha.palabrasClave.map(p => (
+                    <span key={p} className="bg-indigo-100 text-indigo-700 text-xs font-medium px-3 py-1 rounded-full">
+                      {p}
+                    </span>
+                  ))}
+                </div>
+              )}
+            </>
           )}
         </div>
       </div>

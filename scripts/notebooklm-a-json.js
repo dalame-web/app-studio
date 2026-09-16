@@ -160,6 +160,11 @@ Nombre de categoría
 - palabra1
 - palabra2
 
+IMPORTANTE: el nombre de cada categoría va SIEMPRE en su propia línea,
+nunca pegado al final del último guion de la categoría anterior.
+MAL: "- palabra2 Nombre de la siguiente categoría"
+BIEN: "- palabra2" (línea nueva) "Nombre de la siguiente categoría"
+
 ## FRASES CON TERMINO CLAVE
 8 frases completas del texto original, cada una AUTOCONTENIDA (que se
 entienda sola, sin depender de frases anteriores). Cada frase debe contener
@@ -229,7 +234,24 @@ respuesta correcta en UNA de estas tres secciones, nunca en dos o las tres a
 la vez.
 
 No inventes nada que no esté en las fuentes. Si no hay material suficiente
-para alguna sección, indícalo y omite esa sección.`;
+para alguna sección, indícalo y omite esa sección.
+
+PASO FINAL OBLIGATORIO — antes de dar tu respuesta por terminada, revísala
+tú mismo línea por línea contra esta lista y corrige cualquier fallo que
+encuentres (no menciones esta revisión en la respuesta, solo corrige):
+- ¿Todas las cabeceras de sección son "##" exactas (FICHA incluida), sin
+  "###", "####" ni negrita?
+- ¿Hay algún "**" o "*" de énfasis en cualquier parte del texto? Quítalo.
+- ¿El marcador de hueco es "[___]" exacto en todos los casos, sin
+  variantes ni escapes?
+- ¿Queda alguna marca de cita como "[1]" o "[2]"? Quítala.
+- ¿Cada pregunta con opciones tiene "Options: A) ... B) ... C) ... D) ..."
+  las 4 seguidas en una sola línea, y "Correct answer"/"Correct word" en
+  inglés exacto?
+- ¿El nombre de cada categoría está en su propia línea, no pegado al
+  último guion de la categoría anterior?
+- ¿Algún término es la respuesta correcta en más de una de las tres
+  secciones (FRASES, PREGUNTAS OPCION MULTIPLE, COMPRENSION LECTORA)?`;
 }
 
 // Copia al portapapeles en Windows. NO usa `clip` directamente: `clip` lee su
@@ -458,6 +480,15 @@ function partirSecciones(texto) {
     .filter((s) => s.pos)
     .sort((a, b) => a.pos.index - b.pos.index);
 
+  // Si NotebookLM omite la cabecera "## FICHA" (visto con datos reales: la
+  // respuesta empezaba directamente en "TITULO: ..."), no hay ninguna cabecera
+  // que ancle esa sección y se perdía entera (título y contenido vacíos). En
+  // vez de exigir la cabecera, todo lo que hay ANTES de la primera sección
+  // reconocida se trata como el bloque de la ficha, con o sin "## FICHA".
+  if (!encontrados.some((s) => s.key === 'ficha') && encontrados.length > 0 && encontrados[0].pos.index > 0) {
+    encontrados.unshift({ key: 'ficha', pos: { index: 0, fin: 0 } });
+  }
+
   const bloques = {};
   encontrados.forEach((s, i) => {
     const desde = s.pos.fin;
@@ -500,7 +531,18 @@ function parsearPalabrasClave(bloque) {
     });
 }
 
-function parsearCategorias(bloque) {
+// terminos: lista de PALABRAS CLAVE ya parseadas — permite detectar cuándo
+// NotebookLM pega el nombre de la categoría SIGUIENTE al final del último
+// item de la categoría anterior, sin salto de línea entre medias (visto con
+// datos reales: "* expresión facial Textos escritos y orales" en vez de
+// "* expresión facial" + "Textos escritos y orales" en líneas separadas).
+// Sin esto, ese "item" queda como un texto sin sentido y la categoría nueva
+// nunca se detecta — todas las palabras siguientes acaban metidas en la
+// categoría anterior, dejando prácticamente 1 sola categoría gigante (lo que
+// a su vez descalibra el nivel por categoría: casi todo comparte categoría
+// con casi todo, así que casi todo sale "confusable" = nivel 3).
+function parsearCategorias(bloque, terminos = []) {
+  const porLongitud = [...terminos].sort((a, b) => b.length - a.length);
   const grupos = [];
   let actual = null;
   for (const linea of bloque.split('\n')) {
@@ -508,7 +550,18 @@ function parsearCategorias(bloque) {
     if (!l) continue;
     if (esViñeta(l)) {
       if (!actual) continue;
-      actual.items.push(stripCitas(quitarViñeta(l)));
+      const item = stripCitas(quitarViñeta(l));
+      const norm = item.toLowerCase();
+      const terminoPrefijo = porLongitud.find(
+        (t) => norm === t.toLowerCase() || norm.startsWith(`${t.toLowerCase()} `)
+      );
+      if (terminoPrefijo && item.length > terminoPrefijo.length) {
+        actual.items.push(item.slice(0, terminoPrefijo.length));
+        actual = { nombre: item.slice(terminoPrefijo.length).trim(), items: [] };
+        grupos.push(actual);
+        continue;
+      }
+      actual.items.push(item);
     } else {
       actual = { nombre: l, items: [] };
       grupos.push(actual);
@@ -1237,7 +1290,7 @@ async function main() {
 
   const ficha = bloques.ficha ? parsearFicha(bloques.ficha) : { titulo: '', contenido: '', ejemplos: [] };
   const palabrasClave = parsearPalabrasClave(bloques.palabrasClave);
-  const categorias = bloques.categorias ? parsearCategorias(bloques.categorias) : [];
+  const categorias = bloques.categorias ? parsearCategorias(bloques.categorias, palabrasClave.map((p) => p.termino)) : [];
   const frases = parsearFrases(bloques.frases);
   const mcq = bloques.mcq ? parsearMCQ(bloques.mcq) : [];
   const problemas = bloques.problemas ? parsearProblemas(bloques.problemas) : [];

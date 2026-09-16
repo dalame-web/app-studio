@@ -113,6 +113,11 @@ Nombre de categoría
 - palabra1
 - palabra2
 
+IMPORTANTE: el nombre de cada categoría va SIEMPRE en su propia línea,
+nunca pegado al final del último guion de la categoría anterior.
+MAL: "- palabra2 Nombre de la siguiente categoría"
+BIEN: "- palabra2" (línea nueva) "Nombre de la siguiente categoría"
+
 ## FRASES CON TERMINO CLAVE
 8 frases completas del texto original, cada una AUTOCONTENIDA (que se
 entienda sola, sin depender de frases anteriores — no empieces con "it/eso",
@@ -204,6 +209,23 @@ las tres a la vez.
 
 No inventes nada que no esté en las fuentes. Si no hay material suficiente
 para alguna sección, indícalo y omite esa sección.
+
+PASO FINAL OBLIGATORIO — antes de dar tu respuesta por terminada, revísala
+tú mismo línea por línea contra esta lista y corrige cualquier fallo que
+encuentres (no menciones esta revisión en la respuesta, solo corrige):
+- ¿Todas las cabeceras de sección son "##" exactas (FICHA incluida), sin
+  "###", "####" ni negrita?
+- ¿Hay algún "**" o "*" de énfasis en cualquier parte del texto? Quítalo.
+- ¿El marcador de hueco es "[___]" exacto en todos los casos, sin
+  variantes ni escapes?
+- ¿Queda alguna marca de cita como "[1]" o "[2]"? Quítala.
+- ¿Cada pregunta con opciones tiene "Options: A) ... B) ... C) ... D) ..."
+  las 4 seguidas en una sola línea, y "Correct answer"/"Correct word" en
+  inglés exacto?
+- ¿El nombre de cada categoría está en su propia línea, no pegado al
+  último guion de la categoría anterior?
+- ¿Algún término es la respuesta correcta en más de una de las tres
+  secciones (FRASES, PREGUNTAS OPCION MULTIPLE, COMPRENSION LECTORA)?
 ```
 
 (👆 fin del prompt de NotebookLM)

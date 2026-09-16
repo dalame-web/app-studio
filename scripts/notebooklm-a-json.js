@@ -154,8 +154,9 @@ frase (máximo 15 palabras). Formato:
 - término: definición
 
 ## CATEGORIAS
-Agrupa esas mismas palabras clave en 2 o 3 categorías con sentido temático.
-3-6 palabras por categoría. Formato:
+Agrupa esas mismas palabras clave en 3 categorías con sentido temático (2
+solo si el tema realmente no da para 3 — con 3 hay más variedad de niveles
+de dificultad después). 3-6 palabras por categoría. Formato:
 Nombre de categoría
 - palabra1
 - palabra2
@@ -903,6 +904,20 @@ function estimarNivelBanco(correctos, distractores, categoriaDe) {
   return 1;
 }
 
+// Distractores de ArrastrarPalabras: aleatorios sin sesgo por categoría a
+// propósito. Se probó priorizar "otra categoría" (para mantenerlo accesible)
+// pero eso cambia el nivel de "medido según el contenido real" a "fijado por
+// el propio algoritmo de selección" — cualquier patrón determinista (alterna
+// otra/misma, prioriza uno u otro...) fuerza el nivel a un valor casi
+// constante en vez de dejar que varíe con el contenido real de cada ficha.
+// Con pocas categorías (el prompt permite "2 o 3"), es NORMAL y esperable
+// que el nivel salga más alto de lo habitual — es una característica del
+// contenido, no un bug del script. Ver PROMPT-FICHAS.md: se anima a pedir
+// 3 categorías en vez de 2 para dar más margen, en vez de forzarlo aquí.
+function elegirDistractores(candidatos, terminosCorrectos, categoriaDe, cantidad) {
+  return barajar(candidatos).slice(0, cantidad);
+}
+
 // Para problemas numéricos no hay "categoría" que comparar — la dificultad
 // depende de la operación y la magnitud de los números, ambas medibles.
 function estimarNivelProblema(operacion, resultado) {
@@ -976,10 +991,8 @@ function construirEjercicios(fichaId, subject, datos) {
   if (frases.length >= 2) {
     const [f0, f1] = frases;
     const usados = new Set([f0.termino.toLowerCase(), f1.termino.toLowerCase()]);
-    const distractores = datos.palabrasClave
-      .map((p) => p.termino)
-      .filter((t) => !usados.has(t.toLowerCase()))
-      .slice(0, 3); // antes 2 — banco de 4 se quedaba corto para 2 huecos (pedido real)
+    const candidatos = datos.palabrasClave.map((p) => p.termino).filter((t) => !usados.has(t.toLowerCase()));
+    const distractores = elegirDistractores(candidatos, [f0.termino, f1.termino], categoriaDe, 3); // antes 2 — banco de 4 se quedaba corto para 2 huecos (pedido real)
     ejercicios.push({
       id: nextId(), fichaId, subject, tipo: 'ArrastrarPalabras', nivel: estimarNivelBanco([f0.termino, f1.termino], distractores, categoriaDe), tiempoEstimado: 60,
       fraseConHuecos: `${f0.conHueco} ${f1.conHueco}`,
@@ -1020,11 +1033,8 @@ function construirEjercicios(fichaId, subject, datos) {
   // convierten en un ejercicio de arrastrar aparte.
   for (const f of frases.slice(3, 7)) {
     const usado = new Set([f.termino.toLowerCase()]);
-    const distractores = datos.palabrasClave
-      .map((p) => p.termino)
-      .filter((t) => !usado.has(t.toLowerCase()))
-      .sort(() => Math.random() - 0.5)
-      .slice(0, 3); // antes 2 — banco de 3 opciones se quedaba corto (pedido real)
+    const candidatos = datos.palabrasClave.map((p) => p.termino).filter((t) => !usado.has(t.toLowerCase()));
+    const distractores = elegirDistractores(candidatos, [f.termino], categoriaDe, 3); // antes 2 — banco de 3 opciones se quedaba corto (pedido real)
     const nivel = estimarNivelBanco([f.termino], distractores, categoriaDe);
     ejercicios.push({
       id: nextId(), fichaId, subject, tipo: 'ArrastrarPalabras', nivel, tiempoEstimado: 45,

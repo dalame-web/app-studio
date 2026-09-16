@@ -107,8 +107,9 @@ frase (máximo 15 palabras). Formato:
 - término: definición
 
 ## CATEGORIAS
-Agrupa esas mismas palabras clave en 2 o 3 categorías con sentido temático.
-3-6 palabras por categoría. Formato:
+Agrupa esas mismas palabras clave en 3 categorías con sentido temático (2
+solo si el tema realmente no da para 3 — con 3 hay más variedad de niveles
+de dificultad después). 3-6 palabras por categoría. Formato:
 Nombre de categoría
 - palabra1
 - palabra2

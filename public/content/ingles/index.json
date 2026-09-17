@@ -1,0 +1,12 @@
+{
+  "version": "local-1789654020803",
+  "subject": "ingles",
+  "fichas": [
+    {
+      "id": "ing-001",
+      "titulo": "Basic English Grammar Parts of Speech",
+      "nivel": 1,
+      "numEjercicios": 18
+    }
+  ]
+}

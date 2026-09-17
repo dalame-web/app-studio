@@ -1,7 +1,642 @@
 {
-  "version": "2026-09-16-mu4e28pl",
-  "fecha": "2026-09-16",
+  "version": "2026-09-17-mu5lsoa1",
+  "fecha": "2026-09-17",
   "fichas": [
+    {
+      "id": "ing-001",
+      "subject": "ingles",
+      "titulo": "Basic English Grammar Parts of Speech",
+      "nivel": 1,
+      "curso": 4,
+      "contenido": "A noun is a word that names a person, place, thing, or animal. Nouns can be singular or plural, formed using regular rules or irregular changes. A verb represents an action performed by a person, animal, or object. An adjective describes a noun and can use comparative or superlative forms to compare items.",
+      "ejemplos": [
+        "The dog runs in the yard. 2. The small cat slept on the bed. 3. A dog is faster than an elephant."
+      ],
+      "palabrasClave": [
+        "Noun",
+        "Person",
+        "Place",
+        "Thing",
+        "Animal",
+        "Plural noun",
+        "Irregular plural noun",
+        "Verb",
+        "Adjective",
+        "Comparative adjective",
+        "Superlative adjective"
+      ],
+      "tiposEjercicio": [
+        "EleccionMultiple",
+        "ArrastrarPalabras",
+        "OrdenarFrase",
+        "ClasificarGrupos",
+        "ComprensionLectora",
+        "SopaLetras",
+        "MemoriaPareja",
+        "UnirColumnas"
+      ],
+      "ejerciciosDerivar": 18,
+      "ejercicios": [
+        {
+          "id": "ing-001-ex-001",
+          "fichaId": "ing-001",
+          "subject": "ingles",
+          "tipo": "EleccionMultiple",
+          "nivel": 3,
+          "tiempoEstimado": 30,
+          "enunciado": "In the sentence \"The doctor helps sick people\", the word \"doctor\" is classified as:",
+          "pista": "A doctor is a human being who cares for sick people",
+          "opciones": [
+            {
+              "texto": "Person",
+              "emoji": ""
+            },
+            {
+              "texto": "Place",
+              "emoji": ""
+            },
+            {
+              "texto": "Thing",
+              "emoji": ""
+            },
+            {
+              "texto": "Animal",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "Person"
+        },
+        {
+          "id": "ing-001-ex-002",
+          "fichaId": "ing-001",
+          "subject": "ingles",
+          "tipo": "EleccionMultiple",
+          "nivel": 3,
+          "tiempoEstimado": 30,
+          "enunciado": "In the sentence \"The children saw a kangaroo at the zoo\", the word \"zoo\" is classified as:",
+          "pista": "A zoo is a location where people go to see different animals",
+          "opciones": [
+            {
+              "texto": "Person",
+              "emoji": ""
+            },
+            {
+              "texto": "Place",
+              "emoji": ""
+            },
+            {
+              "texto": "Thing",
+              "emoji": ""
+            },
+            {
+              "texto": "Animal",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "Place"
+        },
+        {
+          "id": "ing-001-ex-003",
+          "fichaId": "ing-001",
+          "subject": "ingles",
+          "tipo": "EleccionMultiple",
+          "nivel": 2,
+          "tiempoEstimado": 30,
+          "enunciado": "A student moves their legs quickly across the track to win a race. Which verb best describes this action?",
+          "pista": "Moving legs quickly across a track to win a race is the action of running",
+          "opciones": [
+            {
+              "texto": "Walk",
+              "emoji": ""
+            },
+            {
+              "texto": "Sit",
+              "emoji": ""
+            },
+            {
+              "texto": "Run",
+              "emoji": ""
+            },
+            {
+              "texto": "Laugh",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "Run"
+        },
+        {
+          "id": "ing-001-ex-004",
+          "fichaId": "ing-001",
+          "subject": "ingles",
+          "tipo": "EleccionMultiple",
+          "nivel": 2,
+          "tiempoEstimado": 30,
+          "enunciado": "To make the word \"box\" plural, we write \"boxes\" by adding -es to the end. Which regular plural rule applies to \"box\"?",
+          "pista": "Words ending in x form their plural by adding -es to the end",
+          "opciones": [
+            {
+              "texto": "Add -s",
+              "emoji": ""
+            },
+            {
+              "texto": "Drop the y and add -ies",
+              "emoji": ""
+            },
+            {
+              "texto": "Drop the f or fe and add -ves",
+              "emoji": ""
+            },
+            {
+              "texto": "Add -es",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "Add -es"
+        },
+        {
+          "id": "ing-001-ex-005",
+          "fichaId": "ing-001",
+          "subject": "ingles",
+          "tipo": "EleccionMultiple",
+          "nivel": 2,
+          "tiempoEstimado": 30,
+          "enunciado": "In the sentence \"The red car is faster than the blue one\", what form of adjective is \"faster\"?",
+          "pista": "Faster is used with than to compare two specific objects",
+          "opciones": [
+            {
+              "texto": "Comparative adjective",
+              "emoji": ""
+            },
+            {
+              "texto": "Superlative adjective",
+              "emoji": ""
+            },
+            {
+              "texto": "Base adjective",
+              "emoji": ""
+            },
+            {
+              "texto": "Irregular adjective",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "Comparative adjective"
+        },
+        {
+          "id": "ing-001-ex-006",
+          "fichaId": "ing-001",
+          "subject": "ingles",
+          "tipo": "ArrastrarPalabras",
+          "nivel": 3,
+          "tiempoEstimado": 60,
+          "fraseConHuecos": "A [___] is a person, place, thing, or animal. A doctor is a [___] who helps sick people.",
+          "banco": [
+            "person",
+            "Thing",
+            "noun",
+            "Plural noun",
+            "Comparative adjective"
+          ],
+          "respuestasCorrectas": [
+            "noun",
+            "person"
+          ]
+        },
+        {
+          "id": "ing-001-ex-007",
+          "fichaId": "ing-001",
+          "subject": "ingles",
+          "tipo": "OrdenarFrase",
+          "nivel": 3,
+          "tiempoEstimado": 60,
+          "enunciado": "Put the words in order:",
+          "palabrasDesordenadas": [
+            "you",
+            "a",
+            "find",
+            "A",
+            "library",
+            "where",
+            "place",
+            "books",
+            "can",
+            "is"
+          ],
+          "fraseCorrecta": "A library is a place where you can find books"
+        },
+        {
+          "id": "ing-001-ex-008",
+          "fichaId": "ing-001",
+          "subject": "ingles",
+          "tipo": "ArrastrarPalabras",
+          "nivel": 2,
+          "tiempoEstimado": 45,
+          "fraseConHuecos": "A pencil is a [___] used for writing.",
+          "banco": [
+            "Superlative adjective",
+            "Adjective",
+            "thing",
+            "Place"
+          ],
+          "respuestasCorrectas": [
+            "thing"
+          ]
+        },
+        {
+          "id": "ing-001-ex-009",
+          "fichaId": "ing-001",
+          "subject": "ingles",
+          "tipo": "ArrastrarPalabras",
+          "nivel": 2,
+          "tiempoEstimado": 45,
+          "fraseConHuecos": "A cat is an [___] that can jump on the chair.",
+          "banco": [
+            "Adjective",
+            "Person",
+            "Plural noun",
+            "animal"
+          ],
+          "respuestasCorrectas": [
+            "animal"
+          ]
+        },
+        {
+          "id": "ing-001-ex-010",
+          "fichaId": "ing-001",
+          "subject": "ingles",
+          "tipo": "ArrastrarPalabras",
+          "nivel": 2,
+          "tiempoEstimado": 45,
+          "fraseConHuecos": "A [___] is an action like run or play.",
+          "banco": [
+            "verb",
+            "Noun",
+            "Thing",
+            "Superlative adjective"
+          ],
+          "respuestasCorrectas": [
+            "verb"
+          ]
+        },
+        {
+          "id": "ing-001-ex-011",
+          "fichaId": "ing-001",
+          "subject": "ingles",
+          "tipo": "ArrastrarPalabras",
+          "nivel": 1,
+          "tiempoEstimado": 45,
+          "fraseConHuecos": "An [___] describes a noun like small or red.",
+          "banco": [
+            "Noun",
+            "adjective",
+            "Person",
+            "Thing"
+          ],
+          "respuestasCorrectas": [
+            "adjective"
+          ]
+        },
+        {
+          "id": "ing-001-ex-012",
+          "fichaId": "ing-001",
+          "subject": "ingles",
+          "tipo": "ClasificarGrupos",
+          "nivel": 2,
+          "tiempoEstimado": 60,
+          "enunciado": "Sort each word into its category:",
+          "grupos": [
+            {
+              "id": "g1",
+              "nombre": "Noun Categories"
+            },
+            {
+              "id": "g2",
+              "nombre": "Nouns and Verbs"
+            }
+          ],
+          "items": [
+            {
+              "id": "1",
+              "texto": "Person",
+              "grupoId": "g1"
+            },
+            {
+              "id": "2",
+              "texto": "Place",
+              "grupoId": "g1"
+            },
+            {
+              "id": "5",
+              "texto": "Plural noun",
+              "grupoId": "g2"
+            },
+            {
+              "id": "3",
+              "texto": "Thing",
+              "grupoId": "g1"
+            },
+            {
+              "id": "6",
+              "texto": "Irregular plural noun",
+              "grupoId": "g2"
+            },
+            {
+              "id": "4",
+              "texto": "Noun",
+              "grupoId": "g2"
+            }
+          ]
+        },
+        {
+          "id": "ing-001-ex-013",
+          "fichaId": "ing-001",
+          "subject": "ingles",
+          "tipo": "ComprensionLectora",
+          "nivel": 2,
+          "tiempoEstimado": 240,
+          "enunciado": "Read and answer:",
+          "texto": "Nouns can be singular or plural. A plural noun means there is more than one person, place, thing, or animal. Most plural nouns are formed by adding -s to the end of the singular noun, like turning book into books. However, if a noun ends in s, ch, sh, x, or z, we add -es to make it plural, such as changing box into boxes.",
+          "preguntas": [
+            {
+              "tipo": "EleccionMultiple",
+              "enunciado": "Which plural word is formed by adding -es because it ends in the letter x?",
+              "opciones": [
+                "Books",
+                "Boxes",
+                "Cats",
+                "Babies"
+              ],
+              "respuestaCorrecta": "Boxes",
+              "pista": "Boxes ends in x so it forms its plural by adding -es to the end"
+            },
+            {
+              "tipo": "RellenarHueco",
+              "enunciado": "Most plural nouns are formed by adding -s to the end of the singular noun, like turning book into [___].",
+              "respuestaCorrecta": "books",
+              "pista": "The plural form of book is books created by adding -s to the singular noun."
+            },
+            {
+              "tipo": "EleccionMultiple",
+              "enunciado": "What suffix is added to a singular noun ending in s, ch, sh, x, or z to make it plural?",
+              "opciones": [
+                "-s",
+                "-ies",
+                "-es",
+                "-ves"
+              ],
+              "respuestaCorrecta": "-es",
+              "pista": "The suffix -es is added to singular nouns ending in s, ch, sh, x, or z"
+            }
+          ]
+        },
+        {
+          "id": "ing-001-ex-014",
+          "fichaId": "ing-001",
+          "subject": "ingles",
+          "tipo": "ComprensionLectora",
+          "nivel": 2,
+          "tiempoEstimado": 240,
+          "enunciado": "Read and answer:",
+          "texto": "Irregular plural nouns do not follow standard rules, so you have to memorize them. Some irregular plural nouns change their spelling completely when they become plural. For example, man becomes men, tooth becomes teeth, child becomes children, and mouse becomes mice. Other irregular nouns stay exactly the same in plural form, such as sheep, fish, pants, and scissors.",
+          "preguntas": [
+            {
+              "tipo": "RellenarHueco",
+              "enunciado": "For example, man becomes men, tooth becomes teeth, child becomes [___], and mouse becomes mice.",
+              "respuestaCorrecta": "children",
+              "pista": "Children is the irregular plural form of child with a spelling change."
+            },
+            {
+              "tipo": "EleccionMultiple",
+              "enunciado": "Which plural noun stays exactly the same as its singular form without changing spelling?",
+              "opciones": [
+                "Teeth",
+                "Children",
+                "Men",
+                "Sheep"
+              ],
+              "respuestaCorrecta": "Sheep",
+              "pista": "Sheep remains identical in both singular and plural forms without adding suffixes or changing spelling"
+            },
+            {
+              "tipo": "EleccionMultiple",
+              "enunciado": "What singular noun changes its spelling to become \"mice\" in its plural form?",
+              "opciones": [
+                "Mouse",
+                "Cactus",
+                "Goose",
+                "Person"
+              ],
+              "respuestaCorrecta": "Mouse",
+              "pista": "Mouse changes its spelling to mice in the irregular plural form"
+            }
+          ]
+        },
+        {
+          "id": "ing-001-ex-015",
+          "fichaId": "ing-001",
+          "subject": "ingles",
+          "tipo": "ComprensionLectora",
+          "nivel": 2,
+          "tiempoEstimado": 240,
+          "enunciado": "Read and answer:",
+          "texto": "We use comparative adjectives to compare two things, like saying a dog is faster than an elephant. We use superlative adjectives to show something is the most or best among a group, such as stating the dog is the fastest. For one-syllable adjectives, we add -er to form the comparative and -est to form the superlative. Some adjectives are irregular, changing good to better and best.",
+          "preguntas": [
+            {
+              "tipo": "EleccionMultiple",
+              "enunciado": "In the sentence \"A dog is faster than an elephant\", what type of adjective is \"faster\"?",
+              "opciones": [
+                "Superlative adjective",
+                "Comparative adjective",
+                "Irregular adjective",
+                "Base adjective"
+              ],
+              "respuestaCorrecta": "Comparative adjective",
+              "pista": "Faster compares two animals directly using the suffix -er and the word than"
+            },
+            {
+              "tipo": "RellenarHueco",
+              "enunciado": "We use superlative adjectives to show something is the [___] or best among a group.",
+              "respuestaCorrecta": "most",
+              "pista": "Superlative adjectives indicate that something possesses a quality to the most extreme degree."
+            },
+            {
+              "tipo": "EleccionMultiple",
+              "enunciado": "What is the comparative form of the irregular adjective \"good\"?",
+              "opciones": [
+                "Best",
+                "Worse",
+                "Better",
+                "Faster"
+              ],
+              "respuestaCorrecta": "Better",
+              "pista": "Better is the irregular comparative form of the adjective good"
+            }
+          ]
+        },
+        {
+          "id": "ing-001-ex-016",
+          "fichaId": "ing-001",
+          "subject": "ingles",
+          "tipo": "SopaLetras",
+          "nivel": 3,
+          "tiempoEstimado": 180,
+          "enunciado": "Find the words:",
+          "palabras": [
+            "NOUN",
+            "PERSON",
+            "PLACE",
+            "THING",
+            "ANIMAL",
+            "VERB"
+          ],
+          "cuadricula": [
+            [
+              "S",
+              "B",
+              "R",
+              "E",
+              "V",
+              "G",
+              "F",
+              "R"
+            ],
+            [
+              "R",
+              "N",
+              "K",
+              "B",
+              "E",
+              "O",
+              "F",
+              "A"
+            ],
+            [
+              "Z",
+              "H",
+              "G",
+              "N",
+              "I",
+              "H",
+              "T",
+              "N"
+            ],
+            [
+              "J",
+              "D",
+              "D",
+              "W",
+              "V",
+              "P",
+              "N",
+              "I"
+            ],
+            [
+              "A",
+              "N",
+              "U",
+              "O",
+              "N",
+              "L",
+              "R",
+              "M"
+            ],
+            [
+              "S",
+              "F",
+              "S",
+              "D",
+              "W",
+              "A",
+              "Y",
+              "A"
+            ],
+            [
+              "N",
+              "P",
+              "W",
+              "J",
+              "Q",
+              "C",
+              "K",
+              "L"
+            ],
+            [
+              "X",
+              "N",
+              "O",
+              "S",
+              "R",
+              "E",
+              "P",
+              "J"
+            ]
+          ]
+        },
+        {
+          "id": "ing-001-ex-017",
+          "fichaId": "ing-001",
+          "subject": "ingles",
+          "tipo": "MemoriaPareja",
+          "nivel": 3,
+          "tiempoEstimado": 180,
+          "enunciado": "Match each term with its definition:",
+          "parejas": [
+            {
+              "a": "Plural noun",
+              "b": "A plural noun is more than…"
+            },
+            {
+              "a": "Irregular plural noun",
+              "b": "Irregular plural nouns do not follow…"
+            },
+            {
+              "a": "Comparative adjective",
+              "b": "Comparative adjectives are used to compare…"
+            },
+            {
+              "a": "Superlative adjective",
+              "b": "Superlative adjectives show something is the…"
+            },
+            {
+              "a": "Noun",
+              "b": "A noun is a person, place,…"
+            },
+            {
+              "a": "Person",
+              "b": "A person is a noun category…"
+            }
+          ]
+        },
+        {
+          "id": "ing-001-ex-018",
+          "fichaId": "ing-001",
+          "subject": "ingles",
+          "tipo": "UnirColumnas",
+          "nivel": 2,
+          "tiempoEstimado": 90,
+          "enunciado": "Match each definition to its term:",
+          "parejas": [
+            {
+              "izquierda": "A place is a noun category including locations like school…",
+              "derecha": "Place"
+            },
+            {
+              "izquierda": "A thing is a noun category including objects like pencil…",
+              "derecha": "Thing"
+            },
+            {
+              "izquierda": "An animal is a noun category including creatures like cat…",
+              "derecha": "Animal"
+            },
+            {
+              "izquierda": "A verb is an action",
+              "derecha": "Verb"
+            }
+          ]
+        }
+      ],
+      "videoExplicacion": "https://youtube.com/shorts/JwiXbC7r2bE"
+    },
     {
       "id": "len-001",
       "subject": "lengua",

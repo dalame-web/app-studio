@@ -1,15 +1,15 @@
 {
-  "version": "2026-09-17-mu5lsoa1",
+  "version": "2026-09-17-mu5m7u12",
   "fecha": "2026-09-17",
   "asignaturas": {
     "lengua": {
-      "version": "local-1789654020805"
+      "version": "local-1789654728126"
     },
     "matematicas": {
-      "version": "local-1789654020807"
+      "version": "local-1789654728128"
     },
     "ingles": {
-      "version": "local-1789654020803"
+      "version": "local-1789654728124"
     }
   }
 }

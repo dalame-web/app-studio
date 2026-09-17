@@ -1,5 +1,12 @@
 {
-  "version": "local-1789654020807",
+  "version": "local-1789654728128",
   "subject": "matematicas",
-  "fichas": []
+  "fichas": [
+    {
+      "id": "mat-001",
+      "titulo": "Fundamentos de matemáticas y estadística",
+      "nivel": 1,
+      "numEjercicios": 28
+    }
+  ]
 }

@@ -1,5 +1,5 @@
 {
-  "version": "2026-09-17-mu5lsoa1",
+  "version": "2026-09-17-mu5m7u12",
   "fecha": "2026-09-17",
   "fichas": [
     {
@@ -1881,6 +1881,804 @@
         }
       ],
       "videoExplicacion": "https://youtu.be/lsWLh60jLdM"
+    },
+    {
+      "id": "mat-001",
+      "subject": "matematicas",
+      "titulo": "Fundamentos de matemáticas y estadística",
+      "nivel": 1,
+      "curso": 4,
+      "contenido": "Esta ficha aborda contenidos fundamentales de estadística, numeración y medida. En el bloque de estadística se explica que la moda es el dato más repetido, la mediana es el valor central al ordenar los datos y el gráfico de barras sirve para visualizar cantidades. En la sección de numeración se enseña el funcionamiento de los números romanos mediante sus símbolos básicos y sus reglas de suma, resta y repetición. Por último, se introduce la longitud como la magnitud para medir objetos y distancias utilizando unidades como el metro, el centímetro y el kilómetro.",
+      "ejemplos": [
+        "En una caja con caramelos de distintos colores, el color que más veces se repite es la moda. Para formar el número cuatro en números romanos se coloca una I delante de una V para restar uno a cinco. La altura de una mesa de clase se mide en metros y la longitud de un lápiz en centímetros."
+      ],
+      "palabrasClave": [
+        "moda",
+        "mediana",
+        "gráfico de barras",
+        "números romanos",
+        "regla de suma",
+        "regla de resta",
+        "regla de repetición",
+        "longitud",
+        "unidades de medida",
+        "metro",
+        "centímetro",
+        "kilómetro"
+      ],
+      "tiposEjercicio": [
+        "ProblemaVisual",
+        "CompletarSerie",
+        "EleccionMultiple",
+        "ArrastrarPalabras",
+        "OrdenarFrase",
+        "ClasificarGrupos",
+        "ComprensionLectora",
+        "SopaLetras",
+        "MemoriaPareja",
+        "UnirColumnas"
+      ],
+      "ejerciciosDerivar": 28,
+      "ejercicios": [
+        {
+          "id": "mat-001-ex-001",
+          "fichaId": "mat-001",
+          "subject": "matematicas",
+          "tipo": "ProblemaVisual",
+          "nivel": 1,
+          "tiempoEstimado": 45,
+          "enunciado": "Para calcular el valor del numero romano VI se suma 5 mas 1.",
+          "respuestaCorrecta": "6",
+          "esNumerico": true
+        },
+        {
+          "id": "mat-001-ex-002",
+          "fichaId": "mat-001",
+          "subject": "matematicas",
+          "tipo": "ProblemaVisual",
+          "nivel": 1,
+          "tiempoEstimado": 45,
+          "enunciado": "Para calcular el valor del numero romano IX a 10 se le resta 1.",
+          "respuestaCorrecta": "9",
+          "esNumerico": true
+        },
+        {
+          "id": "mat-001-ex-003",
+          "fichaId": "mat-001",
+          "subject": "matematicas",
+          "tipo": "ProblemaVisual",
+          "nivel": 2,
+          "tiempoEstimado": 45,
+          "enunciado": "Para obtener el valor del numero romano LX se suma 50 mas 10.",
+          "respuestaCorrecta": "60",
+          "esNumerico": true
+        },
+        {
+          "id": "mat-001-ex-004",
+          "fichaId": "mat-001",
+          "subject": "matematicas",
+          "tipo": "ProblemaVisual",
+          "nivel": 2,
+          "tiempoEstimado": 45,
+          "enunciado": "Para aplicar la regla de resta en el numero romano XL a 50 se le resta 10.",
+          "respuestaCorrecta": "40",
+          "esNumerico": true
+        },
+        {
+          "id": "mat-001-ex-005",
+          "fichaId": "mat-001",
+          "subject": "matematicas",
+          "tipo": "ProblemaVisual",
+          "nivel": 3,
+          "tiempoEstimado": 45,
+          "enunciado": "Para descomponer el numero 198 en bloques se suma 100 mas 90 mas 8.",
+          "respuestaCorrecta": "198",
+          "esNumerico": true
+        },
+        {
+          "id": "mat-001-ex-006",
+          "fichaId": "mat-001",
+          "subject": "matematicas",
+          "tipo": "ProblemaVisual",
+          "nivel": 3,
+          "tiempoEstimado": 45,
+          "enunciado": "Si un trayecto mide 1000 metros y se recorren 400 metros para saber cuanto queda se resta 1000 menos 400.",
+          "respuestaCorrecta": "600",
+          "esNumerico": true
+        },
+        {
+          "id": "mat-001-ex-007",
+          "fichaId": "mat-001",
+          "subject": "matematicas",
+          "tipo": "CompletarSerie",
+          "nivel": 2,
+          "tiempoEstimado": 35,
+          "enunciado": "Completa la serie:",
+          "serie": [
+            "10",
+            "20",
+            null,
+            "40",
+            "50"
+          ],
+          "opciones": [
+            "28",
+            "29",
+            "30"
+          ],
+          "respuestaCorrecta": "30"
+        },
+        {
+          "id": "mat-001-ex-008",
+          "fichaId": "mat-001",
+          "subject": "matematicas",
+          "tipo": "CompletarSerie",
+          "nivel": 2,
+          "tiempoEstimado": 35,
+          "enunciado": "Completa la serie:",
+          "serie": [
+            "100",
+            null,
+            "300",
+            "400",
+            "500"
+          ],
+          "opciones": [
+            "200",
+            "199",
+            "198"
+          ],
+          "respuestaCorrecta": "200"
+        },
+        {
+          "id": "mat-001-ex-009",
+          "fichaId": "mat-001",
+          "subject": "matematicas",
+          "tipo": "CompletarSerie",
+          "nivel": 2,
+          "tiempoEstimado": 35,
+          "enunciado": "Completa la serie:",
+          "serie": [
+            "5",
+            "10",
+            "15",
+            null,
+            "25"
+          ],
+          "opciones": [
+            "19",
+            "20",
+            "18"
+          ],
+          "respuestaCorrecta": "20"
+        },
+        {
+          "id": "mat-001-ex-010",
+          "fichaId": "mat-001",
+          "subject": "matematicas",
+          "tipo": "CompletarSerie",
+          "nivel": 2,
+          "tiempoEstimado": 35,
+          "enunciado": "Completa la serie:",
+          "serie": [
+            null,
+            "2000",
+            "3000",
+            "4000",
+            "5000"
+          ],
+          "opciones": [
+            "999",
+            "998",
+            "1000"
+          ],
+          "respuestaCorrecta": "1000"
+        },
+        {
+          "id": "mat-001-ex-011",
+          "fichaId": "mat-001",
+          "subject": "matematicas",
+          "tipo": "EleccionMultiple",
+          "nivel": 2,
+          "tiempoEstimado": 30,
+          "enunciado": "En una caja hay 6 caramelos rojos, 2 verdes, 3 azules y 5 amarillos; el color rojo es el que más veces aparece, por lo que este dato se identifica como:",
+          "pista": "Es el dato que más veces se repite dentro de un grupo",
+          "opciones": [
+            {
+              "texto": "La moda",
+              "emoji": ""
+            },
+            {
+              "texto": "La mediana",
+              "emoji": ""
+            },
+            {
+              "texto": "El gráfico de barras",
+              "emoji": ""
+            },
+            {
+              "texto": "Los números ordenados",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "La moda"
+        },
+        {
+          "id": "mat-001-ex-012",
+          "fichaId": "mat-001",
+          "subject": "matematicas",
+          "tipo": "EleccionMultiple",
+          "nivel": 2,
+          "tiempoEstimado": 30,
+          "enunciado": "Al ordenar la cantidad de caramelos de menor a mayor obtenemos la serie 2, 3, 5 y 6; el valor 4 situado justo en el centro entre el 3 y el 5 se identifica como:",
+          "pista": "Es el número que queda situado justo en medio tras ordenar todos los datos",
+          "opciones": [
+            {
+              "texto": "La moda",
+              "emoji": ""
+            },
+            {
+              "texto": "La mediana",
+              "emoji": ""
+            },
+            {
+              "texto": "El gráfico de barras",
+              "emoji": ""
+            },
+            {
+              "texto": "Los números ordenados",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "La mediana"
+        },
+        {
+          "id": "mat-001-ex-013",
+          "fichaId": "mat-001",
+          "subject": "matematicas",
+          "tipo": "EleccionMultiple",
+          "nivel": 2,
+          "tiempoEstimado": 30,
+          "enunciado": "Para escribir el número cuatro en el sistema romano se coloca la letra I antes de la letra V formando IV, lo cual responde a:",
+          "pista": "Se aplica al colocar un símbolo pequeño antes de uno mayor para restar su valor",
+          "opciones": [
+            {
+              "texto": "La regla de suma",
+              "emoji": ""
+            },
+            {
+              "texto": "La regla de repetición",
+              "emoji": ""
+            },
+            {
+              "texto": "La regla de resta",
+              "emoji": ""
+            },
+            {
+              "texto": "La combinación",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "La regla de resta"
+        },
+        {
+          "id": "mat-001-ex-014",
+          "fichaId": "mat-001",
+          "subject": "matematicas",
+          "tipo": "EleccionMultiple",
+          "nivel": 2,
+          "tiempoEstimado": 30,
+          "enunciado": "Para escribir el número treinta en el sistema romano se coloca la letra X tres veces seguidas formando XXX, lo cual responde a:",
+          "pista": "Permite escribir algunas letras como la X hasta tres veces seguidas",
+          "opciones": [
+            {
+              "texto": "La regla de suma",
+              "emoji": ""
+            },
+            {
+              "texto": "La regla de resta",
+              "emoji": ""
+            },
+            {
+              "texto": "La combinación",
+              "emoji": ""
+            },
+            {
+              "texto": "La regla de repetición",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "La regla de repetición"
+        },
+        {
+          "id": "mat-001-ex-015",
+          "fichaId": "mat-001",
+          "subject": "matematicas",
+          "tipo": "EleccionMultiple",
+          "nivel": 2,
+          "tiempoEstimado": 30,
+          "enunciado": "Si un estudiante necesita medir la altura de la mesa de su clase para comprobar si cabe en un espacio, la unidad principal que debe emplear es:",
+          "pista": "Es la unidad principal de medida empleada para medir objetos grandes como una mesa o una puerta",
+          "opciones": [
+            {
+              "texto": "El metro",
+              "emoji": ""
+            },
+            {
+              "texto": "El centímetro",
+              "emoji": ""
+            },
+            {
+              "texto": "El kilómetro",
+              "emoji": ""
+            },
+            {
+              "texto": "El propio pie",
+              "emoji": ""
+            }
+          ],
+          "respuestaCorrecta": "El metro"
+        },
+        {
+          "id": "mat-001-ex-016",
+          "fichaId": "mat-001",
+          "subject": "matematicas",
+          "tipo": "ArrastrarPalabras",
+          "nivel": 1,
+          "tiempoEstimado": 60,
+          "fraseConHuecos": "La [___] es el número que más se repite dentro de un conjunto de datos. La [___] representa el valor que queda justo en el centro al ordenar los datos de menor a mayor.",
+          "banco": [
+            "moda",
+            "regla de suma",
+            "mediana",
+            "longitud",
+            "centímetro"
+          ],
+          "respuestasCorrectas": [
+            "moda",
+            "mediana"
+          ]
+        },
+        {
+          "id": "mat-001-ex-017",
+          "fichaId": "mat-001",
+          "subject": "matematicas",
+          "tipo": "OrdenarFrase",
+          "nivel": 3,
+          "tiempoEstimado": 60,
+          "enunciado": "Ordena las palabras:",
+          "palabrasDesordenadas": [
+            "gráfico",
+            "sencilla",
+            "de",
+            "sirve",
+            "para",
+            "Un",
+            "elementos",
+            "manera",
+            "hay",
+            "barras",
+            "cuántos",
+            "ver",
+            "clara",
+            "y",
+            "de",
+            "cada",
+            "tipo",
+            "de"
+          ],
+          "fraseCorrecta": "Un gráfico de barras sirve para ver de manera clara y sencilla cuántos elementos hay de cada tipo"
+        },
+        {
+          "id": "mat-001-ex-018",
+          "fichaId": "mat-001",
+          "subject": "matematicas",
+          "tipo": "ArrastrarPalabras",
+          "nivel": 1,
+          "tiempoEstimado": 45,
+          "fraseConHuecos": "Los [___] utilizan un sistema de siete letras básicas para representar las distintas cantidades.",
+          "banco": [
+            "unidades de medida",
+            "números romanos",
+            "mediana",
+            "longitud"
+          ],
+          "respuestasCorrectas": [
+            "números romanos"
+          ]
+        },
+        {
+          "id": "mat-001-ex-019",
+          "fichaId": "mat-001",
+          "subject": "matematicas",
+          "tipo": "ArrastrarPalabras",
+          "nivel": 1,
+          "tiempoEstimado": 45,
+          "fraseConHuecos": "La [___] es la medida que se utiliza para saber cuánto mide un objeto o una distancia.",
+          "banco": [
+            "regla de repetición",
+            "números romanos",
+            "longitud",
+            "mediana"
+          ],
+          "respuestasCorrectas": [
+            "longitud"
+          ]
+        },
+        {
+          "id": "mat-001-ex-020",
+          "fichaId": "mat-001",
+          "subject": "matematicas",
+          "tipo": "ArrastrarPalabras",
+          "nivel": 1,
+          "tiempoEstimado": 45,
+          "fraseConHuecos": "El [___] es la unidad principal de medida y se emplea para calcular objetos o espacios grandes.",
+          "banco": [
+            "regla de resta",
+            "metro",
+            "números romanos",
+            "mediana"
+          ],
+          "respuestasCorrectas": [
+            "metro"
+          ]
+        },
+        {
+          "id": "mat-001-ex-021",
+          "fichaId": "mat-001",
+          "subject": "matematicas",
+          "tipo": "ArrastrarPalabras",
+          "nivel": 2,
+          "tiempoEstimado": 45,
+          "fraseConHuecos": "El [___] es una unidad más pequeña que el metro que sirve para medir objetos de reducido tamaño.",
+          "banco": [
+            "regla de resta",
+            "kilómetro",
+            "centímetro",
+            "gráfico de barras"
+          ],
+          "respuestasCorrectas": [
+            "centímetro"
+          ]
+        },
+        {
+          "id": "mat-001-ex-022",
+          "fichaId": "mat-001",
+          "subject": "matematicas",
+          "tipo": "ClasificarGrupos",
+          "nivel": 2,
+          "tiempoEstimado": 60,
+          "enunciado": "Clasifica cada palabra en su categoría:",
+          "grupos": [
+            {
+              "id": "g1",
+              "nombre": "ESTADÍSTICA"
+            },
+            {
+              "id": "g2",
+              "nombre": "NÚMEROS ROMANOS"
+            }
+          ],
+          "items": [
+            {
+              "id": "1",
+              "texto": "moda",
+              "grupoId": "g1"
+            },
+            {
+              "id": "6",
+              "texto": "regla de resta",
+              "grupoId": "g2"
+            },
+            {
+              "id": "4",
+              "texto": "números romanos",
+              "grupoId": "g2"
+            },
+            {
+              "id": "2",
+              "texto": "mediana",
+              "grupoId": "g1"
+            },
+            {
+              "id": "3",
+              "texto": "gráfico de barras",
+              "grupoId": "g1"
+            },
+            {
+              "id": "5",
+              "texto": "regla de suma",
+              "grupoId": "g2"
+            }
+          ]
+        },
+        {
+          "id": "mat-001-ex-023",
+          "fichaId": "mat-001",
+          "subject": "matematicas",
+          "tipo": "ComprensionLectora",
+          "nivel": 2,
+          "tiempoEstimado": 240,
+          "enunciado": "Lee y responde:",
+          "texto": "En una caja hay varios caramelos de distintos colores: seis rojos, dos verdes, tres azules y cinco amarillos. Al observar la cantidad de cada grupo, el color rojo es el que aparece más veces. En estadística, el dato o valor que se repite con mayor frecuencia dentro de un conjunto se conoce como la moda, por lo que en este caso la moda es el color rojo.",
+          "preguntas": [
+            {
+              "tipo": "EleccionMultiple",
+              "enunciado": "¿Cuál es el concepto estadístico que representa el color rojo en el ejemplo de los caramelos de la caja?",
+              "opciones": [
+                "La mediana",
+                "La moda",
+                "El gráfico de barras",
+                "El número ordenado"
+              ],
+              "respuestaCorrecta": "La moda",
+              "pista": "Es el dato que aparece más veces en el grupo de caramelos"
+            },
+            {
+              "tipo": "RellenarHueco",
+              "enunciado": "En estadística, el dato o valor que se repite con mayor frecuencia dentro de un conjunto se conoce como la [___].",
+              "respuestaCorrecta": "moda",
+              "pista": "La palabra moda corresponde al concepto que define el dato que más se repite."
+            },
+            {
+              "tipo": "EleccionMultiple",
+              "enunciado": "¿Qué cantidad de caramelos de color rojo hay en la caja según el texto?",
+              "opciones": [
+                "Dos caramelos",
+                "Tres caramelos",
+                "Seis caramelos",
+                "Cinco caramelos"
+              ],
+              "respuestaCorrecta": "Seis caramelos",
+              "pista": "El texto indica expresamente que hay seis caramelos de color rojo en la caja"
+            }
+          ]
+        },
+        {
+          "id": "mat-001-ex-024",
+          "fichaId": "mat-001",
+          "subject": "matematicas",
+          "tipo": "ComprensionLectora",
+          "nivel": 2,
+          "tiempoEstimado": 240,
+          "enunciado": "Lee y responde:",
+          "texto": "Los romanos utilizaban solo siete letras para representar todos los números. Para escribir el número cuatro, en lugar de repetir cuatro veces la letra I, aplicaban la regla de la resta. Esta regla establece que cuando un símbolo pequeño se coloca justo antes de uno mayor, se resta su valor. Por eso, colocaban la letra I antes de la V para formar IV, lo que significa restar uno a cinco para obtener cuatro.",
+          "preguntas": [
+            {
+              "tipo": "EleccionMultiple",
+              "enunciado": "¿Qué regla del sistema romano se aplica al colocar la letra I delante de la letra V para formar el número cuatro?",
+              "opciones": [
+                "La regla de suma",
+                "La regla de repetición",
+                "La regla de combinación",
+                "La regla de resta"
+              ],
+              "respuestaCorrecta": "La regla de resta",
+              "pista": "Se coloca un símbolo menor antes de uno mayor para restar su valor"
+            },
+            {
+              "tipo": "RellenarHueco",
+              "enunciado": "Esta regla establece que cuando un símbolo pequeño se coloca justo antes de uno mayor, se [___] su valor.",
+              "respuestaCorrecta": "resta",
+              "pista": "La palabra resta hace referencia a la operación que se realiza cuando el símbolo menor antecede al mayor."
+            },
+            {
+              "tipo": "EleccionMultiple",
+              "enunciado": "¿Cuántas letras distintas utilizaban los romanos en su sistema para representar todos los números?",
+              "opciones": [
+                "Siete letras",
+                "Tres letras",
+                "Cuatro letras",
+                "Cinco letras"
+              ],
+              "respuestaCorrecta": "Siete letras",
+              "pista": "El texto indica que los romanos usaban exactamente siete letras como símbolos básicos"
+            }
+          ]
+        },
+        {
+          "id": "mat-001-ex-025",
+          "fichaId": "mat-001",
+          "subject": "matematicas",
+          "tipo": "ComprensionLectora",
+          "nivel": 2,
+          "tiempoEstimado": 240,
+          "enunciado": "Lee y responde:",
+          "texto": "Las unidades de medida son formas de medir que todas las personas entienden por igual. La unidad principal para medir la longitud es el metro, representado por la letra m. Esta unidad se utiliza principalmente para calcular el tamaño de objetos o espacios grandes, como una puerta, una habitación o una mesa. Por ejemplo, la mesa de la clase mide un metro de altura.",
+          "preguntas": [
+            {
+              "tipo": "EleccionMultiple",
+              "enunciado": "¿Cuál es la unidad principal utilizada para medir objetos o espacios grandes como una mesa de clase?",
+              "opciones": [
+                "El centímetro",
+                "El metro",
+                "El kilómetro",
+                "El propio pie"
+              ],
+              "respuestaCorrecta": "El metro",
+              "pista": "Es la unidad principal que sirve para medir elementos grandes como una mesa o una puerta"
+            },
+            {
+              "tipo": "RellenarHueco",
+              "enunciado": "La unidad principal para medir la longitud es el [___], representado por la letra m.",
+              "respuestaCorrecta": "metro",
+              "pista": "La palabra metro indica el nombre de la unidad principal de medida de longitud."
+            },
+            {
+              "tipo": "EleccionMultiple",
+              "enunciado": "¿Qué ejemplo concreto del texto mide exactamente un metro de altura?",
+              "opciones": [
+                "Un lápiz escolar",
+                "El camino al colegio",
+                "La mesa de la clase",
+                "Una goma de borrar"
+              ],
+              "respuestaCorrecta": "La mesa de la clase",
+              "pista": "El texto menciona explícitamente que la mesa de la clase mide un metro de alto"
+            }
+          ]
+        },
+        {
+          "id": "mat-001-ex-026",
+          "fichaId": "mat-001",
+          "subject": "matematicas",
+          "tipo": "SopaLetras",
+          "nivel": 3,
+          "tiempoEstimado": 180,
+          "enunciado": "Encuentra las palabras:",
+          "palabras": [
+            "MODA",
+            "MEDIANA",
+            "LONGITUD",
+            "METRO"
+          ],
+          "cuadricula": [
+            [
+              "R",
+              "L",
+              "J",
+              "K",
+              "J",
+              "A",
+              "W",
+              "O"
+            ],
+            [
+              "Q",
+              "O",
+              "I",
+              "W",
+              "N",
+              "N",
+              "E",
+              "V"
+            ],
+            [
+              "B",
+              "N",
+              "C",
+              "N",
+              "A",
+              "A",
+              "N",
+              "E"
+            ],
+            [
+              "W",
+              "G",
+              "J",
+              "Z",
+              "M",
+              "I",
+              "G",
+              "Q"
+            ],
+            [
+              "V",
+              "I",
+              "R",
+              "A",
+              "E",
+              "D",
+              "N",
+              "F"
+            ],
+            [
+              "Q",
+              "T",
+              "Y",
+              "D",
+              "T",
+              "E",
+              "O",
+              "C"
+            ],
+            [
+              "X",
+              "U",
+              "G",
+              "I",
+              "R",
+              "M",
+              "C",
+              "N"
+            ],
+            [
+              "A",
+              "D",
+              "O",
+              "M",
+              "O",
+              "O",
+              "T",
+              "Q"
+            ]
+          ]
+        },
+        {
+          "id": "mat-001-ex-027",
+          "fichaId": "mat-001",
+          "subject": "matematicas",
+          "tipo": "MemoriaPareja",
+          "nivel": 3,
+          "tiempoEstimado": 180,
+          "enunciado": "Empareja cada término con su definición:",
+          "parejas": [
+            {
+              "a": "regla de suma",
+              "b": "Cuando un símbolo pequeño va después…"
+            },
+            {
+              "a": "regla de resta",
+              "b": "Cuando un símbolo pequeño va antes…"
+            },
+            {
+              "a": "regla de repetición",
+              "b": "Establece que algunas letras se pueden…"
+            },
+            {
+              "a": "unidades de medida",
+              "b": "Son formas de medir que todos…"
+            },
+            {
+              "a": "moda",
+              "b": "Es el número que más se…"
+            },
+            {
+              "a": "mediana",
+              "b": "Es el número que queda justo…"
+            }
+          ]
+        },
+        {
+          "id": "mat-001-ex-028",
+          "fichaId": "mat-001",
+          "subject": "matematicas",
+          "tipo": "UnirColumnas",
+          "nivel": 2,
+          "tiempoEstimado": 90,
+          "enunciado": "Une cada definición con su término:",
+          "parejas": [
+            {
+              "izquierda": "Dibujo que ayuda a ver fácilmente cuántos hay de cada…",
+              "derecha": "gráfico de barras"
+            },
+            {
+              "izquierda": "Sistema que usa siete letras para representar todos los números",
+              "derecha": "números romanos"
+            },
+            {
+              "izquierda": "Es lo que usamos para saber cuánto mide un objeto",
+              "derecha": "longitud"
+            },
+            {
+              "izquierda": "Es la unidad principal y se usa para medir cosas…",
+              "derecha": "metro"
+            }
+          ]
+        }
+      ],
+      "videoExplicacion": "https://youtu.be/P4glcJM_d0k"
     }
   ]
 }
